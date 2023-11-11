@@ -27,7 +27,7 @@
 
 .content{
     position: relative;
-    max-width: 550px;
+    max-width: 500px;
     display: none;
     visibility: hidden;
     transform: scale(0);
@@ -42,12 +42,12 @@
 }
 
 .movie-title{
-    max-width: 250px;
+    max-width: 350px;
     color:yellow;
 }
 
 .banner .content p{
-    font-size:1em;
+    font-size:1.25em;
     font-weight: 300;
     line-height: 1.5em;
     color:white;

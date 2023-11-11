@@ -1,8 +1,14 @@
 import React from 'react'
-import App from '../CarouselComps/App2'
+import Card from 'react-bootstrap/Card';
 
-export default function Carousel() {
+export default function Carousel(props) {
   return (
-    <App/>
+    <div className="cards">
+      {
+        <p>
+          
+        </p>
+      }
+    </div>
   )
 }
