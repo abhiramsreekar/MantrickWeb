@@ -42,6 +42,14 @@ export default function Carousel() {
         let lists = document.querySelectorAll('.item');
         document.getElementById('slide').appendChild(lists[0]);
       }
+      const nleft=(x)=>{
+        alert(x);
+        let lists = document.querySelectorAll('.item');
+        for(let i=0;i<x;i++)
+        {
+          document.getElementById('slide').append(lists[i]);
+        }
+      }
       const right=()=>{
         let lists = document.querySelectorAll('.item');
         document.getElementById('slide').prepend(lists[lists.length - 1]);
@@ -50,9 +58,12 @@ export default function Carousel() {
     <div className="container">
         <div id="slide">
             {
-              slides.map((Element)=>
+              slides.map((Element,i)=>
               {
-                return <><div className="item" style={{backgroundImage:`URL(${Element.image})`,color:"black"}}>
+                return <><div className="item"  value={i} style={{backgroundImage:`URL(${Element.image})`,color:"black"}} onClick={()=>{
+                  nleft(i);
+                }
+                }>
                 <div className="content">
                     <div className="name" >LUNDEV</div>
                     <div className="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
@@ -63,7 +74,6 @@ export default function Carousel() {
               }
               )
             }   
-        </div>
         <div className="buttons">
             <button id="prev" onClick={left}><span class="material-symbols-outlined">
             arrow_back_ios_new
@@ -71,6 +81,7 @@ export default function Carousel() {
             <button id="next" onClick={right}><span class="material-symbols-outlined">
               arrow_forward_ios
               </span></button>
+        </div>
         </div>
     </div>
   )

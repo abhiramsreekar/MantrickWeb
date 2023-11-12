@@ -7,7 +7,6 @@ export default function LandingPage() {
     <div>
         <Navbar/>
         <Banner/>
-        {/* <Carousel/> */}
     </div>
   )
 }

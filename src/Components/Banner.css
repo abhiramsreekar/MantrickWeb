@@ -1,5 +1,5 @@
-.banner{
-    /* position: relative;
+/* .banner{
+    position: relative;
     width:100%;
     min-height: 100vh;
     padding: 0 100px;
@@ -10,11 +10,11 @@
     background-size: cover;
     background-position: center;
     overflow: hidden;
-    transition: 0.5s; */
+    transition: 0.5s;
     background-color: black;
 }
 
-/* .banner::before{
+.banner::before{
     position: absolute;
     content: '';
     top:0;
