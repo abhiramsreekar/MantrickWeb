@@ -31,11 +31,6 @@ export default function Carousel() {
           image:b5,
           name:"Hi Nanna",
           des:"'Jorugaa Husharugaa' song: 'Raffa Raffa' is personal, emotiona Game Changer song: Makers reveal reason behind postpon"
-        },
-        {
-          image:b5,
-          name:"Hi Nanna",
-          des:"'Jorugaa Husharugaa' song: 'Raffa Raffa' is personal, emotiona Game Changer song: Makers reveal reason behind postpon"
         }
       ]);
       const left=()=>{
