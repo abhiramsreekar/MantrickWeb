@@ -1,0 +1,15 @@
+.basiccard{
+    /* background-color: yellow; */
+    background: url(../Images/poster2.jpg);
+    background-size: cover;
+    width:200px;
+    height:200px;
+    transition: 0.5s;
+    margin:3%;
+    /* position:sticky; */
+}
+
+.basiccard:hover{
+    width:210px;
+    height:210px;
+}

@@ -1,41 +1,41 @@
 import './carousel.css'
 import {useState} from 'react';
+import b1 from '../Images/banner1.jpg'
+import b2 from '../Images/banner2.jpg'
+import b3 from '../Images/banner3.jpg'
+import b4 from '../Images/banner4.jpg'
+import b5 from '../Images/banner5.jpg'
 export default function Carousel() {
     const [slides,setSlides]=useState([
         {
-          image:"https://cdn.pixabay.com/photo/2017/11/24/10/43/ticket-2974645_1280.jpg",
-          name:"LUNDEV",
+          image:b1,
+          name:"Banner1",
           des:"Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu"
         },
         {
-          image:"https://cdn.pixabay.com/photo/2016/09/14/08/18/film-1668918_1280.jpg",
+          image:b2,
           name:"USTAAD",
           des:"Ustaad Bhagat Singh Movie Poster Designs"
         },
         {
-          image:"https://cdn.pixabay.com/photo/2019/10/17/21/17/joker-4557864_1280.jpg",
+          image:b3,
           name:"Guntur Kaaram",
           des:"Guntur Kaaram movie poster"
         },
         {
-          image:"https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_1280.jpg",
+          image:b4,
           name:"LUNDEV",
           des:"Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu"
         },
         {
-          image:"https://cdn.pixabay.com/photo/2013/09/29/12/21/camera-188083_1280.jpg",
+          image:b5,
           name:"Hi Nanna",
           des:"'Jorugaa Husharugaa' song: 'Raffa Raffa' is personal, emotiona Game Changer song: Makers reveal reason behind postpon"
         },
         {
-          image:"https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_1280.jpg",
-          name:"bro",
-          des:"Bro Movie Poster Designs"
-        },
-        {
-          image:"https://cdn.pixabay.com/photo/2019/04/24/21/55/cinema-4153289_1280.jpg",
-          name:"LUNDEV",
-          des:"Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu"
+          image:b5,
+          name:"Hi Nanna",
+          des:"'Jorugaa Husharugaa' song: 'Raffa Raffa' is personal, emotiona Game Changer song: Makers reveal reason behind postpon"
         }
       ]);
       const left=()=>{
@@ -65,7 +65,7 @@ export default function Carousel() {
                 }
                 }>
                 <div className="content">
-                    <div className="name" >LUNDEV</div>
+                    <div className="name" >Random</div>
                     <div className="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
                     <button>See more</button>
                 </div>

@@ -1,0 +1,25 @@
+.clientspage{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    
+}
+
+.clientspage h1{
+    margin:3%;
+    color:white;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width:80%;
+    height:auto;
+    align-items: center;
+    justify-content: center;
+}

@@ -13,9 +13,9 @@ function newnavbar() {
         <li><a href="">Home</a></li>
         <li><a href="">About Us</a></li>
         <li><a href="">Services</a></li>
-        <li><a href="">Contact Us</a></li>
         <li><a className='spec' href="">Brochure</a></li>
         <li><a className='spec' href="">Schedule Meet</a></li>
+        <li><a className='spec' href="">Contact Us</a></li>
       </ul>
       </header>
   );
