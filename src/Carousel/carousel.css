@@ -2,11 +2,7 @@
 font-family: 'Lexend Deca', sans-serif;
 }
 
-.container{
-    /* position: absolute;
-    left:50%;
-    top:65%;
-    transform: translate(-50%,-50%); */
+.containerbox{
     overflow-x: hidden;
     width:100vw;
     height:96vh;

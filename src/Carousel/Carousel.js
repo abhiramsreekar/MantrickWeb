@@ -50,7 +50,7 @@ export default function Carousel() {
         document.getElementById('slide').prepend(lists[lists.length - 1]);
       }
   return (
-    <div className="container">
+    <div className="containerbox">
         <div id="slide">
             {
               slides.map((Element,i)=>
