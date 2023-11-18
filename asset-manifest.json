@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/MantrickWeb/static/css/main.05ae1c79.css",
-    "main.js": "/MantrickWeb/static/js/main.dcffae1f.js",
-    "static/js/787.d4aba7ab.chunk.js": "/MantrickWeb/static/js/787.d4aba7ab.chunk.js",
-    "static/media/banner5.jpg": "/MantrickWeb/static/media/banner5.a1b90596fe46f1fbbf56.jpg",
-    "static/media/banner2.jpg": "/MantrickWeb/static/media/banner2.729a1ac1404b53cea32c.jpg",
-    "static/media/poster2.jpg": "/MantrickWeb/static/media/poster2.c59b43250f6630b92be8.jpg",
-    "static/media/banner1.jpg": "/MantrickWeb/static/media/banner1.a06333345b9f4882e3ea.jpg",
-    "static/media/banner3.jpg": "/MantrickWeb/static/media/banner3.b01943ccbc7ad5331347.jpg",
-    "static/media/banner4.jpg": "/MantrickWeb/static/media/banner4.83b4245d813d1db55278.jpg",
-    "static/media/mantrick.png": "/MantrickWeb/static/media/mantrick.4b3d1148044681dcb987.png",
-    "static/media/logo.svg": "/MantrickWeb/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/MantrickWeb/index.html",
-    "main.05ae1c79.css.map": "/MantrickWeb/static/css/main.05ae1c79.css.map",
-    "main.dcffae1f.js.map": "/MantrickWeb/static/js/main.dcffae1f.js.map",
-    "787.d4aba7ab.chunk.js.map": "/MantrickWeb/static/js/787.d4aba7ab.chunk.js.map"
+    "main.css": "/mantrickWeb/static/css/main.31172920.css",
+    "main.js": "/mantrickWeb/static/js/main.702ea0e2.js",
+    "static/js/787.d4aba7ab.chunk.js": "/mantrickWeb/static/js/787.d4aba7ab.chunk.js",
+    "static/media/banner5.jpg": "/mantrickWeb/static/media/banner5.a1b90596fe46f1fbbf56.jpg",
+    "static/media/banner2.jpg": "/mantrickWeb/static/media/banner2.729a1ac1404b53cea32c.jpg",
+    "static/media/poster2.jpg": "/mantrickWeb/static/media/poster2.c59b43250f6630b92be8.jpg",
+    "static/media/banner1.jpg": "/mantrickWeb/static/media/banner1.a06333345b9f4882e3ea.jpg",
+    "static/media/banner3.jpg": "/mantrickWeb/static/media/banner3.b01943ccbc7ad5331347.jpg",
+    "static/media/banner4.jpg": "/mantrickWeb/static/media/banner4.83b4245d813d1db55278.jpg",
+    "static/media/mantrick.png": "/mantrickWeb/static/media/mantrick.4b3d1148044681dcb987.png",
+    "static/media/logo.svg": "/mantrickWeb/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/mantrickWeb/index.html",
+    "main.31172920.css.map": "/mantrickWeb/static/css/main.31172920.css.map",
+    "main.702ea0e2.js.map": "/mantrickWeb/static/js/main.702ea0e2.js.map",
+    "787.d4aba7ab.chunk.js.map": "/mantrickWeb/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.05ae1c79.css",
-    "static/js/main.dcffae1f.js"
+    "static/css/main.31172920.css",
+    "static/js/main.702ea0e2.js"
   ]
 }
