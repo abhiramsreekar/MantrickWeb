@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MantrickWeb/static/css/main.149e3345.css",
-    "main.js": "/MantrickWeb/static/js/main.5e8f7384.js",
+    "main.css": "/MantrickWeb/static/css/main.7b7c1cdf.css",
+    "main.js": "/MantrickWeb/static/js/main.1ad47072.js",
     "static/js/787.d4aba7ab.chunk.js": "/MantrickWeb/static/js/787.d4aba7ab.chunk.js",
     "static/media/banner5.jpg": "/MantrickWeb/static/media/banner5.a1b90596fe46f1fbbf56.jpg",
     "static/media/banner2.jpg": "/MantrickWeb/static/media/banner2.729a1ac1404b53cea32c.jpg",
@@ -12,12 +12,12 @@
     "static/media/mantrick.png": "/MantrickWeb/static/media/mantrick.4b3d1148044681dcb987.png",
     "static/media/logo.svg": "/MantrickWeb/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/MantrickWeb/index.html",
-    "main.149e3345.css.map": "/MantrickWeb/static/css/main.149e3345.css.map",
-    "main.5e8f7384.js.map": "/MantrickWeb/static/js/main.5e8f7384.js.map",
+    "main.7b7c1cdf.css.map": "/MantrickWeb/static/css/main.7b7c1cdf.css.map",
+    "main.1ad47072.js.map": "/MantrickWeb/static/js/main.1ad47072.js.map",
     "787.d4aba7ab.chunk.js.map": "/MantrickWeb/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.149e3345.css",
-    "static/js/main.5e8f7384.js"
+    "static/css/main.7b7c1cdf.css",
+    "static/js/main.1ad47072.js"
   ]
 }
