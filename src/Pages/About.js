@@ -1,18 +1,30 @@
 import React from 'react'
 import './About.css'
-import b from '../Images/banner1.jpg'
-
 export default function About() {
   return (
     <>
-    <div className='about'>
-        <h1>About Us</h1>
-        <div className="aboutInsider">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora harum nemo ipsum minus facilis inventore possimus error, commodi fugit id voluptatem eum, et nisi! Beatae molestias, asperiores ducimus ipsa fugit obcaecati soluta pariatur qui eligendi illo voluptatem expedita molestiae corrupti sequi illum cumque perferendis, id minus, non necessitatibus iure voluptate consequatur harum! Quas itaque voluptates fugiat dolor excepturi consectetur autem, pariatur id incidunt earum. Similique iusto, rem, provident expedita id nesciunt quia ab, fugit dolorum repellat voluptates iure cumque nostrum maxime! Mollitia voluptatibus fugiat quas totam assumenda laboriosam obcaecati libero nesciunt aut. Optio fugiat quasi facilis tempore doloremque eos aspernatur.</p>
-        <img src={b} alt="" />
+            <div className="responsive-container-block bigContainer">
+              <div className='trBlock'></div>
+          <div className="responsive-container-block Container">
+            <div className="responsive-container-block leftSide">
+              <p className="text-blk heading">
+                Our About Us Block
+              </p>
+              <p className="text-blk subHeading">
+                Semaj Africa is an online education platform that delivers video courses, programs and resources for Individual, Advertising &amp; Media Specialist, Online Marketing Professionals, Freelancers and anyone looking to pursue a career in digital marketing, Accounting, Web development, Programming. Multimedia and CAD design.
+              </p>
+            </div>
+            <div className="responsive-container-block rightSide">
+              <img className="number2img img1"src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d14.png"/>
+              <img className="number3img img2" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/b245.png"/>
+              <img className="number5img img3" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Customer supports.png"/>
+              <iframe allowfullscreen="allowfullscreen" className="number4vid" src="https://www.youtube.com/embed/ePOglweqy7o?si=XPvzgauQKtzpfKXt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe>
+              <img className="number7img img4" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d51.png"/>
+              <img className="number6img img5" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/d12.png"/>
+              <img className="number1img  img6" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/ET32.jpg"/>
+            </div>
+          </div>
         </div>
-    </div>
-    
     </>
   )
 }

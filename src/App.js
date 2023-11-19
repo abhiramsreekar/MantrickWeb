@@ -6,17 +6,20 @@ import Clients from './Pages/Clients'
 import About from './Pages/About'
 import Team from './Pages/Team';
 import Navbar from './Components/Navbar'
-
+import Context from './context/Context';
+import Courses from './Pages/Courses';
 function App() {
   return (
+      <Context>
     <div className="App">
       <Navbar/>
       <LandingPage/>
       <About/>
-      <Team/>
-      <Clients/>
-      
+      <Courses/>
+      {/* <Team/>
+      <Clients/> */}
     </div>
+      </Context>
   );
 }
 

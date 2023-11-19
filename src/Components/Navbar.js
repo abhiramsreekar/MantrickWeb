@@ -3,10 +3,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import image from '../Images/mantrick.png'
-
+import { useContext } from 'react';
+import context from '../context/useContext';
+import './Navbar.css'
 function CollapsibleExample() {
+  const {gpt,setGpt}=useContext(context);
+  const change=(e)=>{
+        // const nav=document.querySelector(".nav");
+        // nav.childNodes.dis
+  }
   return (
-    <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
+    <>
+    <Navbar sticky="top" style={{zIndex:9999999}} collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="#home"><img src={image} alt="" width={"200px"}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -35,6 +43,19 @@ function CollapsibleExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    <header>
+      <button type="button"  style={{zIndex:"1000"}} onClick={()=>{
+        if(gpt===true)
+        {
+          setGpt(false);
+        }
+        else
+        {
+          setGpt(true);
+        }
+      }} id="chatBot"  class="btn btn-primary" >Chat With Bot</button>
+    </header>
+      </>
   );
 }
 

@@ -18,7 +18,10 @@ header{
     list-style: none;
     margin:0 10px;
 }
-
+nav nav.link
+{
+    color: red;
+}
 .nav li a{
     color:white;
     text-decoration: none;
@@ -37,3 +40,27 @@ header{
     border: solid;
     border-radius: 1em;
 }
+#chatBot
+{
+    position: fixed;
+    left: -55px;
+    top: 50vh;
+    transform: rotate(-90deg);
+    transition: all .5s ease-in-out;
+}
+@media screen  and (max-width:800px){
+    #chatBot
+    {
+        width: 111px;
+        font-size: 10px;
+        left: -46px;
+    }
+    .container {
+        margin: 0 auto;
+        max-width: 1280px;
+        /* height: 130px; */
+        width: 90%;
+        margin-top: -14px;
+    }
+}
+  

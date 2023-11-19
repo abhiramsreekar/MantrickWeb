@@ -13,10 +13,12 @@ font-family: 'Lexend Deca', sans-serif;
 .slide{
     width:max-content;
     margin-top:90px;
+    display: flex;
 }
 .item{
-    width:200px;
-    height:300px;
+    width:12vw;
+    /* width:200px; */
+    height:40vh;
     display: inline-block;
     transition: 0.5s;
     background-size: cover;
@@ -30,7 +32,16 @@ font-family: 'Lexend Deca', sans-serif;
     box-shadow:  0 30px 50px #505050;
     cursor: pointer;
 }
-.item:nth-child(1),
+.item:nth-child(1)
+{
+    left:0;
+    top:0;
+    transform: translate(0,0);
+    border-radius: 0;
+    width:100%;
+    height:100%;
+    box-shadow: none;
+}
 .item:nth-child(2){
     left:0;
     top:0;
@@ -44,13 +55,13 @@ font-family: 'Lexend Deca', sans-serif;
     left:50%;
 }
 .item:nth-child(4){
-    left:calc(50% + 220px);
+    left:calc(50% + 15vw);
 }
 .item:nth-child(5){
-    left:calc(50% + 440px);
+    left:calc(50% + 30vw);
 }
 .item:nth-child(n+6){
-    left:calc(44% + 660px);
+    left:calc(44% + 45vw);
     opacity: 0;
 }
 .item .content{
@@ -102,7 +113,7 @@ font-family: 'Lexend Deca', sans-serif;
     left: 0px;
     position: absolute;
     bottom:30px;
-    z-index: 222222;
+    z-index: 222;
     text-align: center;
     width:100%;
 }
@@ -114,5 +125,38 @@ font-family: 'Lexend Deca', sans-serif;
     transition: 0.5s;
 }.buttons button:hover{
     background-color: #bac383;
+}
+@media screen  and (max-width:800px){
+    .item
+    {
+        /* height:200px; */
+        width: 30vw;
+        top:60%;
+        height: 30vh;
+    }
+    .item:nth-child(3){
+        left:35%;
+    }
+    .item:nth-child(4){
+        left:calc(35% + 33vw);
+    }
+    .item:nth-child(n+5){
+        left:calc(35% + 39vw);
+        opacity: 0;
+    }
+    .item .content .name{
+        font-size: 24px;
+    }
+    .item .content{
+        position: absolute;
+        top:30%;
+        left:50px;
+        width:300px;
+        transform: translate(0,-50%);
+    }
+    .item button {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
 }
   
