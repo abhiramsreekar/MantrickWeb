@@ -8,6 +8,7 @@ import Team from './Pages/Team';
 import Navbar from './Components/Navbar'
 import Context from './context/Context';
 import Courses from './Pages/Courses';
+import './App.css'
 function App() {
   return (
       <Context>
@@ -16,8 +17,8 @@ function App() {
       <LandingPage/>
       <About/>
       <Courses/>
-      {/* <Team/>
-      <Clients/> */}
+      <Team/>
+      <Clients/>
     </div>
       </Context>
   );

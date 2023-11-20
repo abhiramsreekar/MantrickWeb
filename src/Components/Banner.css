@@ -7,7 +7,7 @@
     justify-content: space-between;
     align-items: center;
     background: url('../Images/banner1.jpg') no-repeat;
-    background-size: cover;
+    background-size: cover
     background-position: center;
     overflow: hidden;
     transition: 0.5s;
