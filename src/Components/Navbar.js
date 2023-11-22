@@ -40,7 +40,7 @@ function CollapsibleExample() {
         {
           setGpt(true);
         }
-      }} id="chatBot"  class="btn btn-primary" >Chat With Bot</button>
+      }} id="chatBot"  class="" >Chat With Bot</button>
     </header>
       </>
   );

@@ -73,6 +73,7 @@ export default function Carousel() {
       }
       const right=()=>{
         let lists = document.querySelectorAll('.item');
+        setCardNo(lists[0].id);
         document.getElementById('slide').prepend(lists[lists.length - 1]);
       }
   return (
@@ -83,7 +84,7 @@ export default function Carousel() {
             {
               slides.map((Element,i)=>
               {
-                return <><div className="item"  id={i+1} style={{backgroundImage:`URL(${Element.image})`,color:"black"}} onClick={nleft
+                return <><div className="item"  id={i+2} style={{backgroundImage:`URL(${Element.image})`,color:"black"}} onClick={nleft
                 }>
                 <div className="content">
                     <div className="name" >Random</div>
@@ -100,7 +101,7 @@ export default function Carousel() {
             <button id="prev" onClick={left}><span class="material-symbols-outlined">
             arrow_back_ios_new
             </span></button>
-            <span style={{color:"white",margin:"0px 10px"}}>{cardNo}/{7}</span>
+            <span style={{color:"white",margin:"0px 10px"}}>{cardNo-1}/{7}</span>
             <button id="next" onClick={right}><span class="material-symbols-outlined">
               arrow_forward_ios
               </span></button>
