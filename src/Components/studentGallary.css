@@ -216,6 +216,7 @@ p {
   flex-direction: column;
   width: 60%;
   margin: 10px auto;
+  animation: silde 1s ease-in-out;
 }
 .gout img
 {
@@ -224,4 +225,14 @@ p {
 .carousel
 {
   width: 100%;
+}
+@keyframes slide {
+  from
+  {
+    margin-left: -100px;
+  }
+  to
+  {
+    margin-left: 0px;
+  }
 }

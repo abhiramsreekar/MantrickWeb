@@ -101,10 +101,12 @@ ul {
   #chatBot
 {
     position: fixed;
-    left: -45px;
+    left: 0px;
     top: 50vh;
-    transform: rotate(-90deg);
+    /* transform: rotate(-90deg); */
+    cursor: pointer;
     transition: all .5s ease-in-out;
+    /* box-shadow: red 2px 2px; */
 }
 @media screen  and (max-width:800px){
     #chatBot

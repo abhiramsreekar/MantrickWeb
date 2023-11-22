@@ -13,7 +13,7 @@ export default function Navbar2() {
       <li><a href="#">Portfolio</a></li>
       <li><a href="#">Contact</a></li>
   </ul>
-      <button type="button"  style={{zIndex:"1000"}} onClick={()=>{
+      <div type="button"  style={{zIndex:"1000"}} onClick={()=>{
         if(gpt===true)
         {
           setGpt(false);
@@ -22,7 +22,7 @@ export default function Navbar2() {
         {
           setGpt(true);
         }
-      }} id="chatBot"  class="btn btn-primary" >Chat With Bot</button>
+      }} id="chatBot"  class="btn btn-primary" ><img src='https://cdn.pixabay.com/photo/2016/04/01/11/09/cartoon-1300224_640.png' alt="" style={{height:"100px"}}></img></div>
 </header> 
 
     </div>
