@@ -14,7 +14,7 @@ function CollapsibleExample() {
   }
   return (
     <>
-    <Navbar sticky="top" style={{zIndex:9999999}} collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
+    <Navbar sticky="top" collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="#home"><img src={image} alt="" width={"200px"}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

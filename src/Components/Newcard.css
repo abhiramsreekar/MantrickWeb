@@ -2,14 +2,14 @@
     /* background-color: yellow; */
     background: url(../Images/poster2.jpg);
     background-size: cover;
-    width:200px;
-    height:200px;
+    width:18vw;
+    height:30vh;
     transition: 0.5s;
     margin:3%;
     /* position:sticky; */
 }
 
 .basiccard:hover{
-    width:210px;
-    height:210px;
+    width:20vw;
+    height:40vh;
 }
