@@ -78,8 +78,8 @@ export default function Courses() {
                  <i className="fas fa-walking"></i>
               </div>
               <div className="info">
-                 <div className="main">Blonkisoaz</div>
-                 <div className="sub">Omuke trughte a otufta</div>
+                 <div className="main">Roto (Rotoscoping)</div>
+                 {/* <div className="sub">Omuke trughte a otufta</div> */}
               </div>
            </div>
           </div>
@@ -90,8 +90,8 @@ export default function Courses() {
                  <i className="fas fa-snowflake"></i>
               </div>
               <div className="info">
-                 <div className="main">Oretemauw</div>
-                 <div className="sub">Omuke trughte a otufta</div>
+                 <div className="main">Paint in VFX</div>
+                 {/* <div className="sub">Omuke trughte a otufta</div> */}
               </div>
            </div>
           </div>
@@ -102,8 +102,8 @@ export default function Courses() {
                  <i className="fas fa-tree"></i>
                 </div>
               <div className="info">
-                 <div className="main">Iteresuselle</div>
-                 <div className="sub">Omuke trughte a otufta</div>
+                 <div className="main">Match Move</div>
+                 {/* <div className="sub">Omuke trughte a otufta</div> */}
               </div>
            </div>
         </div>
@@ -114,8 +114,8 @@ export default function Courses() {
                  <i className="fas fa-tint"></i>
               </div>
               <div className="info">
-                 <div className="main">Idiefe</div>
-                 <div className="sub">Omuke trughte a otufta</div>
+                 <div className="main">3D Animation</div>
+                 {/* <div className="sub">Omuke trughte a otufta</div> */}
                 </div>
            </div>
           </div>
@@ -126,8 +126,8 @@ export default function Courses() {
                  <i className="fas fa-sun"></i>
               </div>
               <div className="info">
-                 <div className="main">Inatethi</div>
-                 <div className="sub">Omuke trughte a otufta</div>
+                 <div className="main">Compositing</div>
+                 {/* <div className="sub">Omuke trughte a otufta</div> */}
                 </div>
              </div>
         </div>
@@ -156,6 +156,7 @@ export default function Courses() {
       </p>
       <h3 id="h3" className='heads'>Online</h3>
       <p id="p3">Roto, short for rotoscoping, is an indispensable technique in the film industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality and feathering for a seamless blend with the background.</p>
+      <button className='cbtn'>Click Here</button>
     </div>
    </div>
  </div>

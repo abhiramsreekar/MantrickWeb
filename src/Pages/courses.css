@@ -63,15 +63,23 @@
 }
 .option1
 {
-  --optionBackground:url(https://66.media.tumblr.com/6fb397d822f4f9f4596dff2085b18f2e/tumblr_nzsvb4p6xS1qho82wo1_1280.jpg);
+  --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_04.0000-2048x1425.jpeg);
 }
 .option2
 {
-  --optionBackground:url(https://66.media.tumblr.com/8b69cdde47aa952e4176b4200052abf4/tumblr_o51p7mFFF21qho82wo1_1280.jpg);
+  --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_006.0000-2048x1425.jpeg);
 }
-.option3,.option4,.option5
+.option3
 {
-  --optionBackground:url(https://66.media.tumblr.com/5af3f8303456e376ceda1517553ba786/tumblr_o4986gakjh1qho82wo1_1280.jpg);
+   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_010C.0000-2048x1152.jpeg);
+}
+.option4
+{
+  --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_018.0000-2048x1152.jpeg);
+}
+.option5
+{
+  --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_027.0000-2048x1152.jpeg);
 }
    .credit {
       position: absolute;
@@ -230,4 +238,14 @@
    {
       opacity: 1;
    }
+}
+.cbtn
+{
+   background-color: black;
+   color: aliceblue;
+   padding: 6px 10px;
+   border-radius: 10px;
+   width: 120px;
+   margin-top: 10px;
+   cursor: pointer;
 }

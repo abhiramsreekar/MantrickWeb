@@ -172,7 +172,7 @@ export default function StudentGallary() {
       </svg>
     </button>
   </section>
-  <section id="toggle-overflow">
+  <section id="toggle-overflow" style={{display:"none"}}>
     <h2>Overflow</h2>
     <input id="toggle" type="checkbox"/>
     <label htmlFor="toggle">

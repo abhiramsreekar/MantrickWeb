@@ -1,9 +1,9 @@
 import Card from 'react-bootstrap/Card';
 import './Newcard.css'
 
-function BasicExample() {
+function BasicExample({img,delay}) {
   return (
-    <Card className='basiccard'></Card>
+    <Card className='basiccard' style={{backgroundImage:`url(${img})`,animationDelay:"."+9*delay+"s"}}></Card>
   );
 }
 

@@ -89,7 +89,10 @@ export default function Carousel() {
                 <div className="content">
                     <div className="name" >Random</div>
                     <div className="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                    <button>See more</button>
+                    {/* <button>play now</button> */}
+                    <div style={{display:"flex"}} className="play">
+                    <img src='https://cdn.pixabay.com/photo/2020/11/01/04/17/youtube-5702828_640.png' style={{height:"50px",cursor:"pointer"}} alt="play"/>
+                    </div>
                 </div>
                 </div>
                 </> 

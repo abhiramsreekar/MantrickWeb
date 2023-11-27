@@ -17,13 +17,13 @@ export default function Chatbot() {
   const BrochureCard=(triggerNextStep)=>{
     return(
       <div class="">
-          <div class="card" style={{width: "18rem"}}>
+        <div class="card" style={{width: "18rem"}}>
         <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..."/>
         <div class="card-body">
         <h5 class="card-title">Brochure </h5>
         <p class="card-text">Some quick example text to build on the card title .</p>
         <a href="https://google.com" target="_blank" class="btn btn-primary">Download brochure</a>
-  </div>
+        </div>
 </div>
             </div>
     )
@@ -41,7 +41,6 @@ export default function Chatbot() {
       else
       {
         triggerNextStep({ trigger: 'brochure-options' });
-
       }
     }
       return(
@@ -56,7 +55,7 @@ export default function Chatbot() {
   return (
     <>
     {
-      gpt?<ChatBot id="bot" style={{right:"0px",position:"absolute",top:"100px",backgroundColor:"black"}}
+      gpt?<ChatBot id="bot" style={{right:"0px",position:"fixed",bottom:"10px",backgroundColor:"black"}}
       steps={[
         {
           id:'intro', 
