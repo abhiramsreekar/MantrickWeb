@@ -21,10 +21,12 @@ function App() {
       <Navbar3/>
       <LandingPage/>
       <About/>
-      <Courses/>
-      <Clients/>
-      <StudentGallary/>
       <Team/>
+      <Courses/>
+      <StudentGallary/>
+      <Clients/>
+      
+      
       {/* <Mystudents/> */}
     </div>
       </Context>
