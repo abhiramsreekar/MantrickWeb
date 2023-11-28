@@ -19,7 +19,7 @@
 .cards{
     display: flex;
     flex-wrap: wrap;
-    width:80%;
+    width:100vw;
     height:auto;
     align-items: center;
     max-width: 1300px;

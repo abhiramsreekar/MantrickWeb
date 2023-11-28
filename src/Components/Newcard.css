@@ -1,14 +1,14 @@
 .basiccard{
     background-size: cover;
-    width:18vw;
+    width:15vw;
     height:30vh;
     margin:3%;
     transition: all .3s ease-in-out;
     opacity: 0;
 }
 .basiccard:hover{
-    width:20vw;
-    height:40vh;
+    width:15.5vw;
+    height:31vh;
 }
 .closeup
 {

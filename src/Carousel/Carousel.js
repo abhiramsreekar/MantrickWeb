@@ -89,10 +89,10 @@ export default function Carousel() {
                 <div className="content">
                     <div className="name" >Random</div>
                     <div className="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                    {/* <button>play now</button> */}
-                    <div style={{display:"flex"}} className="play">
+                    <button>Open YouTube</button>
+                    {/* <div style={{display:"flex"}} className="play">
                     <img src='https://cdn.pixabay.com/photo/2020/11/01/04/17/youtube-5702828_640.png' style={{height:"50px",cursor:"pointer"}} alt="play"/>
-                    </div>
+                    </div> */}
                 </div>
                 </div>
                 </> 
@@ -101,11 +101,11 @@ export default function Carousel() {
             }   
         </div>
         <div className="buttons">
-            <button id="prev" onClick={left}><span class="material-symbols-outlined">
+            <button id="prev" onClick={right}><span class="material-symbols-outlined">
             arrow_back_ios_new
             </span></button>
             {/* <span style={{color:"white",margin:"0px 10px"}}>{cardNo}/{7}</span> */}
-            <button id="next" onClick={right}><span class="material-symbols-outlined">
+            <button id="next" onClick={left}><span class="material-symbols-outlined">
               arrow_forward_ios
               </span></button>
         </div>
