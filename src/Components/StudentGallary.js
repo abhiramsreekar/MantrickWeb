@@ -124,7 +124,7 @@ export default function StudentGallary() {
         <diV className="gallaryBox">
           <div className='gin'>
           <div className='gallary'>
-          <h3 className='text-blk heading'>Student Gallary</h3>
+          <h3 className='text-blk heading'>Student Gallery</h3>
         <section className="carousel-wrapper">
     <button type="button" className="arrows left-arrow arrow-inactive" aria-label="Arrow Left">
       <svg viewBox="0 0 256 512">

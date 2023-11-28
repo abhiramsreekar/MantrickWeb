@@ -25,7 +25,7 @@ function App() {
       <Clients/>
       <StudentGallary/>
       <Team/>
-      <Mystudents/>
+      {/* <Mystudents/> */}
     </div>
       </Context>
   );

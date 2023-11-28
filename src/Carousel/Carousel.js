@@ -104,7 +104,7 @@ export default function Carousel() {
             <button id="prev" onClick={left}><span class="material-symbols-outlined">
             arrow_back_ios_new
             </span></button>
-            <span style={{color:"white",margin:"0px 10px"}}>{cardNo}/{7}</span>
+            {/* <span style={{color:"white",margin:"0px 10px"}}>{cardNo}/{7}</span> */}
             <button id="next" onClick={right}><span class="material-symbols-outlined">
               arrow_forward_ios
               </span></button>
