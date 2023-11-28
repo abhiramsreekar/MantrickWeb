@@ -23,11 +23,9 @@ function App() {
       <About/>
       <Team/>
       <Courses/>
+      <Mystudents/>
       <StudentGallary/>
       <Clients/>
-      
-      
-      {/* <Mystudents/> */}
     </div>
       </Context>
   );

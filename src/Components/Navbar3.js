@@ -43,10 +43,12 @@ export default function Navbar3() {
             </div>
             <div id="mainListDiv" className="main_list">
                 <ul className="navlinks">
+                    <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Schedule Meet</a></li>
+                    <li><a href="#">Brochure</a></li>
+                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
             <span className="navTrigger">
