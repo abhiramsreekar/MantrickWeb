@@ -13,6 +13,7 @@ import './App.css'
 import Team from './Components/Team';
 import Navbar3 from './Components/Navbar3';
 import Mystudents from './Components/Mystudents';
+import Testimonials from './Components/Testimonials';
 function App() {
   return (
       <Context>
@@ -26,6 +27,7 @@ function App() {
       <Mystudents/>
       <StudentGallary/>
       <Clients/>
+      <Testimonials/>
     </div>
       </Context>
   );
