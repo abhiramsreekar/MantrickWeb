@@ -14,40 +14,35 @@ export default function Carousel() {
   const {cardNo,setCardNo}=useContext(context);
     const [slides,setSlides]=useState([
         {
-          image:b1,
-          name:"Banner1",
-          des:"Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu"
+          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/RRR-2-1536x864.jpg",
+          name:"RRR",
+          des:"Directed by Rajamouli"
 
         },
         {
-          image:b2,
-          name:"USTAAD",
-          des:"Ustaad Bhagat Singh Movie Poster Designs"
+          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/PUSHPA-3-1536x864.jpg",
+          name:"Pushpa",
+          des:"Details"
         },
         {
-          image:b3,
-          name:"Guntur Kaaram",
-          des:"Guntur Kaaram movie poster"
+          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/GOD-FATHER-4-1536x864.jpg",
+          name:"GodFather",
+          des:"Details"
         },
         {
-          image:b4,
-          name:"LUNDEV",
-          des:"Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu"
+          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/bheemla-nayak-2-1536x864.jpg",
+          name:"Bheemla Nayak",
+          des:"Details"
         },
         {
-          image:b3,
-          name:"Hi Nanna",
-          des:"'Jorugaa Husharugaa' song: 'Raffa Raffa' is personal, emotiona Game Changer song: Makers reveal reason behind postpon"
+          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/Bangaraju-3-1536x864.jpg",
+          name:"Bangaraju",
+          des:"details"
         },
         {
-          image:b4,
-          name:"Hi Nanna",
-          des:"'Jorugaa Husharugaa' song: 'Raffa Raffa' is personal, emotiona Game Changer song: Makers reveal reason behind postpon"
-        },
-        {
-          image:b1,
-          name:"Hi Nanna",
-          des:"'Jorugaa Husharugaa' song: 'Raffa Raffa' is personal, emotiona Game Changer song: Makers reveal reason behind postpon"
+          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/VARASUDU-1-1536x864.jpg",
+          name:"Varasudu",
+          des:"details"
         }
       ]);
       const left=()=>{
@@ -87,9 +82,9 @@ export default function Carousel() {
                 return <><div className="item"  id={i+2} style={{backgroundImage:`URL(${Element.image})`,color:"black"}} onClick={nleft
                 }>
                 <div className="content">
-                    <div className="name" >Random</div>
-                    <div className="des">Tinh ru anh di chay pho, chua kip chay pho thi anhchay mat tieu</div>
-                    <button>Open YouTube</button>
+                    <div className="name" >{Element.name}</div>
+                    <div className="des">{Element.des}</div>
+                    <button style={{borderRadius:"8px"}}>Open YouTube</button>
                 </div>
                 </div>
                 </> 

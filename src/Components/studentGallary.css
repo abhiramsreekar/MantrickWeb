@@ -29,23 +29,23 @@
   height: 45px;
   outline: none;
   border: none;
-  background-color: #5e4c5a;
+  background-color: #000000;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
   align-self: center;
-  opacity: 1;
+  opacity: 100%;
   cursor: pointer;
   transition: all 0.1s ease;
   padding: 0;
   pointer-events: all;
 }
-
+/* 
 .arrows:hover {
   background-color: #5e4c5a;
   transform: scale(1.1);
-}
+} */
 
 .arrows svg {
   width: 1.5em;

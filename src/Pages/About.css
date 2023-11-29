@@ -184,7 +184,7 @@ body {
   
   .number5img {
     position: absolute;
-    width: 13%;
+    width: 20%;
     height: 21%;
     margin-top: 38%;
     margin-right: 27%;
@@ -216,17 +216,13 @@ body {
     font-size: 14px;
     line-height: 25px;
   }
-  .img1
+  /* .img1
   {
-    border-top-left-radius:60px ;
+    border-top-left-radius:50px ;
   }
-  /* .img6
-  {
-    border-bottom-left-radius: 60px;
-  } */
   .img5
   {
-    border-top-right-radius: 60px;
+    border-top-right-radius: 50px;
   }
   .img4
   {
@@ -242,6 +238,10 @@ body {
     border-bottom-left-radius: 23px;
     border-top-right-radius: 23px;
     border-top-left-radius: 23px;
+  } */
+
+  .responsive-container-block.rightSide *{
+    border-radius: 10px;
   }
   .trBlock {
     height: 36vh;
