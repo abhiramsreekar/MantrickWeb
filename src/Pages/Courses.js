@@ -68,7 +68,7 @@ export default function Courses() {
     document.getElementById("c1").style.display="none";
   }
   return (
-    <div className="coursesBox" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center"}}>
+    <div className="coursesBox" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center",marginTop:"100px"}}>
       <h1 className='text-blk heading'>Here are our courses</h1>
       <div className="options ">
         <div className="option active option1" id="1" onMouseOver={active}>

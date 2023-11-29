@@ -17,7 +17,15 @@
     padding-left: 3rem;
     margin-top: 5px;
 }
-
+.ul2
+{
+    border: 2px rgb(145, 143, 143) solid;
+    border-radius: 8px;
+}
+.nav
+{
+    background-image:linear-gradient(rgb(40, 40, 40),transparent);
+}
 .nav div.logo a {
     text-decoration: none;
     color: #fff;
@@ -73,11 +81,11 @@
 
     }
 }
-.nav div.main_list ul li a:hover {
+/* .nav div.main_list ul li a:hover {
     border-bottom: 2px red solid;
     top:10px;
     
-}
+} */
 
 .navTrigger {
     display: none;
@@ -334,7 +342,6 @@
 
 .affix {
     padding: 0;
-    background-color: #111;
 }
 .myH2 {
 	text-align:center;
@@ -350,6 +357,10 @@
 	.myP {
 		padding:2%;
 	}
+    #chatBot img
+    {
+        height: 40px;
+    }
 }
 #chatBot {
     position: fixed;

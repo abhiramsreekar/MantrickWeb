@@ -3,8 +3,9 @@ import "./Testimonials.css"
 
 export default function Testimonials() {
     return (
-        <div>
+        <div className='testimonial'>
             <h2 style={{color:"skyblue"}}>Testimonials</h2>
+        <div className='intest'>
             <figure class="snip1533">
                 <figcaption>
                     <blockquote>
@@ -32,6 +33,7 @@ export default function Testimonials() {
                     <h4>Twitter</h4>
                 </figcaption>
             </figure>
+        </div>
         </div>
     )
 }

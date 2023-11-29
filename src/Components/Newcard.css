@@ -1,7 +1,6 @@
 .basiccard{
     background-size: cover;
     width:15vw;
-    height:30vh;
     margin:3%;
     transition: all .3s ease-in-out;
     opacity: 0;

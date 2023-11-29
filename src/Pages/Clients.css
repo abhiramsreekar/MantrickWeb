@@ -25,3 +25,9 @@
     max-width: 1300px;
     justify-content: center;
 }
+@media (max-width:500px)
+{
+    .basiccard {
+        width: 27vw;
+    }
+}

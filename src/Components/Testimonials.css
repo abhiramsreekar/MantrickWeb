@@ -67,10 +67,22 @@
   margin: 0 0 20px;
 }
 
-
-/* Demo purposes only */
-
-body {
-  background-color: #000000;
-  text-align: center;
+.testimonial
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.intest
+{
+  display: flex;
+}
+@media (max-width:900px)
+{
+  .intest
+  {
+    flex-direction: column;
+  }
 }

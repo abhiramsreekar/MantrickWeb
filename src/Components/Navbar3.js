@@ -46,10 +46,10 @@ export default function Navbar3() {
                 <ul className="navlinks">
                     <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#team">Portfolio</a></li>
-                    <li><a href="#courses">Schedule Meet</a></li>
-                    <li><a href="#gllary">Brochure</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#team" >Services</a></li>
+                    <li><a href="#courses" className='ul2'>Schedule Meet</a></li>
+                    <li><a href="#gllary" className='ul2'>Brochure</a></li>
+                    <li><a href="#" className='ul2'>Contact Us</a></li>
                 </ul>
             </div>
             <span className="navTrigger">

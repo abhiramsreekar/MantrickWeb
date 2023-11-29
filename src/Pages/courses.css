@@ -1,15 +1,29 @@
 .optionContent
 {
    bottom: 0px;
-   background-color: black;
-   /* background-color: rgb(77, 74, 74); */
+   background-color: rgb(77, 74, 74);
+   /* backdrop-filter: 1; */
    color: white;
    width: 70%;
    padding:10px  40px ;
    display: none;
-   animation: comeDown 1s ease-in-out;
+   /* animation: comeDown 1s ease-in-out; */
    z-index: 0;
    margin-top: 10px;
+
+}
+@media  (max-width:500px)
+{
+   .cbtns .cbtn
+   {
+      height: 35px;
+      font-size: 9px;
+   }
+   .optionContent
+   {
+      width: 100%;
+      padding: 0px;
+   }
 }
 #c1
 {
@@ -127,13 +141,6 @@
    margin-top: 10px;
 }
 @import url(https://pro.fontawesome.com/releases/v5.11.2/css/all.css);
-:root {
-  --user-button-circle: rgba(0,0,0,0.025);
-  --user-button-cardborder: rgba(255,255,255,0.25);
-  --user-button-text:#323133;
-  --user-button-shadow:rgba(0,0,0,0.1);
-}
-
  #user-button {
   z-index: 1000;
   bottom: 1rem !important;
@@ -341,8 +348,7 @@ body.dark {
 }
 @media (prefers-color-scheme: dark) {
   body:not(.light) {
-    background: #232223;
-    color: white;
+    background: black;
   }
 }
 body .credit {
@@ -365,14 +371,24 @@ body .options {
   body .options {
     min-width: 520px;
   }
+  .heading
+  {
+   font-size: 18px;
+  }
+  .optionContent
+  {
+    font-size: 15px;
+    width: 96%;
+    padding: 1px;
+  }
   body .options .option:nth-child(5) {
     display: none;
   }
 }
 @media screen and (max-width: 638px) {
   body .options {
-    min-width: 440px;
-  }
+     min-width: 440px;
+   }
   body .options .option:nth-child(4) {
     display: none;
   }

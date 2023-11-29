@@ -133,37 +133,37 @@ export default function StudentGallary() {
               </button>
               <section className="carousel">
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2013/10/02/23/03/mountains-190055_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/02.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2018/02/13/23/41/nature-3151869_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/10.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/06.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2018/11/17/22/15/trees-3822149_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/09.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2017/09/04/09/37/cinema-strip-2713352_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/12.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2016/06/13/19/50/sony-1455038_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/14.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2016/10/17/19/25/aditi-rao-hydari-1748439_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/15.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2016/06/13/19/49/sony-1455032_1280.jpg" alt="Working" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/17.jpg" alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2014/01/16/08/52/woman-246236_1280.jpg" alt="Holidays" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/19.jpg" alt="Holidays" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://picsum.photos/id/11/200/300https://cdn.pixabay.com/photo/2015/05/15/05/59/demonstration-767863_1280.jpg" alt="Holidays" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/18.jpg" alt="Holidays" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://cdn.pixabay.com/photo/2017/06/25/11/16/photo-time-line-2440490_1280.jpg" alt="Holidays" />
+                  <img src="https://pixelloid.com/wp-content/grand-media/image/08.jpg" alt="Holidays" />
                 </div>
               </section>
               <button type="button" className="arrows right-arrow" aria-label="Arrow Right">
