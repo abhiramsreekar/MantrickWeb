@@ -204,3 +204,13 @@
     background: dodgerblue;
     color: white;
   }
+  @media (max-width:500px){ 
+    .tcard
+    {
+      width: 96%;
+    }
+    .wrapper 
+    {
+      height: 300px;
+    }
+  }

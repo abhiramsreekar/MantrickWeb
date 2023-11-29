@@ -17,6 +17,10 @@ html
     color: aliceblue;
 
 }
+html
+{
+	overflow-x: hidden;
+}
 body
 {
 	overflow-x:hidden ;

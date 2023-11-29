@@ -253,7 +253,7 @@ body {
 }
   @media (max-width: 1024px) {
     .responsive-container-block.Container {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
   
     .text-blk.heading {
@@ -287,13 +287,21 @@ body {
       width: 450px;
       height: 450px;
     }
-  
+    .responsive-container-block.bigContainer
+    {
+      padding: 5px;
+      width: 96%;
+    }
     .responsive-container-block.leftSide {
       max-width: 450px;
     }
   }
   
   @media (max-width: 500px) {
+    .text-blk.heading
+    {
+      margin-bottom: 3px;
+    }
     .number1img {
       display: none;
     }

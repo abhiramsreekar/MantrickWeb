@@ -6,6 +6,10 @@
     transition: all .3s ease-in-out;
     opacity: 0;
 }
+.basiccard img
+{
+    width: 15vw;
+}
 .basiccard:hover{
     width:15.5vw;
     height:31vh;

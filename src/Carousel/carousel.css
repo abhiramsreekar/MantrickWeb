@@ -165,13 +165,13 @@ font-family: 'Lexend Deca', sans-serif;
         height: 30vh;
     }
     .item:nth-child(3){
-        left:35%;
+        left:30%;
     }
     .item:nth-child(4){
-        left:calc(35% + 33vw);
+        left:calc(30% + 33vw);
     }
     .item:nth-child(n+5){
-        left:calc(35% + 39vw);
+        left:calc(31% + 39vw);
         opacity: 0;
     }
     .item .content .name{
@@ -182,10 +182,19 @@ font-family: 'Lexend Deca', sans-serif;
         top:30%;
         left:50px;
         width:300px;
+        font-size: 15px;
         transform: translate(0,-50%);
     }
     .item button {
         padding: 4px 10px;
         font-size: 12px;
     }
+    .containerbox
+{
+    padding: 0px;
+}
+.buttons button{
+    width:38px;
+    height:38px;
+}
 }

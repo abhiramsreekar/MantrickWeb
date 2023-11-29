@@ -18,7 +18,6 @@ function App() {
   return (
       <Context>
     <div className="App">
-      {/* <Navbar2/> */}
       <Navbar3/>
       <LandingPage/>
       <About/>

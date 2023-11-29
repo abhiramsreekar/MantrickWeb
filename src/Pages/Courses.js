@@ -132,8 +132,8 @@ export default function Courses() {
              </div>
         </div>
    </div>
-   <div style={{width:"70%",height:"400px",overflowY:"scroll",overflowX:"clip",outline:"none"}}>
-    <div className="optionContent" id="c1" style={{padding:"20px 40px",width:"95%"}}>
+   <div style={{width:"100%",height:"400px",overflowY:"scroll",overflowX:"clip",display:"flex",outline:"none",justifyContent:"center",marginTop:"100px"}}>
+    <div className="optionContent" id="c1" style={{padding:"20px 40px"}}>
       <h3 id="h1" className='heads'>3D</h3>
       <p id="p1">
          GoDaddy - Official Site - Get Domain Names & More            

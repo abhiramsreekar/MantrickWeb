@@ -3,7 +3,9 @@ import './Newcard.css'
 
 function BasicExample({img,delay}) {
   return (
-    <Card className='basiccard' style={{backgroundImage:`url(${img})`,animationDelay:"."+9*delay+"s"}}></Card>
+    <Card className='basiccard' style={{animationDelay:"."+9*delay+"s"}}>
+      <img src={img} style={{width:"15vw"}}/>
+    </Card>
   );
 }
 
