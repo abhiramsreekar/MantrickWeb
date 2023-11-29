@@ -7,8 +7,20 @@
   position: absolute;
   margin-bottom: 10px;
   z-index: 10;
+  padding: 0px;
+  margin: 0px;
+  margin-left: -25px;
+  margin-top: -20px;
 }
-
+.socialIcons ul li
+{
+  margin: 0px 1px;
+}
+.socialIcons ul
+{
+  margin: 0px;
+  padding: 0px;
+}
 .socialIcons ul {
    position: relative;
    display: flex;
@@ -62,7 +74,7 @@
   z-index: 1000;
   transition: .3s;
   color: #fff;
-  box-shadw: -1px 1px 1px rgba(0, 0, 0, .5);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, .5);
 }
 .socialIcons ul li:hover span:nth-child(5){
   transform: translate(8px, -8px);

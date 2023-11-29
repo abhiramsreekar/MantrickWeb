@@ -5,6 +5,12 @@ import image from '../Images/mantrick.png'
 import logo from '../Images/chatlogo2..png'
 export default function Navbar3() {
     const {gpt,setGpt}=useContext(context);
+    const navanimation=(e)=>{
+        // e.target.style.top="10px";
+        setTimeout(()=>{
+        },10);
+
+    }
     useEffect(()=>{
         window.addEventListener('scroll', function() {
             if (document.documentElement.scrollTop > 50 || document.body.scrollTop > 50) {
@@ -44,12 +50,15 @@ export default function Navbar3() {
             </div>
             <div id="mainListDiv" className="main_list">
                 <ul className="navlinks">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#team" >Services</a></li>
+                    <li>
+                        <a href="#" className='ul1' onMouseOver={navanimation}>Home</a>
+                        <a href="#" style={{display:"none"}} className='ul1'><strong>Home</strong></a>
+                    </li>
+                    <li><a href="#about" className='ul1'>About</a></li>
+                    <li><a href="#team" className='ul1'>Services</a></li>
                     <li><a href="#courses" className='ul2'>Schedule Meet</a></li>
                     <li><a href="#gllary" className='ul2'>Brochure</a></li>
-                    <li><a href="#" className='ul2'>Contact Us</a></li>
+                    <li><a href="#" className='ul1'>Contact Us</a></li>
                 </ul>
             </div>
             <span className="navTrigger">
