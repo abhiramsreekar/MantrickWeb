@@ -2,6 +2,7 @@ import React,{useEffect,useContext} from 'react'
 import './navbar3.css'
 import context from '../context/useContext';
 import image from '../Images/mantrick.png'
+import logo from '../Images/chatlogo2..png'
 export default function Navbar3() {
     const {gpt,setGpt}=useContext(context);
     useEffect(()=>{
@@ -44,10 +45,10 @@ export default function Navbar3() {
             <div id="mainListDiv" className="main_list">
                 <ul className="navlinks">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Schedule Meet</a></li>
-                    <li><a href="#">Brochure</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#team">Portfolio</a></li>
+                    <li><a href="#courses">Schedule Meet</a></li>
+                    <li><a href="#gllary">Brochure</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
@@ -68,7 +69,7 @@ export default function Navbar3() {
         {
           setGpt(true);
         }
-      }} id="chatBot"  class="btn btn-primary" ><img src='https://cdn.pixabay.com/photo/2016/04/01/11/09/cartoon-1300224_640.png' alt="" style={{height:"100px"}}></img></div>
+      }} id="chatBot"  class="btn btn-primary" ><img src={logo} alt="" style={{height:"60px"}}></img></div>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </>

@@ -121,7 +121,7 @@ export default function StudentGallary() {
   }, [])
   return (
     <>
-      <diV className="gallaryBox">
+      <diV className="gallaryBox" id="gallary">
         <div className='gin'>
           <div className='gallary'>
             <h3 className='text-blk heading'>Student Gallery</h3>

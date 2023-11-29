@@ -3,7 +3,7 @@ import './About.css'
 export default function About() {
   return (
     <>
-            <div className="responsive-container-block bigContainer">
+            <div className="responsive-container-block bigContainer" id="about">
               <div className='trBlock'></div>
           <div className="responsive-container-block Container">
             <div className="responsive-container-block leftSide">

@@ -2,7 +2,7 @@ import React from 'react'
 import './team.css'
 export default function Team() {
   return (
-    <div className='wrapper'>
+    <div className='wrapper' id="team">
         <h3 className='text-blk heading' style={{marginTop:"20px", marginBottom:"5px"}}>Team</h3>
         <div className='tcards'>
 
