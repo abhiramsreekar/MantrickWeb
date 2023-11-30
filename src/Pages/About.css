@@ -312,7 +312,10 @@ body {
     .number1img {
       display: none;
     }
-  
+    .responsive-container-block.Container 
+    {
+      margin-top: 20px;
+    }
     .number2img {
       display: none;
     }

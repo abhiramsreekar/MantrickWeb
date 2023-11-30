@@ -1,29 +1,28 @@
 .optionContent
 {
    bottom: 0px;
-   background-color: rgb(77, 74, 74);
+   /* background-color: rgb(77, 74, 74); */
    /* backdrop-filter: 1; */
    color: white;
    width: 70%;
    padding:10px  40px ;
    display: none;
-   /* animation: comeDown 1s ease-in-out; */
+   animation: splash 1s ease-in-out;
    z-index: 0;
+   transition: all 1s ease-in-out;
    margin-top: 10px;
 
 }
-@media  (max-width:500px)
+.optionContentout
 {
-   .cbtns .cbtn
-   {
-      height: 35px;
-      font-size: 9px;
-   }
-   .optionContent
-   {
-      width: 100%;
-      padding: 0px;
-   }
+  width:100%;
+  height:400px;
+  overflow-y:scroll;
+ overflow-x:clip;
+  display:flex;
+  outline:none;
+  justify-content:center;
+  margin-top:100px;
 }
 #c1
 {
@@ -39,9 +38,8 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background-color: black;
 
-}
+  }
 .option1
 {
   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_04.0000-2048x1425.jpeg);
@@ -53,7 +51,7 @@
 .option3
 {
    --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_010C.0000-2048x1152.jpeg);
-}
+  }
 .option4
 {
   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_018.0000-2048x1152.jpeg);
@@ -64,28 +62,28 @@
 }
 .active
 {
-   animation: splash 1s ease-in;
+  animation: splash 1s ease-in;
 }
 @keyframes splash {
-   from
+  from
    {
       opacity: 0;
-   }
-   to
-   {
+    }
+    to
+    {
       opacity: 1;
-   }
-}
-.cbtns .cbtn
+    }
+  }
+  .cbtns .cbtn
 {
-   margin:2px 10px;
+  margin:2px 10px;
 } 
 .cbtn:hover
 {
    background-color: #c98200;
-
-}
-.cbtn
+   
+  }
+  .cbtn
 {
    background-color: #f1a513;
    /* background-color: black; */
@@ -96,21 +94,21 @@
    height: 50px;
    margin-top: 10px;
    cursor: pointer;
-}
+  }
 @media (max-width:1200px)
 {
-   .optionContent
-   {
+  .optionContent
+  {
       width: 96%;
    }
    .options
    {
       width: 60%;
-   }
-   .active
+    }
+    .active
    {
-      max-width: 400px;
-      border-radius: 2px;
+     max-width: 400px;
+     border-radius: 2px;
    }
    .options .option
    {
@@ -120,17 +118,17 @@
    }
    .optionContent
    {
-      margin-top: 100px;
-   }
-   .option .label .icon
-   {
+     margin-top: 100px;
+    }
+    .option .label .icon
+    {
       display: n;
    }
-}
-.optionContent
-{
-   bottom: 0px;
-   background-color: black;
+  }
+  .optionContent
+  {
+    bottom: 0px;
+    /* background-color: black;s */
    /* background-color: rgb(77, 74, 74); */
    color: white;
    width: 70%;
@@ -139,9 +137,9 @@
    animation: comeDown 1s ease-in-out;
    z-index: 0;
    margin-top: 10px;
-}
+  }
 @import url(https://pro.fontawesome.com/releases/v5.11.2/css/all.css);
- #user-button {
+#user-button {
   z-index: 1000;
   bottom: 1rem !important;
   right: 1rem !important;
@@ -170,18 +168,18 @@
     display: block !important;
   }
 }
- #user-button .u-card {
+#user-button .u-card {
   border-radius: 100%;
   box-shadow: 0 0 1rem -0.25rem var(--user-button-shadow), inset 0 0 1rem -0.75rem var(--user-button-shadow);
 }
  #user-button .u-main {
-  cursor: pointer;
+   cursor: pointer;
   --user-button-background:var(--user-button-main, #EC87C0);
 }
  #user-button .u-main img {
-  height: 100%;
-  width: 100%;
-}
+   height: 100%;
+   width: 100%;
+  }
 body #user-button .u-main iframe {
   position: absolute;
   top: 0;
@@ -257,7 +255,7 @@ body #user-button .u-icons a.u-random div {
   top: -1px;
   -webkit-animation: diespin 2s linear infinite;
           animation: diespin 2s linear infinite;
-}
+        }
 @-webkit-keyframes diespin {
   0% {
     transform: rotate(0deg);
@@ -276,7 +274,7 @@ body #user-button .u-icons a.u-random div {
 }
 body #user-button .u-icons a.u-random:not(:hover) div {
   -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
 }
 body #user-button .u-icons > * {
   position: absolute;
@@ -367,13 +365,41 @@ body .options {
   width: calc(100% - 100px);
   height: 400px;
 }
+@media (max-width:500px)
+{
+    .basiccard:hover{
+      width: none;
+      height: none;
+    }
+    body .options .option
+    {
+      margin: 3px;
+        min-width: 38px;
+      }
+    body .options .option .label .icon
+    {
+        min-width: 20px;
+        height: 30px;
+    }
+    body .options .option .label .info .main {
+      font-weight: bold;
+      font-size: 10px;
+    }
+}
+@media screen and (max-width: 450px) {
+  body .options .option
+  {
+    min-width: 40px;
+    
+  }
+}
 @media screen and (max-width: 718px) {
   body .options {
     min-width: 520px;
   }
   .heading
   {
-   font-size: 18px;
+    font-size: 18px;
   }
   .optionContent
   {
@@ -381,25 +407,25 @@ body .options {
     width: 96%;
     padding: 1px;
   }
-  body .options .option:nth-child(5) {
+  /* body .options .option:nth-child(5) {
     display: none;
-  }
+  } */
 }
 @media screen and (max-width: 638px) {
   body .options {
      min-width: 440px;
-   }
-  body .options .option:nth-child(4) {
-    display: none;
-  }
+    }
+    /* body .options .option:nth-child(4) {
+      display: none;
+  } */
 }
 @media screen and (max-width: 558px) {
   body .options {
     min-width: 360px;
   }
-  body .options .option:nth-child(3) {
+  /* body .options .option:nth-child(3) {
     display: none;
-  }
+  } */
 }
 @media screen and (max-width: 478px) {
   body .options {
@@ -407,11 +433,11 @@ body .options {
   }
   .active
   {
-   max-width: 200x;
+    max-width: 200x;
   }
-  body .options .option:nth-child(2) {
+  /* body .options .option:nth-child(2) {
     display: none;
-  }
+  } */
 }
 body .options .option {
   position: relative;
@@ -450,7 +476,7 @@ body .options .option.active {
   border-radius: 40px;
   background-size: auto 100%;
   /*&:active {
-     transform:scale(0.9);
+    transform:scale(0.9);
   }*/
 }
 body .options .option.active .shadow {
@@ -526,3 +552,38 @@ body .options .option .label .info .main {
 body .options .option .label .info .sub {
   transition-delay: 0.1s;
 }
+  @media  (max-width:500px)
+  {
+     .cbtns .cbtn
+     {
+        height: 35px;
+        font-size: 9px;
+     }
+     .optionContent
+     {
+        width: 100%;
+        padding: 0px;
+     }
+     .optionContentout
+     {
+      margin-top: 10px;
+     }
+      .basiccard:hover{
+          width: none;
+          height: none;
+      }
+      body .options .option
+      {
+          margin: 3px;
+          min-width: 38px;
+      }
+      body .options .option .label .icon
+      {
+          min-width: 20px;
+          height: 30px;
+      }
+      body .options .option .label .info .main {
+          font-weight: bold;
+          font-size: 10px;
+      }
+  }

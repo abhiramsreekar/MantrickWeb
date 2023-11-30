@@ -4,7 +4,7 @@ import "./Testimonials.css"
 export default function Testimonials() {
     return (
         <div className='testimonial'>
-            <h2 style={{color:"skyblue"}}>Testimonials</h2>
+            <h2 className='text-blk heading'>Testimonials</h2>
         <div className='intest'>
             <figure class="snip1533">
                 <figcaption>

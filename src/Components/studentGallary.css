@@ -23,7 +23,17 @@
   gap: 1em;
   scrollbar-width: none;
 }
-
+@media (max-width:500px)
+{
+  .carousel-item
+  {
+    height: 40vh;
+  }
+}
+.carousel-item
+{
+  height: 51vw;
+}
 .arrows {
   width: 20px;
   height: 45px;

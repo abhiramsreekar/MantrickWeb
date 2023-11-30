@@ -48,7 +48,7 @@ export default function Carousel() {
       const left=()=>{
         let lists = document.querySelectorAll('.item');
         // let lists=document.getElementById("slide").childNodes;
-        setCardNo(lists[0].id);
+        setCardNo(lists[2].id);
         document.getElementById('slide').append(lists[0]);
         // console.log("\n:\n");
         // for(let j=0;j<5;j++)
@@ -79,7 +79,8 @@ export default function Carousel() {
             {
               slides.map((Element,i)=>
               {
-                return <><div className="item"  id={i+2} style={{backgroundImage:`URL(${Element.image})`,color:"black"}} onClick={nleft
+                return <><div className="item"  id={i===0?6:i}
+                 style={{backgroundImage:`URL(${Element.image})`,color:"black"}} onClick={nleft
                 }>
                 <div className="content">
                     <div className="name" >{Element.name}</div>
@@ -96,7 +97,7 @@ export default function Carousel() {
             <button id="prev" onClick={right}><span class="material-symbols-outlined">
             arrow_back_ios_new
             </span></button>
-            {/* <span style={{color:"white",margin:"0px 10px"}}>{cardNo}/{7}</span> */}
+            <span style={{color:"white",margin:"0px 10px"}}>{cardNo}/{6}</span>
             <button id="next" onClick={left}><span class="material-symbols-outlined">
               arrow_forward_ios
               </span></button>

@@ -218,6 +218,11 @@
   @media (max-width:500px){ 
     .tcard
     {
-      width: 96%;
+      width: 62%;
+      height: 26vh;
+    }
+    .tcards
+    {
+      justify-content: center;
     }
   }
