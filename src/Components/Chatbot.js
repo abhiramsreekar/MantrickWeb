@@ -166,7 +166,8 @@ export default function Chatbot() {
     :<div></div>
     }
     <section>
-    <div type="button"  style={{zIndex:"1000"}} onClick={()=>{
+    {/* <div type="button" style={{zIndex:"1000"}} onClick={()=>{ */}
+    <div type="button" onClick={()=>{
         const c1=document.querySelector("#chat1");
         const c2=document.querySelector("#chat2");
         const bot=document.querySelector("#bot");
@@ -175,10 +176,12 @@ export default function Chatbot() {
             c2.style.display="none";
             c1.style.display="block";
             bot.style.opacity=0;
+            bot.style.zIndex=-1000;
           }
           else
           {
             bot.style.opacity=1;
+            bot.style.zIndex=1000;
             c1.style.display="none";
             c2.style.display="block";
         }
