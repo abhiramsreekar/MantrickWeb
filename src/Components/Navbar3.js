@@ -29,18 +29,48 @@ export default function Navbar3() {
           fadeIn(mainListDiv);
       });
       function fadeIn(element) {
-          let opacity = 0;
+          let opacity = 1;
+          const links=document.querySelector('.ulm');
+        links.style.display="none";
+        setTimeout(()=>{
+            links.style.display="block";
+        },500)
           element.style.display = 'block';
           const fadeInInterval = setInterval(function() {
               if (opacity < 1) {
-                  opacity += 0.1;
+                  opacity += 0.5;
                   element.style.opacity = opacity;
-              } else {
-                  clearInterval(fadeInInterval);
-              }
-          }, 50);
+                } else {
+                    clearInterval(fadeInInterval);
+                }
+            }, 50);
       }
     },[])
+    const services=()=>{
+        const carousel=document.querySelector(".containerbox").style.display="none";
+        const about=document.querySelector(".responsive-container-block").style.display="none";
+        const gallary=document.querySelector(".gallaryBox").style.display="none";
+        const test=document.querySelector(".testimonial").style.display="none";
+        const team=document.querySelector(".team").style.display="none";
+        const client=document.querySelector(".clientspage").style.display="none";
+        const placements=document.querySelector(".outerStudent ").style.display="none";
+        const courses=document.querySelector(".coursesBox").style.display="none";
+        const footer=document.querySelector(".outerfooter").style.display="none";
+        const services=document.querySelector(".services").style.display="block";
+    }
+    const all=()=>{
+        const carousel=document.querySelector(".containerbox").style="none";
+        const about=document.querySelector(".responsive-container-block").style="none";
+        const gallary=document.querySelector(".gallaryBox").style="none";
+        const test=document.querySelector(".testimonial").style="none";
+        const team=document.querySelector(".team").style="none";
+        const client=document.querySelector(".clientspage").style="none";
+        const placements=document.querySelector(".outerStudent ").style="none";
+        const courses=document.querySelector(".coursesBox").style="none";
+        const footer=document.querySelector(".outerfooter").style="none";
+        const services=document.querySelector(".services").style.display="none";
+
+    }
   return (
     <>
      <nav className="nav">
@@ -49,16 +79,16 @@ export default function Navbar3() {
                 <a href="#"><img src={image} alt="" width={"200px"}/></a>
             </div>
             <div id="mainListDiv" className="main_list">
-                <ul className="navlinks">
+                <ul className="navlinks ulm">
                     <li>
-                        <a href="#" className='ul1' onMouseOver={navanimation}>Home</a>
-                        <a href="#" style={{display:"none"}} className='ul1'><strong>Home</strong></a>
+                        <a href="#" onClick={all} className='ul1 ul1'>Home</a>
                     </li>
-                    <li><a href="#about" className='ul1'>About</a></li>
-                    <li><a href="#team" className='ul1'>Services</a></li>
-                    <li><a href="#courses" className='ul2'>Schedule Meet</a></li>
-                    <li><a href="#gllary" className='ul2'>Brochure</a></li>
-                    <li><a href="#" className='ul1'>Contact Us</a></li>
+                    <li><a href="#about" className='ul1 ul2' onClick={all}>About</a></li>
+                    <li><a href="#team" className='ul1 ul3' onClick={services}>Services</a></li>
+                    <li><a href="#courses" className='ul1 ul4'  onClick={all}>Training</a></li>
+                    <li><a href="#courses" className='ul22 ul5'  onClick={all}>Schedule Meet</a></li>
+                    <li><a href="#clients" className='ul22 ul6'  onClick={all}>Brochure</a></li>
+                    <li><a href="#footer" className='ul1 ul7'  onClick={all}>Contact Us</a></li>
                 </ul>
             </div>
             <span className="navTrigger">
@@ -68,18 +98,7 @@ export default function Navbar3() {
             </span>
         </div>
     </nav>
-    <section>
-    <div type="button"  style={{zIndex:"1000"}} onClick={()=>{
-        if(gpt===true)
-        {
-          setGpt(false);
-        }
-        else
-        {
-          setGpt(true);
-        }
-      }} id="chatBot"  class="btn btn-primary" ><img src={logo} alt="" style={{height:"60px"}}></img></div>
-    </section>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </>
   )

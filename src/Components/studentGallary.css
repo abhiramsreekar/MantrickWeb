@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   gap: 0.5em;
-  width: 95%;
+  width: 104%;
   max-width: 1300px;
 }
 
@@ -205,6 +205,10 @@ input:checked + label #off {
   flex-direction: column;
   background-color: black;
 }
+.gallary h3
+{
+  font-size: 30px;
+}
 .gallary
 {
   display: flex;
@@ -247,4 +251,20 @@ input:checked + label #off {
   {
     margin-left: 0px;
   }
+}
+@media  (max-width:700px) {
+  .carousel-item img {
+      width: 92vw;
+  }
+  .carousel-item {
+    width: 100vw;
+      height: 64vw;
+  }
+  
+}
+#gallary
+{
+  height: 100vh;
+  max-width: 1330px;
+  margin: 2px auto;
 }

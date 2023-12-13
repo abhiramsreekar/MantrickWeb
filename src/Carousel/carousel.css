@@ -16,9 +16,9 @@ font-family: 'Lexend Deca', sans-serif;
     display: flex;
 }
 .item{
-    width:12vw;
+    width:10vw;
     /* width:200px; */
-    height:40vh;
+    height:30vh;
     display: inline-block;
     transition: 0.5s;
     background-size: cover;
@@ -26,9 +26,9 @@ font-family: 'Lexend Deca', sans-serif;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 1;
-    top:63%;
+    top:73%;
     transform: translate(0,-50%);
-    border-radius: 20px;
+    border-radius: 8px;
     box-shadow:  0 30px 50px #505050;
 }
 .item:nth-child(1)
@@ -51,17 +51,20 @@ font-family: 'Lexend Deca', sans-serif;
     box-shadow: none;
 }
 .item:nth-child(3){
-    left:50%;
+    left:60%;
 }
 .item:nth-child(4){
-    left:calc(50% + 15vw);
+    left:calc(60% + 11vw);
 }
 .item:nth-child(5){
-    left:calc(50% + 30vw);
+    left:calc(60% + 22vw);
 }
 .item:nth-child(n+6){
     left:calc(44% + 45vw);
     opacity: 0;
+}
+.item .content button{
+    border-radius: 5px;
 }
 .item .content{
     position: absolute;
@@ -103,7 +106,7 @@ font-family: 'Lexend Deca', sans-serif;
     z-index: 11111;
 }
 .item .name{
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     opacity: 0;
     animation:showcontent 1s ease-in-out 1 forwards
@@ -137,32 +140,20 @@ font-family: 'Lexend Deca', sans-serif;
         filter:blur(0);
     }
 }
-.buttons{
-    margin-top: 0px;
-    left: 0px;
-    position: absolute;
-    bottom:30px;
-    z-index: 222;
-    text-align: center;
-    width:100%;
-}
-.buttons button{
-    cursor: pointer;
-    width:50px;
-    height:50px;
-    border-radius: 50%;
-    border:1px solid #555;
-    transition: 0.5s;
-}.buttons button:hover{
+.buttons button:hover{
     background-color: #bac383;
 }
 @media screen  and (max-width:800px){
+    .item .content button{
+        border-radius: 2px;
+    }
     .item
     {
         /* height:200px; */
         width: 30vw;
         top:60%;
         height: 30vh;
+        border-radius: 3px;
     }
     .item:nth-child(3){
         left:30%;
@@ -190,11 +181,48 @@ font-family: 'Lexend Deca', sans-serif;
         font-size: 12px;
     }
     .containerbox
-{
-    padding: 0px;
+    {
+        padding: 0px;
+    }
+    .buttons button{
+        width:38px;
+        height:38px;
+        background-color: transparent;
+        color: white;
+    }
 }
-.buttons button{
-    width:38px;
-    height:38px;
+
+.item .content button{
+    background-color: white;
+    color: black;
 }
-}
+.banner .containerbox .buttons button{
+    background-color: transparent;
+        color: white;
+        cursor: pointer;
+        border: none;
+    }
+    .banner .containerbox .buttons span{
+        margin: 1px 10px;
+    }
+    .banner .containerbox .buttons{
+        margin-top: 0px;
+        left: 0px;
+        position: absolute;
+        bottom:30px;
+        z-index: 222;
+        text-align: center;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav .buttons button{
+        cursor: pointer;
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        border:1px solid #555;
+        transition: 0.5s;
+        opacity: .5;
+    }

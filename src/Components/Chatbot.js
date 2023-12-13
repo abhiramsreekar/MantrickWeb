@@ -4,6 +4,7 @@ import User from './User';
 import Login from './Login'
 import './index.css'
 import context from '../context/useContext';
+import logo from '../Images/chatlogo2..png'
 import DateCompo from './DateCompo';
 // type ValuePiece = Date | null;
 
@@ -52,111 +53,148 @@ export default function Chatbot() {
       )
 
   }
+  const login=()=>{
+    window.localStorage({"name":"pavan"});
+  }
   return (
     <>
     {
-      gpt?<ChatBot id="bot" style={{right:"0px",position:"fixed",bottom:"10px",backgroundColor:"black"}}
-      steps={[
-        {
-          id:'intro', 
-          message:"Hi There. Welcome to Mantrick Studios", 
-          trigger:'i1',
-        },
-        {
-          id:"i1",
-          // component:<Login  msg="brochure"/>,
-          message:"trigger:'intro-user",
-          trigger:'i2',
-        },
-        {
-          id:"i2",
-          message:"Hiii user1",
-          trigger:'i3',
-        },
-        {
-          id:"i3",
-          message:"Hiii user2",
-          trigger:'intro-user',
-        },
-        {
-          id:'intro-user', 
-          options:[
-          {value:'Download Brochure', label:'Download Brochure', trigger:'Download Brochure'},
-          {value:'Get Callback', label:'Get Callback', trigger:'arrange-call-back'},
-          ] 
-        },
-        {
-          id:'Download Brochure', 
-          component:<User type="brochure" />
-          
-        },
-        {
-          id:'arrange-call-back', 
-          component:<User type="call-back"/>
-        },
-        {
-          id:'brochure-otp', 
-          component:<Login  type="brochure"/>,
-        },
-        {
-          id:'callBack-otp', 
-          component:<Login  type="call-back"/>,
-        },
-        {
-          id:'Get Callback', 
-          message:'Sorry to hear that.', 
-          end:true
-        },
-        {
-          id:'brochure',
-          component:<BrochureCard/>,
-          trigger:"brochure-options"
-        },
-        {
-          id:'book-call',
-          component:<DateCompo/>
-        },
-        {
-          id:'brochure-options',
-          options:[
-            {value:'1', label:'Download Brochure', trigger:'end'},
-            {value:'2', label:'Get Callback', trigger:'end'},
-            {value:'3', label:'Get Callback', trigger:'end'},
-            // {value:'4', label:'Get Callback', trigger:'end'},
-            // {value:'5', label:'Get Callback', trigger:'end'}
+      gpt?
+      <div id='bot' style={{zIndex:44,opacity:0}}>
+        <ChatBot style={{right:"0px",position:"fixed",bottom:"115px",backgroundColor:"black"}}
+        steps={[
+          {
+            id:'intro', 
+            message:"Hi There. Welcome to Mantrick Studios", 
+            trigger:'i1',
+          },
+          {
+            id:"i1",
+            // component:<Login  msg="brochure"/>,
+            message:"trigger:'intro-user",
+            trigger:'i2',
+          },
+          {
+            id:"i2",
+            message:"Hiii user1",
+            trigger:'i3',
+          },
+          {
+            id:"i3",
+            message:"Hiii user2",
+            trigger:'intro-user',
+          },
+          {
+            id:'intro-user', 
+            options:[
+            {value:'Download Brochure', label:'Download Brochure', trigger:'Download Brochure'},
+            {value:'Get Callback', label:'Get Callback', trigger:'arrange-call-back'},
             ] 
-        },
-        {
-          id:'call-options', 
-          options:[
-            {value:'1', label:'Download Brochure', trigger:'end'},
-            {value:'2', label:'Get Callback', trigger:'end'},
-            {value:'3', label:'Get Callback', trigger:'end'}
+          },
+          {
+            id:'Download Brochure', 
+            component:<User type="brochure" />
+            
+          },
+          {
+            id:'arrange-call-back', 
+            component:<User type="call-back"/>
+          },
+          {
+            id:'brochure-otp', 
+            component:<Login  type="brochure"/>,
+          },
+          {
+            id:'callBack-otp', 
+            component:<Login  type="call-back"/>,
+          },
+          {
+            id:'Get Callback', 
+            message:'Sorry to hear that.', 
+            end:true
+          },
+          {
+            id:'brochure',
+            component:<BrochureCard/>,
+            trigger:"brochure-options"
+          },
+          {
+            id:'book-call',
+            component:<DateCompo/>
+          },
+          {
+            id:'brochure-options',
+            options:[
+              {value:'1', label:'Download Brochure', trigger:'end'},
+              {value:'2', label:'Get Callback', trigger:'end'},
+              {value:'3', label:'Get Callback', trigger:'end'},
+              // {value:'4', label:'Get Callback', trigger:'end'},
+              // {value:'5', label:'Get Callback', trigger:'end'}
+              ] 
+          },
+          {
+            id:'call-options', 
+            options:[
+              {value:'1', label:'Download Brochure', trigger:'end'},
+              {value:'2', label:'Get Callback', trigger:'end'},
+              {value:'3', label:'Get Callback', trigger:'end'}
+              ] 
+          },
+          {
+            id:"end",
+            message:"Would you like to continue the chat ?",
+            trigger:"end1"
+          },
+          {
+            id:'end1', 
+            options:[
+            {value:'Download Brochure', label:'No', trigger:'0'},
+            {value:'Get Callback', label:'Yes', trigger:'intro'},
             ] 
-        },
-        {
-          id:"end",
-          message:"Would you like to continue the chat ?",
-          trigger:"end1"
-        },
-        {
-          id:'end1', 
-          options:[
-          {value:'Download Brochure', label:'No', trigger:'0'},
-          {value:'Get Callback', label:'Yes', trigger:'intro'},
-          ] 
-        }
-        ,
-        {
-          id:'0',
-          message:"Exited",
-          end:true
-        }
-      ]}
-      {...config}
-    />
+          }
+          ,
+          {
+            id:'0',
+            message:"Exited",
+            end:true
+          }
+        ]}
+        {...config}
+      />
+
+      </div>
     :<div></div>
     }
+    <section>
+    <div type="button"  style={{zIndex:"1000"}} onClick={()=>{
+        const c1=document.querySelector("#chat1");
+        const c2=document.querySelector("#chat2");
+        const bot=document.querySelector("#bot");
+        if(c2.style.display==="block")
+        {
+            c2.style.display="none";
+            c1.style.display="block";
+            bot.style.opacity=0;
+          }
+          else
+          {
+            bot.style.opacity=1;
+            c1.style.display="none";
+            c2.style.display="block";
+        }
+        // if(gpt===true)
+        // {
+        //   setGpt(false);
+        // }
+        // else
+        // {
+        //   setGpt(true);
+        // }
+      }} id="chatBot"  class="btn btn-primary" >
+        <img id="chat1" src={logo} alt="" style={{height:"50px"}}/>
+        <img id="chat2" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.png" alt="" style={{height:"60px"}}>
+        </img></div>
+    </section>
     </>
   )
 }

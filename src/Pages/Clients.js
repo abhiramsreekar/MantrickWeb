@@ -56,7 +56,7 @@ export default function Clients() {
   ]
   return (
     
-    <div className='clientspage'> 
+    <div className='clientspage page' id="clients"> 
     <h1 className='text-blk heading' style={{marginTop:"40px"}}><strong>Clients</strong></h1>
     <div className='cards'>
       {

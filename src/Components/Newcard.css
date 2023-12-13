@@ -1,17 +1,31 @@
 .basiccard{
     background-size: cover;
-    width:15vw;
+    width:13vw;
     margin:3%;
-    transition: all .3s ease-in-out;
+    transition: all .6s ease-in-out;
+    animation: transform .5s ease-in-out;
     opacity: 0;
+}
+@keyframes basiccard {
+    from
+    {
+        transform: scale(1);
+        
+    }
+    to
+    {
+        transform: scale(1.4);
+    }
+    
 }
 .basiccard img
 {
     width: 15vw;
+    transition: all .5s ease-in-out;
+    border-radius: 18px;
 }
-.basiccard:hover{
-    width:15.5vw;
-    height:31vh;
+.basiccard img:hover{
+  transform: scale(1.2);
 }
 .closeup
 {
@@ -20,18 +34,6 @@
 }
 
 @keyframes closeup {
-    /* from
-    {
-        opacity: 0;
-        transform: translate(80%,40%);
-        transform: scale(2);
-    }
-    to
-    {
-        opacity: 1;
-        transform: translate(0%,0%);
-        transform: scale(1);
-    } */
     0%
     {
         opacity: 0;

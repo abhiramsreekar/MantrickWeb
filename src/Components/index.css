@@ -194,9 +194,34 @@ body {
 {
 	z-index: 10000000;
 }
+#bot
+{
+	right:0px;
+	position:fixed;
+	bottom:115px;
+	background-color:black;
+}
 .KChAP
 {
 	z-index: 9999999;
+	/* transform: scale(.5); */
+	animation: splash .5s ease-in-out;
+	animation-fill-mode: forwards;
+	opacity: 0;
+	border: 1px rgb(60, 60, 60) solid;
+}
+@keyframes splash {
+	from
+	{
+		opacity: 0;
+		transform: scale(.5);
+	}
+	to 
+	{
+		opacity: 1;
+		transform: scale(1);
+	}
+	
 }
 .ipSaXD {
     background: white;
@@ -207,6 +232,15 @@ body {
     display: inline-block;
     font-size: 14px;
     padding: 12px;
+}
+.page
+{
+	margin-bottom: 200px;
+}
+@media screen  and (max-width:1000px){
+	.page{
+		margin-bottom: 200px;
+	}
 }
 @media screen  and (max-width:500px){
 	.sc-iwsKbI
@@ -221,5 +255,27 @@ body {
 	.sc-bZQynM {
 		font-size: 10px;
 	}
+	.page
+	{
+		margin-bottom: 50px;
+	}
 }
+@media screen and (max-width: 1200px) {
 
+	.KChAP {
+	width: 50%;
+	margin: 2px auto;
+	height: 70vh;
+	}
+}
+@media screen and (max-width: 568px) {
+	.KChAP {
+    bottom: 0 !important;
+    left: initial !important;
+    height: 100%;
+    right: 0 !important;
+    top: 30px !important;
+    width: 80%;
+	margin: 2px auto;
+	}
+}

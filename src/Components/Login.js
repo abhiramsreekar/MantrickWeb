@@ -43,9 +43,7 @@ const Login = ({triggerNextStep,type}) => {
     const phoneNumber = "+91"+ph;
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
     .then((confirmationResult) => {
-      alert("OTP Successfully sent");
       window.confirmationResult = confirmationResult;
-      alert("response initaiels");
       setLoading(false);
       setShowOtp(true);
       toast.success("OTP Sended Sucessfully");

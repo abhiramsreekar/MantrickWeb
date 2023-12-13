@@ -9,11 +9,14 @@ import Context from './context/Context';
 // import Navbar from './Components/Navbar'
 import StudentGallary from './Components/StudentGallary'
 import Courses from './Pages/Courses';
+import Footer from './Pages/Footer';
 import './App.css'
 import Team from './Components/Team';
 import Navbar3 from './Components/Navbar3';
-import Mystudents from './Components/Mystudents';
+// import Mystudents from './Components/Mystudents';
 import Testimonials from './Components/Testimonials';
+import Mystudents from './Components/Mystudents';
+import Services from './Pages/Services';
 function App() {
   return (
       <Context>
@@ -25,8 +28,10 @@ function App() {
       <Courses/>
       <Mystudents/>
       <StudentGallary/>
-      <Clients/>
       <Testimonials/>
+      <Clients/>
+      <Services/>
+    <Footer/>
     </div>
       </Context>
   );

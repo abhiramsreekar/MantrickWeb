@@ -6,7 +6,7 @@ const Context = (props) => {
     const [name,setName]=useState("");
     const [email,setEmail]=useState("");
     const [msg,setMsg]=useState("");
-    const [gpt,setGpt]=useState(false);
+    const [gpt,setGpt]=useState(true);
     const [cardNo,setCardNo]=useState(1);
     const [gptState,setGptState]=useState("");
     return (
