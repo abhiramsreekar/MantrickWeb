@@ -4,7 +4,7 @@ export default function Mystudents() {
   return (
 	  <div className='page outerStudent page'>
         <div className='gout2'>
-            <h4 className='text-blk heading' style={{color:"white",margin:"5px 0px"}}>Our students are working in:</h4>
+            <h4 className='text-blk heading' style={{color:"white",margin:"5px 0px"}}>OUR STUDENTS ARE WORKING IN</h4>
             <div class="grid-wrapper">
 
 		<img src="https://media.mpcfilm.com/app/uploads/2022/09/Untitled-1-1-640x960.jpg" alt="" />

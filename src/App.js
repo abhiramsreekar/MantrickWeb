@@ -3,13 +3,15 @@ import logo from './logo.svg';
 import './App.css';
 import LandingPage from './Pages/LandingPage';
 import Clients from './Pages/Clients'
-import About from './Pages/About'
+// import About from './Pages/About'
+import About2 from './Pages/About2'
 import Context from './context/Context';
 // import Navbar2 from './Components/Navbar2'
 // import Navbar from './Components/Navbar'
 import StudentGallary from './Components/StudentGallary'
 import Courses from './Pages/Courses';
 import Footer from './Pages/Footer';
+import ServicesTab from './Pages/ServicesTab';
 import './App.css'
 import Team from './Components/Team';
 import Navbar3 from './Components/Navbar3';
@@ -23,12 +25,14 @@ function App() {
     <div className="App">
       <Navbar3/>
       <LandingPage/>
-      <About/>
-      <Team/>
+      {/* <About/> */}
+      <About2/>
+      <ServicesTab/>
       <Courses/>
       <Mystudents/>
       <StudentGallary/>
       <Testimonials/>
+      <Team/>
       <Clients/>
       <Services/>
     <Footer/>

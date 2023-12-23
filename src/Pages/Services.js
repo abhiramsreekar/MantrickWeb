@@ -77,7 +77,7 @@ export default function Services() {
         {
             setI(photos.length-1);
         }
-        setPhoto(photos[i].img);
+        setPhoto(photos[i].imageUrl);
     }
     const photoNext=()=>{
         let temp=i+1;
@@ -86,7 +86,7 @@ export default function Services() {
         {
             setI(0);
         }
-        setPhoto(photos[i].img);
+        setPhoto(photos[i].imageUrl);
     }
     const showphoto=(l)=>{
         // setI(l);

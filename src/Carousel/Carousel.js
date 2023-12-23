@@ -12,9 +12,9 @@ export default function Carousel() {
     fetchAllLandings();
     auto();
   },[])
-  const {cardNo,setCardNo}=useState(1);
-  const {count,setCount}=useState(4);
-  const {j,setJ}=useState(1);
+  const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); 
+  const {cardNo,setCardNo}=useContext(context);
+  const [total,setTotal]=useState(0);
     const [landings,setLandings]=useState([
       ]);
       const t=[
@@ -50,18 +50,39 @@ export default function Carousel() {
           des:"details"
         }
       ];
-      const auto=()=>{
-        let lists = document.querySelectorAll('.item');
-        // setCount(lists[2].id);
-        document.getElementById('slide').append(lists[0]);
-        setTimeout(()=>{
-          auto();
-        },2000);
+      var j;
+      const auto=async ()=>{
+        
+        // setTimeout(()=>{
+        //   //     // let x=cardNo+1;
+        //   //     // if(x==total+1)
+        //   //     // {
+        //     //     //   x=1;
+        //     //     // }
+        //     //     left();
+        //     //   auto();
+        
+        //   },2000);
+        while(1)
+        {
+            let lists = document.querySelectorAll('.item');
+            document.getElementById('slide').append(lists[0]);
+            await sleep(3000);
+        }
+  
+      }
+      const increase=()=>{
+        let x=cardNo+1;
+        if(x==total+1)
+        {
+          x=1;
+        }
+        setCardNo(x);
       }
       const left=()=>{
         let lists = document.querySelectorAll('.item');
-        // setJ(lists[2].id);
         document.getElementById('slide').append(lists[0]);
+        increase();
       }
       const nleft=(e)=>{
         // alert(e.target.id);
@@ -76,8 +97,13 @@ export default function Carousel() {
       }
       const right=()=>{
         let lists = document.querySelectorAll('.item');
-        // setJ(lists[0].id);
         document.getElementById('slide').prepend(lists[lists.length - 1]);
+        let x=cardNo-1;
+        if(x==0)
+        {
+          x=total;
+        }
+        setCardNo(x);
       }
 
       // var eventIds;
@@ -87,7 +113,11 @@ export default function Carousel() {
           // return response;
           // alert(JSON.stringify(response.data));
           setLandings(response.data);
-          setCount(response.data.length);
+          let c=0;
+          Object.keys(response.data).forEach(key => {
+          c=c+1;
+        });
+          setTotal(c);
         } catch (err) {
           console.error(`Error: ${err}`);
         }
@@ -98,22 +128,6 @@ export default function Carousel() {
       {/* <img src={lists[0].image}/> */}
     <div className="containerbox">
         <div id="slide">
-            {/* {
-              slides.map((Element,i)=>
-              {
-                return <><div className="item"  id={i===0?6:i}
-                 style={{backgroundImage:`URL(${Element.image})`,color:"black"}} onClick={nleft
-                }>
-                <div className="content">
-                    <div className="name" >{Element.name}</div>
-                    <div className="des">{Element.des}</div>
-                    <button>Open YouTube</button>
-                </div>
-                </div>
-                </> 
-              }
-              )
-            }    */}
 
             {eventIds.map((eventId,i) => {
             const event = landings[eventId];
@@ -137,7 +151,7 @@ export default function Carousel() {
             <button id="prev" onClick={right}><span class="material-symbols-outlined">
             arrow_back_ios_new
             </span></button>
-            <span style={{color:"white",margin:"0px 10px"}}>{j}   |   {count}</span>
+            <span style={{color:"white",margin:"0px 10px"}}>{cardNo}   |   {total}</span>
             <button id="next" onClick={left}><span class="material-symbols-outlined">
               arrow_forward_ios
               </span></button>

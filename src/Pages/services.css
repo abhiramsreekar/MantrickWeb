@@ -82,6 +82,10 @@ align-items: center;
     opacity: .7;
     z-index: 90;
 }
+.outerphotos
+{
+  margin-top: 50vh;
+}
 .outerphotos .showphoto p
 {
     padding: 2px 20px;

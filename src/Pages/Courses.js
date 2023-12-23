@@ -68,8 +68,10 @@ export default function Courses() {
     document.getElementById("c1").style.display="none";
   }
   return (
-    <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center",marginTop:"100px"}}>
-      <h1 className='text-blk heading' style={{fontSize:"30px"}}>Here are our courses</h1>
+   <>
+      <h1 className='text-blk heading trainhead' style={{textAlign:"center",marginTop:"100px",marginBottom:"0px"}}>TRAINING</h1>
+    <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"flex-start",marginTop:"100px"}}>
+      <h1 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px"}}>HERE ARE OUR COURSES</h1>
       <div className="options ">
         <div className="option active option1" id="1" onMouseOver={active}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
@@ -164,5 +166,6 @@ export default function Courses() {
     </div>
    </div>
  </div>
+   </>
   )
 }

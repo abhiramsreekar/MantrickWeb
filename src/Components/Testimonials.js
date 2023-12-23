@@ -138,8 +138,8 @@ export default function Testimonials() {
         <>
             <diV className="testimonial page" id="gallary">
         <div className='gin container'>
-          <div className='gallary'>
-            <h3 className='text-blk heading'>Testimonials</h3>
+          <div className='gallary' style={{display:"block",margin:"2px auto"}}>
+            <h3 className='text-blk heading' style={{fontSize:"30px",marginLeft:"20px",letterSpacing:"-.5px"}}>TESTIMONIALS</h3>
             <section className="carousel-wrapper">
               <button type="button" className="arrows left-arrow arrow-inactive" aria-label="Arrow Left">
                 {/* <svg viewBox="0 0 256 512">

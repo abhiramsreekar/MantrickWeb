@@ -227,6 +227,10 @@
       width: 62%;
       height: 26vh;
     }
+    .team
+    {
+      padding-top: 10vh;
+    }
     .team .tcards
     {
       justify-content: center;

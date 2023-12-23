@@ -60,7 +60,7 @@ export default function Chatbot() {
     <>
     {
       gpt?
-      <div id='bot' style={{zIndex:44,opacity:0}}>
+      <div id='bot' className='bot' style={{opacity:0}}>
         <ChatBot style={{right:"0px",position:"fixed",bottom:"115px",backgroundColor:"black"}}
         steps={[
           {
@@ -170,7 +170,7 @@ export default function Chatbot() {
     <div type="button" onClick={()=>{
         const c1=document.querySelector("#chat1");
         const c2=document.querySelector("#chat2");
-        const bot=document.querySelector("#bot");
+        const bot=document.querySelector(".bot");
         if(c2.style.display==="block")
         {
             c2.style.display="none";
@@ -193,9 +193,9 @@ export default function Chatbot() {
         // {
         //   setGpt(true);
         // }
-      }} id="chatBot"  class="btn btn-primary" >
-        <img id="chat1" src={logo} alt="" style={{height:"50px"}}/>
-        <img id="chat2" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.png" alt="" style={{height:"60px"}}>
+      }} id="chatBot"  class="btn btn-primary"  style={{zIndex:900}}>
+        <img id="chat1"  src={logo} alt="" style={{height:"50px"}}/>
+        <img id="chat2"   src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.png" alt="" style={{height:"60px"}}>
         </img></div>
     </section>
     </>

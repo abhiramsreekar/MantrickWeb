@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+.servicesTab
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin: 0px;
+    color: white;
+    /* font-family: var(--e-global-typography-7c1bf50-font-family), Sans-serif; */
+}
+.servicesTab h1
+{
+    margin: 0px;
+} 
+.servicesTab .service1 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.servicesTab .service1 .inner
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.servicesTab .service1 .inner .tabs h3
+{
+    margin-bottom: 0px;
+    font-family: 'Abel', sans-serif;
+    letter-spacing: 1.5px;
+}
+.servicesTab .service1 .inner .tabs p
+{
+    text-align: center;
+    margin-top: 5px;
+    font-family:sans-serif;
+    color: rgb(174, 174, 174);
+}
+.servicesTab .service1 .inner .tabs .icons img
+{
+    width: 40px;
+}
+.servicesTab .service1 .inner .tabs
+{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 30%;
+    margin: 10px;
+}
+.service1
+{
+    margin-top: 10vh;
+}
+@media screen  and (max-width:800px){
+    .servicesTab .service1 .inner .tabs
+    {        
+        width: 96%;
+    }
+    .servicesTab .service1 .inner {
+        flex-direction: column;
+    }
+    .servicesTab
+    {
+        padding-top: 15vh;
+    }
+}
+@media (max-width:1300px) {
+    .aboutUs
+    {
+        flex-direction: column;
+    }
+    .aboutUs .left .tabs 
+    {
+        width: 70vw;
+    }
+    
+}

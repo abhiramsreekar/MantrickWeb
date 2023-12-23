@@ -233,10 +233,10 @@ body {
     font-size: 14px;
     padding: 12px;
 }
-.page
+/* .page
 {
 	margin-bottom: 200px;
-}
+} */
 @media screen  and (max-width:1000px){
 	.page{
 		margin-bottom: 200px;
@@ -268,7 +268,18 @@ body {
 	height: 70vh;
 	}
 }
-@media screen and (max-width: 568px) {
+@media screen and (max-width: 500px) {
+	.KChAP {
+    bottom: 0 !important;
+    left: initial !important;
+    height: 100%;
+    right: 0 !important;
+    top: 30px !important;
+    width: 80%;
+	margin: 2px auto;
+	}
+}
+@media screen and (max-width: 400px) {
 	.KChAP {
     bottom: 0 !important;
     left: initial !important;

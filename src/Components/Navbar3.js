@@ -44,9 +44,9 @@ export default function Navbar3() {
                     clearInterval(fadeInInterval);
                 }
             }, 50);
-      }
+        }
     },[])
-    const services=()=>{
+    const portfolio=()=>{
         const carousel=document.querySelector(".containerbox").style.display="none";
         const about=document.querySelector(".responsive-container-block").style.display="none";
         const gallary=document.querySelector(".gallaryBox").style.display="none";
@@ -55,14 +55,19 @@ export default function Navbar3() {
         const client=document.querySelector(".clientspage").style.display="none";
         const placements=document.querySelector(".outerStudent ").style.display="none";
         const courses=document.querySelector(".coursesBox").style.display="none";
-        const footer=document.querySelector(".outerfooter").style.display="none";
+        const trainH=document.querySelector(".trainhead").style.display="none";
+        const servicesTab=document.querySelector(".servicesTab").style.display="none";
+        const aboutUs=document.querySelector(".aboutUs").style.display="none";
         const services=document.querySelector(".services").style.display="block";
     }
     const all=()=>{
+        const trainH=document.querySelector(".trainhead").style.display="block";
         const carousel=document.querySelector(".containerbox").style="none";
         const about=document.querySelector(".responsive-container-block").style="none";
+        const servicesTab=document.querySelector(".servicesTab").style.display="flex";
         const gallary=document.querySelector(".gallaryBox").style="none";
         const test=document.querySelector(".testimonial").style="none";
+    const aboutUs=document.querySelector(".aboutUs").style.display="flex";
         const team=document.querySelector(".team").style="none";
         const client=document.querySelector(".clientspage").style="none";
         const placements=document.querySelector(".outerStudent ").style="none";
@@ -83,8 +88,9 @@ export default function Navbar3() {
                     <li>
                         <a href="#" onClick={all} className='ul1 ul1'>Home</a>
                     </li>
-                    <li><a href="#about" className='ul1 ul2' onClick={all}>About</a></li>
-                    <li><a href="#team" className='ul1 ul3' onClick={services}>Services</a></li>
+                    <li><a href="#aboutUs" className='ul1 ul2' onClick={all}>About</a></li>
+                    <li><a href="#team" className='ul1 ul3' onClick={portfolio}>Portfolio</a></li>
+                    <li><a href="#servicesTab" className='ul1 ul3' onClick={all}>Services</a></li>
                     <li><a href="#courses" className='ul1 ul4'  onClick={all}>Training</a></li>
                     <li><a href="#courses" className='ul22 ul5'  onClick={all}>Schedule Meet</a></li>
                     <li><a href="#clients" className='ul22 ul6'  onClick={all}>Brochure</a></li>

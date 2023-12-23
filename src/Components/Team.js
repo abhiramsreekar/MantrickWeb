@@ -5,7 +5,7 @@ export default function Team() {
     <div>
 
     <div className='wrapper page team' id="team">
-        <h3 className='text-blk heading' style={{marginTop:"20px", marginBottom:"5px"}}>Team</h3>
+        <h3 className='text-blk heading' style={{marginTop:"20px", marginBottom:"5px"}}>MEET OUR TEAM</h3>
         <div className='tcards'>
         <div className='tcard'>
             <img src='https://cdn.pixabay.com/photo/2018/11/08/23/52/man-3803551_640.jpg'/>
