@@ -119,8 +119,8 @@ display: none;
   animation: splash .5s ease-in-out;
   animation-fill-mode: forwards;
   opacity: 0;
-  border: 1px rgb(60, 60, 60) solid;
-  font-family: sans-serif;
+  border: 1px rgb(60, 60, 60) solid !important;
+  font-family: sans-serif !important;
 }
 @keyframes splash {
   from
@@ -136,14 +136,14 @@ display: none;
   
 }
 .ipSaXD {
-  background: white;
-  border: 0;
-  border-radius: 23px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
-  color:black;
-  display: inline-block;
-  font-size: 14px;
-  padding: 12px;
+  background: white !important;
+  border: 0; 
+  border-radius: 23px !important;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15) !important;
+  color:black !important;
+  display: inline-block !important;
+  font-size: 14px !important;
+  padding: 12px !important;
 }
 .page
 {
@@ -204,16 +204,16 @@ display: none;
   }
   .nav
   {
-    position: absolute;
+    position: absolute ;
   }
 }
 .glfuN h2
 {
-    color: white;
+    color: white !important;
 }
 .glfuN ,.sc-bZQynM{
-    background-color: black;
-    color: white;
+    background-color: black !important;
+    color: white !important;
 }
 /* .rsc-header::before
 {
@@ -227,65 +227,65 @@ display: none;
 } */
 #bot .sc-bwzfXH
 {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: black !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 #bot #msform fieldset
 {
-    border: 2px rgb(73, 73, 73) solid;
-    background-color: black;
+    border: 2px rgb(73, 73, 73) solid !important;
+    background-color: black !important;
 }
 #bot .fs-title 
 {
-    color: white;
+    color: white !important;
 }
 #bot #msform input,#msform textarea
 {
-    color: black;
-    background-color: white;
+    color: black !important;
+    background-color: white !important;
 }
 #bot #msform .action-button
 {
-    background-color: black;
-    color: white;
-    border: 1px rgb(73, 73, 73) solid;
+    background-color: black !important;
+    color: white !important;
+    border: 1px rgb(73, 73, 73) solid !important;
 }
 #bot #msform .action-button:hover
 {
-    border-color: white;
+    border-color: white !important;
 }
 #bot .d-flex input[type="text" i]
 {
-    background-color: white;
+    background-color: white !important;
     color: black !important;
-    text-align: center;
-    border-radius: 5px;
-    font-size: 20px;
+    text-align: center !important;
+    border-radius: 5px !important;
+    font-size: 20px !important;
 }
 #bot .d-flex div:nth-child(2) div 
 {
-    padding-left: 0px;
+    padding-left: 0px !important;
 }
 #bot .d-flex button
 {
-    border: 1px rgb(73, 73, 73) solid;
-    background-color: black;
-    font-size: 20px;
-    padding: 5px 30px;
-    margin-top: 10px;
-    cursor: pointer;
+    border: 1px rgb(73, 73, 73) solid !important;
+    background-color: black !important;
+    font-size: 20px !important;
+    padding: 5px 30px !important;
+    margin-top: 10px !important; 
+    cursor: pointer !important;
 
     
 }
 #bot .d-flex button:hover
 {
-    border:1px white solid;
+    border:1px white solid !important;
 
 }
 #bot .d-flex div:nth-child(2)
 {
     /* border: 1px rgb(73, 73, 73) solid; */
-    padding: 10px;
+    padding: 10px !important;
 }

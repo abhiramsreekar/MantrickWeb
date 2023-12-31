@@ -34,12 +34,12 @@
 	}
 } */
 .my-students .carousel-item img {
-    border-radius: 10pt;
-    width: 14vw;
+    border-radius: 10px;
+    width: 13vw;
 }
 .my-students .carousel-item {
     /* width: 50vw; */
-    height: 15vw;
+    height: 13vw;
 }
 .my-students .gallary {
     /* height: 71vh; */

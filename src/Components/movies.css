@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+.movies{
+  display: block;
+
+}
 .movies .carousel-wrapper {
   display: flex;
   justify-content: space-between;
   gap: 0.5em;
-  width: 110%;
-  max-width: 1300px;
+  width: 89%;
+  max-width: 1400px;
+  margin-left: -59px;
 }
-/* .movies
-{
-    height: 100vh;
-} */
 .movies .wrapped-container {
   display: flex;
   overflow: hidden;
@@ -79,22 +80,22 @@
   width: 25vw;
     height: 21vw;
     cursor: pointer;
-    margin: 2px 14px ;
+    margin: 2px 7px ;
 }
 .movies .show .video .exit
 {
-    /* position: relative; */
     margin-left: 95%;
     padding: 10px;
     color: white;
     cursor: pointer;
-    /* position: relative;
-    z-index: 1000; */
+  }
+  .movies .show {
+    position: fixed;
+    top: 0px;
+    left: 0px;
   }
   .movies .show .video iframe
   {
-  /* position: relative;
-  z-index: 1000; */
     width: 50vw;
     height: 50vh;
 }
@@ -211,6 +212,17 @@
   display: none;
 }
 
+/* .movies::before
+{
+  content: '';
+  position: sticky;
+  width: 200vh;
+  height: 100vh;
+  top: 0;
+  right:0;
+  background-color: #2d242b;
+  z-index: 11111111;
+} */
 .movies .gallaryBox p {
   margin: 0;
   padding: 0;

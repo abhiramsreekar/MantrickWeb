@@ -146,12 +146,7 @@ export default function Movies() {
           setShow(souce);
           const show=document.querySelector("#show");
           show.style.display="flex";
-          // window.onscroll = function () { window.scrollTo('none'); };
-          const scrollTop =window.pageYOffset || document.documentElement.scrollTop;
-          const scrollLeft =window.pageXOffset || document.documentElement.scrollLeft;
-          window.onscroll = function() {
-            window.scrollTo(scrollLeft, scrollTop);
-           };
+          
         }
       const fetchAllLandings = async () => {
         try {
