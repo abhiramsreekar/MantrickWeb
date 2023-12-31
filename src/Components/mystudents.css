@@ -1,4 +1,4 @@
-.outerStudent
+/* .outerStudent
 {
 	max-width: 2300px;
 	
@@ -32,4 +32,16 @@
 	{
 		border-radius: 2px;
 	}
+} */
+.my-students .carousel-item img {
+    border-radius: 10pt;
+    width: 14vw;
 }
+.my-students .carousel-item {
+    /* width: 50vw; */
+    height: 15vw;
+}
+.my-students .gallary {
+    /* height: 71vh; */
+}
+

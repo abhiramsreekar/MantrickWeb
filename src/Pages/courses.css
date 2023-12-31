@@ -60,6 +60,14 @@
 {
   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_027.0000-2048x1152.jpeg);
 }
+.option6
+{
+  --optionBackground:url(https://www.simplilearn.com/ice9/free_resources_article_thumb/Why-Digital-Marketing-is-Critical-to-Your-Organization-in-2017.jpg);
+}
+.option7
+{
+  --optionBackground:url(https://cdn.sanity.io/images/tlr8oxjg/production/fe5795af341f222b6b33ebce00659f188088821b-1456x816.png?w=3840&q=80&fit=clip&auto=format);
+}
 .active
 {
   animation: splash 1s ease-in;
@@ -345,9 +353,14 @@ body.dark {
   background: #232223;
   color: white;
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body:not(.light) {
     background: black;
+  }
+} */
+@media (prefers-color-scheme:light) {
+  body {
+      background:black;
   }
 }
 body .credit {
@@ -362,8 +375,8 @@ body .options {
   align-items: stretch;
   overflow: hidden;
   min-width: 600px;
-  max-width: 1320px;
-  width: calc(105% - 100px);
+  max-width: 2320px;
+  width: calc(107% - 100px);
   height: 400px;
 }
 @media (max-width:500px)
@@ -446,7 +459,7 @@ body .options {
 body .options .option {
   position: relative;
   overflow: hidden;
-  min-width: 160px;
+  min-width: 130px;
   margin: 9px;
   border: 1px rgb(68, 67, 67) solid;
   background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
@@ -637,7 +650,7 @@ body .options .option .label .info .sub {
         #courses
         {
     /* height: 100vh; */
-    max-width: 1330px;
+    max-width: 1430px;
     margin: 2px auto;
   }
     .coursesBox h1

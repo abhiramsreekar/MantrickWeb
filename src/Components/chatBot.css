@@ -1,0 +1,291 @@
+.affix {
+    padding: 0;
+}
+.myH2 {
+    text-align:center;
+	font-size: 4rem;
+}
+.myP {
+    text-align: justify;
+	padding-left:15%;
+	padding-right:15%;
+	font-size: 20px;
+}
+@media all and (max-width:700px){
+    .myP {
+        padding:2%;
+	}
+    #chatBot img
+    {
+        height: 40px;
+    }
+}
+#chatBot {
+    position: fixed;
+    right:2vw;
+    bottom: 5vh;
+    /* transform: rotate(-90deg); */
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    z-index: 900;
+}
+
+@media screen and (max-width:900px) {
+    .nav div.main_list ul li
+    {
+        text-align: center;
+    }
+}
+.nav .ul22:hover
+{
+    background-color: white;
+    color: black;
+}
+#team
+{
+    height: 70vh;
+    max-width: 2030px;
+}
+#chat1
+{
+    opacity: 0;
+    position: relative;
+    animation: an .5s ease-in-out;
+    animation-fill-mode: forwards;
+    /* z-index: 500; */
+}
+#chat2
+{
+    display: none;
+    position: relative;
+    animation: an .5s ease-in-out;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    /* z-index: 500; */
+}
+#bot
+{
+    z-index: -100;
+}
+@keyframes an {
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+    
+}
+.sc-bZQynM
+{
+    border-radius: 11px;
+  }
+  .sc-cSHVUG
+  {
+display: none;
+}
+.sc-htoDjs
+{
+  display: inline;
+  /* position: absolute; */
+  padding-right: 9px;
+}
+.date
+{
+  background-color: aliceblue;
+}
+
+.react-datepicker__input-container input
+{
+  color: white;
+}
+.sc-iwsKbI
+{
+  z-index: 10000000;
+}
+#bot
+{
+  right:0px;
+  position:fixed;
+  bottom:115px;
+  background-color:black;
+}
+.KChAP
+{
+  z-index: 9999999;
+  /* transform: scale(.5); */
+  animation: splash .5s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  border: 1px rgb(60, 60, 60) solid;
+  font-family: sans-serif;
+}
+@keyframes splash {
+  from
+  {
+      opacity: 0;
+      transform: scale(.5);
+  }
+  to 
+  {
+      opacity: 1;
+      transform: scale(1);
+  }
+  
+}
+.ipSaXD {
+  background: white;
+  border: 0;
+  border-radius: 23px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+  color:black;
+  display: inline-block;
+  font-size: 14px;
+  padding: 12px;
+}
+.page
+{
+  margin-top: 100px;
+}
+.pages
+{
+  margin-top:30px;
+}
+.aboutUs
+{
+    margin-top: 140px;
+}
+@media screen  and (max-width:1000px){
+  .page{
+      margin-bottom: 10px;
+  }
+}
+@media screen  and (max-width:500px){
+  .sc-iwsKbI
+  {
+      width: 100%;
+      top: 45px;
+      height: 68% !important;
+  }
+  .sc-bZQynM {
+      font-size: 10px;
+  }
+  .sc-bZQynM {
+      font-size: 10px;
+  }
+  .page
+  {
+      margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 1200px) {
+
+  .KChAP {
+  width: 80%;
+  margin: 2px auto;
+  height: 70vh;
+  }
+}
+@media screen and (max-width: 568px) {
+  .KChAP {
+  /* bottom: 0 !important;
+  left: initial !important;
+  height: 100%;
+  right: 0 !important;
+  top: 30px !important;
+  width: 80%;
+  margin: 2px auto; */
+  }
+  .page
+  {
+    margin-top: 30px;
+  }
+  .nav
+  {
+    position: absolute;
+  }
+}
+.glfuN h2
+{
+    color: white;
+}
+.glfuN ,.sc-bZQynM{
+    background-color: black;
+    color: white;
+}
+/* .rsc-header::before
+{
+    content: 'hello';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    color: red;
+
+} */
+#bot .sc-bwzfXH
+{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#bot #msform fieldset
+{
+    border: 2px rgb(73, 73, 73) solid;
+    background-color: black;
+}
+#bot .fs-title 
+{
+    color: white;
+}
+#bot #msform input,#msform textarea
+{
+    color: black;
+    background-color: white;
+}
+#bot #msform .action-button
+{
+    background-color: black;
+    color: white;
+    border: 1px rgb(73, 73, 73) solid;
+}
+#bot #msform .action-button:hover
+{
+    border-color: white;
+}
+#bot .d-flex input[type="text" i]
+{
+    background-color: white;
+    color: black !important;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 20px;
+}
+#bot .d-flex div:nth-child(2) div 
+{
+    padding-left: 0px;
+}
+#bot .d-flex button
+{
+    border: 1px rgb(73, 73, 73) solid;
+    background-color: black;
+    font-size: 20px;
+    padding: 5px 30px;
+    margin-top: 10px;
+    cursor: pointer;
+
+    
+}
+#bot .d-flex button:hover
+{
+    border:1px white solid;
+
+}
+#bot .d-flex div:nth-child(2)
+{
+    /* border: 1px rgb(73, 73, 73) solid; */
+    padding: 10px;
+}

@@ -3,6 +3,8 @@ import './footer.css';
 import logo from '../Images/mantrick.png';
 export default function Footer() {
   return (
+    <>
+
     <div className='outerfooter' id="footer">
     <div className='footer'>
         <div className='f3'>
@@ -63,5 +65,6 @@ export default function Footer() {
     </div>
       <div className='rights'><h6 style={{color:"white",textAlign:"center"}}>&copy; 2023 All rights are reserved</h6></div>
     </div>
+    </>
   )
 }

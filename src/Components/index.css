@@ -237,6 +237,9 @@ body {
 {
 	margin-bottom: 200px;
 } */
+:root {
+	color-scheme: only dark;
+  }
 @media screen  and (max-width:1000px){
 	.page{
 		margin-bottom: 200px;

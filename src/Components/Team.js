@@ -2,7 +2,7 @@ import React from 'react'
 import './team.css'
 export default function Team() {
   return (
-    <div>
+    <>
 
     <div className='wrapper page team' id="team">
         <h3 className='text-blk heading' style={{marginTop:"20px", marginBottom:"5px"}}>MEET OUR TEAM</h3>
@@ -162,6 +162,6 @@ export default function Team() {
         </div>
       </div>
     </div>
-    </div>
+    </>
   )
 }

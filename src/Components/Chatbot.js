@@ -5,9 +5,10 @@ import Login from './Login'
 import './index.css'
 import context from '../context/useContext';
 import logo from '../Images/chatlogo2..png'
+import logo2 from '../Images/img/ChatBot/img.svg'
 import DateCompo from './DateCompo';
 // type ValuePiece = Date | null;
-
+import './chatBot.css';
 // type Value = ValuePiece | [ValuePiece, ValuePiece];
 // all available config props
 const config ={
@@ -194,7 +195,7 @@ export default function Chatbot() {
         //   setGpt(true);
         // }
       }} id="chatBot"  class="btn btn-primary"  style={{zIndex:900}}>
-        <img id="chat1"  src={logo} alt="" style={{height:"50px"}}/>
+        <img id="chat1"  src={logo} alt="" style={{height:"50px",color:"white"}}/>
         <img id="chat2"   src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.png" alt="" style={{height:"60px"}}>
         </img></div>
     </section>

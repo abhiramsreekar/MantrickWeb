@@ -49,11 +49,11 @@ export default function Navbar3() {
     const portfolio=()=>{
         const carousel=document.querySelector(".containerbox").style.display="none";
         const about=document.querySelector(".responsive-container-block").style.display="none";
-        const gallary=document.querySelector(".gallaryBox").style.display="none";
+        const gallary=document.querySelector(".original-gallary").style.display="none";
         const test=document.querySelector(".testimonial").style.display="none";
         const team=document.querySelector(".team").style.display="none";
         const client=document.querySelector(".clientspage").style.display="none";
-        const placements=document.querySelector(".outerStudent ").style.display="none";
+        const placements=document.querySelector(".my-students ").style.display="none";
         const courses=document.querySelector(".coursesBox").style.display="none";
         const trainH=document.querySelector(".trainhead").style.display="none";
         const servicesTab=document.querySelector(".servicesTab").style.display="none";
@@ -65,12 +65,12 @@ export default function Navbar3() {
         const carousel=document.querySelector(".containerbox").style="none";
         const about=document.querySelector(".responsive-container-block").style="none";
         const servicesTab=document.querySelector(".servicesTab").style.display="flex";
-        const gallary=document.querySelector(".gallaryBox").style="none";
+        const gallary=document.querySelector(".original-gallary").style="none";
         const test=document.querySelector(".testimonial").style="none";
     const aboutUs=document.querySelector(".aboutUs").style.display="flex";
         const team=document.querySelector(".team").style="none";
         const client=document.querySelector(".clientspage").style="none";
-        const placements=document.querySelector(".outerStudent ").style="none";
+        const placements=document.querySelector(".my-students ").style="none";
         const courses=document.querySelector(".coursesBox").style="none";
         const footer=document.querySelector(".outerfooter").style="none";
         const services=document.querySelector(".services").style.display="none";
@@ -81,7 +81,7 @@ export default function Navbar3() {
      <nav className="nav">
         <div className="container">
             <div className="logo">
-                <a href="#"><img src={image} alt="" width={"200px"}/></a>
+                <a href="#"><img src={image} alt=""/></a>
             </div>
             <div id="mainListDiv" className="main_list">
                 <ul className="navlinks ulm">
@@ -89,9 +89,9 @@ export default function Navbar3() {
                         <a href="#" onClick={all} className='ul1 ul1'>Home</a>
                     </li>
                     <li><a href="#aboutUs" className='ul1 ul2' onClick={all}>About</a></li>
-                    <li><a href="#team" className='ul1 ul3' onClick={portfolio}>Portfolio</a></li>
                     <li><a href="#servicesTab" className='ul1 ul3' onClick={all}>Services</a></li>
                     <li><a href="#courses" className='ul1 ul4'  onClick={all}>Training</a></li>
+                    <li><a href="#team" className='ul1 ul3' onClick={portfolio}>Portfolio</a></li>
                     <li><a href="#courses" className='ul22 ul5'  onClick={all}>Schedule Meet</a></li>
                     <li><a href="#clients" className='ul22 ul6'  onClick={all}>Brochure</a></li>
                     <li><a href="#footer" className='ul1 ul7'  onClick={all}>Contact Us</a></li>

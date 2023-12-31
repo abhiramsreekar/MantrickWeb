@@ -6,7 +6,7 @@ font-family: 'Lexend Deca', sans-serif;
 {
     content: '';
     position: absolute;
-    height: 200px;
+    height: 280px;
     width: 100vw;
     background-image: linear-gradient(transparent,black,black,black,black);
     margin-top: 83vh;
@@ -211,9 +211,11 @@ font-family: 'Lexend Deca', sans-serif;
     }
 }
 
+.item .content button a{
+    color: white;
+}
 .item .content button{
-    background-color: white;
-    color: black;
+    background-color: red;
 }
 .banner .containerbox .buttons button{
     background-color: transparent;

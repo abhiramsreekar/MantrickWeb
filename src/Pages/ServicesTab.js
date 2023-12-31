@@ -9,6 +9,8 @@ import i6 from '../Images/i6.png';
 import i7 from '../Images/i7.png';
 export default function ServicesTab() {
   return (
+    <div>
+
     <div class="servicesTab page">
             <h1>OUR SERVICES</h1>
         <div className='service1' id="servicesTab">
@@ -92,6 +94,7 @@ guidance, ensuring your projects align with the latest trends and best practices
 
             </div>
         </div>
+    </div>
     </div>
   )
 }

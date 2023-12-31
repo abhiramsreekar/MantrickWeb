@@ -9,7 +9,7 @@ export default function Services() {
     useEffect(()=>{
         fetchAllPhotos();
     },[])
-    const [photos,setPhotos]=useState([]);
+    const [photos,setPhotos]=useState(null);
     const photos2=[
         {
             img:`https://mantrickstudios.com/wp-content/uploads/2022/11/RRR-2-768x432.jpg`
@@ -89,10 +89,9 @@ export default function Services() {
         setPhoto(photos[i].imageUrl);
     }
     const showphoto=(l)=>{
-        // setI(l);
-        // alert(l.imageUrl);
         setPhoto(l);
         document.querySelector('.showphoto').style.display="block";
+        document.querySelector('.showphoto').style.position="fixed";
     }
     const exit=()=>{
         document.querySelector('.showphoto').style.display="none";
@@ -108,12 +107,19 @@ export default function Services() {
           console.error(`Error: ${err}`);
         }
       };
-      
-      const eventIds = Object.keys(photos);
+      var eventIds;
+      if(photos!=null)
+      {
+        eventIds= Object.keys(photos);
+      }
   return (
     <div className='services' >
         <video autoPlay muted loop id="myVideo"  src={Video} type="video/mp4">
         </video>
+        <div className='outerWork'>
+            
+        <div className='ourWork'>
+            <div className='back'></div>
         <Movies/>
         <div className='outerphotos'>
             <div className='showphoto'>
@@ -136,35 +142,22 @@ export default function Services() {
                 </p>
                 </div>
             </div>
+            {/* <h3 style={{color:"white",textAlign:"center"}}>PHOTOS</h3> */}
         <div className='photos' id="photos">
-            {/* {
-                photos.map((e,i)=>{
-                    return <div className='photo'>
-                            <img src={e.img} onClick={()=>{
-                                showphoto(i);
-                            }}/>
-                        </div>
-                })
-            } */}
-            {eventIds.map((eventId) => {
+            {photos?eventIds.map((eventId) => {
         const event = photos[eventId];
         return (
-        //   <div className="carousel-item">
-        //             <img onClick={()=>{
-        //               alert(event.iframeSrc);
-        //                 showdev(event);
-        //             }}
-        //              className="img" src={event.imageUrl} alt="Working" />
-        //             <h3 style={{color:"white"}}>{event.title}</h3>
-        //     </div>
         <div className='photo'>
                             <img src={event.imageUrl} onClick={()=>{
                                 showphoto(event.imageUrl);
                             }}/>
+                            <h3>{event.title}</h3>
                         </div>
         );
                 
-      })}
+      }):<div></div>}
+        </div>
+        </div>
         </div>
         </div>
     </div>

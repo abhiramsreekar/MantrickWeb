@@ -80,7 +80,7 @@ const Login = ({triggerNextStep,type}) => {
   return (
     <div className={`d-flex justify-content-center`}>
     <div id="recaptcha-container"  style={{display:"block",width:"65px",marginBottom:"50px"}} className="mt-6"></div>
-    <div style={{display:"block",marginTop:"90px"}} >
+    <div style={{display:"block",marginTop:"40px"}} >
     <a style={{color:"white"}}>Enter the otp sent to your registered mobile number</a>
       <OtpInput
                   value={otp}

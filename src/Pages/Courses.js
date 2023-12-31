@@ -46,6 +46,24 @@ export default function Courses() {
       p2:"Roto, short for rotoscoping, is an indispensable technique in the film industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality."
  
     }
+    ,
+    {
+      heading:"Digital Marketing:      ",
+      content:"These programs provide in-person instruction, often including hands-on experiences with digital marketing tools and direct interaction with instructors and peers. They may offer simulations of real-world digital marketing challenges, workshops, and networking opportunities.",
+      duration:"2 Months",
+      p1:" Online courses offer flexibility and accessibility, allowing learners to study at their own pace and access course materials from anywhere. These programs often include video lectures, interactive assignments, and forums for discussion with instructors and fellow students. ",
+      p2:"Both on-campus and online digital marketing courses typically span several months and are designed to equip participants with the skills necessary to navigate the digital marketing landscape effectively. They cover foundational concepts, the latest industry trends, and practical applications, preparing students for careers in various sectors, including e-commerce, advertising, media, and more."
+ 
+    }
+    ,
+    {
+      heading:"UX/UI Design:      ",
+      content:"Understanding the fundamentals of design principles and psychology.Learning tools and software commonly used in the industry, such as Sketch, Adobe XD, Figma, and InVision.Building a portfolio through practice projects, which is crucial for showcasing skills to potential employers or clients.",
+      duration:"6 Months",
+      p1:"Both online and on-campus options are available for learning UX/UI design, each offering unique advantages. Online courses can provide flexibility and convenience, while on-campus programs may offer more hands-on, collaborative experiences. ",
+      p2:"UX/UI design is a rewarding and challenging field, combining creativity with practical problem-solving to improve the way people interact with technology and digital products."
+ 
+    }
     
   ];
   function active(e) {
@@ -70,8 +88,8 @@ export default function Courses() {
   return (
    <>
       <h1 className='text-blk heading trainhead' style={{textAlign:"center",marginTop:"100px",marginBottom:"0px"}}>TRAINING</h1>
-    <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"flex-start",marginTop:"100px"}}>
-      <h1 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px"}}>HERE ARE OUR COURSES</h1>
+    <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center",marginTop:"0px"}}>
+      <h1 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px",width:"100%"}}>HERE ARE OUR COURSES</h1>
       <div className="options ">
         <div className="option active option1" id="1" onMouseOver={active}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
@@ -133,9 +151,33 @@ export default function Courses() {
                 </div>
              </div>
         </div>
+        <div className="option option6" id="6" onMouseOver={active}>
+           <div className="shadow" style={{pointerEvents:"none"}}></div>
+           <div className="label" style={{pointerEvents:"none"}}>
+              <div className="icon" style={{pointerEvents:"none"}}>
+                 <i className="fas fa-sun"></i>
+              </div>
+              <div className="info">
+                 <div className="main">Digital Marketing</div>
+                 {/* <div className="sub">Omuke trughte a otufta</div> */}
+                </div>
+             </div>
+        </div>
+        <div className="option option7" id="7" onMouseOver={active}>
+           <div className="shadow" style={{pointerEvents:"none"}}></div>
+           <div className="label" style={{pointerEvents:"none"}}>
+              <div className="icon" style={{pointerEvents:"none"}}>
+                 <i className="fas fa-sun"></i>
+              </div>
+              <div className="info">
+                 <div className="main">UX/UI Design</div>
+                 {/* <div className="sub">Omuke trughte a otufta</div> */}
+                </div>
+             </div>
+        </div>
    </div>
    <div  className='optionContentout'>
-    <div className="optionContent" id="c1" style={{padding:"20px 40px"}} >
+    <div className="optionContent" id="c1" style={{padding:"20px 0px"}} >
       <h3 id="h1" className='heads'>3D</h3>
       <p id="p1">
          GoDaddy - Official Site - Get Domain Names & More            
@@ -151,7 +193,7 @@ export default function Courses() {
             Get Domain Matching Email
             Earn customers' trust with email that matches your business name.
       </p>
-      <h4 className='heads'>duration:<span id="time" style={{color:"white"}}> 6 Months</span></h4>
+      <h4 className='heads'>Duration:<span id="time" style={{color:"white"}}> 6 Months</span></h4>
       <h3 id="h2" className='heads'>On-Campus</h3>
       <p id="p2">
       Roto, short for rotoscoping, is an indispensable technique in the film industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality and feathering for a seamless blend with the background.

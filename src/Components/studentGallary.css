@@ -40,7 +40,7 @@
   height: 45px;
   outline: none;
   border: none;
-  background-color: #000000;
+  background: transparent;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -205,10 +205,6 @@ input:checked + label #off {
   align-items: center; */
   flex-direction: column;
   background-color: black;
-}
-.gallary h3
-{
-  font-size: 30px;
 }
 .gallary
 {

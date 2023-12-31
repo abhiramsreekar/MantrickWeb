@@ -11,6 +11,10 @@
     margin-bottom: 0px;
 }
 
+.clientspage .carouse-wrapper
+{
+    align-items: center;
+}
 .clientspage h1{
     margin:3%;
     color:white;
@@ -26,6 +30,9 @@
     max-width: 1300px;
     justify-content: center;
 }
+.clientspage .client-item {
+/* height: 50vh; */
+}
 @media (max-width:500px)
 {
     .basiccard {
@@ -35,7 +42,7 @@
     {
         padding-top: 30vh;
     }
-        .client-item {
-        height: 37vw;
+    .clientspage .client-item {
+    height: 30vh;
     }
 }

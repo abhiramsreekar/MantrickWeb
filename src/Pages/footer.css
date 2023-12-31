@@ -4,6 +4,7 @@
     flex-direction: column;
     /* justify-content: center; */
     padding: 30px;
+    border-top: 1px rgb(110, 108, 108) solid;
     /* background-color: rgb(41, 41, 41); */
 }
 .outerfooter .footer .f1,.f2,.f3

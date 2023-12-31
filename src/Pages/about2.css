@@ -10,11 +10,16 @@
     justify-content: center;
     align-items: center;
     background-color: black;
+    margin-top: 100px;
 }
 .aboutUs .left h1
 {
     margin-top: 0px;
     font-family: 'Abel', sans-serif;
+}
+.blackbg
+{
+    background-color: black;
 }
 .aboutUs .left
 {
@@ -25,12 +30,11 @@
     /* align-items: center; */
 }
 
-.aboutUs .left .tabs .tableft
+.aboutUs .left .tabs .tableft img
 {
-    height: 5px;
-    width: 200px;
-    background-color: white;
-    margin-right: 20px;
+    width: 40px;
+    margin: 2px 10px;
+    margin-top: -10px;
 }
 .aboutUs .left .tabs h3 p
 {

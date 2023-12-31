@@ -5,16 +5,23 @@ import TPN from '../Images/TPN.png'
 import cubes from '../Images/3_cubes.JPG'
 import huesfx from '../Images/huesfx.JPG'
 import cubes2 from '../Images/cubes2.JPG'
+import effects from '../Images/effects.png';
+import eye from '../Images/eye.png';
+import arrow from '../Images/arrow.png';
 export default function About2() {
   return (
     <>
         {/* <div className='trBlock'></div> */}
+        <div>
+
     <div class="aboutUs page" id="aboutUs">
         <div className='left'>
-            <h3>ABOUT COMPANY</h3>
+            <h3 className=''>ABOUT COMPANY</h3>
             <h1 className='text-blk heading'>BRINGING IMAGINATION ALIVE, ON SCREEN</h1>
             <div className='tabs'>
-                <div className='tableft'></div>
+                <div className='tableft'>
+                    <img src={eye}></img>
+                </div>
                 <div className='tabright'>
                     <h3>Vision</h3>
                     <p>At Mantrick Studios, we envision becoming a global leader in the realms of VFX, animation, and 
@@ -25,8 +32,10 @@ international clients, delivering cuttingedge visual experiences that captivate 
                 </div>
             </div>
             <div className='tabs' >
-                <div className='tableft'></div>
-                <div className='tabright' style={{paddingLeft:"12px"}}>
+                <div className='tableft'>
+                <img src={arrow}></img>
+                </div>
+                <div className='tabright'>
                     <h3>Mission</h3>
                     <p>Our mission at Mantrick Studios is to push the boundaries of imagination through innovative 
 and top-tier VFX, animation, and gaming solutions. We are committed to providing industry-leading 
@@ -37,8 +46,10 @@ and knowledge necessary to excel in the competitive VFX landscape, ensuring they
                 </div>
             </div>
             <div className='tabs' >
-                <div className='tableft'></div>
-                <div className='tabright' style={{paddingLeft:"5px"}}>
+                <div className='tableft'>
+                <img src={effects}></img>
+                </div>
+                <div className='tabright'>
                     <h3>HUES FX</h3>
                     <p> Embark on a transformative journey with Hues FX, a dynamic joint venture born from the 
 evolution of Mantrick Studios' VFX production. Guided by Mathew Kemper, we specialize in elevating 
@@ -65,6 +76,7 @@ redefining visual storytelling
               <img className="number1img  img6 aleft" src={cubes}/>
             </div>
     </div>
+        </div>
     </>
   )
 }

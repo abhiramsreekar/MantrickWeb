@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react'
 import "./Testimonials.css"
+import starf from '../Images/starf.png';
+import starh from '../Images/starh.png';
+import stare from '../Images/stare.png';
 export default function Testimonials() {
     // useEffect(()=>{
 	// 	const wrapper = document.querySelector('#wrapper');
@@ -133,116 +136,152 @@ export default function Testimonials() {
           }
         });
       }, [])
-
-    return (
+      
+      return (
         <>
-            <diV className="testimonial page" id="gallary">
+            <diV className="testimonial page pages" id="gallary">
         <div className='gin container'>
-          <div className='gallary' style={{display:"block",margin:"2px auto"}}>
+          <div className='gallary' style={{display:"block",margin:"0px auto"}}>
             <h3 className='text-blk heading' style={{fontSize:"30px",marginLeft:"20px",letterSpacing:"-.5px"}}>TESTIMONIALS</h3>
             <section className="carousel-wrapper">
               <button type="button" className="arrows left-arrow arrow-inactive" aria-label="Arrow Left">
-                {/* <svg viewBox="0 0 256 512">
+                <svg viewBox="0 0 256 512">
                   <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z" />
-                </svg> */}
+                </svg>
               </button>
               <section className="carousel wrapper">
-                <div className="carousel-item">
+                <div className="carousel-item"
+                //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
+                 >
                     {/* <img className='img'  src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg" class="client-img" alt=""/> */}
+                <div className='back'></div>
                 <div class="card img">
+                <div class="card-body">
+                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
+                    <div class="rating">
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={starf} class="star" alt=""/>
+                    </div>
+                </div>
                 <div class="card-thumb">
                     <img className='img'  src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg" class="client-img" alt=""/>
                     <span class="client-name">client one</span>
                 </div>
+            </div>
+                </div>
+                <div className="carousel-item" 
+                // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
+                >
+                <div className='back'></div>
+                <div class="card">
                 <div class="card-body">
                     <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
                     <div class="rating">
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
+						            <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={starh} class="star" alt=""/>
                     </div>
                 </div>
-            </div>
-                </div>
-                <div className="carousel-item">
-                <div class="card">
                 <div class="card-thumb">
                     <img className='img'  src="https://cdn.pixabay.com/photo/2019/07/26/20/52/man-4365597_640.png" class="client-img" alt=""/>
                     <span class="client-name">client two</span>
                 </div>
+            </div>
+                </div>
+                <div className="carousel-item"
+                //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814_640.jpg')`}}
+                 >
+                <div className='back'></div>
+                <div class="card">
                 <div class="card-body">
                     <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
                     <div class="rating">
-						<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
+                    <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
                     </div>
                 </div>
-            </div>
-                </div>
-                <div className="carousel-item">
-                <div class="card">
                 <div class="card-thumb">
                     <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814_640.jpg" class="client-img" alt=""/>
                     <span class="client-name">client three</span>
                 </div>
+            </div>
+                </div>
+                <div className="carousel-item"
+                //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
+                 >
+                <div className='back'></div>
+                <div class="card">
                 <div class="card-body">
                     <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
                     <div class="rating">
-					<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
+                    <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={starf} class="star" alt=""/>
                     </div>
                 </div>
-            </div>
-                </div>
-                <div className="carousel-item">
-                <div class="card">
                 <div class="card-thumb">
                     <img className='img'  src="https://cdn.pixabay.com/photo/2019/04/12/21/19/man-4123268_640.jpg" class="client-img" alt=""/>
                     <span class="client-name">client three</span>
                 </div>
+            </div>
+                </div>
+                <div className="carousel-item" 
+                // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
+                >
+                <div className='back'></div>
+                <div class="card">
                 <div class="card-body">
                     <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
                     <div class="rating">
-					<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
+                    <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
                     </div>
                 </div>
-            </div>
-                </div>
-                <div className="carousel-item">
-                <div class="card">
                 <div class="card-thumb">
                     <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/18/16/17/man-1835599_640.jpg" class="client-img" alt=""/>
                     <span class="client-name">client three</span>
                 </div>
+            </div>
+                </div>
+                <div className="carousel-item" 
+                // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
+                >
+                <div className='back'></div>
+                <div class="card">
                 <div class="card-body">
                     <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
                     <div class="rating">
-					<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
+                    <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
+                        <img className='img'  src={stare} class="star" alt=""/>
                     </div>
+                </div>
+                <div class="card-thumb">
+                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/18/16/17/man-1835599_640.jpg" class="client-img" alt=""/>
+                    <span class="client-name">client three</span>
                 </div>
             </div>
                 </div>
               </section>
               <button type="button" className="arrows right-arrow" aria-label="Arrow Right">
-                {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
                   <path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" />
-                </svg> */}
+                </svg>
               </button>
             </section>
             <section id="toggle-overflow" style={{ display: "none" }}>
@@ -256,97 +295,7 @@ export default function Testimonials() {
           </div>
         </div>
       </diV>
-	{/* <div class="container">
-        <div class="wrapper" id="wrapper">
-            <div class="card">
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client one</span>
-                </div>
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2019/07/26/20/52/man-4365597_640.png" class="client-img" alt=""/>
-                    <span class="client-name">client two</span>
-                </div>
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-						<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client three</span>
-                </div>
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-					<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2019/04/12/21/19/man-4123268_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client three</span>
-                </div>
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-					<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFBNA1493v6nSPqsbs2XlDYVt5YHXU9SuArQ&usqp=CAU" class="star" alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/18/16/17/man-1835599_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client three</span>
-                </div>
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-					<img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                        <img className='img'  src="https://png.pngtree.com/png-clipart/20201106/ourmid/pngtree-classic-black-stars-clipart-png-image_2395202.jpg" class="star" alt=""/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="indicators">
-            <button class="active"></button>
-            <button></button>
-            <button></button>
-            <button></button>
-            <button></button>
-        </div>
-    </div> */}
+
     </>
 
         

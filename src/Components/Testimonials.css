@@ -6,16 +6,22 @@
 .testimonial{
     display: flex;
     font-family: 'dosis';
-    color: #080808;
+    color: white; 
+    mix-blend-mode: difference;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     max-width: 1300px;
     margin-left:2px auto;
+    /* margin-top: 30px; */
 }
 
+.testimonial .container .gallary h3
+{
+    margin-bottom: 0px;
+}
 .testimonial .container .gallary{
-    height: 100vh;
+    /* height: 71vh; */
     width: 93vw;
 
 }
@@ -47,24 +53,71 @@
     margin: 0 10px;
 } */
 
-/* .testimonial .card-thumb{
-    width: 70%;
-    height: 35vh;
-    overflow: hidden;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    position: relative;
-} */
+.testimonial .card-thumb img{
+    width: 50px;
+    height: 50px;
+    
+}
+.testimonial .card-thumb{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
 
-.testimonial .card{
-    /* display: flex; */
-    padding: 10px;
+.testimonial .card  .card-body p,.rating,.card-thumb
+{
+    margin: 10px 0px;
+    
+}
+/* 
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .testimonial .card::before
+    {
+        content:'';
+        position: absolute;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color:  rgb(255 255 255 / 80%);
+        width: 15vw;
+        opacity: .2;
+        z-index: -1;
+        height: 90%;
+    }
+  } */
+  .testimonial .card .card-body,.card-thumb {
+    margin: 0px 10px;
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .testimonial .card{
+        position: relative;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color:  rgb(255 255 255 / 16%);
+        z-index: 3;
+        padding: 10px;
+        width: 15vw;
+        border-radius: 17px;
+        margin: 10px;
+    }
+    /* .services .ourWork {
+        -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      background-color:  rgb(255 255 255 / 16%);
+      margin: 40px auto;
+      border-radius: 40px;
+      width: 90%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+    } */
 }
 .testimonial .client-img{
     width: 21vw;
     height: 30vh;
     object-fit: cover;
 }
+
+
 @media  (max-width:700px) {
     .testimonial .client-img{
         width: 46vw;
@@ -74,7 +127,6 @@
         object-fit: cover;
         object-position: center;
     }
-
     
 }
 .testimonial .client-name{
@@ -84,7 +136,7 @@
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
     padding: 5px 20px;
-    background: #fff;
+    /* background: #fff; */
     text-transform: capitalize;
     font-size: 18px;
 }
@@ -117,39 +169,12 @@
     width: 25px;
     margin-right: 5px;
 }
-/* 
-.testimonial .indicators{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-} */
-
-/* .testimonial .indicators button{
-    background: none;
-    border: none;
-    outline: none;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    cursor: pointer;
-    margin-left: 5px;
-    transition: .5s;
-} */
-
-/* .testimonial button.active{
-    width: 40px;
-    border-radius: 50px;
-    background: #fff;
-} */
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .testimonial .carousel-wrapper {
     display: flex;
-  justify-content: space-between;
-  gap: 0.5em;
-  width: 100%;
+    justify-content: space-between;
+    gap: 0.5em;
+    width: 100%;
   max-width: 2000px;
 }
 
@@ -176,9 +201,18 @@
         height: 100vh;
     }
 }
+/* .testimonial .carousel-item .back
+{
+    position: absolute;
+        width: 30vw;
+        height: 30vh;
+        background-color: #080808;
+} */
 .testimonial .carousel-item
 {
+    
     height: 51vw;
+    
 }
 .testimonial .arrows {
     width: 20px;
@@ -193,7 +227,7 @@
     align-self: center;
     opacity: 100%;
     cursor: pointer;
-  transition: all 0.1s ease;
+    transition: all 0.1s ease;
   padding: 0;
   pointer-events: all;
 }
@@ -221,7 +255,7 @@
 .testimonial .carousel-item {
     width: 50vw;
     height: 100%;
-    background: white;
+    /* background: white; */
 }
 
 .testimonial .carousel-item.img {
@@ -233,8 +267,8 @@
 
 .testimonial input[type="checkbox"] {
     height: 0;
-  width: 0;
-  visibility: hidden;
+    width: 0;
+    visibility: hidden;
 }
 
 .testimonial label {
@@ -282,20 +316,20 @@
 }
 
 .testimonial p {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
   height: 100%;
   display: flex;
   align-items: center;
-  font-size: 0.75rem;
+  /* font-size: 0.75rem; */
   user-select: none;
   padding-left: 0.5em;
   padding-right: 0.35em;
   font-weight: 600;
 }
 #off {
-  justify-content: flex-end;
-  font-size: 0.65rem;
+    justify-content: flex-end;
+    font-size: 0.65rem;
 }
 
 #toggle-overflow {
@@ -303,9 +337,9 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  gap: 0.25em;
-  color: #5e4c5a;
-  font-size: 0.75rem;
+    gap: 0.25em;
+    color: #5e4c5a;
+    font-size: 0.75rem;
 }
 
 .testimonial .overflow {
@@ -399,6 +433,9 @@
     .testimonial .carousel-item.img {
         width: 95vw;
     }.testimonial
+    .testimonial .card {
+        width: 55vw;
+    }
     .testimonial .carousel-item {
         width: 100vw;
         height: 64vw;
@@ -407,8 +444,8 @@
         width: 33vw;
         height: 143vw;
     } */
-
-  
+    
+    
 }
 @media (max-width: 800px){
     .testimonial .container{
@@ -416,3 +453,27 @@
         margin: 2px auto;
     }
 }
+.testimonial .carousel-item
+{
+    /* background-color: #484848; */
+            background-size: cover;
+            background-position: center;
+            
+        }
+        @media  (max-width:1200px) {
+            
+            .testimonial .carousel-item {
+                width: 65vw;
+                height: 100%;
+            }
+            .testimonial .card {
+                width: 59vw;
+            }
+            /* .testimonial .card::before{
+                width: 61vw;
+            } */
+        }
+            .testimonial .card  .card-body .rating img
+            {
+                background-color:transparent;
+            }

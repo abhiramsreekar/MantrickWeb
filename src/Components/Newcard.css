@@ -1,6 +1,6 @@
 .basiccard{
     background-size: cover;
-    width:16vw;
+    width:14vw;
     margin:0%;
     padding: 15px;
     transition: all .6s ease-in-out;
@@ -24,7 +24,7 @@
     width: 15vw;
     transition: all .5s ease-in-out;
     border-radius: 18px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
 }
 .basiccard img:hover{
   transform: scale(1.2);
