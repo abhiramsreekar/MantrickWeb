@@ -183,7 +183,7 @@ export default function Movies() {
             const event = movies[eventId];
             return (
               <div className="carousel-item movie-item">
-                <div className='i-item' style={{position:"absolute",width:"25vw",height:"17vw",backgroundColor:"black",opacity:".5",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <div className='i-item' style={{position:"absolute",width:"25vw",height:"15vw",backgroundColor:"black",opacity:".5",display:"flex",justifyContent:"center",alignItems:"center"}}>
                 <span class="material-symbols-outlined" onClick={()=>{
                             showdev(event);
                         }}>
