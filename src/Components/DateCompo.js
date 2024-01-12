@@ -5,7 +5,7 @@ export default function DateCompo({triggerNextStep}) {
     const [date, setDate] = useState(new Date());
     const submitDate=(e)=>{
       e.preventDefault();
-      triggerNextStep({trigger:"brochure-options"})
+      triggerNextStep({trigger:"intro-user"})
     }
   return (
     <div> 

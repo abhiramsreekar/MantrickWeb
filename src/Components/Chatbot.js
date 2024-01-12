@@ -19,8 +19,8 @@ export default function Chatbot() {
   const BrochureCard=(triggerNextStep)=>{
     return(
       <div class="">
-        <div class="card" style={{width: "18rem"}}>
-        <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..."/>
+        <div class="card" style={{width: "96%"}}>
+        <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..." style={{width:"100%"}}/>
         <div class="card-body">
         <h5 class="card-title">Brochure </h5>
         <p class="card-text">Some quick example text to build on the card title .</p>
@@ -66,39 +66,195 @@ export default function Chatbot() {
         steps={[
           {
             id:'intro', 
-            message:"Hi There. Welcome to Mantrick Studios", 
-            trigger:'i1',
-          },
-          {
-            id:"i1",
-            // component:<Login  msg="brochure"/>,
-            message:"trigger:'intro-user",
-            trigger:'i2',
-          },
-          {
-            id:"i2",
-            message:"Hiii user1",
-            trigger:'i3',
-          },
-          {
-            id:"i3",
-            message:"Hiii user2",
+            message:"Hey there! Welcome to Mantriix Studios, your gateway to a career in VFX and 3D animation. What would you like to do today?", 
             trigger:'intro-user',
           },
           {
             id:'intro-user', 
             options:[
-            {value:'Download Brochure', label:'Download Brochure', trigger:'Download Brochure'},
-            {value:'Get Callback', label:'Get Callback', trigger:'arrange-call-back'},
+            {value:'Courses We Offer', label:'Courses We Offer', trigger:'c1'},
+            {value:'Contact Us', label:'Contact Us', trigger:'arrange-call-back-1'},
+            {value:'Download Brochure', label:'Download Brochure', trigger:'Download Brochure-1'},
+            {value:'Get Callback', label:'Get Callback', trigger:'arrange-call-back-1'},
+          ] 
+        },
+        {
+          id:'c1', 
+            options:[
+            {value:'Rotoscopy', label:'Rotoscopy', trigger:'R1'},
+            {value:'Paint in VFX', label:'Paint in VFX', trigger:'P1'},
+            {value:'Match Move', label:'Match Move', trigger:'M1'},
+            {value:'3D Animation', label:'3D Animation', trigger:'3D'},
+            {value:'Composting', label:'Composting', trigger:'f1'},
+            {value:'Fx', label:'FX (unreal)', trigger:'f1'},
             ] 
           },
           {
-            id:'Download Brochure', 
+            id:'R1', 
+            message:"Mantriix Studios offers a comprehensive Rotoscoping course, a vital skill in the VFX industry. Rotoscoping involves creating mattes or masks around objects in footage, enabling seamless compositing onto different backgrounds. The course covers techniques such as point tracking, shape-based roto, and frame-by-frame roto. Students learn essential tools like Bezier curves and tracking software, gaining creative control over VFX integration. The program emphasises practical experience with live production classes led by industry experts, ensuring students understand production nuances. With a focus on 100% job placement, Mantriix Academy prepares students for successful careers in the dynamic field of VFX.            ", 
+            trigger:'course-end',
+          },
+          {
+            id:'P1', 
+            message:"Mantriix Studios introduces the Paint in VFX course, essential for creating high-quality visual effects in film and television. This program delves into various paint techniques, tools, and software applications used in the industry. Students learn to build a strong portfolio, network within the industry, and attend events to enhance career opportunities. With a dynamic and rewarding curriculum, this course equips individuals with the skills needed to excel in the exciting field of VFX painting.", 
+            trigger:'course-end',
+          },
+          {
+            id:'M1', 
+            message:"The Match Move course at Mantriix Studios explores the visual effects technique crucial for inserting CGI into live-action footage seamlessly. Students delve into applications like object tracking, camera tracking, and motion capture. The program highlights the limitations, emphasising the importance of high-quality footage for accurate tracking. While acknowledging the time-consuming nature of the process, the course equips students with skills essential for successful integration of CGI elements into diverse film and video productions.            ", 
+            trigger:'course-end',
+          },
+          {
+            id:'3D', 
+            message:"Mantriix Studios offers a comprehensive 3D Animation course, guiding students through the process of creating lifelike characters, objects, and environments using industry-standard software like Maya, Blender, and ZBrush. The curriculum covers foundational skills such as 3D modelling, texturing, shading, animation, and rigging. The program explores diverse career opportunities in film, television, video games, architecture, and medical visualisation, making it an ideal choice for individuals passionate about combining art, technology, and storytelling.            ", 
+            trigger:'course-end',
+          },
+          {
+            id:'C1', 
+            message:"The VFX Compositing course at Mantriix Studios focuses on the crucial connection between live-action footage and digital properties. Students learn to enhance digital elements, making them seamlessly blend with reality. Compositors play a pivotal role in creating a final, credible image by combining various digital assets effectively. The course emphasises understanding light, colour, composition, and perspective to achieve realistic results. Aspiring artists gain the skills needed to work collaboratively with other VFX professionals and contribute to the composition of images and videography.            ", 
+            trigger:'course-end',
+          },
+          {
+            id:'f1', 
+            message:"Mantriix Studios presents the FX(Unreal) course, providing a powerful toolkit for game development, architectural visualisation, and film and television content creation. The program explores Unreal Engine's advanced graphics engine and dynamic features, making it suitable for real-time VFX elements. Students learn to harness Unreal's capabilities for creating immersive visual effects. This course caters to those interested in leveraging cutting-edge technology for the development of interactive and engaging content in various industries. ", 
+            trigger:'course-end',
+          },
+          {
+            id:'course-end', 
+            options:[
+              {value:'Learn More', label:'Learn More', trigger:'learn'},
+              {value:'Register Now', label:'Register Now', trigger:'c-register'},
+              {value:'Contact Us', label:'Contact Us', trigger:'c-contact'}
+            ] 
+          },
+          {
+            id:'learn', 
+            component:<div>
+                <p>Learn More: Paint in VFX Course Contents:</p>
+                <ul classNam="a">
+                <li>Introduction to VFX Painting</li>
+                <li>Brush Techniques and Styles</li>
+                <li>Texture Application on 3D Models</li>
+                <li>Color Grading and Correction</li>
+                <li>Background Removal and Replacement</li>
+                <li>Digital Restoration Techniques</li>
+                <li>Software Tools and Applications</li>
+                <li>Building a Strong Portfolio</li>
+                <li>Networking in the VFX Industry</li>
+                <li>Industry Events and Professional Organizations</li>
+                  </ul>
+              <p>Learn More: Match Move Course Contents:</p>
+              <ul classNam="a">
+                <li>Introduction to Match Move in VFX</li>
+                <li>Object Tracking Techniques</li>
+                <li>Camera Tracking Applications</li>
+                <li>Motion Capture Integration</li>
+                <li>Handling High-Quality Footage</li>
+                <li>Time-Consuming Aspects</li>
+                <li>Software and Tools for Match Move</li>
+                <li>Practical Applications in Film Production</li>
+                <li>Real-world Project Exercises</li>
+              </ul>
+
+              <p>Learn More: 3D Animation Course Conten:</p>
+              <ul classNam="a">
+                <li>Introduction to 3D Animation</li>
+                <li>3D Modeling Fundamentals</li>
+                <li> Texturing and Shading Techniques</li>
+                <li>Animation and Rigging Basics</li>
+                <li>Industry-Standard Software (Maya, Blender, ZBrush)</li>
+                <li>Career Opportunities in Film and Television</li>
+                <li>Video Game Development Applications</li>
+                <li>Architectural and Interior Design Visualization</li>
+                <li>Medical and Scientific Visualisation</li>
+                <li>Creating a Professional Animation Portfolio</li>
+              </ul>
+
+              <p>Learn More: Compositing Course Contents</p>
+              <ul classNam="a">
+                <li>Introduction to VFX Compositing</li>
+                <li> Connecting Live-Action and Digital Elements</li>
+                <li> Enhancing Digital Properties</li>
+                <li>   Realistic Image Composition</li>
+                <li> Importance of Light, Color, and Perspective</li>
+                <li> Collaborative Work with VFX Artists</li>
+                <li>Image and Videography Composition</li>
+                <li> Software and Tools for Compositing</li>
+                <li>Creating Credible Visual Effects</li>
+                <li>  Practical Application in Industry Workflow</li>
+              </ul>
+
+              <p>Learn More: FX (Unreal) Course Contents</p>
+              <ul classNam="a">
+                <li>  Introduction to FX in Unreal</li>
+                <li>Unreal Engine's Creation Tools</li>
+                <li>Game Development Applications</li>
+                <li> Architectural and Automotive Visualization</li>
+                <li>   Film and Television Content Creation</li>
+                <li>Real-time Visual Effects in VFX</li>
+                <li> Digital Production Tools in Unreal</li>
+                <li> Interactive and Immersive Elements</li>
+                <li> Broadcasting Visual Effects in Real-time</li>
+                <li> Project-based Learning and Practical Exercises</li>
+              </ul>
+            </div>,
+            trigger:"learn-end"
+          },
+          {
+            id:'learn-end', 
+            message:"Ready to unleash your creativity and become a VFX Master? Enter your mobile number below to get started!", 
+            trigger:"learn-end-2"
+          },
+          {
+            id:'learn-end-2',
+            component:<User type="brochure" />
+          },
+          {
+            id:'c-contact', 
+            message:"Have a question? Want to speak to a representative? Enter your mobile number below and we'll be happy to get in touch!", 
+            trigger:"c-contact-2"
+          },
+          {
+            id:'c-contact-2',
+            component:<User type="call-back" />
+          },
+          {
+            id:'c-register', 
+            message:"Ready to take the next step and schedule a free consultation with our team? Enter your mobile number and choose a date and time that works best for you!", 
+            trigger:"c-register2"
+          },
+          {
+            id:'c-register2', 
+            message:"To confirm your appointment, please provide the following information:", 
+            trigger:"c-register-3"
+          },
+          {
+            id:'c-register-3',
+            component:<User type="brochure" />
+          },
+          {
+            id:'Download Brochure-1', 
+            message:"Download our free brochure to learn more about Mantriix Studios and our courses! Enter your mobile number below to receive the download link.",
+            trigger:"Download Brochure-2"
+            
+          },
+          {
+            id:'Download Brochure-2', 
             component:<User type="brochure" />
             
           },
           {
-            id:'arrange-call-back', 
+            id:'arrange-call-back-1', 
+            message:"Ready to take the next step and schedule a free consultation with our team? Enter your mobile number and choose a date and time that works best for you!            ",
+            trigger:"arrange-call-back-2"
+          },
+          {
+            id:'arrange-call-back-2', 
+            message:"To confirm your appointment, please provide the following information:",
+            trigger:"arrange-call-back-3"
+          },
+          {
+            id:'arrange-call-back-3', 
             component:<User type="call-back"/>
           },
           {
@@ -117,28 +273,19 @@ export default function Chatbot() {
           {
             id:'brochure',
             component:<BrochureCard/>,
-            trigger:"brochure-options"
+            trigger:"intro-user"
           },
           {
             id:'book-call',
             component:<DateCompo/>
           },
           {
-            id:'brochure-options',
-            options:[
-              {value:'1', label:'Download Brochure', trigger:'end'},
-              {value:'2', label:'Get Callback', trigger:'end'},
-              {value:'3', label:'Get Callback', trigger:'end'},
-              // {value:'4', label:'Get Callback', trigger:'end'},
-              // {value:'5', label:'Get Callback', trigger:'end'}
-              ] 
-          },
-          {
             id:'call-options', 
-            options:[
-              {value:'1', label:'Download Brochure', trigger:'end'},
-              {value:'2', label:'Get Callback', trigger:'end'},
-              {value:'3', label:'Get Callback', trigger:'end'}
+              options:[
+                {value:'Courses We Offer', label:'Courses We Offer', trigger:'c1'},
+                {value:'Contact Us', label:'Contact Us', trigger:'arrange-call-back-1'},
+                {value:'Download Brochure', label:'Download Brochure', trigger:'Download Brochure-1'},
+                {value:'Get Callback', label:'Get Callback', trigger:'arrange-call-back-1'},
               ] 
           },
           {

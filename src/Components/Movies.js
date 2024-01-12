@@ -182,10 +182,15 @@ export default function Movies() {
                 {eventIds.map((eventId) => {
             const event = movies[eventId];
             return (
-              <div className="carousel-item">
-                        <img onClick={()=>{
+              <div className="carousel-item movie-item">
+                <div className='i-item' style={{position:"absolute",width:"25vw",height:"17vw",backgroundColor:"black",opacity:".5",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                <span class="material-symbols-outlined" onClick={()=>{
                             showdev(event);
-                        }}
+                        }}>
+                  play_circle
+                </span>
+                </div>
+                        <img 
                          className="img" src={event.imageUrl} alt="Working" />
                         <h3>{event.title}</h3>
                 </div>
