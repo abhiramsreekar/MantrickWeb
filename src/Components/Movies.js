@@ -184,15 +184,8 @@ export default function Movies() {
             const event = movies[eventId];
             return (
               <div className="carousel-item movie-item">
-<<<<<<< HEAD
-                {/* <div className='i-item' style={{position:"absolute",width:"25vw",height:"17vw",backgroundColor:"black",opacity:".5",display:"flex",justifyContent:"center",alignItems:"center"}}>
-                </div> */}
                 <div className='inner-movie-item' style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
                 <span class="material-symbols-outlined" style={{position:"absolute"}} onClick={()=>{
-=======
-                <div className='i-item' style={{position:"absolute",width:"25vw",height:"15vw",backgroundColor:"black",opacity:".5",display:"flex",justifyContent:"center",alignItems:"center"}}>
-                <span class="material-symbols-outlined" onClick={()=>{
->>>>>>> ce8ace56c38a41e30158b65585b174096f3878bd
                             showdev(event);
                         }}>
                   play_circle
