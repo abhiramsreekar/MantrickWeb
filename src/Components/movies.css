@@ -155,8 +155,12 @@
   border-radius: 0px;
     width: 25vw;
     /* height: 80vh; */
+<<<<<<< HEAD
     height: 67vh;
 
+=======
+    height: 15vw;
+>>>>>>> ce8ace56c38a41e30158b65585b174096f3878bd
 }
 
 .movies input[type="checkbox"] {
