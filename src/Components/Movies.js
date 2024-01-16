@@ -160,13 +160,14 @@ export default function Movies() {
       };
       const eventIds = Object.keys(movies);
       return (
-        <div className='movies'>
+        <>
             <div className='show' id="show">
                 <div className='video' id="video">
                     <div className='exit' onClick={exit}>Exit</div>
                     <iframe className='iframe frame' src={dynamicshow.iframeSrc} title={dynamicshow.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
+        <div className='movies'>
       <diV className="gallaryBox" id="gallary" style={{backgroundColor:"tranparent"}}>
         <div className='gin'>
           <div className='gallary'>
@@ -183,15 +184,17 @@ export default function Movies() {
             const event = movies[eventId];
             return (
               <div className="carousel-item movie-item">
-                <div className='i-item' style={{position:"absolute",width:"25vw",height:"17vw",backgroundColor:"black",opacity:".5",display:"flex",justifyContent:"center",alignItems:"center"}}>
-                <span class="material-symbols-outlined" onClick={()=>{
+                {/* <div className='i-item' style={{position:"absolute",width:"25vw",height:"17vw",backgroundColor:"black",opacity:".5",display:"flex",justifyContent:"center",alignItems:"center"}}>
+                </div> */}
+                <div className='inner-movie-item' style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+                <span class="material-symbols-outlined" style={{position:"absolute"}} onClick={()=>{
                             showdev(event);
                         }}>
                   play_circle
                 </span>
-                </div>
-                        <img 
+                        <img style={{height:"40vh"}}
                          className="img" src={event.imageUrl} alt="Working" />
+                </div>
                         <h3>{event.title}</h3>
                 </div>
             );
@@ -216,5 +219,6 @@ export default function Movies() {
       </diV>
       <script src="froogaloop.min.js"></script>
     </div>
+        </>
   )
 }

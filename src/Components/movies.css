@@ -54,6 +54,7 @@
   transition: all 0.1s ease;
   padding: 0;
   pointer-events: all;
+  margin-bottom: 8vh;
 }
 /* 
 .arrows:hover {
@@ -70,6 +71,7 @@
 .movies .arrow-inactive {
   opacity: 0.5;
   cursor: auto;
+  margin-bottom: 8vh;
 }
 
 .movies .arrow-inactive:hover {
@@ -82,19 +84,25 @@
     cursor: pointer;
     margin: 2px 7px ;
 }
-.movies .show .video .exit
+ .show .video .exit
 {
     margin-left: 95%;
     padding: 10px;
     color: white;
     cursor: pointer;
   }
-  .movies .show {
+   .show {
     position: fixed;
     top: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
     left: 0px;
+    display: none;
+    justify-content: center;
+    align-items: center;
   }
-  .movies .show .video iframe
+   .show .video iframe
   {
     width: 50vw;
     height: 50vh;
@@ -114,18 +122,6 @@
     }
     
 }
-/* .movies .show::before
-{
-    content:'';
-    background-color: black;
-    opacity: .7;
-    position: absolute;
-    z-index: 5;
-    height: 100vh;
-    width: 100vw;
-    left: 0px;
-    top: 0px;
-} */
 .movies .show
 {
     height: 100vh;
@@ -142,7 +138,7 @@
     background-color: #2d242b;
 }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-  .movies .show
+  .show
   {
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -159,7 +155,8 @@
   border-radius: 0px;
     width: 25vw;
     /* height: 80vh; */
-    height: 80%;
+    height: 67vh;
+
 }
 
 .movies input[type="checkbox"] {

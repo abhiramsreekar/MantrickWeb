@@ -90,7 +90,7 @@ input[type="checkbox"] {
   width: 0;
   visibility: hidden;
 }
-
+/* 
 label {
   color: white;
   cursor: pointer;
@@ -100,9 +100,9 @@ label {
   display: block;
   border-radius: 100px;
   position: relative;
-}
+} */
 
-label:after {
+/* label:after {
   content: "";
   position: absolute;
   top: 5px;
@@ -112,7 +112,7 @@ label:after {
   background: #fff;
   border-radius: 90px;
   transition: 0.3s;
-}
+} */
 
 input:checked + label {
   background: #ef8354;

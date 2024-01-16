@@ -9,6 +9,7 @@ import logo2 from '../Images/img/ChatBot/img.svg'
 import DateCompo from './DateCompo';
 // type ValuePiece = Date | null;
 import './chatBot.css';
+import { Button } from 'react-bootstrap';
 // type Value = ValuePiece | [ValuePiece, ValuePiece];
 // all available config props
 const config ={
@@ -59,6 +60,76 @@ export default function Chatbot() {
   }
   return (
     <>
+    <div className='schedule-meet' >
+    <span class="material-symbols-outlined" onClick={()=>{
+      document.querySelector(".schedule-meet").style="none";
+    }}>
+cancel
+</span>
+      <h2>Download Brochure</h2>
+      <p>Please provide your contact information</p>
+      <form>
+      <div className='ss-box'>
+          <label for="ss-name" className="ss-label">Name:</label>
+          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Your Name'/>
+        </div>
+      <div className='ss-box'>
+          <label for="ss-name" className="ss-label">Ph.No:</label>
+          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Phone Number'/>
+        </div>
+      <div className='ss-box otp'>
+          <label for="ss-name" className="ss-label" style={{marginRight:"5px"}}>OTP:   </label>
+          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter OTP'/>
+          <Button type='button' >Verify</Button>
+        </div>
+      <div className='ss-box'>
+          <label for="ss-name" className="ss-label">Email: </label>
+          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Email Address'/>
+        </div>
+      <div className='ss-box button'>
+        <Button type='button' >Download Brochure</Button>
+        <p>by pressing this button, you are agreed to receive message on whatsapp</p>
+        </div>
+      </form>
+    </div>
+    {/* schedule */}
+    <div className='schedule-meet schedule-meet-o' >
+    <span class="material-symbols-outlined" onClick={()=>{
+      document.querySelector(".schedule-meet-o").style="none";
+    }}>
+cancel
+</span>
+      <h2>Schedule Meet</h2>
+      <p>Please provide your contact information</p>
+      <form>
+      <div className='ss-box'>
+          <label for="ss-name" className="ss-label">Name:</label>
+          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Your Name'/>
+        </div>
+      <div className='ss-box'>
+          <label for="ss-name" className="ss-label">Ph.No:</label>
+          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Phone Number'/>
+        </div>
+      <div className='ss-box otp'>
+          <label for="ss-name" className="ss-label" style={{marginRight:"5px"}}>OTP:   </label>
+          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter OTP'/>
+          <Button type='button' >Verify</Button>
+        </div>
+      <div className='ss-box'>
+          <label for="ss-name" className="ss-label" >Email: </label>
+          <input type="text" id="ss-name" name='ss-name'  className='ss-input' placeholder='Enter Email Address'/>
+        </div>
+        <p>Please select date and time of visit</p>
+      <div className='ss-box ss-date'>
+        <label for="birthdaytime"  className="ss-label">Date/Time:</label>
+        <input type="datetime-local" id="birthdaytime" className='ss-input' name="birthdaytime"></input>
+        </div>
+      <div className='ss-box button'>
+        <Button type='button' >Schedule Meet</Button>
+        <p>by pressing this button, you are agreed to receive message on whatsapp</p>
+        </div>
+      </form>
+    </div>
     {
       gpt?
       <div id='bot' className='bot' style={{opacity:0}}>

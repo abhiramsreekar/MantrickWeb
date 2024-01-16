@@ -92,40 +92,28 @@ align-items: center;
     justify-content: space-between;
     margin: 2px auto;
   }
-  .outerphotos .showphoto::before
-  {
-    content: '';
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    top: 0px;
-    left: 0px;
-    background-color: #000;
-    opacity: .7;
-    z-index: 90;
-}
 .outerphotos
 {
   margin-top: 10vh;
 }
-.outerphotos .showphoto p
+ .showphoto p
 {
     padding: 2px 20px;
     cursor: pointer;
     margin: 0;
   }
-  .outerphotos .showphoto .inner .img .exit
+   .showphoto .inner .img .exit
   {
-    position: relative;
-    right: 0px;
+    position: absolute;
+    margin-top: -30px;
   }
   
-  .outerphotos .showphoto  .inner .img img
+   .showphoto  .inner .img img
   {
     width: 100%;
     height: 100%;
   }
-  .outerphotos  .inner .img
+    .inner .img
   {
       animation: splash .5s ease-in-out;
       animation-fill-mode: forwards;
@@ -143,13 +131,13 @@ align-items: center;
     }
 }
 
-  .outerphotos .showphoto .inner .img
+   .showphoto .inner .img
   {
       opacity: 0;
       width: 40vw;
       height: 20vw;
   }
-  .outerphotos .showphoto 
+   .showphoto 
   {
       height: 100vh;
       width: 100vw;
@@ -157,12 +145,28 @@ align-items: center;
       position: absolute;
       top: 0px;
       left: -80px;
+      z-index: 1000;
   }
-  .outerphotos .showphoto  .exit
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .showphoto::before
+  {
+    content: '';
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color:  rgb(255 255 255 / 16%);
+    z-index: 90;
+}
+  }
+   .showphoto  .exit
   {
     /* position: absolute; */
 }
-.outerphotos .showphoto .inner
+ .showphoto .inner
 {
     position: absolute;
     display: flex;
@@ -187,7 +191,7 @@ align-items: center;
           height: 21vw;
           cursor: pointer;
       }
-      .services .showphoto .inner .img {
+       .showphoto .inner .img {
           width: 67vw;
           height: 38vw;
       }

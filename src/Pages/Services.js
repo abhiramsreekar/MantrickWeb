@@ -86,7 +86,7 @@ export default function Services() {
         {
             setI(0);
         }
-        setPhoto(photos[i].imageUrl);
+        setPhoto(photos[i].value.imageUrl);
     }
     const showphoto=(l)=>{
         setPhoto(l);
@@ -116,12 +116,8 @@ export default function Services() {
     <div className='services' >
         <video autoPlay muted loop id="myVideo"  src={Video} type="video/mp4">
         </video>
-        <div className='outerWork'>
-            
-        <div className='ourWork'>
-            <div className='back'></div>
         <Movies/>
-        <div className='outerphotos'>
+        <div className='back'></div>
             <div className='showphoto'>
                 <div className='inner'>
                 <p onClick={prev}>
@@ -142,6 +138,10 @@ export default function Services() {
                 </p>
                 </div>
             </div>
+        <div className='outerWork'>
+            
+        <div className='ourWork'>
+        <div className='outerphotos'>
             {/* <h3 style={{color:"white",textAlign:"center"}}>PHOTOS</h3> */}
         <div className='photos' id="photos">
             {photos?eventIds.map((eventId) => {

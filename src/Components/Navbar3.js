@@ -92,8 +92,12 @@ export default function Navbar3() {
                     <li><a href="#servicesTab" className='ul1 ul3' onClick={all}>Services</a></li>
                     <li><a href="#courses" className='ul1 ul4'  onClick={all}>Training</a></li>
                     <li><a href="#team" className='ul1 ul3' onClick={portfolio}>Portfolio</a></li>
-                    <li><a href="#courses" className='ul22 ul5'  onClick={all}>Schedule Meet</a></li>
-                    <li><a href="#clients" className='ul22 ul6'  onClick={all}>Brochure</a></li>
+                    <li><a  className='ul22 ul5'  onClick={all} onClick={()=>{
+                        document.querySelector(".schedule-meet-o").style.display="flex";
+                    }}>Schedule Meet</a></li>
+                    <li><a href="#clients" className='ul22 ul6'  onClick={all} onClick={()=>{
+                        document.querySelector(".schedule-meet").style.display="flex";
+                    }}>Brochure</a></li>
                     <li><a href="#footer" className='ul1 ul7'  onClick={all}>Contact Us</a></li>
                 </ul>
             </div>
