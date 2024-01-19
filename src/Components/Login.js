@@ -23,19 +23,15 @@ const Login = ({triggerNextStep,type}) => {
   function onCaptchaVerify() {
     if (!window.RecaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
-        auth,
         "recaptcha-container",
         {
-          size: "normal",
-          callback: (response) => {
-            onSignup();
-          },
-          "expired-callback": () => {},
-        }
+          size: "invisible",
+        },
+        auth
         );
+        window.recaptchaVerifier.verify();
       }
   }
-
   function onSignup() {
     setLoading(true);
     onCaptchaVerify();
@@ -79,6 +75,10 @@ const Login = ({triggerNextStep,type}) => {
     }
   return (
     <div className={`d-flex justify-content-center`}>
+      <script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js"></script>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <div id="recaptcha-container"  style={{display:"block",width:"65px",marginBottom:"50px"}} className="mt-6"></div>
     <div style={{display:"block",marginTop:"40px"}} >
     <a style={{color:"white"}}>Enter the otp sent to your registered mobile number</a>
@@ -105,14 +105,9 @@ const Login = ({triggerNextStep,type}) => {
                   >Verify</button>
 
     </div>
-       {/* <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">Otp:</label>
-            <input type="text"  className="form-control otp" value={otp} onChange={setOtp}
-                  numInputs={6}
-                  shouldAutoFocus id="exampleInputPassword1" />
-            <button type="button"  className="btn btn-primary" >Submit</button>
-        </div> */}
+        
     </div>
+    
   );
 };
 

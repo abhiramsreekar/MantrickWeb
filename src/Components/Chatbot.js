@@ -7,6 +7,9 @@ import context from '../context/useContext';
 import logo from '../Images/chatlogo2..png'
 import logo2 from '../Images/img/ChatBot/img.svg'
 import DateCompo from './DateCompo';
+import { auth } from "./Firebase.config";
+import { Toaster, toast } from "react-hot-toast";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // type ValuePiece = Date | null;
 import './chatBot.css';
 import { Button } from 'react-bootstrap';
@@ -19,20 +22,26 @@ const config ={
 export default function Chatbot() {
   const BrochureCard=(triggerNextStep)=>{
     return(
-      <div class="">
-        <div class="card" style={{width: "96%"}}>
-        <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..." style={{width:"100%"}}/>
-        <div class="card-body">
-        <h5 class="card-title">Brochure </h5>
-        <p class="card-text">Some quick example text to build on the card title .</p>
-        <a href="https://google.com" target="_blank" class="btn btn-primary">Download brochure</a>
-        </div>
-</div>
+            <div class="">
+              <div class="card" style={{width: "96%"}}>
+                    <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..." style={{width:"100%"}}/>
+                    <div class="card-body">
+                    <h5 class="card-title">Brochure </h5>
+                    <p class="card-text">Some quick example text to build on the card title .</p>
+                    <a href="https://google.com" target="_blank" class="btn btn-primary">Download brochure</a>
+                    </div>
+                </div>
             </div>
-    )
+          )
     
-  }
-  const [otp,setOtp]=useState(null);
+    }
+    const [otp, setOtp] = useState("");
+    const [phone,setPhone] = useState("");
+    const [captcha,setCaptcha] = useState("");
+    const [showOtp, setShowOtp] = useState(false);
+    const [loading, setLoading] = useState(false);
+    
+
   const {ph,setPh,gpt,setGpt,gptState,setGptState}=useContext(context);
   const Otp=({triggerNextStep,type})=>{
     const checkOtp=(e)=>{
@@ -58,75 +67,259 @@ export default function Chatbot() {
   const login=()=>{
     window.localStorage({"name":"pavan"});
   }
+  
+  function onCaptchaVerify(id) {
+    if (!window.RecaptchaVerifier) {
+      alert(id);
+      window.recaptchaVerifier = new RecaptchaVerifier(
+        auth,
+        id===1?"recaptcha-container2":"recaptcha-container3",
+        {
+          size:"invisible"
+        }
+        );
+        window.recaptchaVerifier.verify();
+      }
+    }
+    function onOtpverify() {
+      window.confirmationResult
+        .confirm(otp)
+        .then(async (result) => {
+          // User signed in successfully.
+          const user = result.user;
+          setUser(user);
+          alert(user)
+          setLoading(false);
+        })
+        .catch((error) => {
+          console.log(error.message);
+          toast.error(error.message);
+        });
+      }
+  function onSignup(id) {
+    setLoading(true);
+    onCaptchaVerify(id);
+    const appVerifier = window.recaptchaVerifier;
+    const phoneNumber = "+91"+document.querySelector(".ss-phone-2").value;
+    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+    .then((confirmationResult) => {
+      window.confirmationResult = confirmationResult;
+      setLoading(false);
+      setShowOtp(true);
+      toast.success("OTP Sended Sucessfully");
+      setOtpbox("true");
+    })
+    .catch((error) => {
+      setLoading(false);
+      alert("OTP not sent ");
+      toast.error(error.message);
+      });
+  }
+  // Brochure download whatsapp msg sending
+  const [name, setName] = useState("");
+  const [Botp, setBotp] = useState("");
+  const [email,setEmail] = useState("");
+  const [DateAndTime,setDateAndTime] = useState("");
+  const [user, setUser] = useState(false);
+  const [otpbox,setOtpbox]=useState(null);
+  const [Bsubmit,setBsubmit]=useState(null);
+  const [otpstatus,setOtpstatus]=useState(null);
+  const [emailbox,setEmailbox]=useState(null);
+  const onDowloadBrochure=(e)=>{
+    e.preventDefault();
+    var url = "https://api.ultramsg.com/instance74996/messages/chat";
+    var data = {
+      token: "nbridiw147r4ch9c",
+      to: "+91"+phone,
+      body: JSON.stringify({"email":email,"msg":"WhatsApp API on UltraMsg.com works good "+name,"link":"https://google.com"})
+    };
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(responseData => {
+        console.log(responseData);
+        setBsubmit("s");
+      })
+      .catch(error => {
+        alert("msg not sent");
+        setBsubmit(null);
+        console.error("Error:", error);
+      });
+  }
+  const onScheduleSubmit=(e)=>{
+    e.preventDefault();
+    var url = "https://api.ultramsg.com/instance74996/messages/chat";
+    var data = {
+      token: "nbridiw147r4ch9c",
+      to: "+91"+phone,
+      body: JSON.stringify({"email":email,"msg":"WhatsApp API on UltraMsg.com works good "+name,dateAndTime:DateAndTime,"link":"https://google.com"})
+    };
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(responseData => {
+        console.log(responseData);
+        setBsubmit("s");
+      })
+      .catch(error => {
+        setBsubmit(null);
+        console.error("Error:", error);
+      });
+  }
+  function onOtpverify() {
+    window.confirmationResult
+      .confirm(Botp)
+      .then(async (result) => {
+        // User signed in successfully.
+        const user = result.user;
+        setUser(user);
+        setOtpstatus(null);
+        setEmailbox("ss");
+        setLoading(false);
+      })
+      .catch((error) => {
+        setOtpstatus("s");
+        console.log(error.message);
+        toast.error(error.message);
+      });
+    }
   return (
     <>
     <div className='schedule-meet' >
     <span class="material-symbols-outlined" onClick={()=>{
-      document.querySelector(".schedule-meet").style="none";
-    }}>
-cancel
-</span>
+      document.querySelector(".schedule-meet").style="none";}}>cancel</span>
       <h2>Download Brochure</h2>
       <p>Please provide your contact information</p>
       <form>
       <div className='ss-box'>
           <label for="ss-name" className="ss-label">Name:</label>
-          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Your Name'/>
+          <input type="text" minLength={4} id="ss-name" name='ss-name' value={name} onChange={(e)=>{
+              setName(e.target.value);
+          }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
       <div className='ss-box'>
-          <label for="ss-name" className="ss-label">Ph.No:</label>
-          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Phone Number'/>
+          <label for="ss-name"  className="ss-label" 
+          >Ph.No:</label>
+          <input type="text" id="ss-name"  value={phone} onChange={(e)=>{
+            setPhone(e.target.value);
+            if(phone.length==9)
+            {
+                document.querySelector(".ss-phone-2").blur();
+                onSignup(1);
+            }
+          }} className='ss-input ss-phone-2'  placeholder='Enter Phone Number'/>
         </div>
-      <div className='ss-box otp'>
+        {
+          otpbox?
+          <>
+          <div className='ss-box otp'>
+            {
+              otpstatus?<p style={{marginLeft:"2vw",color:"red"}}>OTP entered is wrong</p>: <p style={{marginLeft:"2vw"}}>Enter OTP which was sent to your Mobile Number</p>
+            }
+            
           <label for="ss-name" className="ss-label" style={{marginRight:"5px"}}>OTP:   </label>
-          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter OTP'/>
-          <Button type='button' >Verify</Button>
+          <input type="text" id="ss-name" value={Botp} onChange={(e)=>{
+            setBotp(e.target.value);
+          }} name='ss-name' className='ss-input' placeholder='Enter OTP'/>
+          <Button type='button' onClick={onOtpverify}>Verify</Button>
         </div>
-      <div className='ss-box'>
-          <label for="ss-name" className="ss-label">Email: </label>
-          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Email Address'/>
-        </div>
+          </>
+        :<></>
+        }
+        {
+          emailbox?
+          <>
+        <div className='ss-box'>
+        <label for="ss-name" className="ss-label">Email: </label>
+        <input type="email" id="ss-name" value={email} 
+        onChange={(e)=>{
+          setEmail(e.target.value);
+        }}
+        name='ss-name' className='ss-input' placeholder='Enter Email Address'/>
+      </div>
+          </>
+        :<></>
+        }
       <div className='ss-box button'>
-        <Button type='button' >Download Brochure</Button>
-        <p>by pressing this button, you are agreed to receive message on whatsapp</p>
+        <Button type='submit' onClick={onDowloadBrochure}>Download Brochure</Button>
+        {
+          Bsubmit?<p style={{color:"green"}}>by pressing this button, you are agreed to receive message on whatsapp</p>:<p>Brochure details sent to your whatsapp successfully</p>
+        }
         </div>
       </form>
     </div>
     {/* schedule */}
+      <div id="recaptcha-container2"  style={{display:"none"}} className="mt-6 recaptcha-container2"></div>
+      <div id="recaptcha-container3"  style={{display:"none"}} className="mt-6 recaptcha-container3"></div>
     <div className='schedule-meet schedule-meet-o' >
     <span class="material-symbols-outlined" onClick={()=>{
+      setPhone("");
       document.querySelector(".schedule-meet-o").style="none";
-    }}>
-cancel
-</span>
+      }}>cancel</span>
       <h2>Schedule Meet</h2>
       <p>Please provide your contact information</p>
       <form>
       <div className='ss-box'>
           <label for="ss-name" className="ss-label">Name:</label>
-          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Your Name'/>
+          <input type="text" id="ss-name" name='ss-name'  value={name} onChange={(e)=>{
+              setName(e.target.value);
+          }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
       <div className='ss-box'>
           <label for="ss-name" className="ss-label">Ph.No:</label>
-          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter Phone Number'/>
+          <input type="text" id="ss-name2" name='ss-name' maxlength="10" value={phone} onChange={(e)=>{
+            setPhone(e.target.value);
+            if(phone.length==9)
+            {
+                document.querySelector(".ss-phone-2").blur();
+                onSignup(1);
+            }
+          }}
+          className='ss-input ss-phone-2' placeholder='Enter Phone Number'/>
         </div>
-      <div className='ss-box otp'>
+        {
+          otpbox?
+          <>
+          <div className='ss-box otp'>
+            {
+              otpstatus?<p style={{marginLeft:"2vw",color:"red"}}>OTP entered is wrong</p>: <p style={{marginLeft:"2vw"}}>Enter OTP which was sent to your Mobile Number</p>
+            }
+            
           <label for="ss-name" className="ss-label" style={{marginRight:"5px"}}>OTP:   </label>
-          <input type="text" id="ss-name" name='ss-name' className='ss-input' placeholder='Enter OTP'/>
-          <Button type='button' >Verify</Button>
+          <input type="text" id="ss-name" value={Botp} onChange={(e)=>{
+            setBotp(e.target.value);
+          }} name='ss-name' className='ss-input' placeholder='Enter OTP'/>
+          <Button type='button' onClick={onOtpverify}>Verify</Button>
         </div>
+          </>
+        :<></>
+        }
       <div className='ss-box'>
           <label for="ss-name" className="ss-label" >Email: </label>
-          <input type="text" id="ss-name" name='ss-name'  className='ss-input' placeholder='Enter Email Address'/>
+          <input type="email" id="ss-name" className='ss-input' placeholder='Enter Email Address'/>
         </div>
         <p>Please select date and time of visit</p>
       <div className='ss-box ss-date'>
         <label for="birthdaytime"  className="ss-label">Date/Time:</label>
-        <input type="datetime-local" id="birthdaytime" className='ss-input' name="birthdaytime"></input>
-        </div>
+        <input type="datetime-local" value={DateAndTime} onChange={(e)=>{
+          setDateAndTime(e.target.value);
+        }} id="birthdaytime" className='ss-input' name="birthdaytime"></input>
+      </div>
       <div className='ss-box button'>
-        <Button type='button' >Schedule Meet</Button>
-        <p>by pressing this button, you are agreed to receive message on whatsapp</p>
+        <Button type='button'  onClick={onScheduleSubmit}>Schedule Meet</Button>
+        {
+          Bsubmit?<p style={{color:"green"}}>by pressing this button, you are agreed to receive message on whatsapp</p>:<p>scheduled meeting confirmation details sent to your whatsapp successfully</p>
+        }
         </div>
       </form>
     </div>
