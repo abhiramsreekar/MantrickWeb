@@ -1,17 +1,12 @@
 {
   "files": {
-    "main.css": "/MantrickWeb/static/css/main.1b730842.css",
-    "main.js": "/MantrickWeb/static/js/main.5c3802f8.js",
+    "main.css": "/MantrickWeb/static/css/main.ef6ef692.css",
+    "main.js": "/MantrickWeb/static/js/main.a82e1c7a.js",
     "static/js/787.d4aba7ab.chunk.js": "/MantrickWeb/static/js/787.d4aba7ab.chunk.js",
     "static/media/rain.mp4": "/MantrickWeb/static/media/rain.939b2c93835c2d20cf75.mp4",
     "static/media/huesfx.JPG": "/MantrickWeb/static/media/huesfx.21c79d81d8572dc6c197.JPG",
     "static/media/3_cubes.JPG": "/MantrickWeb/static/media/3_cubes.13df090646def7db371b.JPG",
     "static/media/cubes2.JPG": "/MantrickWeb/static/media/cubes2.f7644ad5f3839c21de22.JPG",
-    "static/media/banner5.jpg": "/MantrickWeb/static/media/banner5.a1b90596fe46f1fbbf56.jpg",
-    "static/media/banner2.jpg": "/MantrickWeb/static/media/banner2.729a1ac1404b53cea32c.jpg",
-    "static/media/banner1.jpg": "/MantrickWeb/static/media/banner1.a06333345b9f4882e3ea.jpg",
-    "static/media/banner3.jpg": "/MantrickWeb/static/media/banner3.b01943ccbc7ad5331347.jpg",
-    "static/media/banner4.jpg": "/MantrickWeb/static/media/banner4.83b4245d813d1db55278.jpg",
     "static/media/TPN.png": "/MantrickWeb/static/media/TPN.76f7201148eca2e060ad.png",
     "static/media/arrow.png": "/MantrickWeb/static/media/arrow.c1b5679036149799f095.png",
     "static/media/i6.png": "/MantrickWeb/static/media/i6.fd0f9135f3fc037d6215.png",
@@ -21,12 +16,12 @@
     "static/media/logo.svg": "/MantrickWeb/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/MantrickWeb/index.html",
     "static/media/img.svg": "/MantrickWeb/static/media/img.e8414e44a4460c1e71e9ad3c634984ac.svg",
-    "main.1b730842.css.map": "/MantrickWeb/static/css/main.1b730842.css.map",
-    "main.5c3802f8.js.map": "/MantrickWeb/static/js/main.5c3802f8.js.map",
+    "main.ef6ef692.css.map": "/MantrickWeb/static/css/main.ef6ef692.css.map",
+    "main.a82e1c7a.js.map": "/MantrickWeb/static/js/main.a82e1c7a.js.map",
     "787.d4aba7ab.chunk.js.map": "/MantrickWeb/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1b730842.css",
-    "static/js/main.5c3802f8.js"
+    "static/css/main.ef6ef692.css",
+    "static/js/main.a82e1c7a.js"
   ]
 }
