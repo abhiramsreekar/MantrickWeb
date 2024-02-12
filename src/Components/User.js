@@ -26,7 +26,7 @@ return (
   </ul> */}
 
   <fieldset>
-    <h2 class="fs-title">Create your account</h2>
+    <h2 class="fs-title">Enter Your Details</h2>
     {/* <h3 class="fs-subtitle">This is step 1</h3> */}
     <input type="email" onChange={(e)=>{ setEmail(e.target.value)}} name="email" placeholder="Email" />
     <input type="text" onChange={(e)=>{ setName(e.target.value)}} name="name" placeholder="Full Name" />

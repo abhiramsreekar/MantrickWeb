@@ -12,7 +12,7 @@ export default function ServicesTab() {
     <div>
 
     <div class="servicesTab page">
-            <h1>OUR SERVICES</h1>
+            <h1 className="head-one">OUR SERVICES</h1>
         <div className='service1' id="servicesTab">
             <div className='inner'>
             {/* <div className='tabs'>

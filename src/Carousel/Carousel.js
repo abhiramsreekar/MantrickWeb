@@ -10,10 +10,11 @@ import context from '../context/useContext';
 export default function Carousel() {
   useEffect(()=>{
     fetchAllLandings();
-    auto();
+    // auto();
   },[])
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); 
-  const {cardNo,setCardNo}=useContext(context);
+  const [cardNo,setCardNo]=useState(1);
+  // var cardNo;
   const [total,setTotal]=useState(0);
     const [landings,setLandings]=useState([
       ]);
@@ -52,27 +53,17 @@ export default function Carousel() {
       ];
       var j;
       const auto=async ()=>{
-        
-        // setTimeout(()=>{
-        //   //     // let x=cardNo+1;
-        //   //     // if(x==total+1)
-        //   //     // {
-        //     //     //   x=1;
-        //     //     // }
-        //     //     left();
-        //     //   auto();
-        
-        //   },2000);
         while(1)
         {
+          await sleep(4000);
             let lists = document.querySelectorAll('.item');
             document.getElementById('slide').append(lists[0]);
-            await sleep(3000);
         }
   
       }
       const increase=()=>{
         let x=cardNo+1;
+
         if(x==total+1)
         {
           x=1;
@@ -126,9 +117,8 @@ export default function Carousel() {
   return (
     <>
       {/* <img src={lists[0].image}/> */}
-    <div className="containerbox">
+    <div className="containerbox" id="first-landing">
         <div id="slide">
-
             {eventIds.map((eventId,i) => {
             const event = landings[eventId];
             return (
@@ -137,10 +127,16 @@ export default function Carousel() {
                 <div className="content">
                     <div className="name" >{event.title}</div>
                     <div className="des">{event.description}</div>
-                    <button href={event.youtubeUrl}><a href={event.youtubeUrl} style={{textDecoration:"none"}} target="_blank">
+                    {/* <button href={event.youtubeUrl}><a href={event.youtubeUrl} style={{textDecoration:"none"}} target="_blank">
                       Open YouTube
                       </a>
-                      </button>
+                      </button> */}
+                      <button className='carousel-button'> <span class="material-symbols-outlined">
+                  play_circle
+                  </span> 
+                  <a href={event.youtubeUrl} style={{textDecoration:"none",color:"white"}} target="_blank">
+                  Watch Now
+                      </a></button>
                 </div>
                 </div>
             );
@@ -148,13 +144,16 @@ export default function Carousel() {
 
         </div>
         <div className="buttons">
-            <button id="prev" onClick={right}><span class="material-symbols-outlined">
-            arrow_back_ios_new
+            <button id="prev" onClick={right}><span class="material-symbols-outlined" nClick={left}>
+                        arrow_left_alt
+                  </span></button>
+              {/* {cardNo} */}
+                 |   
+                 {/* {total} */}
+            <button id="next" onClick={left}><span class="material-symbols-outlined" nClick={left}>
+                        arrow_right_alt
             </span></button>
-            <span style={{color:"white",margin:"0px 10px"}}>{cardNo}   |   {total}</span>
-            <button id="next" onClick={left}><span class="material-symbols-outlined">
-              arrow_forward_ios
-              </span></button>
+              
         </div>
     </div>
     </>

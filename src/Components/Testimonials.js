@@ -1,8 +1,15 @@
 import React, { useEffect } from 'react'
 import "./Testimonials.css"
 import starf from '../Images/starf.png';
-import starh from '../Images/starh.png';
+import starh from '../Images/star-half.png';
 import stare from '../Images/stare.png';
+import staro from '../Images/star-outline.png';
+import t1 from '../Images/testimonal/t1.jpeg';
+import t2 from '../Images/testimonal/t2.jpeg';
+import t3 from '../Images/testimonal/t3.jpeg';
+import t4 from '../Images/testimonal/t4.jpeg';
+import t5 from '../Images/testimonal/t5.jpeg';
+import t6 from '../Images/testimonal/t6.jpeg';
 export default function Testimonials() {
     // useEffect(()=>{
 	// 	const wrapper = document.querySelector('#wrapper');
@@ -136,7 +143,15 @@ export default function Testimonials() {
           }
         });
       }, [])
-      
+      const viewMore=(e)=>{
+        const x=document.querySelectorAll(".review");
+        for(var j=0;j<x.length;j++)
+        {
+          document.querySelectorAll(".review")[j].style.overflowY="hidden";
+        }
+        document.querySelectorAll(".review")[parseInt(e.target.id)].style.overflowY="scroll";
+        // e.target.style.overflowY="scroll";
+      }
       return (
         <>
             <diV className="testimonial page pages" id="gallary">
@@ -151,24 +166,23 @@ export default function Testimonials() {
               </button>
               <section className="carousel wrapper">
                 <div className="carousel-item"
-                //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
                  >
-                    {/* <img className='img'  src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg" class="client-img" alt=""/> */}
                 <div className='back'></div>
-                <div class="card img">
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={starf} class="star" alt=""/>
+                <div className="card img">
+                <div className="card-body">
+                    <p className="review ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="0">View More</p>
+                        <img className='img star'  src={stare} alt=""/>
+                        <img className='img star'  src={stare} alt=""/>
+                        <img className='img star'  src={stare} alt=""/>
+                        <img className='img star'  src={stare} alt=""/>
+                        <img className='img star'  src={staro} alt=""/>
                     </div>
                 </div>
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/03/27/17/40/man-1283231_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client one</span>
+                <div className="card-thumb">
+                    <img className='img client-img'  src={t1} alt=""/>
+                    <span className="client-name">Durga Prasad</span>
                 </div>
             </div>
                 </div>
@@ -176,20 +190,21 @@ export default function Testimonials() {
                 // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
                 >
                 <div className='back'></div>
-                <div class="card">
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-						            <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={starh} class="star" alt=""/>
+                <div className="card">
+                <div className="card-body">
+                    <p className="review">I express my gratitude towards Mantrick for enabling me to establish a firm groundwork in Multimedia, refine my technical proficiencies, and offer me an internship opportunity where I can put my knowledge and skills to practical use in live projects. My internship journey was helped me a lot to my career growth as a Roto Artist. </p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="1">View More</p>
+						            <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={starh}  alt=""/>
                     </div>
                 </div>
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2019/07/26/20/52/man-4365597_640.png" class="client-img" alt=""/>
-                    <span class="client-name">client two</span>
+                <div className="card-thumb">
+                    <img className='img client-img'  src={t2} alt=""/>
+                    <span className="client-name">Kishore</span>
                 </div>
             </div>
                 </div>
@@ -197,20 +212,21 @@ export default function Testimonials() {
                 //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814_640.jpg')`}}
                  >
                 <div className='back'></div>
-                <div class="card">
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-                    <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
+                <div className="card">
+                <div className="card-body">
+                    <p className="review">It was my immense luck and fortune to be the part of Mantrick Studios where I can grow. The entire faculty and department leaves no stone unturned to shape every one's future. My professional course have been a wonderful experience of learning in VFX with prolific exposure to outside. </p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="2">View More</p>
+                    <img className='img     star'   src={stare} alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
                     </div>
                 </div>
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client three</span>
+                <div className="card-thumb">
+                    <img className='img client-img'  src={t3} alt=""/>
+                    <span className="client-name">Nagam Biswas</span>
                 </div>
             </div>
                 </div>
@@ -218,20 +234,21 @@ export default function Testimonials() {
                 //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
                  >
                 <div className='back'></div>
-                <div class="card">
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-                    <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={starf} class="star" alt=""/>
+                <div className="card">
+                <div className="card-body">
+                    <p className="review">Mantrick Studios is only institute which is provides live-project along with 100% placement in Multimedia. By researching I found the institute and joined for VFX Professional Course. After completing my course  I cracked my first interview and got placed at Hues FX as a Comp Artist and  really I am thankful to all my supports in floor. </p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="3">View More</p>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={staro}  alt=""/>
                     </div>
                 </div>
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2019/04/12/21/19/man-4123268_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client three</span>
+                <div className="card-thumb">
+                    <img className='img client-img'  src={t4}  alt=""/>
+                    <span className="client-name">Rajeswari</span>
                 </div>
             </div>
                 </div>
@@ -239,41 +256,42 @@ export default function Testimonials() {
                 // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
                 >
                 <div className='back'></div>
-                <div class="card">
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-                    <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
+                <div className="card">
+                <div className="card-body">
+                    <p className="review">My experience at Mantrick Studios has been wonderful. I got placed into my dream Job which returns my career to high due to working in live projects. The all-time support and motivation of faculty members have enlightened me on this amazing journey.</p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="4">View More</p>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
                     </div>
                 </div>
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/18/16/17/man-1835599_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client three</span>
+                <div className="card-thumb">
+                    <img className='img client-img'  src={t5} alt=""/>
+                    <span className="client-name">Srikanth</span>
                 </div>
             </div>
                 </div>
                 <div className="carousel-item" 
-                // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
                 >
                 <div className='back'></div>
-                <div class="card">
-                <div class="card-body">
-                    <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
-                    <div class="rating">
-                    <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
-                        <img className='img'  src={stare} class="star" alt=""/>
+                <div className="card">
+                <div className="card-body">
+                    <p className="review">Mantrick Studios is great place to learn. It gives me great to say with pride that i have completed my VFX training in Compositing. Mantrick gave me an opportunity to excel in my area of interest. The Training and Placement cell is very supportive and they have conducted various sessions which helped me to get placed.</p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="5">View More</p>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
                     </div>
                 </div>
-                <div class="card-thumb">
-                    <img className='img'  src="https://cdn.pixabay.com/photo/2016/11/18/16/17/man-1835599_640.jpg" class="client-img" alt=""/>
-                    <span class="client-name">client three</span>
+                <div className="card-thumb">
+                    <img className='img client-img'  src={t6}  alt=""/>
+                    <span className="client-name">Vamshi</span>
                 </div>
             </div>
                 </div>

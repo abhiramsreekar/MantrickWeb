@@ -13,6 +13,7 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 // type ValuePiece = Date | null;
 import './chatBot.css';
 import { Button } from 'react-bootstrap';
+import axios from 'axios';
 // type Value = ValuePiece | [ValuePiece, ValuePiece];
 // all available config props
 const config ={
@@ -20,21 +21,7 @@ const config ={
   height: "70vh",
 };
 export default function Chatbot() {
-  const BrochureCard=(triggerNextStep)=>{
-    return(
-            <div class="">
-              <div class="card" style={{width: "96%"}}>
-                    <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..." style={{width:"100%"}}/>
-                    <div class="card-body">
-                    <h5 class="card-title">Brochure </h5>
-                    <p class="card-text">Some quick example text to build on the card title .</p>
-                    <a href="https://google.com" target="_blank" class="btn btn-primary">Download brochure</a>
-                    </div>
-                </div>
-            </div>
-          )
-    
-    }
+  
     const [otp, setOtp] = useState("");
     const [phone,setPhone] = useState("");
     const [captcha,setCaptcha] = useState("");
@@ -70,7 +57,6 @@ export default function Chatbot() {
   
   function onCaptchaVerify(id) {
     if (!window.RecaptchaVerifier) {
-      alert(id);
       window.recaptchaVerifier = new RecaptchaVerifier(
         auth,
         id===1?"recaptcha-container2":"recaptcha-container3",
@@ -97,10 +83,20 @@ export default function Chatbot() {
         });
       }
   function onSignup(id) {
+    
     setLoading(true);
-    onCaptchaVerify(id);
+    // onCaptchaVerify(id);
+    // alert(document.querySelector(".ss-phone-2").value);
     const appVerifier = window.recaptchaVerifier;
-    const phoneNumber = "+91"+document.querySelector(".ss-phone-2").value;
+    var phoneNumber;
+    if(id==1)
+    {
+      phoneNumber = "+91"+document.querySelector(".ss-phone-2").value;
+    }
+    else
+    {
+      phoneNumber = "+91"+document.querySelector(".ss-phone-3").value;
+    }
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
     .then((confirmationResult) => {
       window.confirmationResult = confirmationResult;
@@ -112,6 +108,9 @@ export default function Chatbot() {
     .catch((error) => {
       setLoading(false);
       alert("OTP not sent ");
+      setEmail("");
+        setPhone("");
+        setName("");
       toast.error(error.message);
       });
   }
@@ -125,14 +124,36 @@ export default function Chatbot() {
   const [Bsubmit,setBsubmit]=useState(null);
   const [otpstatus,setOtpstatus]=useState(null);
   const [emailbox,setEmailbox]=useState(null);
+  // brochure card
+  const BrochureCard=(triggerNextStep)=>{
+    
+    return(
+            <div class="">
+              <div class="card" style={{width: "96%"}}>
+                    <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..." style={{width:"100%"}}/>
+                    <div class="card-body">
+                    <h5 class="card-title">Brochure </h5>
+                    <p class="card-text">Some quick example text to build on the card title .</p>
+                    <a href="https://google.com" target="_blank" class="btn btn-primary">Download brochure</a>
+                    </div>
+                </div>
+            </div>
+          )
+    
+    }
+
+
   const onDowloadBrochure=(e)=>{
     e.preventDefault();
+    // alert(phone);
     var url = "https://api.ultramsg.com/instance74996/messages/chat";
     var data = {
       token: "nbridiw147r4ch9c",
       to: "+91"+phone,
       body: JSON.stringify({"email":email,"msg":"WhatsApp API on UltraMsg.com works good "+name,"link":"https://google.com"})
     };
+    // whatsapp msg sending
+
     fetch(url, {
       method: "POST",
       headers: {
@@ -150,6 +171,60 @@ export default function Chatbot() {
         setBsubmit(null);
         console.error("Error:", error);
       });
+
+      // Data sending to google sheets
+      fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85/mobile/${phone}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date(),meeting:"not yet"}),
+      })
+        .then(response => response.json())
+        .then(responseData => {
+          if(JSON.stringify(responseData)==="[]")
+          {
+
+            fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85`, {
+                  method: "POSt",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date(),meeting:"not yet"}),
+        })
+        .then(response => response.json())
+        .then(responseData => {
+          setEmail("");
+        setPhone("");
+        setName("");
+        setBotp("");
+        setEmailbox(null);
+        setOtpbox(null);
+          console.log("inner new inseted response is:"+JSON.stringify(responseData));
+        })
+        .catch(error => {
+          alert("Data has not been sent");
+          console.error("Error:", error);
+           });
+          }
+          else
+          {
+            // alert("we got user");
+          }
+          setEmail("");
+        setPhone("");
+        setName("");
+        setBotp("");
+        setEmailbox(null);
+        setOtpbox(null);
+          console.log("response is:"+JSON.stringify(responseData));
+        })
+        .catch(error => {
+          alert("data  not sent to google sheet");
+          console.error("Error:", error);
+        });
+        
+        
   }
   const onScheduleSubmit=(e)=>{
     e.preventDefault();
@@ -157,8 +232,10 @@ export default function Chatbot() {
     var data = {
       token: "nbridiw147r4ch9c",
       to: "+91"+phone,
-      body: JSON.stringify({"email":email,"msg":"WhatsApp API on UltraMsg.com works good "+name,dateAndTime:DateAndTime,"link":"https://google.com"})
+      body: JSON.stringify(`Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${DateAndTime}`)
     };
+    // whatsapp msg sending
+
     fetch(url, {
       method: "POST",
       headers: {
@@ -172,9 +249,63 @@ export default function Chatbot() {
         setBsubmit("s");
       })
       .catch(error => {
+        alert("msg not sent");
         setBsubmit(null);
         console.error("Error:", error);
       });
+
+      // Data sending to google sheets
+      fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85/mobile/${phone}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date()}),
+      })
+        .then(response => response.json())
+        .then(responseData => {
+          if(JSON.stringify(responseData)==="[]")
+          {
+
+            fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85`, {
+                  method: "POSt",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(`Thank you for downloding our brochure, we look forward to talking to you!`),
+        })
+        .then(response => response.json())
+        .then(responseData => {
+          setEmail("");
+        setPhone("");
+        setName("");
+        setBotp("");
+        setEmailbox(null);
+        setOtpbox(null);
+          console.log("inner new inseted response is:"+JSON.stringify(responseData));
+        })
+        .catch(error => {
+          alert("data  not sent to google sheet");
+          console.error("Error:", error);
+           });
+          }
+          else
+          {
+            alert("we got user");
+          }
+          setEmail("");
+        setPhone("");
+        setName("");
+        setBotp("");
+        setEmailbox(null);
+        setOtpbox(null);
+          console.log("response is:"+JSON.stringify(responseData));
+        })
+        .catch(error => {
+          alert("data  not sent to google sheet");
+          console.error("Error:", error);
+        });
+        
   }
   function onOtpverify() {
     window.confirmationResult
@@ -193,11 +324,15 @@ export default function Chatbot() {
         toast.error(error.message);
       });
     }
-  return (
-    <>
+    return (
+      <>
+    {/* Download Brochure */}
     <div className='schedule-meet' >
     <span class="material-symbols-outlined" onClick={()=>{
-      document.querySelector(".schedule-meet").style="none";}}>cancel</span>
+      document.querySelector(".schedule-meet").style="none";
+      document.querySelector(".back-2").style.display="none";
+      }}>cancel</span>
+      
       <h2>Download Brochure</h2>
       <p>Please provide your contact information</p>
       <form>
@@ -228,16 +363,18 @@ export default function Chatbot() {
             }
             
           <label for="ss-name" className="ss-label" style={{marginRight:"5px"}}>OTP:   </label>
+         
           <input type="text" id="ss-name" value={Botp} onChange={(e)=>{
             setBotp(e.target.value);
           }} name='ss-name' className='ss-input' placeholder='Enter OTP'/>
           <Button type='button' onClick={onOtpverify}>Verify</Button>
+          
         </div>
           </>
         :<></>
         }
         {
-          emailbox?
+          !emailbox?
           <>
         <div className='ss-box'>
         <label for="ss-name" className="ss-label">Email: </label>
@@ -253,26 +390,28 @@ export default function Chatbot() {
       <div className='ss-box button'>
         <Button type='submit' onClick={onDowloadBrochure}>Download Brochure</Button>
         {
-          Bsubmit?<p style={{color:"green"}}>by pressing this button, you are agreed to receive message on whatsapp</p>:<p>Brochure details sent to your whatsapp successfully</p>
+          !Bsubmit?<p >by pressing this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green"}}>Brochure details sent to your whatsapp successfully</p>
         }
         </div>
       </form>
     </div>
     {/* schedule */}
-      <div id="recaptcha-container2"  style={{display:"none"}} className="mt-6 recaptcha-container2"></div>
+    <div id="recaptcha-container2"  style={{display:"none"}} className="mt-6 recaptcha-container2"></div>
       <div id="recaptcha-container3"  style={{display:"none"}} className="mt-6 recaptcha-container3"></div>
+      <div className='back-2'></div>
     <div className='schedule-meet schedule-meet-o' >
     <span class="material-symbols-outlined" onClick={()=>{
       setPhone("");
+      document.querySelector(".back-2").style.display="none";
       document.querySelector(".schedule-meet-o").style="none";
-      }}>cancel</span>
+    }}>cancel</span>
       <h2>Schedule Meet</h2>
       <p>Please provide your contact information</p>
       <form>
       <div className='ss-box'>
           <label for="ss-name" className="ss-label">Name:</label>
           <input type="text" id="ss-name" name='ss-name'  value={name} onChange={(e)=>{
-              setName(e.target.value);
+            setName(e.target.value);
           }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
       <div className='ss-box'>
@@ -281,11 +420,11 @@ export default function Chatbot() {
             setPhone(e.target.value);
             if(phone.length==9)
             {
-                document.querySelector(".ss-phone-2").blur();
-                onSignup(1);
+                document.querySelector(".ss-phone-3").blur();
+                onSignup(2);
             }
           }}
-          className='ss-input ss-phone-2' placeholder='Enter Phone Number'/>
+          className='ss-input ss-phone-3' placeholder='Enter Phone Number'/>
         </div>
         {
           otpbox?
@@ -304,17 +443,31 @@ export default function Chatbot() {
           </>
         :<></>
         }
-      <div className='ss-box'>
-          <label for="ss-name" className="ss-label" >Email: </label>
-          <input type="email" id="ss-name" className='ss-input' placeholder='Enter Email Address'/>
-        </div>
-        <p>Please select date and time of visit</p>
+
+      {
+        emailbox?
+        <>
+        <div className='ss-box'>
+        <label for="ss-name" className="ss-label">Email: </label>
+        <input type="email" id="ss-name" value={email} 
+        onChange={(e)=>{
+          setEmail(e.target.value);
+        }}
+        name='ss-name' className='ss-input' placeholder='Enter Email Address'/>
+      </div>
+
+      <p>Please select date and time of visit</p>
       <div className='ss-box ss-date'>
         <label for="birthdaytime"  className="ss-label">Date/Time:</label>
         <input type="datetime-local" value={DateAndTime} onChange={(e)=>{
           setDateAndTime(e.target.value);
         }} id="birthdaytime" className='ss-input' name="birthdaytime"></input>
       </div>
+
+          </>
+        :<></>
+      }
+        
       <div className='ss-box button'>
         <Button type='button'  onClick={onScheduleSubmit}>Schedule Meet</Button>
         {
@@ -326,7 +479,7 @@ export default function Chatbot() {
     {
       gpt?
       <div id='bot' className='bot' style={{opacity:0}}>
-        <ChatBot style={{right:"0px",position:"fixed",bottom:"115px",backgroundColor:"black"}}
+        <ChatBot  style={{right:"-2px",position:"fixed",bottom:"3px",backgroundColor:"black"}}
         steps={[
           {
             id:'intro', 
@@ -336,7 +489,7 @@ export default function Chatbot() {
           {
             id:'intro-user', 
             options:[
-            {value:'Courses We Offer', label:'Courses We Offer', trigger:'c1'},
+              {value:'Courses We Offer', label:'Courses We Offer', trigger:'c1'},
             {value:'Contact Us', label:'Contact Us', trigger:'arrange-call-back-1'},
             {value:'Download Brochure', label:'Download Brochure', trigger:'Download Brochure-1'},
             {value:'Get Callback', label:'Get Callback', trigger:'arrange-call-back-1'},
@@ -344,7 +497,7 @@ export default function Chatbot() {
         },
         {
           id:'c1', 
-            options:[
+          options:[
             {value:'Rotoscopy', label:'Rotoscopy', trigger:'R1'},
             {value:'Paint in VFX', label:'Paint in VFX', trigger:'P1'},
             {value:'Match Move', label:'Match Move', trigger:'M1'},
@@ -605,7 +758,7 @@ export default function Chatbot() {
         // {
         //   setGpt(true);
         // }
-      }} id="chatBot"  class="btn btn-primary"  style={{zIndex:900}}>
+      }} id="chatBot"  class="btn btn-primary"  style={{zIndex:9001}}>
         <img id="chat1"  src={logo} alt="" style={{height:"50px",color:"white"}}/>
         <img id="chat2"   src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.png" alt="" style={{height:"60px"}}>
         </img></div>

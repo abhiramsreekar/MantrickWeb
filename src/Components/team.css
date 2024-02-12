@@ -142,11 +142,11 @@
     flex-wrap: wrap;
     z-index: 3;
     max-width: 1300px;
-    justify-content:space-between;
+    justify-content:space-around;
   }
   .team .tcard {
-    width: 20%;
-    height: 41vh;
+    width: 17%;
+    height: 50vh;
     border-radius:0px;
     padding: 1.5rem;
     position: relative;
@@ -154,7 +154,7 @@
     align-items: flex-end;
     transition: 0.4s ease-out;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-    margin: 10px 10px;
+    margin: 45px 10px;
   }
   .team .tcard:hover {
     transform: translateY(20px);
@@ -164,6 +164,7 @@
   }
   .team .tcard:hover .info {
     opacity: 1;
+    z-index: 5;
     transform: translateY(0px);
   }
   .team .tcard:before {
@@ -192,7 +193,7 @@
   }
   .team .tcard .info {
     position: relative;
-    z-index: 3;
+    z-index: -3;
     color: white;
     opacity: 0;
     transform: translateY(30px);
@@ -221,11 +222,21 @@
     background: dodgerblue;
     color: white;
   }
+  @media (max-width:1200px){
+    .team .tcard {
+      width: 28%;
+    }
+  }
+  @media (max-width:1200px) and (min-width:502){
+    .team .tcard h3{
+      bottom: -77px !important;
+    }
+  }
   @media (max-width:500px){ 
     .team .tcard
     {
-      width: 62%;
-      height: 26vh;
+      width: 63%;
+      margin-bottom: 20px;
     }
     .team
     {

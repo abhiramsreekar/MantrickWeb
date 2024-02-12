@@ -6,6 +6,8 @@
     width: 93vw;
     color: white;
     margin-bottom: 100px;
+    position: relative;
+    z-index: 500;
     font-family: 'Abel', sans-serif;
     justify-content: center;
     align-items: center;
@@ -102,5 +104,19 @@
     {
         font-size: 13px;
         padding-top: 83px;
+    }
+}
+@media  (max-width:1300px) {
+    .aboutUs .left {
+        width: 95vw;
+    }
+    .aboutUs .left .tabs {
+        width: 100% !important;
+    }
+    .aboutUs .left .tabs .tableft img {
+        width: 26px;
+    }
+    .responsive-container-block.rightSide * {
+        border-radius: 5px;
     }
 }

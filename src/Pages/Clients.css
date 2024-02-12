@@ -36,13 +36,20 @@
 @media (max-width:500px)
 {
     .basiccard {
-        width: 30vw;
+        width: 61vw;
     }
     .clientGallary
     {
-        padding-top: 30vh;
+        padding-top: 10vh;
     }
     .clientspage .client-item {
-    height: 30vh;
+    /* height: 30vh; */
     }
+}
+
+.clientGallary .gin  .gallary .carousel .carousel-item
+{
+    -webkit-animation: scroll 32s linear infinite;
+            animation: scroll 32s linear infinite;
+            width: 100%;
 }

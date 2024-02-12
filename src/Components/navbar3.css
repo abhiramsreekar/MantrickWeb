@@ -17,9 +17,24 @@
     float: left;
     width: auto;
     height: auto;
+    /* display: none; */
     padding-left: 3rem;
     margin-top: 5px;
+    animation: logoanime 1s;
+    animation-fill-mode: forwards;
 }
+@keyframes logoanime {
+    from{
+        display: none;
+        transform: scale(1.5);
+    }
+    to
+    {
+        display: block;
+        transform: scale(1);
+    }
+}
+
 .ul22:hover
 {
     background-color: white;
@@ -43,9 +58,9 @@
     font-size: 20px;
 }
 
-.nav div.logo a:hover {
+/* .nav div.logo a:hover {
     color: red;
-}
+} */
 
 .nav div.main_list {
     height: 65px;
@@ -140,11 +155,20 @@
         
     }
 }
-.nav div.main_list ul li .ul1:hover {
-    border-bottom: 2px red solid;
-    top:10px;
-    
+.nav div.main_list ul #marker
+{
+    position: absolute;
+    height: 4px;
+    width: 0px;
+    left: 0px;
+    background: rgb(239, 36, 36);
+    bottom: 10px;
+    border-radius: 5px;
+    transition: all .5s;
 }
+/* .nav div.main_list ul li .ul1:hover {
+    border-bottom: 2px red solid;  
+} */
 
 .navTrigger {
     display: none;
@@ -169,13 +193,21 @@
         display: none;
     } */
 }
-.nav div.logo img 
-{
-    width: 250px;
+.nav div.logo img {
+    width: 290px;
+    margin-top: 5px;
 }
 @media screen and (max-width:1008px) {
+    .nav div.logo img {
+        width: 250px;
+        margin-top: 0px;
+    }
     .navTrigger {
         display: block;
+    }
+    #marker
+    {
+        display: none;
     }
     .nav div.logo {
         margin-left: -30px;
@@ -214,7 +246,7 @@
     }
     .nav div.main_list ul li {
         width: 100%;
-        text-align: right;
+        text-align: center;
     }
     .nav div.main_list ul li a {
         text-align: center;

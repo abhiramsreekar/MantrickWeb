@@ -21,7 +21,7 @@
   position: relative;
   overflow-y: hidden;
   display: flex;
-  gap: 1em;
+  gap: 2em;
   scrollbar-width: none;
 }
 @media (max-width:500px)
@@ -51,12 +51,8 @@
   transition: all 0.1s ease;
   padding: 0;
   pointer-events: all;
+  display: none;
 }
-/* 
-.arrows:hover {
-  background-color: #5e4c5a;
-  transform: scale(1.1);
-} */
 
 .arrows svg {
   width: 1.5em;
@@ -80,7 +76,7 @@
 
 .carousel-item img {
   border-radius: 10pt;
-    width: 50vw;
+    width: 33vw;
     /* height: 80vh; */
     height: 100%;
 }
@@ -90,30 +86,6 @@ input[type="checkbox"] {
   width: 0;
   visibility: hidden;
 }
-/* 
-label {
-  color: white;
-  cursor: pointer;
-  width: 50px;
-  height: 30px;
-  background: #5e4c5a;
-  display: block;
-  border-radius: 100px;
-  position: relative;
-} */
-
-/* label:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 20px;
-  height: 20px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
-} */
-
 input:checked + label {
   background: #ef8354;
 }
@@ -253,15 +225,17 @@ input:checked + label #off {
 }
 @media  (max-width:700px) {
   .carousel-item img {
-      width: 92vw;
+      width: 75vw;
+      border-radius: 5px;
   }
   .carousel-item {
-    width: 100vw;
+    width: 74vw;
       height: 64vw;
   }
   .client-item {
     width: 100vw;
-      height: 41vw;
+      height: 66vw;
+
   }
   
 }

@@ -7,10 +7,11 @@ const Context = (props) => {
     const [email,setEmail]=useState("");
     const [msg,setMsg]=useState("");
     const [gpt,setGpt]=useState(true);
+    const [current,setCurrent]=useState(0);
     const [cardNo,setCardNo]=useState(1);
     const [gptState,setGptState]=useState("");
     return (
-        <context.Provider value={{ph,setPh,name,setName,email,setEmail,msg,setMsg,gpt,setGpt,cardNo,setCardNo}}>
+        <context.Provider value={{ph,setPh,name,setName,email,setEmail,msg,setMsg,gpt,setGpt,cardNo,setCardNo,current,setCurrent}}>
                         {props.children}
         </context.Provider>
     )

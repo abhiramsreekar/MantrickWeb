@@ -56,17 +56,6 @@ export default function Clients() {
   ]
   return (
     
-    <div className='blackbg'>
-    {/* <div className='clientspage page' id="clients"> 
-    <h1 className='text-blk heading' style={{marginTop:"40px"}}><strong>Clients</strong></h1>
-    <div className='cards'>
-      {
-        cardArr.map((e,i)=>{
-          return <Newcard img={e.img} delay={i}/>
-        })
-      }
-    </div>
-    </div> */}
     <diV className="gallaryBox page clientGallary clientspage" id="gallary">
         <div className='gin'>
           <div className='gallary'>
@@ -93,17 +82,17 @@ export default function Clients() {
                 </svg>
               </button>
             </section>
-            <section id="toggle-overflow" style={{ display: "none" }}>
+            {/* <section id="toggle-overflow" style={{ display: "none" }}>
               <h2>Overflow</h2>
               <input id="toggle" type="checkbox" />
               <label htmlFor="toggle">
                 <p id="on">ON</p>
                 <p id="off">OFF</p>
               </label>
-            </section>
+            </section> */}
           </div>
         </div>
       </diV>
-    </div>
+    
   )
 }

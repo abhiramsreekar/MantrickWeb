@@ -163,7 +163,9 @@ export default function Movies() {
         <>
             <div className='show' id="show">
                 <div className='video' id="video">
-                    <div className='exit' onClick={exit}>Exit</div>
+                    <div className='exit' onClick={exit}><span class="material-symbols-outlined">
+                close
+                </span></div>
                     <iframe className='iframe frame' src={dynamicshow.iframeSrc} title={dynamicshow.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
             </div>
@@ -190,7 +192,7 @@ export default function Movies() {
                         }}>
                   play_circle
                 </span>
-                        <img style={{height:"40vh"}}
+                        <img 
                          className="img" src={event.imageUrl} alt="Working" />
                 </div>
                         <h3>{event.title}</h3>

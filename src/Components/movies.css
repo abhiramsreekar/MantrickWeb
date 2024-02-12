@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .movies{
   display: block;
+  margin-top: 10vh;
 
 }
 .movies .carousel-wrapper {
@@ -20,7 +21,7 @@
 
 .movies .carousel {
   width: 100%;
-  height: 100%;
+  height: 53vh;
   /* position: relative; */
   overflow-y: hidden;
   display: flex;
@@ -32,6 +33,10 @@
     .movies .carousel-item
   {
     height: 40vh;
+  }
+  .movies .carousel-wrapper {
+    width: 120%;
+    margin: 2px auto;
   }
 }
 .movies .carousel-item
@@ -55,6 +60,7 @@
   padding: 0;
   pointer-events: all;
   margin-bottom: 8vh;
+  display: none;
 }
 /* 
 .arrows:hover {
@@ -68,11 +74,6 @@
   fill: white;
 }
 
-.movies .arrow-inactive {
-  opacity: 0.5;
-  cursor: auto;
-  margin-bottom: 8vh;
-}
 
 .movies .arrow-inactive:hover {
   transform: none;
@@ -80,18 +81,18 @@
 
 .movies .carousel-item {
   width: 25vw;
-    height: 21vw;
-    cursor: pointer;
+  height: 100%;
+  cursor: pointer;
     margin: 2px 7px ;
-}
+  }
  .show .video .exit
 {
-    margin-left: 95%;
-    padding: 10px;
-    color: white;
-    cursor: pointer;
+  margin-left: 95%;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
   }
-   .show {
+  .show {
     position: fixed;
     top: 0px;
     width: 100vw;
@@ -103,23 +104,31 @@
     align-items: center;
   }
    .show .video iframe
-  {
-    width: 50vw;
-    height: 50vh;
-}
-@media screen and (max-width:600px){
-    .movies .show .video iframe {
+   {
+     width: 50vw;
+     height: 50vh;
+    }
+    @media screen and (max-width:600px){
+      .show .video iframe
+      {
+        width: 84vw;
+        height: 40vh;
+       }
+      .movies .show .video iframe {
         width: 78vw;
         height: 48vh;
     }
     .services #myVideo {
-        position: relative;
-        bottom: 0;
-        right: 0;
+      position: relative;
+      bottom: 0;
+      right: 0;
         min-width: 100%;
         width: 86vw;
         height: 100vh;
     }
+    .movies .carousel-item h3 {
+      font-size: 15px;
+  }
     
 }
 .movies .show
@@ -136,7 +145,7 @@
     z-index: 999990;
     display: none;
     background-color: #2d242b;
-}
+  }
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
   .show
   {
@@ -153,9 +162,9 @@
 }
 .movies .carousel-item .img {
   border-radius: 0px;
-    width: 25vw;
-    height: 67vh;
-
+  width: 25vw;
+  height: 43vh;
+  
 }
 
 .movies input[type="checkbox"] {
@@ -274,7 +283,7 @@
 }
 
 @media (pointer: coarse) {
-    .movies .carousel {
+  .movies .carousel {
     overflow-x: auto;
     scrollbar-width: thin;
   }
@@ -322,6 +331,7 @@
 .movies .carousel
 {
   width: 100%;
+  /* margin-left: 44px; */
 }
 @keyframes slide {
   from
@@ -334,28 +344,29 @@
   }
 }
 @media  (max-width:600px) {
+  
     .movies {
-        width: 90vw;
-        margin: 2px auto;
+      width: 105vw;
+        margin:0px;
     }
     .movies .carousel-item .img {
       width: 90vw;
-  }
-  .movies .gallaryBox .gin .gallary .movie-item .i-item{
+    }
+    .movies .gallaryBox .gin .gallary .movie-item .i-item{
       position: absolute;
       width: 100%;
       height: 100%;
       background-color: #5e4c5a;
       opacity: .5;
       z-index: 44;
+    }
+    .movies .carousel-item {
+    width: 100vw;
+    height: 53vh;
   }
   .movies .carousel-item {
     width: 100vw;
-      height: 64vw;
-  }
-  .movies .carousel-item {
-    width: 100vw;
-      height: 64vw;
+    height: 64vw;
   }
   
 }
@@ -370,4 +381,10 @@
 }
 .movies .movie-item .material-symbols-outlined{
   font-size: 50px;
+}
+.movies .arrow-inactive {
+  opacity: 0.5;
+  display: none;
+  cursor: auto;
+  margin-bottom: 8vh;
 }

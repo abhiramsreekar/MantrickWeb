@@ -101,7 +101,16 @@ body {
     margin-left: auto;
     max-width: 600px;
   }
-  
+  .head-one
+  {
+    font-size: 40px !important;
+  }
+  .about-head
+  {
+    position: relative;
+    text-align: center;
+    z-index: 600;
+  }
   .text-blk.heading {
     font-size: 40px;
     line-height: 64px;
@@ -185,15 +194,15 @@ body {
     border-radius: none;
 }
   
-  .number4vid {
-    width: 34%;
-    height: 33%;
-    position: absolute;
-    margin-top: 62%;
-    margin-right: 27%;
-    margin-bottom: 0px;
-    margin-left: 50%;
-  }
+.number4vid {
+  width: 61%;
+  height: 11%;
+  position: absolute;
+  margin-top: 62%;
+  margin-right: 27%;
+  margin-bottom: 0px;
+  margin-left: 50%;
+}
   
   .number5img {
     position: absolute;
@@ -229,30 +238,6 @@ body {
     /* font-size: 14px; */
     line-height: 25px;
   }
-  /* .img1
-  {
-    border-top-left-radius:50px ;
-  }
-  .img5
-  {
-    border-top-right-radius: 50px;
-  }
-  .img4
-  {
-    border-bottom-right-radius: 60px;
-  }
-  .img2
-  {
-    border-bottom-left-radius: 47px;
-  }
-  .img3
-  {
-    border-bottom-right-radius: 23px;
-    border-bottom-left-radius: 23px;
-    border-top-right-radius: 23px;
-    border-top-left-radius: 23px;
-  } */
-
   .responsive-container-block.rightSide *{
     border-radius: 10px;
   }
@@ -270,8 +255,8 @@ body {
     }
   
     .text-blk.heading {
-      text-align: center;
-      max-width: 370px;
+      text-align:left;
+    width: 93% !important;
     }
   
     .text-blk.subHeading {
@@ -296,6 +281,15 @@ body {
   }
   
   @media (max-width: 768px) {
+    .head-one
+  {
+    font-size: 25px !important;
+  }
+  .aboutUs
+  {
+    margin-top: 0px;
+    padding-top: 10px;
+  }
     .responsive-container-block.rightSide {
       width: 450px;
       height: 450px;
@@ -369,9 +363,8 @@ body {
     }
      */
     .text-blk.heading {
-      font-size: 25px;
+      font-size: 25px !important;
       line-height: 40px;
-      max-width: 370px;
       width: auto;
     }
     
@@ -388,7 +381,7 @@ body {
   
     }
   }
-  .moveR
+  .aboutUs .rightSide .moveR
   {
     transition: all 1s ease-in-out;
     animation: movR 1s ease-in-out;
@@ -412,7 +405,7 @@ body {
    }
    
 }
-.moveL
+.aboutUs .rightSide .moveL
 {
   transition: all 1s ease-in-out;
    animation: movL 1s ease-in-out;

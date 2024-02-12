@@ -1,5 +1,9 @@
 import React from 'react'
 import './courses.css'
+import roto from '../Images/Roto.jpeg';
+import paint from '../Images/paint.jpg';
+import mm from '../Images/mm.jpeg';
+import compo from '../Images/compo.jpeg';
 export default function Courses() {
   var currentCard=1;
   const courses=[
@@ -64,7 +68,6 @@ export default function Courses() {
       p2:"UX/UI design is a rewarding and challenging field, combining creativity with practical problem-solving to improve the way people interact with technology and digital products."
  
     }
-    
   ];
   function active(e) {
     if(currentCard===e.target.id)
@@ -87,11 +90,11 @@ export default function Courses() {
   }
   return (
    <>
-      <h1 className='text-blk heading trainhead' style={{textAlign:"center",marginTop:"100px",marginBottom:"0px"}}>TRAINING</h1>
     <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center",marginTop:"0px"}}>
+      <h1 className='head-one' style={{textAlign:"center",marginTop:"100px",marginBottom:"50px"}}>TRAINING</h1>
       <h1 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px",width:"100%"}}>HERE ARE OUR COURSES</h1>
       <div className="options ">
-        <div className="option active option1" id="1" onMouseOver={active}>
+        <div className="option active option1" id="1" onMouseOver={active} style={{"--optionBackground":`url("${roto}")`}}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -103,7 +106,7 @@ export default function Courses() {
               </div>
            </div>
           </div>
-          <div className="option option2" id="2" onMouseOver={active}>
+          <div className="option option2" id="2" onMouseOver={active} style={{"--optionBackground":`url("${paint}")`}}>
              <div className="shadow" style={{pointerEvents:"none"}}></div>
              <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -115,7 +118,7 @@ export default function Courses() {
               </div>
            </div>
           </div>
-        <div className="option option3" id="3" onMouseOver={active} >
+        <div className="option option3" id="3" onMouseOver={active} style={{"--optionBackground":`url("${mm}")`}}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -139,7 +142,7 @@ export default function Courses() {
                 </div>
            </div>
           </div>
-        <div className="option option5" id="5" onMouseOver={active}>
+        <div className="option option5" id="5" onMouseOver={active} style={{"--optionBackground":`url("${compo}")`}}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -176,34 +179,85 @@ export default function Courses() {
              </div>
         </div>
    </div>
+   <div className='options2' style={{display:"none"}}>
+
+         <diV className="gallaryBox page " id="gallary">
+        <div className='gin'>
+          <div className='gallary'>
+            <section className="carousel-wrapper">
+              <button type="button" className="arrows left-arrow arrow-inactive" aria-label="Arrow Left">
+                <svg viewBox="0 0 256 512">
+                  <path d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z" />
+                </svg>
+              </button>
+              <section className="carousel">
+              {/* {
+                cardArr.map((e,i)=>{
+                return 
+                  })
+              } */}
+              <div className="carousel-item client-item option">
+              <h3 id="1" onClick={active}>Roto</h3>
+               </div>
+              <div className="carousel-item client-item option">
+              <h3 id="2" onClick={active}>Paint in VFX</h3>
+               </div>
+              <div className="carousel-item client-item option">
+              <h3 id="3" onClick={active}>Match Move</h3>
+               </div>
+              <div className="carousel-item client-item option">
+              <h3 id="4" onClick={active}>3D Animation</h3>
+               </div>
+              <div className="carousel-item client-item option">
+              <h3 id="5" onClick={active}>Compositing</h3>
+               </div>
+              <div className="carousel-item client-item option">
+              <h3 id="6" onClick={active}>Digital Marketing</h3>
+               </div>
+              <div className="carousel-item client-item option">
+              <h3 id="7" onClick={active}>UX/UI Design</h3>
+               </div>
+              </section>
+              <button type="button" className="arrows right-arrow" aria-label="Arrow Right">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
+                  <path d="M64 448c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L178.8 256L41.38 118.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25l-160 160C80.38 444.9 72.19 448 64 448z" />
+                </svg>
+              </button>
+            </section>
+            {/* <section id="toggle-overflow" style={{ display: "none" }}>
+              <h2>Overflow</h2>
+              <input id="toggle" type="checkbox" />
+              <label htmlFor="toggle">
+                <p id="on">ON</p>
+                <p id="off">OFF</p>
+              </label>
+            </section> */}
+          </div>
+        </div>
+      </diV>
+   </div>
    <div  className='optionContentout'>
     <div className="optionContent" id="c1" style={{padding:"20px 0px"}} >
-      <h3 id="h1" className='heads'>3D</h3>
+      <h3 id="h1" className='heads'>{courses[0].heading}</h3>
       <p id="p1">
-         GoDaddy - Official Site - Get Domain Names & More            
-            GoDaddy
-            https://www.godaddy.com
-            Manage Your Website, Customerss, & Email Campaigns with Our All In One Solutions. Your Website Starts With The Perfect Domain. World's Largest Registrar. Big Savings Over Others. 100's of New Domains. 24/7 Expert Support. Services: Domain Names, Web Hosting.
-            Web Hosting + Free Domain
-            Includes email, setup & support. Fast & reliable, uptime guarantee.
-            Domain Name Generator
-            Get started by entering a word or phrase you want in your domain.
-            GoDaddy™ Website Builder
-            Start For Free Award-winning 24/7 Support Team.
-            Get Domain Matching Email
-            Earn customers' trust with email that matches your business name.
+      {courses[0].content}
       </p>
-      <h4 className='heads'>Duration:<span id="time" style={{color:"white"}}> 6 Months</span></h4>
+      <h4 className='heads'>Duration:<span id="time" style={{color:"white"}}>{courses[0].duration}</span></h4>
       <h3 id="h2" className='heads'>On-Campus</h3>
       <p id="p2">
-      Roto, short for rotoscoping, is an indispensable technique in the film industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality and feathering for a seamless blend with the background.
+      {courses[0].p1}
       </p>
       <h3 id="h3" className='heads'>Online</h3>
-      <p id="p3">Roto, short for rotoscoping, is an indispensable technique in the film industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality and feathering for a seamless blend with the background.</p>
+      <p id="p3">{courses[0].p2}</p>
       <div style={{display:"flex", justifyContent:"center", alignItems:"center"}} className="cbtns">
-      <button className='cbtn'>Click Here</button>
-      <button className='cbtn'>Get Call Back</button>
-      <button className='cbtn'>Brochure</button>
+      <button className='cbtn' onClick={()=>{
+         document.querySelector(".schedule-meet").style.display="none";
+         document.querySelector(".schedule-meet-o").style.display="flex";
+      }}>Get Call Back</button>
+      <button className='cbtn'onClick={()=>{
+         document.querySelector(".schedule-meet-o").style.display="none";
+         document.querySelector(".schedule-meet").style.display="flex";
+      }}>Brochure</button>
       </div>
     </div>
    </div>

@@ -13,6 +13,56 @@
    margin-top: 10px;
 
 }
+.coursesBox .options2 {
+
+}
+.coursesBox .options2
+{
+  display: flex;
+  /* flex-wrap: wrap; */
+}
+.coursesBox .options2 .gallaryBox
+{
+  margin: 0px;
+}
+.coursesBox .options2 .option h3:hover
+{
+  background-color: rgb(194, 191, 191);
+
+}
+.coursesBox .options2 .option h3
+{
+  color: black;
+  border-radius: 5px;
+  background-color: white;
+  margin:1px 2px;
+  width: 30vw;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+@media (max-width: 500px)
+{
+  .coursesBox .options
+  {
+    display: none !important;
+  }
+  .coursesBox .options2
+  {
+    display: block !important;
+  }
+  .coursesBox .options2 .client-item {
+    width: 100vw;
+    height: 100%;
+  }
+}
+.coursesBox .options2 .carousel
+{
+  gap: .3rem;
+}
+.coursesBox .options2 .option
+{
+  font-size: 10px;
+}
 .optionContentout
 {
   width:100%;
@@ -40,10 +90,11 @@
    align-items: flex-start;
 
   }
-.option1
+/* .option1
 {
   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_04.0000-2048x1425.jpeg);
-}
+  
+} */
 .option2
 {
   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_006.0000-2048x1425.jpeg);
@@ -399,6 +450,12 @@ body .options {
       font-weight: bold;
       font-size: 10px;
     }
+    .trainhead
+    {
+      font-size: 30px !important;
+      margin-bottom: 10vh !important;
+    }
+
   }
 @media screen and (max-width: 450px) {
   body .options .option
@@ -586,8 +643,11 @@ body .options .option .label .info .sub {
     font-weight: bold;
     font-size: 13px;
   }
+
   body .options .option.active {
     border-radius: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 @media  (max-width:900px)
@@ -604,6 +664,10 @@ body .options .option .label .info .sub {
 }
 @media  (max-width:800px)
 {
+  
+  .optionContentout {
+    width: 94%;
+  }
   body .options .option:not(.active) {
     border-radius: 0px;
   }

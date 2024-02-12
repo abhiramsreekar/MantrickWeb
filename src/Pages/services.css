@@ -16,14 +16,18 @@
     margin-left: 10px;
     color: white;
   }
+  .portfolio-first
+  {
+    display: none;
+  }
   .services {
     margin: 0;
     font-family: Arial;
     font-size: 17px;
     width: 100vw;
-    display: none;
+    /* display: none; */
     justify-content: center;
-    margin-left: -10px;
+    /* margin-left: -10px; */
 align-items: center;
 }
 .services .outerWork
@@ -96,11 +100,12 @@ align-items: center;
 {
   margin-top: 10vh;
 }
- .showphoto p
+ .showphoto .p
 {
     padding: 2px 20px;
     cursor: pointer;
     margin: 0;
+    display: none;
   }
    .showphoto .inner .img .exit
   {
@@ -144,7 +149,6 @@ align-items: center;
       display: none;
       position: absolute;
       top: 0px;
-      left: -80px;
       z-index: 1000;
   }
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
@@ -180,51 +184,50 @@ align-items: center;
     z-index: 208888;
     /* display: none; */
   }
+    @media screen  and (max-width:500px){
+      .services .photos .photo h3 {
+        font-size: 12px;
+    }
+    }
     @media screen  and (max-width:800px){
-      #photos {
-          width: 95vw;
-          justify-content: space-around;
-      }
       #photos .photo img {
-          width: 35vw;
+        border-radius: 5px;
+    }
+      #photos {
+          width: 96%;
+          justify-content: space-around;
+          margin: 0px;
+      }
+      #photos .photo
+      {
+        width: 45vw;
+      }
+      .services .ourWork {
+        border-radius: 10px !important;
+        width: 97% !important;
+  
+      }
+
+      #photos .photo img {
+          width: 100%;
           margin: 5px 10px;
           height: 21vw;
           cursor: pointer;
       }
        .showphoto .inner .img {
-          width: 67vw;
-          height: 38vw;
+          width: 90vw;
+          height: 56vw;
       }
     }
-    /* .services .ourWork::before
-    {
-      content: '';
-      position:absolute;
-      width: 90%;
-      left: 20px;
-      border-radius: 50px;
-      height: 100%;
-      background-color: #726f6f;
-      opacity: .4;
-      z-index: -2;
-    } */
-    /* .services .ourWork .back
-    {
-      position: absolute;
-      background-color: #ddd;
-      width: 95%;
-      height: 100%;
-
-    } */
     @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
       .services .ourWork {
-        -webkit-backdrop-filter: blur(10px);
+        /* -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
-        background-color:  rgb(255 255 255 / 16%);
-        margin: 40px auto;
+        background-color:  rgb(255 255 255 / 16%); */
+        margin: 0px auto;
         border-radius: 40px;
         width: 90%;
-        padding-top: 20px;
+        /* padding-top: 20px; */
         padding-bottom: 20px;
   
       }

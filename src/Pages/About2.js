@@ -8,15 +8,14 @@ import cubes2 from '../Images/cubes2.JPG'
 import effects from '../Images/effects.png';
 import eye from '../Images/eye.png';
 import arrow from '../Images/arrow.png';
+import image from '../Images/mantrick.png'
 export default function About2() {
   return (
     <>
-        {/* <div className='trBlock'></div> */}
-        <div>
 
+            <h3 className='about-head head-one'>ABOUT COMPANY</h3>
     <div class="aboutUs page" id="aboutUs">
         <div className='left'>
-            <h3 className=''>ABOUT COMPANY</h3>
             <h1 className='text-blk heading'>BRINGING IMAGINATION ALIVE, ON SCREEN</h1>
             <div className='tabs'>
                 <div className='tableft'>
@@ -70,13 +69,13 @@ redefining visual storytelling
               {/* <img className="number3img img2 aleft" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/b245.png"/> */}
               {/* <img className="number5img img3 aright" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Customer supports.png"/> */}
               {/* <iframe allowfullscreen="allowfullscreen aup" className="number4vid" src="https://www.youtube.com/embed/ePOglweqy7o?si=XPvzgauQKtzpfKXt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe> */}
-              <img className="number4vid aright" src={huesfx}/>
+              <img className="number4vid aright" src={image}/>
               <img className="number7img img4 aright" src={cubes}/>
               <img className="number6img img5 aright" src={TPN}/>
               <img className="number1img  img6 aleft" src={cubes}/>
             </div>
     </div>
-        </div>
+        
     </>
   )
 }

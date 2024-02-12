@@ -78,6 +78,48 @@
             addClass(leftcard, "moveR");
           }
         });
+        // marker movement on view
+        const portfolio= document.getElementById("services");
+        if(!portfolio.style.display)
+        {
+          const slides= document.getElementById("slides");
+            var sli=slides.offsetTop;
+            if (windowOffsetTop >= sli) {
+              document.getElementById("marker").style.left=document.getElementById("first").offsetLeft+"px";
+              document.getElementById("marker").style.width=document.getElementById("first").offsetWidth+"px";
+            }
+          
+          // alert(1);
+          const aboutUs= document.getElementById("aboutUs");
+            var aboutTop=aboutUs.offsetTop;
+            if (windowOffsetTop >= aboutTop) {
+              document.getElementById("marker").style.left=document.getElementById("#aboutUs1").offsetLeft+"px";
+              document.getElementById("marker").style.width=document.getElementById("#aboutUs1").offsetWidth+"px";
+            }
+            const servicesTab= document.getElementById("servicesTab");
+    
+              var homeTop=servicesTab.offsetTop;
+              if (windowOffsetTop >= homeTop) {
+                document.getElementById("marker").style.left=document.getElementById("#servicesTab3").offsetLeft+"px";
+                document.getElementById("marker").style.width=document.getElementById("#servicesTab3").offsetWidth+"px";
+              }
+            
+          const courses= document.getElementById("courses");
+
+            var coursesTop=courses.offsetTop;
+            if (windowOffsetTop >= coursesTop) {
+              document.getElementById("marker").style.left=document.getElementById("#courses1").offsetLeft+"px";
+              document.getElementById("marker").style.width=document.getElementById("#courses1").offsetWidth+"px";
+            }
+          
+          const footer= document.getElementById("footer");
+            var footerTop=footer.offsetTop;
+            if (windowOffsetTop >= footerTop) {
+              document.getElementById("marker").style.left=document.getElementById("#footer1").offsetLeft+"px";
+              document.getElementById("marker").style.width=document.getElementById("#footer1").offsetWidth+"px";
+            }
+        }
+          
       // move about cards to left
       const rightcards = document.getElementsByClassName("aright");
       Array.prototype.forEach.call(rightcards, (rightcard) => {

@@ -87,7 +87,7 @@ font-family: 'Lexend Deca', sans-serif;
 }
 .item .content{
     position: absolute;
-    top:50%;
+    top:75%;
     left:100px;
     width:300px;
     text-align: left;
@@ -162,6 +162,10 @@ font-family: 'Lexend Deca', sans-serif;
 .buttons button:hover{
     background-color: #bac383;
 }
+.containerbox .buttons button span
+{
+    font-size: 50px;
+}
 @media screen  and (max-width:800px){
     .item .content button{
         border-radius: 2px;
@@ -204,7 +208,7 @@ font-family: 'Lexend Deca', sans-serif;
         padding: 0px;
     }
     .buttons button{
-        width:38px;
+        width:177px;
         height:38px;
         background-color: transparent;
         color: white;
@@ -214,8 +218,34 @@ font-family: 'Lexend Deca', sans-serif;
 .item .content button a{
     color: white;
 }
+.item .content button span{
+    margin-right: 5px;
+    animation: playmove 1s infinite;
+    animation-fill-mode: forwards;
+
+}
+@keyframes playmove {
+    0%
+    {
+        transform: scale(1);
+    }
+    50%
+    {
+        transform: scale(1.5);
+        
+    }
+    100%
+    {
+        transform: scale(1);
+        
+    }
+    
+}
 .item .content button{
-    background-color: red;
+    background-color: #ffd61deb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .banner .containerbox .buttons button{
     background-color: transparent;

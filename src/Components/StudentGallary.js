@@ -1,5 +1,22 @@
 import React, { useEffect } from 'react'
 import './studentGallary.css';
+import s1 from '../Images/student-works/s1.jpg'
+import s2 from '../Images/student-works/s2.jpg'
+import s3 from '../Images/student-works/s3.jpg'
+import s4 from '../Images/student-works/s4.jpg'
+import s5 from '../Images/student-works/s5.jpg'
+import s6 from '../Images/student-works/s6.jpg'
+import s7 from '../Images/student-works/s7.jpg'
+import s8 from '../Images/student-works/s8.jpg'
+import s9 from '../Images/student-works/s9.jpg'
+import s10 from '../Images/student-works/s10.jpg'
+import s11 from '../Images/student-works/s11.jpg'
+import s12 from '../Images/student-works/s12.jpg'
+import s13 from '../Images/student-works/s13.jpg'
+import s14 from '../Images/student-works/s14.jpg'
+import s15 from '../Images/student-works/s15.jpg'
+import s16 from '../Images/student-works/s16.jpg'
+import s17 from '../Images/student-works/s17.jpg'
 export default function StudentGallary() {
   function scrollEv(leftArrow, rightArrow, carousel) {
     if (carousel.scrollLeft <= 0) {
@@ -124,7 +141,7 @@ export default function StudentGallary() {
       <diV className="gallaryBox original-gallary page pages" id="gallary">
         <div className='gin'>
           <div className='gallary'>
-            <h3 className='text-blk heading' style={{fontSize:"30px",marginLeft:"20px",letterSpacing:"-.5px"}}>STUDENT GALLARY</h3>
+            <h3 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px"}}>STUDENT GALLARY</h3>
             <section className="carousel-wrapper">
               <button type="button" className="arrows left-arrow arrow-inactive" aria-label="Arrow Left">
                 <svg viewBox="0 0 256 512">
@@ -133,37 +150,55 @@ export default function StudentGallary() {
               </button>
               <section className="carousel">
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/02.jpg" alt="Working" />
+                  <img src={s1} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/10.jpg" alt="Working" />
+                  <img src={s2} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/06.jpg" alt="Working" />
+                  <img src={s3} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/09.jpg" alt="Working" />
+                  <img src={s4} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/12.jpg" alt="Working" />
+                  <img src={s5} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/14.jpg" alt="Working" />
+                  <img src={s6} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/15.jpg" alt="Working" />
+                  <img src={s7} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/17.jpg" alt="Working" />
+                  <img src={s8} alt="Working" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/19.jpg" alt="Holidays" />
+                  <img src={s9} alt="Holidays" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/18.jpg" alt="Holidays" />
+                  <img src={s10} alt="Holidays" />
                 </div>
                 <div className="carousel-item">
-                  <img src="https://pixelloid.com/wp-content/grand-media/image/08.jpg" alt="Holidays" />
+                  <img src={s11} alt="Holidays" />
+                </div>
+                <div className="carousel-item">
+                  <img src={s12} alt="Holidays" />
+                </div>
+                <div className="carousel-item">
+                  <img src={s13} alt="Holidays" />
+                </div>
+                <div className="carousel-item">
+                  <img src={s14} alt="Holidays" />
+                </div>
+                <div className="carousel-item">
+                  <img src={s15} alt="Holidays" />
+                </div>
+                <div className="carousel-item">
+                  <img src={s16} alt="Holidays" />
+                </div>
+                <div className="carousel-item">
+                  <img src={s17} alt="Holidays" />
                 </div>
               </section>
               <button type="button" className="arrows right-arrow" aria-label="Arrow Right">

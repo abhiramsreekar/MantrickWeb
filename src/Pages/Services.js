@@ -113,14 +113,16 @@ export default function Services() {
         eventIds= Object.keys(photos);
       }
   return (
-    <div className='services' >
+    <div className='services' id="services">
+        <div className='portfolio-first'>
         <video autoPlay muted loop id="myVideo"  src={Video} type="video/mp4">
         </video>
         <Movies/>
+        </div>
         <div className='back'></div>
             <div className='showphoto'>
                 <div className='inner'>
-                <p onClick={prev}>
+                <p className='p' onClick={prev}>
                 <span class="material-symbols-outlined">
                 arrow_back_ios
                 </span>
@@ -131,7 +133,7 @@ export default function Services() {
                 </span></p>
                 <img src={photo}></img>
                 </div>
-                <p onClick={photoNext}>
+                <p className='p' onClick={photoNext}>
                 <span class="material-symbols-outlined">
                 arrow_forward_ios
                 </span>
@@ -139,10 +141,9 @@ export default function Services() {
                 </div>
             </div>
         <div className='outerWork'>
-            
+            <h3 style={{color:"white",textAlign:"center"}}className="head-one">OUR POTRFOLIO</h3>
         <div className='ourWork'>
         <div className='outerphotos'>
-            {/* <h3 style={{color:"white",textAlign:"center"}}>PHOTOS</h3> */}
         <div className='photos' id="photos">
             {photos?eventIds.map((eventId) => {
         const event = photos[eventId];
