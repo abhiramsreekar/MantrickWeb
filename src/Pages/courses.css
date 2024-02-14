@@ -95,6 +95,25 @@
   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_04.0000-2048x1425.jpeg);
   
 } */
+
+
+.optionContentout::-webkit-scrollbar {
+  height: 10px;
+}
+.optionContentout ::-webkit-scrollbar-track {
+background: #c0b6af;
+border-radius: 10pt;
+}
+
+.optionContentout ::-webkit-scrollbar-thumb {
+  background: #5e4c5a;
+  border-radius: 10pt;
+}
+
+.optionContentout::-webkit-scrollbar-thumb:hover {
+  background: #2d242b;
+}
+
 .option2
 {
   --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_006.0000-2048x1425.jpeg);

@@ -107,6 +107,7 @@ body {
   }
   .about-head
   {
+    /* font-family: 'Abel', sans-serif; */
     position: relative;
     text-align: center;
     z-index: 600;
@@ -119,7 +120,7 @@ body {
     margin-top: 0px;
     margin-right: 0px;
     font-family: 'Abel', sans-serif;
-    letter-spacing: 1PX;
+    letter-spacing: 0PX;
     margin-bottom: 40px;
     margin-left: 0px;
   }

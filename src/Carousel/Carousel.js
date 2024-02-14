@@ -131,30 +131,35 @@ export default function Carousel() {
                       Open YouTube
                       </a>
                       </button> */}
+                      <div style={{display:"flex"}} >
+                      <a href={event.youtubeUrl} target="_blank" style={{textDecoration:"none",color:"white"}} >
                       <button className='carousel-button'> <span class="material-symbols-outlined">
                   play_circle
                   </span> 
-                  <a href={event.youtubeUrl} style={{textDecoration:"none",color:"white"}} target="_blank">
+                  <a  style={{textDecoration:"none",color:"white"}} target="_blank">
                   Watch Now
                       </a></button>
+                      </a>
+                      <span style={{fontSize:"50px",cursor:"pointer"}} class="material-symbols-outlined" onClick={left}>
+                        arrow_right_alt
+                      </span>
+                      </div>
                 </div>
                 </div>
             );
           })}
 
         </div>
-        <div className="buttons">
+        {/* <div className="buttons">
             <button id="prev" onClick={right}><span class="material-symbols-outlined" nClick={left}>
                         arrow_left_alt
                   </span></button>
-              {/* {cardNo} */}
                  |   
-                 {/* {total} */}
             <button id="next" onClick={left}><span class="material-symbols-outlined" nClick={left}>
                         arrow_right_alt
             </span></button>
               
-        </div>
+        </div> */}
     </div>
     </>
   )

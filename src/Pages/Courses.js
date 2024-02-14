@@ -238,6 +238,16 @@ export default function Courses() {
    </div>
    <div  className='optionContentout'>
     <div className="optionContent" id="c1" style={{padding:"20px 0px"}} >
+      <div style={{display:"flex", justifyContent:"center", alignItems:"center"}} className="cbtns">
+      <button className='cbtn' onClick={()=>{
+         document.querySelector(".schedule-meet").style.display="none";
+         document.querySelector(".schedule-meet-o").style.display="flex";
+      }}>Get Call Back</button>
+      <button className='cbtn'onClick={()=>{
+         document.querySelector(".schedule-meet-o").style.display="none";
+         document.querySelector(".schedule-meet").style.display="flex";
+      }}>Brochure</button>
+      </div>
       <h3 id="h1" className='heads'>{courses[0].heading}</h3>
       <p id="p1">
       {courses[0].content}
@@ -249,16 +259,6 @@ export default function Courses() {
       </p>
       <h3 id="h3" className='heads'>Online</h3>
       <p id="p3">{courses[0].p2}</p>
-      <div style={{display:"flex", justifyContent:"center", alignItems:"center"}} className="cbtns">
-      <button className='cbtn' onClick={()=>{
-         document.querySelector(".schedule-meet").style.display="none";
-         document.querySelector(".schedule-meet-o").style.display="flex";
-      }}>Get Call Back</button>
-      <button className='cbtn'onClick={()=>{
-         document.querySelector(".schedule-meet-o").style.display="none";
-         document.querySelector(".schedule-meet").style.display="flex";
-      }}>Brochure</button>
-      </div>
     </div>
    </div>
  </div>

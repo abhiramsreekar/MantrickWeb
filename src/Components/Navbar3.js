@@ -83,6 +83,7 @@ export default function Navbar3() {
         const servicesTab=document.querySelector(".servicesTab").style.display="none";
         const aboutUs=document.querySelector(".aboutUs").style.display="none";
         document.querySelector(".portfolio-first").style.display="block";
+        document.querySelector(".about-head").style.display="none";
         // const services=document.querySelector(".services").style.display="block";
     }
     const all=(e)=>{
@@ -100,6 +101,7 @@ export default function Navbar3() {
         {
             document.querySelector(".containerbox").style.display="block";
         }   
+        document.querySelector(".about-head").style.display="block";
         var mark=document.querySelector(".back-2").style.display="none";
         var mark=document.querySelector("#marker");
         mark.style.left=e.target.offsetLeft+"px";
@@ -163,11 +165,14 @@ export default function Navbar3() {
                     <li><a href="#servicesTab" className='ul1 ul3'  id="#servicesTab3" onMouseOver={all}>Services</a></li>
                     <li><a href="#courses" className='ul1 ul4'   id="#courses1" onMouseOver={all}>Training</a></li>
                     <li><a href="#team" className='ul1 ul3' id="#team1" onMouseOver={portfolio}>Portfolio</a></li>
-                    <li><a  className='ul22 ul5'  onMouseOver={(e)=>{
-                    document.querySelector('.navTrigger').classList.toggle('active');
-                    const mainListDiv = document.querySelector('#mainListDiv');
-                    mainListDiv.classList.toggle('show_list');
-                    fadeIn(mainListDiv);
+                    <li><a  className='ul22 ul5'  onClick={(e)=>{
+                        if(window.innerWidth<=1000)
+                        {
+                            document.querySelector('.navTrigger').classList.toggle('active');
+                            const mainListDiv = document.querySelector('#mainListDiv');
+                            mainListDiv.classList.toggle('show_list');
+                            fadeIn(mainListDiv);
+                        }
                         var mark=document.querySelector("#marker");
                         mark.style.left=e.target.offsetLeft+"px";
                         mark.style.width=e.target.offsetWidth+"px";
@@ -176,11 +181,14 @@ export default function Navbar3() {
                         document.querySelector(".schedule-meet").style.display="none";
                         document.querySelector(".schedule-meet-o").style.display="flex";
                     }}>Schedule Meet</a></li>
-                    <li><a href="#clients" className='ul22 ul6' onMouseOver={(e)=>{
-                        document.querySelector('.navTrigger').classList.toggle('active');
-                        const mainListDiv = document.querySelector('#mainListDiv');
-                        mainListDiv.classList.toggle('show_list');
-                        fadeIn(mainListDiv);
+                    <li><a href="#clients" className='ul22 ul6' onClick={(e)=>{
+                        if(window.innerWidth<=1000)
+                        {
+                            document.querySelector('.navTrigger').classList.toggle('active');
+                            const mainListDiv = document.querySelector('#mainListDiv');
+                            mainListDiv.classList.toggle('show_list');
+                            fadeIn(mainListDiv);
+                        }
                         var mark=document.querySelector("#marker");
                         document.querySelector(".back-2").style.display="block";
                         mark.style.left=e.target.offsetLeft+"px";

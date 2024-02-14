@@ -16,7 +16,7 @@ export default function About2() {
             <h3 className='about-head head-one'>ABOUT COMPANY</h3>
     <div class="aboutUs page" id="aboutUs">
         <div className='left'>
-            <h1 className='text-blk heading'>BRINGING IMAGINATION ALIVE, ON SCREEN</h1>
+            <h3 className='text-blk heading' style={{fontSize:"35px"}}>BRINGING IMAGINATION ALIVE, ON SCREEN</h3>
             <div className='tabs'>
                 <div className='tableft'>
                     <img src={eye}></img>

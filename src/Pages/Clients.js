@@ -59,7 +59,7 @@ export default function Clients() {
     <diV className="gallaryBox page clientGallary clientspage" id="gallary">
         <div className='gin'>
           <div className='gallary'>
-            <h3 className='text-blk heading' style={{fontSize:"40px",textAlign:"center",width:"100vw"}}>CLIENTS</h3>
+            <h1 className='head-one' style={{fontSize:"40px",textAlign:"center",width:"100vw"}}>CLIENTS</h1>
             <section className="carousel-wrapper">
               <button type="button" className="arrows left-arrow arrow-inactive" aria-label="Arrow Left">
                 <svg viewBox="0 0 256 512">

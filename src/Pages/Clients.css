@@ -30,9 +30,14 @@
     max-width: 1300px;
     justify-content: center;
 }
+.clientGallary .carousel
+{
+    height: 100%;
+}
 .clientspage .client-item {
 /* height: 50vh; */
 }
+
 @media (max-width:500px)
 {
     .basiccard {

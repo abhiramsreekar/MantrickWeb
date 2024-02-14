@@ -141,7 +141,7 @@ export default function Services() {
                 </div>
             </div>
         <div className='outerWork'>
-            <h3 style={{color:"white",textAlign:"center"}}className="head-one">OUR POTRFOLIO</h3>
+            <h3 style={{color:"white",textAlign:"center"}}className="head-one">OUR PORTFOLIO</h3>
         <div className='ourWork'>
         <div className='outerphotos'>
         <div className='photos' id="photos">
