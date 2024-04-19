@@ -1,75 +1,15 @@
 import React,{useEffect,useState} from 'react'
 import './services.css'
-import Video from '../videos/rain.mp4';
-import Movies from '../Components/Movies';
+// import Video from '../videos/rain.mp4';
 import apiClient from "../firebase/apiClient";
 export default function Services() {
     const [photo,setPhoto]=useState("");
     const [i,setI]=useState(0);
     useEffect(()=>{
         fetchAllPhotos();
+            window.scrollTo(0, 0);
     },[])
     const [photos,setPhotos]=useState(null);
-    const photos2=[
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2022/11/RRR-2-768x432.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2022/11/PUSHPA-3-768x432.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2022/11/GOD-FATHER-4-768x432.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2022/11/bheemla-nayak-2-768x432.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2022/11/Bangaraju-3-768x432.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2022/11/VARASUDU-1-768x432.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/EGwHWV5VUAA2CPy-800x400.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/Venky-Mama-Diwali-Wishes-HD-Poster-and-Still--289x400.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/2-16-768x432.jpeg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/Sooryavanshi-Full-Movie-Download-402x400.jpg`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/15_Sayvasachi.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/17_ee-maya-perumeto.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/14_NTR-M.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/13_Kavcham.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/11_Abduction.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/10_rangastlam.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/07_Arjun-survaram.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/05_Maharshi.png`
-        },
-        {
-            img:`https://mantrickstudios.com/wp-content/uploads/2021/03/02_FILM-WORKS.png`
-        },
-
-    ];
     const prev=()=>{
         let temp=i-1;
         setI(temp);
@@ -100,8 +40,6 @@ export default function Services() {
     const fetchAllPhotos = async () => {
         try {
           const response = await apiClient.get(`/events.json`);
-          // return response;
-          // alert(JSON.stringify(response.data));
           setPhotos(response.data);
         } catch (err) {
           console.error(`Error: ${err}`);
@@ -115,9 +53,8 @@ export default function Services() {
   return (
     <div className='services' id="services">
         <div className='portfolio-first'>
-        <video autoPlay muted loop id="myVideo"  src={Video} type="video/mp4">
-        </video>
-        <Movies/>
+        {/* <video style={{display:"absolute",width:"100%"}} autoPlay muted loop id="myVideo"  src={Video} type="video/mp4"> 
+      </video> */}
         </div>
         <div className='back'></div>
             <div className='showphoto'>
@@ -140,12 +77,12 @@ export default function Services() {
                 </p>
                 </div>
             </div>
-        <div className='outerWork'>
+        <div className='outerWork' id="photos_o">
             <h3 style={{color:"white",textAlign:"center"}}className="head-one">OUR PORTFOLIO</h3>
         <div className='ourWork'>
         <div className='outerphotos'>
         <div className='photos' id="photos">
-            {photos?eventIds.map((eventId) => {
+            {photos?eventIds.reverse().map((eventId) => {
         const event = photos[eventId];
         return (
         <div className='photo'>

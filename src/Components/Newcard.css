@@ -5,7 +5,7 @@
     padding: 15px;
     transition: all .6s ease-in-out;
     animation: transform .5s ease-in-out;
-    opacity: 0;
+    opacity: 1;
 }
 @keyframes basiccard {
     from

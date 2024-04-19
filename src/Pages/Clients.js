@@ -7,51 +7,51 @@ export default function Clients() {
   const cardArr=[
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/01_LEGEND-GLOBAL-STUDIO.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/01_LEGEND-GLOBAL-STUDIO.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/02_VFX-Wala.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/02_VFX-Wala.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/03_EROS.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/03_EROS.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/05_konidela-p.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/05_konidela-p.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/06_g-silver.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/06_g-silver.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/07_Mythri-Movie.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/07_Mythri-Movie.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/08_DVV.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/08_DVV.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/09_Green-GOLD.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/09_Green-GOLD.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/10_SYMBIOSYS-png.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/10_SYMBIOSYS-png.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/04_Suresh-Productions.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/04_Suresh-Productions.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/11_EFX.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/11_EFX.png"
     },
     {
       link:"youtube.com",
-      img:"https://mantrickstudios.com/wp-content/uploads/2021/03/12_smt.apsri-venkateswara-creations.png"
+      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/12_smt.apsri-venkateswara-creations.png"
     }
   ]
   return (
@@ -59,7 +59,7 @@ export default function Clients() {
     <diV className="gallaryBox page clientGallary clientspage" id="gallary">
         <div className='gin'>
           <div className='gallary'>
-            <h1 className='head-one' style={{fontSize:"40px",textAlign:"center",width:"100vw"}}>CLIENTS</h1>
+            <h1 className='head-one' style={{fontSize:"40px",textAlign:"center",width:"93%"}}>CLIENTS</h1>
             <section className="carousel-wrapper">
               <button type="button" className="arrows left-arrow arrow-inactive" aria-label="Arrow Left">
                 <svg viewBox="0 0 256 512">
@@ -70,7 +70,7 @@ export default function Clients() {
               {
                 cardArr.map((e,i)=>{
                 return <div className="carousel-item client-item">
-                  {/* <img src="https://pixelloid.com/wp-content/grand-media/image/02.jpg" alt="Working" /> */}
+                  {/* <img src="https://pixelloid.com/old/wp-content/grand-media/image/02.jpg" alt="Working" /> */}
                   <Newcard img={e.img} delay={i}/>
                 </div>
                   })
@@ -82,14 +82,6 @@ export default function Clients() {
                 </svg>
               </button>
             </section>
-            {/* <section id="toggle-overflow" style={{ display: "none" }}>
-              <h2>Overflow</h2>
-              <input id="toggle" type="checkbox" />
-              <label htmlFor="toggle">
-                <p id="on">ON</p>
-                <p id="off">OFF</p>
-              </label>
-            </section> */}
           </div>
         </div>
       </diV>

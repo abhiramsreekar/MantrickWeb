@@ -18,22 +18,7 @@
     }
   }
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    /* .services .ourWork {
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      background-color:  rgb(255 255 255 / 16%);
-      margin: 40px auto;
-      border-radius: 40px;
-      width: 90%;
-      padding-top: 20px;
-      padding-bottom: 20px;
-
-    } */
     .slider {
-      /* -webkit-backdrop-filter: blur(10px) !important;
-      backdrop-filter: blur(10px) !important;
-      background-color:  rgb(255 255 255 / 16%) !important;
-      box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
       margin: auto;
       overflow: hidden;
       position: relative;

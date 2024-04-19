@@ -10,6 +10,12 @@
     color: white;
     /* font-family: var(--e-global-typography-7c1bf50-font-family), Sans-serif; */
 }
+@media (max-width:1000px) {
+    .servicesTab
+    {
+        padding-bottom:  20vh;
+    }
+}
 .servicesTab h1
 {
     margin: 0px;

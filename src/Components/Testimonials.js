@@ -11,127 +11,10 @@ import t4 from '../Images/testimonal/t4.jpeg';
 import t5 from '../Images/testimonal/t5.jpeg';
 import t6 from '../Images/testimonal/t6.jpeg';
 export default function Testimonials() {
-    // useEffect(()=>{
-	// 	const wrapper = document.querySelector('#wrapper');
-	// 	const indicators = [...document.querySelectorAll('.indicators button')];
-		
-	// 	let currentTestimonial = 0;
-	// 	indicators.forEach((item, i) => {
-	// 		item.addEventListener('click', () => {
-	// 			indicators[currentTestimonial].classList.remove('active');
-	// 			wrapper.style.marginLeft = `-${100 * i}%`;
-	// 			item.classList.add('active');
-	// 			currentTestimonial = i;
-	// 		})
-	// 	})
-    // },[]);
-    function scrollEv(leftArrow, rightArrow, carousel) {
-        if (carousel.scrollLeft <= 0) {
-          leftArrow.classList.add("arrow-inactive");
-        } else {
-          leftArrow.classList.remove("arrow-inactive");
-        }
-        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.offsetWidth - 1) {
-          rightArrow.classList.add("arrow-inactive");
-        } else {
-          rightArrow.classList.remove("arrow-inactive");
-        }
-      }
-    
-      function clicleftArrow(carousel, rectList) {
-        let shiftScroll;
-        for (let i = 0; i < rectList.length; i++) {
-          if (carousel.scrollLeft > rectList[rectList.length - 1]) {
-            shiftScroll = rectList[rectList.length - 1];
-          } else if (
-            carousel.scrollLeft > rectList[i] &&
-            carousel.scrollLeft <= rectList[i + 1]
-          ) {
-            shiftScroll = rectList[i];
-          }
-        }
-        carousel.scrollTo({
-          left: shiftScroll,
-          behavior: "smooth"
-        });
-      }
-    
-      function clickRight(carousel, rectList) {
-        let shiftScroll;
-        for (let i = 0; i < rectList.length; i++) {
-          if (
-            carousel.scrollLeft >= rectList[i] - 1 &&
-            carousel.scrollLeft < rectList[i + 1]
-          ) {
-            shiftScroll = rectList[i + 1];
-          }
-        }
-        carousel.scrollTo({
-          left: shiftScroll,
-          behavior: "smooth"
-        });
-      }
-    
-      function listRectCarousel(carouselNumber, carousels) {
-        let divs = carousels[carouselNumber].getElementsByClassName("carousel-item");
-        let rectList = [];
-        let rectGauche = carousels[carouselNumber].getBoundingClientRect().left;
-    
-        for (let i = 0; i < divs.length; i++) {
-          let rect = divs[i].getBoundingClientRect();
-          rectList.push(rect.left - rectGauche);
-        }
-    
-        for (let i = rectList.length - 1; i >= 0; i--) {
-          rectList[i] = rectList[i] - rectList[0];
-        }
-        return rectList;
-      }
-    
-      function autoSlidePosLeft(carouselNumber, carousels, leftArrows) {
-        let rectList = listRectCarousel(carouselNumber, carousels);
-        leftArrows[carouselNumber].addEventListener("click", () => {
-          clicleftArrow(carousels[carouselNumber], rectList);
-        });
-      }
-    
-      function autoSlidePosRight(carouselNumber, carousels, rightArrows) {
-        let rectList = listRectCarousel(carouselNumber, carousels);
-        rightArrows[carouselNumber].addEventListener("click", () => {
-          clickRight(carousels[carouselNumber], rectList);
-        });
-      }
       useEffect(() => {
         let leftArrows = document.getElementsByClassName("left-arrow");
         let rightArrows = document.getElementsByClassName("right-arrow");
         let carousels = document.getElementsByClassName("carousel");
-    
-        for (let i = 0; i < leftArrows.length; i++) {
-          autoSlidePosLeft(i, carousels, leftArrows);
-          window.onresize = () => {
-            autoSlidePosLeft(i, carousels, leftArrows);
-          };
-        }
-    
-        for (let i = 0; i < rightArrows.length; i++) {
-          autoSlidePosRight(i, carousels, rightArrows);
-          window.onresize = () => {
-            autoSlidePosRight(i, carousels, rightArrows);
-          };
-        }
-    
-        for (let i = 0; i < carousels.length; i++) {
-          carousels[i].addEventListener("scroll", () => {
-            scrollEv(leftArrows[i], rightArrows[i], carousels[i]);
-          });
-        }
-    
-        for (let i = 0; i < carousels.length; i++) {
-          scrollEv(leftArrows[i], rightArrows[i], carousels[i]);
-          window.onresize = () => {
-            scrollEv(leftArrows[i], rightArrows[i], carousels[i]);
-          };
-        }
     
         /* TOGGLE OVERFLOW */
     
@@ -170,19 +53,19 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card img">
                 <div className="card-body">
-                    <p className="review ">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea, nam. Fugiat, ut provident. Nulla quibusdam labore ea est consequatur sequi fuga iusto laudantium, earum doloremque?</p>
+                    <p className="review ">I have completed my Intensive course recently ,and it's great place if u really want to learn and go into VFX industry. Great faculty and 100% placemen. Best environment for upgrading your future</p>
                     <div className="rating">
                     <p onClick={viewMore} id="0">View More</p>
                         <img className='img star'  src={stare} alt=""/>
                         <img className='img star'  src={stare} alt=""/>
                         <img className='img star'  src={stare} alt=""/>
                         <img className='img star'  src={stare} alt=""/>
-                        <img className='img star'  src={staro} alt=""/>
+                        <img className='img star'  src={stare} alt=""/>
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className='img client-img'  src={t1} alt=""/>
-                    <span className="client-name">Durga Prasad</span>
+                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjUzD_kWPwmBsztbQ_z8j5poPv_qJGyzL14WKDI67eU8O_kfUYhoQQ=w75-h75-p-rp-mo-br100" alt=""/>
+                    <span className="client-name">Sai Teja</span>
                 </div>
             </div>
                 </div>
@@ -192,19 +75,19 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">I express my gratitude towards Mantrick for enabling me to establish a firm groundwork in Multimedia, refine my technical proficiencies, and offer me an internship opportunity where I can put my knowledge and skills to practical use in live projects. My internship journey was helped me a lot to my career growth as a Roto Artist. </p>
+                    <p className="review">Mantrick studios is great place for learning 3D animation & VFX. The faculty are very helpful and polite. After completing the class daily I am practicing  live projects and it will be helpful for my career growth. </p>
                     <div className="rating">
                     <p onClick={viewMore} id="1">View More</p>
 						            <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={starh}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className='img client-img'  src={t2} alt=""/>
-                    <span className="client-name">Kishore</span>
+                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjVedbetLV1psmqIY1KbHfWbWqbCzKLTQJE9BdzK6gKu2PwKUmMG=w75-h75-p-rp-mo-br100" alt=""/>
+                    <span className="client-name">Nadiminti Balamurali</span>
                 </div>
             </div>
                 </div>
@@ -226,7 +109,7 @@ export default function Testimonials() {
                 </div>
                 <div className="card-thumb">
                     <img className='img client-img'  src={t3} alt=""/>
-                    <span className="client-name">Nagam Biswas</span>
+                    <span className="client-name">Senbaga Rajan Muthu</span>
                 </div>
             </div>
                 </div>
@@ -236,19 +119,19 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">Mantrick Studios is only institute which is provides live-project along with 100% placement in Multimedia. By researching I found the institute and joined for VFX Professional Course. After completing my course  I cracked my first interview and got placed at Hues FX as a Comp Artist and  really I am thankful to all my supports in floor. </p>
+                    <p className="review">The best VFX training in Hyderabad, we had live project experience with faculty. The faculty was highly experienced more than 25yrs from VFX industry. </p>
                     <div className="rating">
                     <p onClick={viewMore} id="3">View More</p>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={staro}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className='img client-img'  src={t4}  alt=""/>
-                    <span className="client-name">Rajeswari</span>
+                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjXzo3QSyAiKA4PDzMj33aO8dWlbmeRm8KubF43nEnTQtE2hpe2j=w75-h75-p-rp-mo-br100"  alt=""/>
+                    <span className="client-name">anil kumar</span>
                 </div>
             </div>
                 </div>
@@ -258,7 +141,7 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">My experience at Mantrick Studios has been wonderful. I got placed into my dream Job which returns my career to high due to working in live projects. The all-time support and motivation of faculty members have enlightened me on this amazing journey.</p>
+                    <p className="review">My experience is wonderful and I have learnt many tools which used to my career in Animation  & enjoyed my classes, and they helping us with live projects to our practice.</p>
                     <div className="rating">
                     <p onClick={viewMore} id="4">View More</p>
                         <img className='img star'  src={stare}  alt=""/>
@@ -269,17 +152,17 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className='img client-img'  src={t5} alt=""/>
-                    <span className="client-name">Srikanth</span>
+                    <img className='img client-img'  src="https://lh3.googleusercontent.com/-Kqh_ReY0pvY/AAAAAAAAAAI/AAAAAAAAAAA/s6uS5oeiH7M/w70-h70-p/photo.jpg" alt=""/>
+                    <span className="client-name">digital swetha</span>
                 </div>
             </div>
                 </div>
-                <div className="carousel-item" 
+          <div className="carousel-item" 
                 >
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">Mantrick Studios is great place to learn. It gives me great to say with pride that i have completed my VFX training in Compositing. Mantrick gave me an opportunity to excel in my area of interest. The Training and Placement cell is very supportive and they have conducted various sessions which helped me to get placed.</p>
+                    <p className="review">Mantrick is a great learning and experience with professional faculty. I started my career as a student now I'm working with production team. THANKS TO MANTRICK STUDIOS</p>
                     <div className="rating">
                     <p onClick={viewMore} id="5">View More</p>
                         <img className='img star'  src={stare}  alt=""/>
@@ -290,11 +173,53 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className='img client-img'  src={t6}  alt=""/>
-                    <span className="client-name">Vamshi</span>
+                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjUhRn6_0Cl8DddrNDDQwwj58HgiZUzIW8IJPJHggUk1VF_a97JZ=w75-h75-p-rp-mo-br100"  alt=""/>
+                    <span className="client-name">VENU</span>
                 </div>
             </div>
+          </div>
+          <div className="carousel-item" 
+                >
+                <div className='back'></div>
+                <div className="card">
+                <div className="card-body">
+                    <p className="review">An excellent academy for career in VFX with multiple career opportunities in ever growing media and entertainment sector. Recently complted my Vfx course and got placed waiting for my big day to join.</p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="5">View More</p>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                    </div>
                 </div>
+                <div className="card-thumb">
+                    <img className="https://lh3.googleusercontent.com/a/ACg8ocLOvWcWR0806jH4KXRSee35AidmjyZ05ysjqK0jNFSFjyA9PA=w75-h75-p-rp-mo-br100"  alt=""/>
+                    <span className="client-name">Divya Lakshmi Kancharla</span>
+                </div>
+            </div>
+          </div>
+          <div className="carousel-item" 
+                >
+                <div className='back'></div>
+                <div className="card">
+                <div className="card-body">
+                    <p className="review">Best Institute for the best career , their teaching skills were interesting. Mantrick was one with good fame in the Animation industry..</p>
+                    <div className="rating">
+                    <p onClick={viewMore} id="5">View More</p>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                        <img className='img star'  src={stare}  alt=""/>
+                    </div>
+                </div>
+                <div className="card-thumb">
+                    <img className="https://lh3.googleusercontent.com/a-/ALV-UjU_TvBvFmKJiQL1U9hXkijxr_ZHJLpbmdCZaNfTFg3RkSGWSQ0=w75-h75-p-rp-mo-br100"  alt=""/>
+                    <span className="client-name">srikanth alaparthi</span>
+                </div>
+            </div>
+          </div>
               </section>
               <button type="button" className="arrows right-arrow" aria-label="Arrow Right">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">

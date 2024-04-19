@@ -4,19 +4,19 @@ import './index.css'
 import context from "../context/useContext";
 export default function DateCompo({triggerNextStep}) {
   const {ph,setPh,name,setName,msg,setMsg,email,setEmail}=useContext(context);
-    const [date, setDate] = useState(new Date());
+  const {openSnackbar,setOpenSnackbar,snackbarMessage,snackbarSeverity,setSnackbarSeverity,showSnackbar,setSnackbarMessage}=useContext(context);
+    const [date, setDate] = useState("");
     const submitDate=(e)=>{
       e.preventDefault();
-      // message sending to whatsapp
-
-
+      // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
       var url = "https://api.ultramsg.com/instance74996/messages/chat";
     var data = {
       token: "nbridiw147r4ch9c",
       to: "+91"+ph,
-      body: JSON.stringify({"email":email,"msg":"WhatsApp API on UltraMsg.com works good "+name,meetingDate:date,"link":"https://google.com"})
+      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${date}`)
     };
     fetch(url, {
+      // mode: 'no-cors',
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default function DateCompo({triggerNextStep}) {
       
       // data storing on google sheets
 
-      fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85/mobile/${ph}`, {
+      fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806/mobile/${ph}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default function DateCompo({triggerNextStep}) {
           if(JSON.stringify(responseData)==="[]")
           {
 
-            fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85`, {
+            fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806`, {
                   method: "POSt",
                   headers: {
                     "Content-Type": "application/json",
@@ -62,13 +62,13 @@ export default function DateCompo({triggerNextStep}) {
           console.log("inner new inseted response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("data  not sent to google sheet");
+          showSnackbar('Meeting Not Scheduled,Try Again!', 'error');
           console.error("Error:", error);
            });
           }
           else
           {
-            alert("we got user");
+            showSnackbar('Meeting  Scheduled Successfully!', 'success');
           }
           setEmail("");
         setPh("");
@@ -76,7 +76,7 @@ export default function DateCompo({triggerNextStep}) {
           console.log("response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("data  not sent to google sheet");
+          showSnackbar('Meeting Not Scheduled,Try Again!', 'error');
           console.error("Error:", error);
         });
 
@@ -87,8 +87,10 @@ export default function DateCompo({triggerNextStep}) {
     <form id="msform">
   <fieldset>
   <h2 class="fs-title">Enter Date To Get Call Back</h2>
-  <input type="Date" name="date" value={date} placeholder="Enter Date" />
-  <input type="submit" onClick={submitDate} name="next"  class="next action-button" value="Next" />
+  <input type="datetime-local" name="date" value={date} onChange={(e)=>{
+    setDate(e.target.value);
+  }} placeholder="Enter Date" />
+  <input type="submit" onClick={submitDate} name="next"  class="next action-button" />
   </fieldset>
   </form>
     </div>

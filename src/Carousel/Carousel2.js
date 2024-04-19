@@ -9,7 +9,7 @@ function Carousel2() {
     fetchAllLandings();
   },[])
   useEffect(()=>{
-      scrolling();
+    // scrolling();
     
   },[])
   const [total,setTotal]=useState(null);
@@ -28,17 +28,24 @@ function Carousel2() {
       console.error(`Error: ${err}`);
     }
   };
+  var reset=1;
   var scrolling=async ()=>{
     setTimeout(()=>{
       let d= document.querySelectorAll('.circle');
+      // if(eventIds.length>4)
+      // {
+        left((current+1)%c);
+      // }
+      // if(reset===0)
+      // return;
       scrolling();
-      left((current+1)%c);
     },5000)
   }
   
   const sleep = ms => new Promise(r => setTimeout(r, ms));
   const left=(x)=>
   {
+    
     // alert(x);
     // alert(current);
     let d= document.querySelectorAll('.circle');
@@ -47,7 +54,7 @@ function Carousel2() {
           d[k].style.backgroundColor="white";
         }
         // e.target.style.backgroundColor="black";
-        document.querySelectorAll('.circle')[x].style.backgroundColor="black";
+        d[x].style.backgroundColor="black";
         let lists = document.querySelectorAll('.slide-container .slide');
         if(current<x)
         {
@@ -87,7 +94,7 @@ function Carousel2() {
             const el = landings[eventId];
             return (
               <div className='slide' style={{width:"100vw",backgroundImage:`url("${el.imageUrl}")`,height:"100vh"}}>
-                {/* <img src={el.image} style={{width:"100vw"}}/> */}
+                
                 <div className='des'>
                 <p>{el.title}</p>
                 <h1>{el.description}</h1>
@@ -101,6 +108,10 @@ function Carousel2() {
                   <span class="material-symbols-outlined" onClick={()=>
                   {
                     left((i+1)%eventIds.length);
+                    reset=0;
+                    // setTimeout(()=>{
+                    // reset=1;
+                    // },3000);
                   }
                     }>
                         arrow_right_alt

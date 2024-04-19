@@ -42,6 +42,14 @@
 }
 @media (max-width: 500px)
 {
+  .training-head
+  {
+    margin-top: 10px !important;
+  }
+  .coursesBox 
+  {
+    margin-top: 0px !important;
+  }
   .coursesBox .options
   {
     display: none !important;
@@ -90,11 +98,6 @@
    align-items: flex-start;
 
   }
-/* .option1
-{
-  --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_04.0000-2048x1425.jpeg);
-  
-} */
 
 
 .optionContentout::-webkit-scrollbar {
@@ -124,7 +127,7 @@ border-radius: 10pt;
   }
 .option4
 {
-  --optionBackground:url(https://mantrickstudios.com/wp-content/uploads/2022/11/SHOT_018.0000-2048x1152.jpeg);
+  --optionBackground:url(https://mantrickstudios.com/old/wp-content/uploads/2022/11/SHOT_018.0000-2048x1152.jpeg);
 }
 .option5
 {
@@ -164,7 +167,7 @@ border-radius: 10pt;
   }
   .cbtn
 {
-  background-color: #f1a513;
+  background-color: red;
    /* background-color: black; */
    color: aliceblue;
    padding: 6px 10px;
@@ -545,7 +548,7 @@ body .options .option {
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 body .options .option:nth-child(1)  .label .info .main{
-  color: black;
+  /* color: black; */
 }
 body .options .option:nth-child(1) {
   --defaultBackground:#ED5565;

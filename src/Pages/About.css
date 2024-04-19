@@ -13,6 +13,12 @@ body {
 {
   max-width: 1000px;
 } */
+@media (min-width:1000px) {
+  .text-blk.heading {
+    margin-top: 40px !important;
+  }
+  
+}
   .text-blk {
     padding-top: 0px;
     padding-right: 0px;
@@ -118,6 +124,7 @@ body {
     font-weight: 900;
     color: white;
     margin-top: 0px;
+    
     margin-right: 0px;
     font-family: 'Abel', sans-serif;
     letter-spacing: 0PX;
@@ -160,10 +167,10 @@ body {
     height: 700px;
     min-height: auto;
   }
-  .responsive-container-block img
+  /* .responsive-container-block img
   {
     opacity: 0;
-  }
+  } */
   .number1img {
     margin-top: 56%;
     margin-right: 80%;
@@ -251,6 +258,7 @@ body {
     margin-left: -40px;
 }
   @media (max-width: 1024px) {
+    
     .responsive-container-block.Container {
       flex-direction: column;
     }
@@ -282,6 +290,9 @@ body {
   }
   
   @media (max-width: 768px) {
+    .aboutUs {
+      margin-bottom: 40px;
+    }
     .head-one
   {
     font-size: 25px !important;
@@ -324,26 +335,6 @@ body {
     {
       margin-top: 20px;
     }
-    /* .number2img {
-      display: none;
-    }
-  
-    .number3img {
-      display: none;
-    }
-  
-    .number5img {
-      display: none;
-    }
-  
-    .number6img {
-      display: none;
-    }
-  
-    .number7img {
-      display: none;
-    }
-   */
     .responsive-container-block.rightSide {
       width: 100%;
       height: 250px;
@@ -352,17 +343,6 @@ body {
       margin-bottom: 0px;
       margin-left: 0px;
     }
-    
-    /* .number4vid {
-      position: static;
-      margin-top: 0px;
-      margin-right: auto;
-      margin-bottom: 0px;
-      margin-left: auto;
-      width: 100%;
-      height: 100%;
-    }
-     */
     .text-blk.heading {
       font-size: 25px !important;
       line-height: 40px;
@@ -389,65 +369,17 @@ body {
     animation-delay: .4s;
     animation-fill-mode: forwards;
   }
-
-  @keyframes movR {
-    from
-    {
-      transform: translateX(-80%);
-      opacity: 0;
-      filter: blur(45px);
-    }
-    to
-    {
-      transform: translateX(0%);
-      opacity: 1;
-      filter: blur(0);
-      
-   }
-   
-}
 .aboutUs .rightSide .moveL
 {
   transition: all 1s ease-in-out;
    animation: movL 1s ease-in-out;
    animation-fill-mode: forwards;
    animation-delay: .4s;
-  }
-  @keyframes movL {
-    from
-    {
-      transform: translateX(80%);
-     opacity: 0;
-     filter: blur(53px);
-    }
-    to
-    {
-      transform: translateX(0%);
-      opacity: 1;
-      filter: blur(0);
-      
-    }
-    
-  }
+}
   .text-blkUp
   {
     transition: all 1s ease-in-out;
      animation: text-blkUp 1s ease-in-out;
      animation-fill-mode: forwards;
      animation-delay: .4s;
-  }
-  @keyframes text-blkUp {
-    from
-      {
-        opacity: 0;
-        transform: translateY(40%);
-        filter: blur(23px);
-      }
-      to
-      {
-        opacity: 1;
-        transform: translateY(0%);
-        filter: blur(0);
-        
-    }
   }

@@ -1,0 +1,261 @@
+.thumbnailContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.thumbnailContainer img{
+    width: 100%;
+}
+
+.thumbnailContainer img:hover{
+    transform: none;
+    opacity: 1;
+}
+
+
+.thumbnailDetails{
+    display: flex;
+    /* background-color: red; */
+    position: relative;
+    padding-top: 10px;
+}
+
+.thumbnailContainer .thumbnailDate{
+    width: 24%;
+    height: 100%;
+    font-family: 'Poppins',sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumbnailContainer .thumbnailDate p{
+    /* background-color: blue; */
+    font-size: 19px;
+    padding: 0 0 0 5px;
+    margin: 0px;
+    color:white;
+    text-transform: uppercase;
+    /* text-align: center; */
+}
+
+.thumbnailContainer p.date{
+    font-size: 34px;
+    /* color: #EB4438; */
+}
+
+.thumbnailContainer .thumbnailNameDetails{
+    width: 85%;
+    /* font-size: 10px; */
+    height: 100% !important;
+    /* padding: 5px; */
+    font-family: 'Lexend Deca',sans-serif;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap:0px;
+    
+}
+
+.thumbnailContainer .thumbnailTitle p{
+    font-weight: bolder;
+    margin: 0;
+    padding: 0 0 0 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; 
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    color:white;
+}
+
+.thumbnailContainer .thumbnailDescription p{
+    font-size: 13px;
+    margin: 0;
+    padding: 0 0 0 5px;
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    color:white;
+}
+
+.thumbnailContainer .thumbnailLinks a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #EB4438;
+    font-weight: bolder;
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+
+.thumbnailContainer  {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .thumbnailContainer .thumbnailImage {
+    width: 100%; /* Adjust this width as needed */
+    height: 300px; /* Adjust this height as needed */
+    margin-right: 10px;
+    overflow: hidden;
+  }
+  
+  .thumbnailContainer .thumbnailImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps the aspect ratio and fits the image */
+  }
+  
+  .thumbnailContainer .thumbnailDetails {
+    flex: 1;
+  }
+  
+  
+
+@media only screen and (max-width: 798px) {
+    .thumbnailContainer .thumbnailDate{
+        width: 20%;
+    }
+    
+    .thumbnailContainer .thumbnailNameDetails{
+        width: 80%;
+    }
+    
+}
+
+/* next event */
+.thumbnailContainer .eventPoster{
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    /* background-color: #355061; */
+    cursor: pointer;
+}
+.thumbnailContainer .img
+{
+    width: 60%;
+    height: 60vh;
+    margin: 20px 30px;
+}
+.thumbnailContainer .eventPoster img:hover{
+    transform: scale(0.97);
+    /* opacity: 0.5; */
+}
+
+.thumbnailContainer .eventPoster img{
+    width: 100%;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    transition: all 0.45s ease-out;
+}
+
+.thumbnailContainer .eventPoster a{
+    width:100%;
+}
+
+.thumbnailContainer .colorOverlay{
+    background: linear-gradient(to top right, #000 10%, rgba(254, 243, 236,0) 100%);
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+.thumbnailContainer .colorOverlay.pastOverlay{
+    cursor: pointer;
+    transition: all 0.45s ease-in-out;
+    background: linear-gradient(to top right, #355061 10%, rgba(254, 243, 236,0) 98%);
+}
+
+.thumbnailContainer .colorOverlay.pastOverlay:hover{
+    background: #355061;
+}
+
+.thumbnailContainer .overlayText{
+    width:100%;
+    height: 100%;
+    position: absolute;
+    top:65%;
+    background-color: rgba(0,0,0,0);
+    padding: 20px;
+    line-height: 1.3;
+    color: #fef3ec;
+}
+
+.thumbnailContainer .PastEventPoster {
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* overflow: hidden; */
+}
+
+.thumbnailContainer .PastEventPoster h1{
+    color: #355061 !important;
+}
+
+.thumbnailContainer .PastEventPoster img{
+    width: 100%;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    transition: all 0.45s ease-out;
+}
+
+.thumbnailContainer .PastEventPoster img:hover{
+    transform: scale(0.97);
+    /* opacity: 0.5; */
+}
+
+.thumbnailContainer a{
+    text-decoration: none;
+}
+
+
+@media  (max-width: 500px) {
+    .thumbnailContainer .img
+    {
+        width: 100% !important;
+        margin: 20px 0px !important;
+        height: 50vh !important;
+    }
+    .getInvolvedPage h4
+    {
+        width: 100% !important;
+        margin: 0px !important;
+    }
+    .getInvolvedPage p
+    {
+        width: 100% !important;
+    }
+    .getInvolvedPage div
+    {
+        width: 89% !important;
+    }
+    .getInvolvedPage
+    {
+        width: 100% !important;
+        margin: 0px !important;
+    }
+    .bigShow
+    {
+        padding-top: 3vh !important;
+    }
+}
+

@@ -12,7 +12,11 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    margin-top: 100px;
+    margin-top: 0px;
+}
+#huesfx:hover
+{
+    text-decoration: underline !important;
 }
 .aboutUs .left h1
 {

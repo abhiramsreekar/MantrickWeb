@@ -212,7 +212,8 @@ align-items: center;
       #photos .photo img {
           width: 100%;
           margin: 5px 10px;
-          height: 21vw;
+
+          height: 30vw;
           cursor: pointer;
       }
        .showphoto .inner .img {

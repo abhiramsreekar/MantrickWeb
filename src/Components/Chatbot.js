@@ -27,10 +27,10 @@ export default function Chatbot() {
     const [captcha,setCaptcha] = useState("");
     const [showOtp, setShowOtp] = useState(false);
     const [loading, setLoading] = useState(false);
-    
 
-  const {ph,setPh,gpt,setGpt,gptState,setGptState}=useContext(context);
+  const {openSnackbar,setOpenSnackbar,snackbarMessage,snackbarSeverity,setSnackbarSeverity,showSnackbar,setSnackbarMessage,ph,setPh,gpt,setGpt,gptState,setGptState}=useContext(context);
   const Otp=({triggerNextStep,type})=>{
+
     const checkOtp=(e)=>{
       e.preventDefault();
       if(type==="call-back")
@@ -44,7 +44,7 @@ export default function Chatbot() {
     }
       return(
         <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">Otp:</label>
+            <label htmlFor="exampleInputPassword1" className="form-label">Otp:</label>
             <input type="text"  className="form-control otp" id="exampleInputPassword1" />
             <button type="submit"  onClick={checkOtp} className="btn btn-primary" >Submit</button>
         </div>
@@ -74,7 +74,6 @@ export default function Chatbot() {
           // User signed in successfully.
           const user = result.user;
           setUser(user);
-          alert(user)
           setLoading(false);
         })
         .catch((error) => {
@@ -85,8 +84,7 @@ export default function Chatbot() {
   function onSignup(id) {
     
     setLoading(true);
-    // onCaptchaVerify(id);
-    // alert(document.querySelector(".ss-phone-2").value);
+    onCaptchaVerify(id);
     const appVerifier = window.recaptchaVerifier;
     var phoneNumber;
     if(id==1)
@@ -97,17 +95,19 @@ export default function Chatbot() {
     {
       phoneNumber = "+91"+document.querySelector(".ss-phone-3").value;
     }
+    alert(phoneNumber);
     signInWithPhoneNumber(auth, phoneNumber, appVerifier)
     .then((confirmationResult) => {
       window.confirmationResult = confirmationResult;
       setLoading(false);
       setShowOtp(true);
-      toast.success("OTP Sended Sucessfully");
+      // toast.success("OTP Sended Sucessfully");
+      showSnackbar('OTP Sended Sucessfully!', 'success');
       setOtpbox("true");
     })
     .catch((error) => {
       setLoading(false);
-      alert("OTP not sent ");
+      showSnackbar('OTP Not Sent!', 'error');
       setEmail("");
         setPhone("");
         setName("");
@@ -128,13 +128,13 @@ export default function Chatbot() {
   const BrochureCard=(triggerNextStep)=>{
     
     return(
-            <div class="">
-              <div class="card" style={{width: "96%"}}>
-                    <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" class="card-img-top" alt="..." style={{width:"100%"}}/>
-                    <div class="card-body">
-                    <h5 class="card-title">Brochure </h5>
-                    <p class="card-text">Some quick example text to build on the card title .</p>
-                    <a href="https://google.com" target="_blank" class="btn btn-primary">Download brochure</a>
+            <div className="">
+              <div className="card" style={{width: "96%"}}>
+                    <img src="https://cdn.pixabay.com/photo/2015/06/30/08/07/lens-826308_1280.jpg" className="card-img-top" alt="..." style={{width:"100%"}}/>
+                    <div className="card-body">
+                    <h5 className="card-title">Brochure </h5>
+                    <p className="card-text">Some quick example text to build on the card title .</p>
+                    <a href="https://google.com" target="_blank" className="btn btn-primary">Download brochure</a>
                     </div>
                 </div>
             </div>
@@ -144,13 +144,17 @@ export default function Chatbot() {
 
 
   const onDowloadBrochure=(e)=>{
+    // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
     e.preventDefault();
     // alert(phone);
     var url = "https://api.ultramsg.com/instance74996/messages/chat";
     var data = {
       token: "nbridiw147r4ch9c",
       to: "+91"+phone,
-      body: JSON.stringify({"email":email,"msg":"WhatsApp API on UltraMsg.com works good "+name,"link":"https://google.com"})
+      body: JSON.stringify(`${name} Thank you for download our brochure, we look forward to talking to you!
+      Download our brochure-
+      https://drive.google.com/file/d/1v2JQvY40RLbKf8W8J3eyLH22d4ZYQenk/view
+      `)
     };
     // whatsapp msg sending
 
@@ -164,16 +168,17 @@ export default function Chatbot() {
       .then(response => response.json())
       .then(responseData => {
         console.log(responseData);
+        showSnackbar('Brochure details has been sent to Whatsapp', 'success');
         setBsubmit("s");
       })
       .catch(error => {
-        alert("msg not sent");
+        showSnackbar('Data Not Went Whatsapp', 'error');
         setBsubmit(null);
         console.error("Error:", error);
       });
 
       // Data sending to google sheets
-      fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85/mobile/${phone}`, {
+      fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806/mobile/${phone}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -185,7 +190,7 @@ export default function Chatbot() {
           if(JSON.stringify(responseData)==="[]")
           {
 
-            fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85`, {
+            fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806`, {
                   method: "POSt",
                   headers: {
                     "Content-Type": "application/json",
@@ -200,10 +205,12 @@ export default function Chatbot() {
         setBotp("");
         setEmailbox(null);
         setOtpbox(null);
+        showSnackbar('Details sent to your Whatsapp successfully', 'success');
           console.log("inner new inseted response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("Data has not been sent");
+          // alert("Data has not been sent");
+          showSnackbar('Data Has Not Been Sent', 'error');
           console.error("Error:", error);
            });
           }
@@ -220,7 +227,7 @@ export default function Chatbot() {
           console.log("response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("data  not sent to google sheet");
+          showSnackbar('data  not sent to database', 'error');
           console.error("Error:", error);
         });
         
@@ -232,7 +239,7 @@ export default function Chatbot() {
     var data = {
       token: "nbridiw147r4ch9c",
       to: "+91"+phone,
-      body: JSON.stringify(`Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${DateAndTime}`)
+      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${DateAndTime}`)
     };
     // whatsapp msg sending
 
@@ -242,20 +249,24 @@ export default function Chatbot() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
-    })
+    }
+    // ,{ mode: 'no-cors'}
+    )
       .then(response => response.json())
       .then(responseData => {
         console.log(responseData);
+        showSnackbar('Meeting details has been sent to Whatsapp', 'success');
         setBsubmit("s");
       })
       .catch(error => {
-        alert("msg not sent");
+        // alert("msg not sent");
+        showSnackbar('msg not sent', 'erro');
         setBsubmit(null);
         console.error("Error:", error);
       });
 
       // Data sending to google sheets
-      fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85/mobile/${phone}`, {
+      fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806/mobile/${phone}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -266,13 +277,12 @@ export default function Chatbot() {
         .then(responseData => {
           if(JSON.stringify(responseData)==="[]")
           {
-
-            fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85`, {
+            fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806`, {
                   method: "POSt",
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify(`Thank you for downloding our brochure, we look forward to talking to you!`),
+                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date()}),
         })
         .then(response => response.json())
         .then(responseData => {
@@ -282,16 +292,17 @@ export default function Chatbot() {
         setBotp("");
         setEmailbox(null);
         setOtpbox(null);
+        showSnackbar('Meeting Has Been Scheduled Successfully', 'success');
           console.log("inner new inseted response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("data  not sent to google sheet");
+          showSnackbar('Data  Not Submitted', 'error');
           console.error("Error:", error);
            });
           }
           else
           {
-            alert("we got user");
+            showSnackbar('Failed to schedule yor meet. ', 'error'); 
           }
           setEmail("");
         setPhone("");
@@ -302,7 +313,7 @@ export default function Chatbot() {
           console.log("response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("data  not sent to google sheet");
+          console.log("data  not sent to google sheet");
           console.error("Error:", error);
         });
         
@@ -324,11 +335,19 @@ export default function Chatbot() {
         toast.error(error.message);
       });
     }
+    function auto_popUp(){
+      setTimeout(()=>{
+        document.querySelector(".schedule-meet").style.display="flex";
+      },30000)
+    }
+    useEffect(()=>{
+      auto_popUp();
+    },[])
     return (
       <>
     {/* Download Brochure */}
     <div className='schedule-meet' >
-    <span class="material-symbols-outlined" onClick={()=>{
+    <span className="material-symbols-outlined" onClick={()=>{
       document.querySelector(".schedule-meet").style="none";
       document.querySelector(".back-2").style.display="none";
       }}>cancel</span>
@@ -337,47 +356,23 @@ export default function Chatbot() {
       <p>Please provide your contact information</p>
       <form>
       <div className='ss-box'>
-          <label for="ss-name" className="ss-label">Name:</label>
+          <label htmlFor="ss-name" className="ss-label">Name:</label>
           <input type="text" minLength={4} id="ss-name" name='ss-name' value={name} onChange={(e)=>{
               setName(e.target.value);
           }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
       <div className='ss-box'>
-          <label for="ss-name"  className="ss-label" 
+          <label htmlFor="ss-name"  className="ss-label" 
           >Ph.No:</label>
-          <input type="text" id="ss-name"  value={phone} onChange={(e)=>{
+          <input type="text" id="ss-name"  maxLength={10} value={phone} onChange={(e)=>{
             setPhone(e.target.value);
-            if(phone.length==9)
-            {
-                document.querySelector(".ss-phone-2").blur();
-                onSignup(1);
-            }
           }} className='ss-input ss-phone-2'  placeholder='Enter Phone Number'/>
         </div>
-        {
-          otpbox?
-          <>
-          <div className='ss-box otp'>
-            {
-              otpstatus?<p style={{marginLeft:"2vw",color:"red"}}>OTP entered is wrong</p>: <p style={{marginLeft:"2vw"}}>Enter OTP which was sent to your Mobile Number</p>
-            }
-            
-          <label for="ss-name" className="ss-label" style={{marginRight:"5px"}}>OTP:   </label>
-         
-          <input type="text" id="ss-name" value={Botp} onChange={(e)=>{
-            setBotp(e.target.value);
-          }} name='ss-name' className='ss-input' placeholder='Enter OTP'/>
-          <Button type='button' onClick={onOtpverify}>Verify</Button>
-          
-        </div>
-          </>
-        :<></>
-        }
         {
           !emailbox?
           <>
         <div className='ss-box'>
-        <label for="ss-name" className="ss-label">Email: </label>
+        <label htmlFor="ss-name" className="ss-label">Email: </label>
         <input type="email" id="ss-name" value={email} 
         onChange={(e)=>{
           setEmail(e.target.value);
@@ -387,20 +382,35 @@ export default function Chatbot() {
           </>
         :<></>
         }
-      <div className='ss-box button'>
-        <Button type='submit' onClick={onDowloadBrochure}>Download Brochure</Button>
         {
-          !Bsubmit?<p >by pressing this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green"}}>Brochure details sent to your whatsapp successfully</p>
-        }
+         !otpbox?      <div className='ss-box button'>
+         <Button type='submit' onClick={onDowloadBrochure}>Download Brochure</Button>
+         {
+           !Bsubmit?<p >by pressing this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green"}}>Brochure details sent to your whatsapp successfully</p>
+         }
+         </div>
+        :<>
+        
+        <div className='ss-box button'>
+        <Button type='button'  onClick={()=>{
+            onSignup(2);
+        }}>SEND OTP</Button>
         </div>
+        </>
+      }
       </form>
     </div>
     {/* schedule */}
     <div id="recaptcha-container2"  style={{display:"none"}} className="mt-6 recaptcha-container2"></div>
       <div id="recaptcha-container3"  style={{display:"none"}} className="mt-6 recaptcha-container3"></div>
-      <div className='back-2'></div>
+      <div className='back-2' onClick={()=>{
+      setPhone("");
+      document.querySelector(".back-2").style.display="none";
+      document.querySelector(".schedule-meet-o").style="none";
+      document.querySelector(".schedule-meet").style="none";
+    }}></div>
     <div className='schedule-meet schedule-meet-o' >
-    <span class="material-symbols-outlined" onClick={()=>{
+    <span className="material-symbols-outlined" onClick={()=>{
       setPhone("");
       document.querySelector(".back-2").style.display="none";
       document.querySelector(".schedule-meet-o").style="none";
@@ -409,46 +419,24 @@ export default function Chatbot() {
       <p>Please provide your contact information</p>
       <form>
       <div className='ss-box'>
-          <label for="ss-name" className="ss-label">Name:</label>
+          <label htmlFor="ss-name" className="ss-label">Name:</label>
           <input type="text" id="ss-name" name='ss-name'  value={name} onChange={(e)=>{
             setName(e.target.value);
           }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
       <div className='ss-box'>
-          <label for="ss-name" className="ss-label">Ph.No:</label>
-          <input type="text" id="ss-name2" name='ss-name' maxlength="10" value={phone} onChange={(e)=>{
+          <label htmlFor="ss-name" className="ss-label">Ph.No:</label>
+          <input type="text" id="ss-name3" name='ss-name' maxLength="10" value={phone} onChange={(e)=>{
             setPhone(e.target.value);
-            if(phone.length==9)
-            {
-                document.querySelector(".ss-phone-3").blur();
-                onSignup(2);
-            }
           }}
           className='ss-input ss-phone-3' placeholder='Enter Phone Number'/>
         </div>
-        {
-          otpbox?
-          <>
-          <div className='ss-box otp'>
-            {
-              otpstatus?<p style={{marginLeft:"2vw",color:"red"}}>OTP entered is wrong</p>: <p style={{marginLeft:"2vw"}}>Enter OTP which was sent to your Mobile Number</p>
-            }
-            
-          <label for="ss-name" className="ss-label" style={{marginRight:"5px"}}>OTP:   </label>
-          <input type="text" id="ss-name" value={Botp} onChange={(e)=>{
-            setBotp(e.target.value);
-          }} name='ss-name' className='ss-input' placeholder='Enter OTP'/>
-          <Button type='button' onClick={onOtpverify}>Verify</Button>
-        </div>
-          </>
-        :<></>
-        }
 
       {
-        emailbox?
+        !emailbox?
         <>
         <div className='ss-box'>
-        <label for="ss-name" className="ss-label">Email: </label>
+        <label htmlFor="ss-name" className="ss-label">Email: </label>
         <input type="email" id="ss-name" value={email} 
         onChange={(e)=>{
           setEmail(e.target.value);
@@ -458,7 +446,7 @@ export default function Chatbot() {
 
       <p>Please select date and time of visit</p>
       <div className='ss-box ss-date'>
-        <label for="birthdaytime"  className="ss-label">Date/Time:</label>
+        <label htmlFor="birthdaytime"  className="ss-label">Date/Time:</label>
         <input type="datetime-local" value={DateAndTime} onChange={(e)=>{
           setDateAndTime(e.target.value);
         }} id="birthdaytime" className='ss-input' name="birthdaytime"></input>
@@ -467,13 +455,22 @@ export default function Chatbot() {
           </>
         :<></>
       }
-        
-      <div className='ss-box button'>
+      {
+         !otpbox?<div className='ss-box button'>
         <Button type='button'  onClick={onScheduleSubmit}>Schedule Meet</Button>
         {
           Bsubmit?<p style={{color:"green"}}>by pressing this button, you are agreed to receive message on whatsapp</p>:<p>scheduled meeting confirmation details sent to your whatsapp successfully</p>
         }
+        </div>:<>
+        
+        <div className='ss-box button'>
+        <Button type='button'  onClick={()=>{
+            onSignup(2);
+        }}>SEND OTP</Button>
         </div>
+        </>
+      }
+      
       </form>
     </div>
     {
@@ -758,7 +755,7 @@ export default function Chatbot() {
         // {
         //   setGpt(true);
         // }
-      }} id="chatBot"  class="btn btn-primary"  style={{zIndex:9001}}>
+      }} id="chatBot"  className="btn btn-primary"  style={{zIndex:9001}}>
         <img id="chat1"  src={logo} alt="" style={{height:"50px",color:"white"}}/>
         <img id="chat2"   src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.png" alt="" style={{height:"60px"}}>
         </img></div>

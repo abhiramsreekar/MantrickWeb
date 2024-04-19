@@ -1,20 +1,25 @@
 import React from 'react'
 import './about2.css';
 import './About.css';
-import TPN from '../Images/TPN.png'
-import cubes from '../Images/3_cubes.JPG'
-import huesfx from '../Images/huesfx.JPG'
-import cubes2 from '../Images/cubes2.JPG'
-import effects from '../Images/effects.png';
-import eye from '../Images/eye.png';
-import arrow from '../Images/arrow.png';
-import image from '../Images/mantrick.png'
+import TPN from '../Images/about/mantrickstudios_tpn.webp'
+import cubes from '../Images/about/mantrickstudios_3_cubes.webp'
+import cubes2 from '../Images/about/mantrickstudios_cubes2.webp'
+import effects from '../Images/mantrickstudios_effects.png';
+import eye from '../Images/mantrickstudios_eye.png';
+import arrow from '../Images/mantrickstudios_arrow.png';
+import image from '../Images/mantrickstudios_logo.webp'
+import { useEffect } from 'react';
 export default function About2() {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
   return (
     <>
+    <div style={{height:"5vh"}}></div>
+<div className='about-route' style={{paddingTop:"15vh"}}>
 
             <h3 className='about-head head-one'>ABOUT COMPANY</h3>
-    <div class="aboutUs page" id="aboutUs">
+    <div className="aboutUs page" id="aboutUs">
         <div className='left'>
             <h3 className='text-blk heading' style={{fontSize:"35px"}}>BRINGING IMAGINATION ALIVE, ON SCREEN</h3>
             <div className='tabs'>
@@ -49,7 +54,7 @@ and knowledge necessary to excel in the competitive VFX landscape, ensuring they
                 <img src={effects}></img>
                 </div>
                 <div className='tabright'>
-                    <h3>HUES FX</h3>
+                    <h3>HUES FX  (<a id="huesfx" style={{textDecoration:"none",color:"white"}} href='https://huesfx.in/' target="_blank">huesfx.in</a>)</h3>
                     <p> Embark on a transformative journey with Hues FX, a dynamic joint venture born from the 
 evolution of Mantrick Studios' VFX production. Guided by Mathew Kemper, we specialize in elevating 
 visual effects production. Hues FX proudly holds the Trusted Partner Network (TPN) certification, 
@@ -59,22 +64,15 @@ redefining visual storytelling
                 </div>
             </div>
         </div>
-        {/* <div className='right'>
-            <img src='https://cdn.pixabay.com/photo/2015/11/17/18/59/architecture-1048092_640.jpg' alt='' id='img1'/>
-            <img src='https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849824_640.jpg' alt='' id='img2'/>
-            <img src='https://cdn.pixabay.com/photo/2017/08/05/13/06/girl-2583442_640.jpg' alt='' id='img3'/>
-        </div> */}
         <div className="responsive-container-block rightSide">
               <img className="number2img img1 aleft"src={cubes2}/>
-              {/* <img className="number3img img2 aleft" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/b245.png"/> */}
-              {/* <img className="number5img img3 aright" src="https://workik-widget-assets.s3.amazonaws.com/widget-assets/images/Customer supports.png"/> */}
-              {/* <iframe allowfullscreen="allowfullscreen aup" className="number4vid" src="https://www.youtube.com/embed/ePOglweqy7o?si=XPvzgauQKtzpfKXt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ></iframe> */}
               <img className="number4vid aright" src={image}/>
               <img className="number7img img4 aright" src={cubes}/>
               <img className="number6img img5 aright" src={TPN}/>
               <img className="number1img  img6 aleft" src={cubes}/>
             </div>
     </div>
+</div>
         
     </>
   )

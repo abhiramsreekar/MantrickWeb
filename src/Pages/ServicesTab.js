@@ -6,31 +6,18 @@ import i2 from '../Images/i2.png';
 import i3 from '../Images/i3.png';
 import i4 from '../Images/i4.png';
 import i6 from '../Images/i6.png';
-import i7 from '../Images/i7.png';
+import { useEffect } from 'react';
 export default function ServicesTab() {
+    useEffect(()=>{
+        window.scrollTo(0, 0);
+    },[])
   return (
-    <div>
+    <div id="servicesTabOuter_o" style={{paddingTop:"16vh"}}>
 
-    <div class="servicesTab page">
-            <h1 className="head-one">OUR SERVICES</h1>
+    <div class="servicesTab page" id="servicesTabOuter">
+            <h1 className="head-one" id="services-head">OUR SERVICES</h1>
         <div className='service1' id="servicesTab">
             <div className='inner'>
-            {/* <div className='tabs'>
-                    <span class="material-symbols-outlined">
-                        psychology
-                    </span>
-                <h3>VFX</h3>
-                <p>Recycling food and other organic waste into compost provides a range of environmental benefits, including improving soil health, reducing greenhouse gas emissions, recycling nutrients, and mitigating the impact of droughts.</p>
-                
-            </div>
-            <div className='tabs'>
-                    <span class="material-symbols-outlined">
-                        psychology
-                    </span>
-                <h3>ROTO/PAINT</h3>
-                <p>Recycling food and other organic waste into compost provides a range of environmental benefits, including improving soil health, reducing greenhouse gas emissions, recycling nutrients, and mitigating the impact of droughts.</p>
-
-            </div> */}
             <div className='tabs' id="tab">
                     <span class="icons">
                         <img src={i5} alt=''></img>

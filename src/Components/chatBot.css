@@ -266,16 +266,6 @@ display: none;
     background-color: black !important;
     color: white !important;
 }
-/* .rsc-header::before
-{
-    content: 'hello';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: aqua;
-    color: red;
-
-} */
 #bot .sc-bwzfXH
 {
     background-color: black !important;
@@ -454,7 +444,7 @@ button
     flex-direction: column;
     /* background-color: rgb(235, 235, 235); */
     left: 25vw;
-    top:25vh;
+    top:15vh;
     z-index: 10;
     display: flex;
     /* justify-content: center; */
@@ -474,16 +464,6 @@ button
         background-color:  rgb(255 255 255 / 29%);
     }
 }
-/* .schedule-meet .ss-box
-{
-    display: none;
-    animation: schedule2 2s;
-animation-fill-mode: forwards;
-} */
-/* .schedule-meet-o   .ss-date p
-{
-    font-size: 20px;
-} */
 .schedule-meet-o   .ss-date .ss-input
 {
     background: rgb(84, 84, 84);
@@ -511,20 +491,6 @@ animation-fill-mode: forwards;
 
     }
 }
-/* @keyframes schedule2 {
-    from
-    {
-        width: 0vw;
-        opacity: 0;
-        display: none;
-    }
-    to
-    {
-        opacity: 1;
-        display: flex;
-        width: 100%;
-    }
-} */
 .schedule-meet  form .button
 {
     display: flex;

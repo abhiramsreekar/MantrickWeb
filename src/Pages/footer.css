@@ -17,10 +17,6 @@
 {
     display: flex;
 }
-.footer .f
-{
-    margin: 10px 2px !important;
-}
 .footer 
 {
     display: flex;
@@ -117,12 +113,13 @@
 {
     color: white;
 }
-.footer .f3 .p p
+.footer .f1 .p p
 {
     font-size: 12px;
     font-weight: 200;
     font-family: sans-serif;
     margin: 1px;
+    padding-top: 8px;
     color: white;
 }
 .footer .f3 .map

@@ -1,16 +1,20 @@
 import React from 'react'
 import './courses.css'
-import roto from '../Images/Roto.jpeg';
-import paint from '../Images/paint.jpg';
-import mm from '../Images/mm.jpeg';
-import compo from '../Images/compo.jpeg';
+import roto from '../Images/courses/mantrickstudios_roto.webp';
+import paint from '../Images/courses/mantrickstudios_paint.webp';
+import d3 from '../Images/courses/mantrickstudios_3d.webp';
+import mm from '../Images/courses/mantrickstudios_mm.webp';
+import { useEffect } from 'react';
 export default function Courses() {
   var currentCard=1;
+  useEffect(()=>{
+   window.scrollTo(0, 0);
+},[])
   const courses=[
     {
       heading:"Roto (Rotoscoping)",
       content:"Roto, short for rotoscoping, is an indispensable technique in the film industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality and feathering for a seamless blend with the background. ",
-      duration:"6 Moths",
+      duration:"6 Months",
       p1:"Roto, short for rotoscoping, is an indispensable techniqueing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality and feathering for a seamless blend with the background. ",
       p2:"Roto, short for rotoscoping, is  in the film industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality."
     }
@@ -18,7 +22,7 @@ export default function Courses() {
     {
       heading:"Paint in VFX",
       content:"Paint in VFX is a fundamental tool for creating high-quality visual effects in the film, television, and media industries. Aspiring artists can develop their skills through courses, workshops, and by building a robust portfolio. Networking within the industry is crucial for discovering job opportunities and advancing in this dynamic field. Professionals in VFX paint utilize various techniques and industry-standard tools to enhance their creations. By staying updated on the latest trends and continuously building a strong network of contacts, individuals can carve out a successful and rewarding career in this exciting industry.",
-      duration:"4 Moths",
+      duration:"4 Months",
       p1:"Roto, short for rotoscoping, is an indispensable technique in the ftists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality and feathering for a seamless blend with the background. ",
       p2:"Roto, short for rotoscoping, is an inilm industry, allowing VFX artists to meticulously isolate objects in footage. This isolation facilitates seamless compositing onto various backgrounds, providing creators with extensive creative control over the final product. The process involves several techniques such as point tracking, where a point on the object is tracked for consistent motion, shape-based roto for irregular motion, and frame-by-frame roto for complex scenes. Despite its time-consuming nature, roto is crucial for achieving flawless integration of VFX elements into live-action sequences. Tips for effective roto work include starting with simple shapes, using appropriate tools like Bezier curves and tracking software, taking regular breaks to combat fatigue, and ensuring meticulous attention to edge quality."
  
@@ -58,8 +62,8 @@ export default function Courses() {
       p1:" Online courses offer flexibility and accessibility, allowing learners to study at their own pace and access course materials from anywhere. These programs often include video lectures, interactive assignments, and forums for discussion with instructors and fellow students. ",
       p2:"Both on-campus and online digital marketing courses typically span several months and are designed to equip participants with the skills necessary to navigate the digital marketing landscape effectively. They cover foundational concepts, the latest industry trends, and practical applications, preparing students for careers in various sectors, including e-commerce, advertising, media, and more."
  
-    }
-    ,
+   }
+   ,
     {
       heading:"UX/UI Design:      ",
       content:"Understanding the fundamentals of design principles and psychology.Learning tools and software commonly used in the industry, such as Sketch, Adobe XD, Figma, and InVision.Building a portfolio through practice projects, which is crucial for showcasing skills to potential employers or clients.",
@@ -67,11 +71,11 @@ export default function Courses() {
       p1:"Both online and on-campus options are available for learning UX/UI design, each offering unique advantages. Online courses can provide flexibility and convenience, while on-campus programs may offer more hands-on, collaborative experiences. ",
       p2:"UX/UI design is a rewarding and challenging field, combining creativity with practical problem-solving to improve the way people interact with technology and digital products."
  
-    }
+   }
   ];
   function active(e) {
-    if(currentCard===e.target.id)
-    return;
+     if(currentCard===e.target.id)
+     return;
     currentCard=e.target.id;
     // alert(courses[e.target.id].heading);
     document.getElementById('h1').innerHTML=courses[e.target.id-1].heading;
@@ -81,20 +85,24 @@ export default function Courses() {
     document.getElementById('time').innerHTML=courses[e.target.id-1].duration;
     setTimeout(()=>{
        document.getElementById("c1").style.display="block";
-   },100)
+      },100)
     let lists=document.querySelectorAll(".option").forEach(function(el) {
       el.classList.remove("active");
-    });
+   });
     e.target.classList.add("active");
     document.getElementById("c1").style.display="none";
-  }
-  return (
-   <>
-    <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center",marginTop:"0px"}}>
-      <h1 className='head-one' style={{textAlign:"center",marginTop:"100px",marginBottom:"50px"}}>TRAINING</h1>
+   }
+   return (
+      <>
+      {/* <video style={{display:"absolute",width:"100%"}} autoPlay muted loop id="myVideo"  src={Video} type="video/mp4" controls> 
+      </video> */}
+    <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center",marginTop:"0px",paddingTop:"5vh"}}>
+      <h1 className='head-one training-head' style={{textAlign:"center",marginTop:"100px",marginBottom:"50px"}} >TRAINING</h1>
       <h1 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px",width:"100%"}}>HERE ARE OUR COURSES</h1>
       <div className="options ">
-        <div className="option active option1" id="1" onMouseOver={active} style={{"--optionBackground":`url("${roto}")`}}>
+        <div className="option active option1" id="1" onMouseOver={active}
+         style={{"--optionBackground":`url("${roto}")`}}
+         >
            <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -104,9 +112,13 @@ export default function Courses() {
                  <div className="main">Roto (Rotoscoping)</div>
                  {/* <div className="sub">Omuke trughte a otufta</div> */}
               </div>
+                 {/* <video style={{position:"absolute",left:"0px",top:"0px",width:"100%",height:"100%"}} autoPlay muted loop id="myVideo"  src={Video} type="video/mp4"> 
+                  </video> */}
            </div>
           </div>
-          <div className="option option2" id="2" onMouseOver={active} style={{"--optionBackground":`url("${paint}")`}}>
+          <div className="option option2" id="2" onMouseOver={active}
+           style={{"--optionBackground":`url("${paint}")`}}
+           >
              <div className="shadow" style={{pointerEvents:"none"}}></div>
              <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -130,7 +142,9 @@ export default function Courses() {
               </div>
            </div>
         </div>
-        <div className="option option4" id="4" onMouseOver={active} >
+        <div className="option option4" id="4" onMouseOver={active}>
+        {/* <video style={{display:"absolute",width:"100%"}} muted loop id="myVideo"  src={Video} type="video/mp4">
+        </video> */}
           <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -142,7 +156,7 @@ export default function Courses() {
                 </div>
            </div>
           </div>
-        <div className="option option5" id="5" onMouseOver={active} style={{"--optionBackground":`url("${compo}")`}}>
+        <div className="option option5" id="5" onMouseOver={active} style={{"--optionBackground":`url("${d3}")`}}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -224,14 +238,6 @@ export default function Courses() {
                 </svg>
               </button>
             </section>
-            {/* <section id="toggle-overflow" style={{ display: "none" }}>
-              <h2>Overflow</h2>
-              <input id="toggle" type="checkbox" />
-              <label htmlFor="toggle">
-                <p id="on">ON</p>
-                <p id="off">OFF</p>
-              </label>
-            </section> */}
           </div>
         </div>
       </diV>
@@ -252,13 +258,15 @@ export default function Courses() {
       <p id="p1">
       {courses[0].content}
       </p>
-      <h4 className='heads'>Duration:<span id="time" style={{color:"white"}}>{courses[0].duration}</span></h4>
+      <h4 className='heads'>Duration: <span id="time" style={{color:"white"}}>{courses[0].duration}</span></h4>
+      <div style={{display:"none"}}>
       <h3 id="h2" className='heads'>On-Campus</h3>
       <p id="p2">
       {courses[0].p1}
       </p>
       <h3 id="h3" className='heads'>Online</h3>
       <p id="p3">{courses[0].p2}</p>
+         </div>
     </div>
    </div>
  </div>

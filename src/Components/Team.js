@@ -1,75 +1,28 @@
 import React from 'react'
 import './team.css'
+import team_1 from '../Images/mantrickstudios_team-3.webp';
+import team_2 from '../Images/mantrickstudios_team-2.webp';
+import { useEffect } from 'react';
 export default function Team() {
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+},[])
   return (
     <>
-
-    <div className='wrapper page team' id="team">
-        <h1 className='head-one'>MEET OUR TEAM</h1>
+    <div style={{height:"7vh"}}></div>
+    <div className='wrapper page team' id="team2" style={{marginTop:"0px",paddingTop:"15vh"}}>
+        <h1 className='head-one' id="teamId">MEET OUR TEAM</h1>
         <div className='tcards'>
         <div className='tcard'>
-            <img src='https://cdn.pixabay.com/photo/2018/11/08/23/52/man-3803551_640.jpg'/>
-            <h3 style={{position:"absolute",bottom:"-60px",color:"white",width:"100%",left:"0px"}}>Mr.Anil Kumar Telikepalli</h3>
-            <div className='info'>
-              <div className=''>
-            {/* <h8 ><strong>Mr.Anil Kumar Telikepalli</strong> </h8> */}
-                <p className='p'> Head of VFX Deparment</p>
-                <div className='socialIcons'>
-                    <ul> 
-                      <li>
-                        <a href="#">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span class="fa fa-facebook"></span>
-                        </a> 
-                      </li>
-                      {/* <li>
-                        <a href="#">
-                        <span></span>
-                        <span></span>
-                          <span></span>
-                          <span></span>
-                          <span class="fa fa-twitter"></span>
-                          </a> 
-                        </li> */}
-                      <li>
-                        <a href="#">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span class="fa fa-instagram"></span>
-                        </a> 
-                      </li>
-                      <li>
-                        <a href="#">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span class="fa fa-linkedin"></span>
-                        </a> 
-                      </li>
-                    </ul>  
-                </div> 
-                        <p className='teamdes' >
-                        "Avul Pakir Jainulabdeen Abdul Kalam BR (/bdəl kə; 15 October 193127 July 2015) was an Indian aerospace scientist and stat."
-                        </p>
-            </div>
-              </div>
-        </div>
-        <div className='tcard'>
-            <img src='https://cdn.pixabay.com/photo/2015/01/08/18/30/entrepreneur-593371_1280.jpg'/>
-            <h3 style={{position:"absolute",bottom:"-60px",color:"white",width:"100%",left:"0px"}}>Mr.Muneswara Rao</h3>
+            <img src={team_1}/>
+            <h3 style={{position:"absolute",bottom:"-60px",color:"white",width:"100%",left:"0px"}}>Mr. Muneswara Rao</h3>
             <div className='info'>
                 {/* <h8 ><strong> Mr.Muneswara Rao Tirumalla</strong> </h8> */}
                       <p className='p'> Head of VFX Deparment</p>
                 <div className='socialIcons'>
                     <ul> 
                       <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/mantrickstudios">
                           <span></span>
                           <span></span>
                           <span></span>
@@ -77,17 +30,8 @@ export default function Team() {
                           <span class="fa fa-facebook"></span>
                         </a> 
                       </li>
-                      {/* <li>
-                        <a href="#">
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span></span>
-                          <span class="fa fa-twitter"></span>
-                        </a> 
-                      </li> */}
                       <li>
-                        <a href="#">
+                        <a href="https://www.instagram.com/mantrick_studios">
                           <span></span>
                           <span></span>
                           <span></span>
@@ -96,7 +40,7 @@ export default function Team() {
                         </a> 
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/muneswara-rao-tirumalla-a268b216/" target="_blank" >
                           <span></span>
                           <span></span>
                           <span></span>
@@ -108,19 +52,21 @@ export default function Team() {
                       
                 </div> 
                 <p className='teamdes' >
-                        "Avul Pakir Jainulabdeen Abdul Kalam BR (/bdəl kə; 15 October 193127 July 2015) was an Indian aerospace scientist and stat."
+                        "Muneeshwar Tirumalla: Strategic CEO leading operations with innovation, efficiency, and collaboration."
                         </p>
             </div>
         </div>
-        {/* <div className='tcard'>
-            <img src='https://cdn.pixabay.com/photo/2015/01/08/18/30/man-593372_640.jpg'/>
+        <div className='tcard'>
+            <img src={team_2}/>
+            <h3 style={{position:"absolute",bottom:"-60px",color:"white",width:"100%",left:"0px"}}>Mr. Anil Kumar Telikepalli</h3>
             <div className='info'>
-            <h8 ><strong> Mountain</strong> </h8>
+              <div className=''>
+            {/* <h8 ><strong>Mr.Anil Kumar Telikepalli</strong> </h8> */}
                 <p className='p'> Head of VFX Deparment</p>
                 <div className='socialIcons'>
                     <ul> 
                       <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/mantrickstudios">
                           <span></span>
                           <span></span>
                           <span></span>
@@ -129,7 +75,7 @@ export default function Team() {
                         </a> 
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://www.instagram.com/mantrick_studios">
                           <span></span>
                           <span></span>
                           <span></span>
@@ -138,7 +84,7 @@ export default function Team() {
                         </a> 
                       </li>
                       <li>
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/anil-telikepalli-82b82416/" target="_blank">
                           <span></span>
                           <span></span>
                           <span></span>
@@ -148,11 +94,13 @@ export default function Team() {
                       </li>
                     </ul>  
                 </div> 
-                <p className='teamdes'>
-                        "Avul Pakir Jainulabdeen Abdul Kalam BR (/bdəl kə; 15 October 193127 July 2015) was an Indian aerospace scientist and stat."
+                        <p className='teamdes' >
+                        "Anil Kumar Telikepalli is a dynamic Chief Creative Officer (CCO)."
                         </p>
             </div>
-        </div> */}
+              </div>
+        </div>
+
       </div>
     </div>
     </>

@@ -1,10 +1,5 @@
 import './carousel.css'
 import {useState,useContext, useEffect} from 'react';
-import b1 from '../Images/banner1.jpg'
-import b2 from '../Images/banner2.jpg'
-import b3 from '../Images/banner3.jpg'
-import b4 from '../Images/banner4.jpg'
-import b5 from '../Images/banner5.jpg'
 import apiClient from "../firebase/apiClient";
 import context from '../context/useContext';
 export default function Carousel() {
@@ -101,8 +96,6 @@ export default function Carousel() {
       const fetchAllLandings = async () => {
         try {
           const response = await apiClient.get(`/landingpage.json`);
-          // return response;
-          // alert(JSON.stringify(response.data));
           setLandings(response.data);
           let c=0;
           Object.keys(response.data).forEach(key => {
@@ -116,7 +109,6 @@ export default function Carousel() {
       const eventIds = Object.keys(landings);
   return (
     <>
-      {/* <img src={lists[0].image}/> */}
     <div className="containerbox" id="first-landing">
         <div id="slide">
             {eventIds.map((eventId,i) => {
@@ -127,12 +119,9 @@ export default function Carousel() {
                 <div className="content">
                     <div className="name" >{event.title}</div>
                     <div className="des">{event.description}</div>
-                    {/* <button href={event.youtubeUrl}><a href={event.youtubeUrl} style={{textDecoration:"none"}} target="_blank">
-                      Open YouTube
-                      </a>
-                      </button> */}
                       <div style={{display:"flex"}} >
-                      <a href={event.youtubeUrl} target="_blank" style={{textDecoration:"none",color:"white"}} >
+                      <a href="https://youtu.be/mtrvpCRQ_Lc?si=u48931DN8-B1AT1Q" target="_blank" style={{textDecoration:"none",color:"white"}} >
+                      
                       <button className='carousel-button'> <span class="material-symbols-outlined">
                   play_circle
                   </span> 
@@ -150,16 +139,6 @@ export default function Carousel() {
           })}
 
         </div>
-        {/* <div className="buttons">
-            <button id="prev" onClick={right}><span class="material-symbols-outlined" nClick={left}>
-                        arrow_left_alt
-                  </span></button>
-                 |   
-            <button id="next" onClick={left}><span class="material-symbols-outlined" nClick={left}>
-                        arrow_right_alt
-            </span></button>
-              
-        </div> */}
     </div>
     </>
   )

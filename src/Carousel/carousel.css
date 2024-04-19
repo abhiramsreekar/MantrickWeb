@@ -1,6 +1,3 @@
-/* *{
-font-family: 'Lexend Deca', sans-serif;
-} */
 
 .containerbox::after
 {
@@ -35,9 +32,9 @@ font-family: 'Lexend Deca', sans-serif;
     display: flex;
 }
 .item{
-    width:10vw;
+    width:5vw;
     /* width:200px; */
-    height:30vh;
+    height:15vh;
     display: inline-block;
     transition: 0.5s;
     background-size: cover;
@@ -45,7 +42,7 @@ font-family: 'Lexend Deca', sans-serif;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 1;
-    top:73%;
+    top:87%;
     transform: translate(0,-50%);
     border-radius: 8px;
     box-shadow:  0 30px 50px #505050;
@@ -73,13 +70,25 @@ font-family: 'Lexend Deca', sans-serif;
     left:60%;
 }
 .item:nth-child(4){
-    left:calc(60% + 11vw);
+    left:calc(60% + 6vw);
 }
 .item:nth-child(5){
-    left:calc(60% + 22vw);
+    left:calc(60% + 12vw);
 }
-.item:nth-child(n+6){
-    left:calc(44% + 45vw);
+.item:nth-child(6){
+    left:calc(60% + 18vw);
+}
+.item:nth-child(7){
+    left:calc(60% + 24vw);
+}
+.item:nth-child(8){
+    left:calc(60% + 30vw);
+}
+.item:nth-child(9){
+    left:calc(60% + 36vw);
+}
+.item:nth-child(n+9){
+    left:calc(44% + 65vw);
     opacity: 0;
 }
 .item .content button{
@@ -243,7 +252,7 @@ font-family: 'Lexend Deca', sans-serif;
     
 }
 .item .content button{
-    background-color: #ffd61deb;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;

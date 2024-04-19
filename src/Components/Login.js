@@ -1,7 +1,4 @@
 import React, { useState,useEffect,useContext} from "react";
-// import Style from "../Auth/login.module.css";
-// import bgimg from "../Asset/Img/back.jpg";
-// import Twilio from 'twilio';
 import { BiSolidPhoneCall } from "react-icons/bi";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import PhoneInput from "react-phone-input-2";
@@ -13,6 +10,7 @@ import { Toaster, toast } from "react-hot-toast";
 import context from "../context/useContext";
 const Login = ({triggerNextStep,type}) => {
   const {ph,setPh,name,setName,msg,setMsg,email,setEmail}=useContext(context);
+  const {openSnackbar,setOpenSnackbar,snackbarMessage,snackbarSeverity,setSnackbarSeverity,showSnackbar,setSnackbarMessage}=useContext(context);
   useEffect(()=>{
     onSignup();
   },[])
@@ -42,12 +40,12 @@ const Login = ({triggerNextStep,type}) => {
       window.confirmationResult = confirmationResult;
       setLoading(false);
       setShowOtp(true);
-      toast.success("OTP Sended Sucessfully");
+      showSnackbar('OTP Sended Sucessfully!', 'success');
       // document.getElementById("recaptcha-container").style.display="none";
     })
     .catch((error) => {
       setLoading(false);
-      alert("Otp bot sent.");
+      showSnackbar('OTP Not Sent', 'error');
         toast.error(error.message);
       });
   }
@@ -60,12 +58,14 @@ const Login = ({triggerNextStep,type}) => {
         const user = result.user;
         setUser(user);
         setLoading(false);
-        alert(ph);
+        // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
         var url = "https://api.ultramsg.com/instance74996/messages/chat";
       var data = {
         token: "nbridiw147r4ch9c",
         to: "+91"+ph,
-        body: JSON.stringify({"email":email,"msg":"WhatsApp API on UltraMsg.com works good ","link":"https://google.com"})
+        body: JSON.stringify(`${name} Thank you for download our brochure, we look forward to talking to you!
+        Download our brochure-
+        https://drive.google.com/file/d/1v2JQvY40RLbKf8W8J3eyLH22d4ZYQenk/view`)
       };
       if(type==="brochure")
       {
@@ -81,16 +81,17 @@ const Login = ({triggerNextStep,type}) => {
             .then(response => response.json())
             .then(responseData => {
               console.log(responseData);
+              showSnackbar('Whatsapp Message Has Been Sent!', 'success');
              
             })
             .catch(error => {
-              alert("msg not sent");
+              showSnackbar('Whatsapp Message Not Sent!', 'error');
               console.error("Error:", error);
             });
 
           // data storing on google sheet
 
-          fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85/mobile/${ph}`, {
+          fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806/mobile/${ph}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +103,7 @@ const Login = ({triggerNextStep,type}) => {
           if(JSON.stringify(responseData)==="[]")
           {
 
-            fetch(`https://sheet.best/api/sheets/29cba8d3-cb7f-4c2a-923b-2a77bf108c85`, {
+            fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806`, {
                   method: "POSt",
                   headers: {
                     "Content-Type": "application/json",
@@ -117,13 +118,13 @@ const Login = ({triggerNextStep,type}) => {
           console.log("inner new inseted response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("data  not sent to google sheet");
+          showSnackbar('Failure!', 'error');
           console.error("Error:", error);
            });
           }
           else
           {
-            alert("we got user");
+            showSnackbar('Success!', 'success');
           }
           setEmail("");
         setPh("");
@@ -131,8 +132,8 @@ const Login = ({triggerNextStep,type}) => {
           console.log("response is:"+JSON.stringify(responseData));
         })
         .catch(error => {
-          alert("data  not sent to google sheet");
-          console.error("Error:", error);
+          // showSnackbar('Failure!', 'error');
+          console.log("Not updated in Google sheet");
         });
           triggerNextStep({trigger:"brochure"});
         }
@@ -144,7 +145,7 @@ const Login = ({triggerNextStep,type}) => {
       
       })
       .catch((error) => {
-        alert("OTP not correct");
+        showSnackbar('OTP Not Correct!', 'error');
         console.log(error.message);
         toast.error(error.message);
       });
@@ -177,7 +178,11 @@ const Login = ({triggerNextStep,type}) => {
                 ></OtpInput>
         <button
                     className="btn btn-primary mt-3 w-75 "
+                    // onClick={()=>{
+                    //   triggerNextStep({trigger:"book-call"});
+                    // }}
                     onClick={onOtpverify}
+                    
                   >Verify</button>
 
     </div>
