@@ -29,7 +29,6 @@ export default function Navbar3() {
             const navTrigger = document.querySelector('.navTrigger');
       navTrigger.addEventListener('click', function() {
           this.classList.toggle('active');
-          console.log("Clicked menu");
           const mainListDiv = document.getElementById('mainListDiv');
           mainListDiv.classList.toggle('show_list');
           fadeIn(mainListDiv);
@@ -54,14 +53,23 @@ export default function Navbar3() {
     }
    
     const marker=(e)=>{
+        if(window.innerWidth<=1048)
+        {
+            const navTrigger = document.querySelector('.navTrigger').classList.toggle('active');
+            const mainListDiv = document.getElementById('mainListDiv');
+            mainListDiv.classList.toggle('show_list');
+            fadeIn(mainListDiv);
+        }
+
         var mark=document.querySelector("#marker");
         mark.style.left=e.target.offsetLeft+"px";
         mark.style.width=e.target.offsetWidth+"px";
+        
     }
   return (
     <>
     <div className='navUp'>
-        <ul>
+        <ul style={{    margin:"auto 2px"}}>
             <li className='ul-1'>
                 <span>
                 <span class="material-symbols-outlined" style={{color:"red"}}>
@@ -89,6 +97,7 @@ export default function Navbar3() {
                 </span>
             </li>
                     <li className='ul-3' style={{cursor:"pointer"}} id='sh-meet'><a  className=''  onClick={(e)=>{
+                        document.querySelector(".back-2").style.display="flex";
                         if(window.innerWidth<=1000)
                         {
                             document.querySelector('.navTrigger').classList.toggle('active');
@@ -98,9 +107,6 @@ export default function Navbar3() {
                             fadeIn(mainListDiv);
                         }
                         
-                        var mark=document.querySelector("#marker");
-                        mark.style.left=e.target.offsetLeft+"px";
-                        mark.style.width=e.target.offsetWidth+"px";
                         
                         document.querySelector(".back-2").style.display="block";
                         document.querySelector(".schedule-meet").style.display="none";
@@ -124,16 +130,18 @@ export default function Navbar3() {
                 <ul className="navlinks ulm">
                     <div id='marker'></div>
                     <li>
-                        <Link to="/" id='first'  className='ul1 ul1'>Home</Link>
+                        <Link to="/" id='first'  className='ul1 ul1' onClick={marker}>Home</Link>
                     </li>
-                    <li><Link to="/about" className='ul1 ul2' id="#aboutUs1">About</Link></li>
-                    <li><Link to="/services" className='ul1 ul3'  id="#services-head3">Services</Link></li>
-                    <li><Link to="/training" className='ul1 ul4'   id="#courses1">Training</Link></li>
-                    <li><Link to="/team" className='ul1 ul5'   id="#team22">Team</Link></li>
+                    <li><Link to="/about" className='ul1 ul2' id="#aboutUs1" onClick={marker}>About</Link></li>
+                    <li><Link to="/services" className='ul1 ul3'  id="#services-head3" onClick={marker}>Services</Link></li>
+                    <li><Link to="/training" className='ul1 ul4'   id="#courses1" onClick={marker}>Training</Link></li>
+                    <li><Link to="/team" className='ul1 ul5'   id="#team22" onClick={marker} >Team</Link></li>
                     <li><Link to="/team" className='ul1 ul3' id="#team1"
                     //  onClick={portfolio}
+                    onClick={marker}
                     >Portfolio</Link></li>
                     <li><a href="#clients" className='ul22 ul6' onClick={(e)=>{
+                        document.querySelector(".back-2").style.display="flex";
                         if(window.innerWidth<=1000)
                         {
                             document.querySelector('.navTrigger').classList.toggle('active');
@@ -145,10 +153,10 @@ export default function Navbar3() {
                         document.querySelector(".schedule-meet").style.display="flex";
                     }}>Brochure</a></li>
                         <li>
-                        <Link to="/blogs" className='ul1 ul7' id="#footer1" >Blogs</Link>
+                        <Link to="/blogs" className='ul1 ul7' id="#footer1"  onClick={marker}>Blogs</Link>
                         </li>
                         <li>
-                        <Link to="/studentcorner" className='ul1 ul7' id="#footer1">Student Corner</Link>
+                        <Link to="/studentcorner" className='ul1 ul7' id="#footer1"  onClick={marker}>Student Corner</Link>
                         </li>
                 </ul>
             </div>

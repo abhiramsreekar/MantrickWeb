@@ -51,7 +51,7 @@ if(photos!=null)
               <section className="carousel student-carousel" >
               {photos?eventIds.reverse().map((eventId) => {
                   const event = photos[eventId];
-                  return ( <div className="carousel-item">
+                  return ( <div className="carousel-item student-carousel-item">
                         <img src={event.imageUrl} alt="Working" />
                       </div>
                   );

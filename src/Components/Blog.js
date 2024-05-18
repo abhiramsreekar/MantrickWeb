@@ -24,10 +24,9 @@ export default function Blog() {
   },[])
   return (
     <>
-      <div className='show blogShow' style={{paddingTop:"15vh",margin:"1px auto",width:"60%",backgroundColor:"black",zIndex:"9",display:"block",position:"relative"}} id="show">
+      <div className='show blogShow' style={{paddingTop:"20vh",margin:"1px auto",width:"60%",backgroundColor:"black",zIndex:"9",display:"block",position:"relative"}} id="show">
                     <div className='video' id="video" style={{width:"89vw"}}>
-                        <div className='exit'><span class="material-symbols-outlined">close</span>
-                        </div>
+                        
                         
                         {
                           realblog && realblog.length!=0 && <div className='getInvolvedPage' id="event" style={{height:"90vh",width:"100vw",overflowY:"scroll",paddingBottom:"5vh"}}>

@@ -12,6 +12,7 @@ import Training from './Components/Training';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Chatbot from './Components/Chatbot';
 import Home from './home'
+import Courses from './Pages/Courses';
 import Blog from './Components/Blog';
 import { useEffect } from 'react';
 function App() {
@@ -32,6 +33,7 @@ function App() {
       <Route path='/team' element={<Team />} />
       <Route path='/studentcorner' element={<StudentCorner />} />
       <Route path='/blog/:id' element={<Blog/>} />
+      <Route path='/courses' element={<Courses/>} />
       
       </Routes>
       <Footer/>

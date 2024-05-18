@@ -3,6 +3,10 @@ import './team.css'
 import team_1 from '../Images/mantrickstudios_team-3.webp';
 import team_2 from '../Images/mantrickstudios_team-2.webp';
 import { useEffect } from 'react';
+import facebook from '../Images/icons/facebook.png';
+import instagram from '../Images/icons/instagram.png';
+import twitter from '../Images/icons/twitter.png';
+import linkedin from '../Images/icons/linkedin.png';
 export default function Team() {
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -27,7 +31,9 @@ export default function Team() {
                           <span></span>
                           <span></span>
                           <span></span>
-                          <span class="fa fa-facebook"></span>
+                          <span>
+                          <img src={facebook} alt='facebook' style={{height:"40px",width:"40px",marginTop:"-4px",marginLeft:"-3px"}}/>
+                          </span>
                         </a> 
                       </li>
                       <li>
@@ -36,22 +42,28 @@ export default function Team() {
                           <span></span>
                           <span></span>
                           <span></span>
-                          <span class="fa fa-instagram"></span>
+                          <span>
+                          <img src={instagram} alt='facebook' style={{height:"40px",width:"40px",marginTop:"-4px",marginLeft:"-3px"}}/>
+                          </span>
                         </a> 
                       </li>
+                      
                       <li>
                         <a href="https://www.linkedin.com/in/muneswara-rao-tirumalla-a268b216/" target="_blank" >
                           <span></span>
                           <span></span>
                           <span></span>
                           <span></span>
-                          <span class="fa fa-linkedin"></span>
+                          <span>
+                          <img src={linkedin} alt='facebook' style={{height:"40px",width:"40px",marginTop:"-4px",marginLeft:"-3px"}}/>
+                          </span>
                         </a> 
                       </li>
                     </ul>
                       
                 </div> 
                 <p className='teamdes' >
+                
                         "Muneeshwar Tirumalla: Strategic CEO leading operations with innovation, efficiency, and collaboration."
                         </p>
             </div>
@@ -71,7 +83,9 @@ export default function Team() {
                           <span></span>
                           <span></span>
                           <span></span>
-                          <span class="fa fa-facebook"></span>
+                          <span>
+                          <img src={facebook} alt='facebook' style={{height:"40px",width:"40px",marginTop:"-4px",marginLeft:"-3px"}}/>
+                          </span>
                         </a> 
                       </li>
                       <li>
@@ -80,7 +94,9 @@ export default function Team() {
                           <span></span>
                           <span></span>
                           <span></span>
-                          <span class="fa fa-instagram"></span>
+                          <span>
+                          <img src={instagram} alt='facebook' style={{height:"40px",width:"40px",marginTop:"-4px",marginLeft:"-3px"}}/>
+                          </span>
                         </a> 
                       </li>
                       <li>
@@ -89,7 +105,9 @@ export default function Team() {
                           <span></span>
                           <span></span>
                           <span></span>
-                          <span class="fa fa-linkedin"></span>
+                          <span>
+                          <img src={linkedin} alt='facebook' style={{height:"40px",width:"40px",marginTop:"-4px",marginLeft:"-3px"}}/>
+                          </span>
                         </a> 
                       </li>
                     </ul>  

@@ -249,6 +249,10 @@
         height: auto;
         display: none;
     } */
+    .navUp ul
+    {
+        padding-left: 10px !important;
+    }
     .navUp ul li {
         padding-right: 2vw;
     }
@@ -256,7 +260,7 @@
 @media screen and (max-width:700px) {
     .navUp ul #sh-meet
     {
-        height: 5vh;
+        height: 5vh !important;
     }
     .navUp
     {

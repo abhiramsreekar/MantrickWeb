@@ -244,6 +244,6 @@ input:checked + label #off {
   max-width: 2030px;
 }
 
-.gallaryBox .carousel-item {
+.gallaryBox .student-carousel-item {
   animation: scroll linear 20s infinite;
 }

@@ -254,11 +254,11 @@ export default function Courses() {
          document.querySelector(".schedule-meet").style.display="flex";
       }}>Brochure</button>
       </div>
-      <h3 id="h1" className='heads'>{courses[0].heading}</h3>
+      <h3 id="h1" className='heads' style={{color:"red"}}>{courses[0].heading}</h3>
       <p id="p1">
       {courses[0].content}
       </p>
-      <h4 className='heads'>Duration: <span id="time" style={{color:"white"}}>{courses[0].duration}</span></h4>
+      <h4 className='heads' style={{color:"red"}}>Duration: <span id="time" style={{color:"white"}}>{courses[0].duration}</span></h4>
       <div style={{display:"none"}}>
       <h3 id="h2" className='heads'>On-Campus</h3>
       <p id="p2">

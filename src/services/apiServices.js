@@ -12,6 +12,15 @@ class ApiServices {
       return err.response;
     }
   };
+  fetchAllCorners = async () => {
+    try {
+      const response = await apiClient.get(`/studentcorner.json`);
+      return response;
+    } catch (err) {
+      console.error(`Error: ${err}`);
+      return err.response;
+    }
+  };
 
   fetchAllEvents = async () => {
     try {

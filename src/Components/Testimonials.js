@@ -53,9 +53,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card img">
                 <div className="card-body">
-                    <p className="review ">I have completed my Intensive course recently ,and it's great place if u really want to learn and go into VFX industry. Great faculty and 100% placemen. Best environment for upgrading your future</p>
+                    <p className="review ">{"I have completed my Intensive course recently ,and it's great place if u really want to learn and go into VFX industry. Great faculty and 100% placemen. Best environment for upgrading your future".slice(0,200)+"......"}</p>
                     <div className="rating">
-                    <p onClick={viewMore} id="0">View More</p>
+                    {/* <p onClick={viewMore} id="0">View More</p> */}
                         <img className='img star'  src={stare} alt=""/>
                         <img className='img star'  src={stare} alt=""/>
                         <img className='img star'  src={stare} alt=""/>
@@ -75,9 +75,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">Mantrick studios is great place for learning 3D animation & VFX. The faculty are very helpful and polite. After completing the class daily I am practicing  live projects and it will be helpful for my career growth. </p>
+                    <p className="review">{"Mantrick studios is great place for learning 3D animation & VFX. The faculty are very helpful and polite. After completing the class daily I am practicing  live projects and it will be helpful for my career growth.".slice(0,200)+"......"} </p>
                     <div className="rating">
-                    <p onClick={viewMore} id="1">View More</p>
+                    {/* <p onClick={viewMore} id="1">View More</p> */}
 						            <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
@@ -97,9 +97,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">It was my immense luck and fortune to be the part of Mantrick Studios where I can grow. The entire faculty and department leaves no stone unturned to shape every one's future. My professional course have been a wonderful experience of learning in VFX with prolific exposure to outside. </p>
+                    <p className="review">{"It was my immense luck and fortune to be the part of Mantrick Studios where I can grow. The entire faculty and department leaves no stone unturned to shape every one's future. My professional course have been a wonderful experience of learning in VFX with prolific exposure to outside.".slice(0,200)+"......"} </p>
                     <div className="rating">
-                    <p onClick={viewMore} id="2">View More</p>
+                    {/* <p onClick={viewMore} id="2">View More</p> */}
                     <img className='img     star'   src={stare} alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
@@ -119,9 +119,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">The best VFX training in Hyderabad, we had live project experience with faculty. The faculty was highly experienced more than 25yrs from VFX industry. </p>
+                    <p className="review">{"The best VFX training in Hyderabad, we had live project experience with faculty. The faculty was highly experienced more than 25yrs from VFX industry.".slice(0,200)+"......"} </p>
                     <div className="rating">
-                    <p onClick={viewMore} id="3">View More</p>
+                    {/* <p onClick={viewMore} id="3">View More</p> */}
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
@@ -141,9 +141,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">My experience is wonderful and I have learnt many tools which used to my career in Animation  & enjoyed my classes, and they helping us with live projects to our practice.</p>
+                    <p className="review">{"My experience is wonderful and I have learnt many tools which used to my career in Animation  & enjoyed my classes, and they helping us with live projects to our practice.".slice(0,200)+"......"} </p>
                     <div className="rating">
-                    <p onClick={viewMore} id="4">View More</p>
+                    {/* <p onClick={viewMore} id="4">View More</p> */}
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
@@ -162,9 +162,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">Mantrick is a great learning and experience with professional faculty. I started my career as a student now I'm working with production team. THANKS TO MANTRICK STUDIOS</p>
+                    <p className="review">{"Mantrick is a great learning and experience with professional faculty. I started my career as a student now I'm working with production team. THANKS TO MANTRICK STUDIOS".slice(0,200)+"......"} </p>
                     <div className="rating">
-                    <p onClick={viewMore} id="5">View More</p>
+                    {/* <p onClick={viewMore} id="5">View More</p> */}
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
@@ -183,9 +183,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">An excellent academy for career in VFX with multiple career opportunities in ever growing media and entertainment sector. Recently complted my Vfx course and got placed waiting for my big day to join.</p>
+                    <p className="review">{"An excellent academy for career in VFX with multiple career opportunities in ever growing media and entertainment sector. Recently complted my Vfx course and got placed waiting for my big day to join.".slice(0,200)+"......"}</p>
                     <div className="rating">
-                    <p onClick={viewMore} id="5">View More</p>
+                    {/* <p onClick={viewMore} id="5">View More</p> */}
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
@@ -194,7 +194,7 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className="https://lh3.googleusercontent.com/a/ACg8ocLOvWcWR0806jH4KXRSee35AidmjyZ05ysjqK0jNFSFjyA9PA=w75-h75-p-rp-mo-br100"  alt=""/>
+                    <img className='img client-img' src="https://lh3.googleusercontent.com/a/ACg8ocLOvWcWR0806jH4KXRSee35AidmjyZ05ysjqK0jNFSFjyA9PA=w75-h75-p-rp-mo-br100"  alt=""/>
                     <span className="client-name">Divya Lakshmi Kancharla</span>
                 </div>
             </div>
@@ -204,9 +204,9 @@ export default function Testimonials() {
                 <div className='back'></div>
                 <div className="card">
                 <div className="card-body">
-                    <p className="review">Best Institute for the best career , their teaching skills were interesting. Mantrick was one with good fame in the Animation industry..</p>
+                    <p className="review">{"Best Institute for the best career , their teaching skills were interesting. Mantrick was one with good fame in the Animation industry".slice(0,200)+"......"}</p>
                     <div className="rating">
-                    <p onClick={viewMore} id="5">View More</p>
+                    {/* <p onClick={viewMore} id="5">View More</p> */}
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
                         <img className='img star'  src={stare}  alt=""/>
@@ -215,7 +215,7 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className="https://lh3.googleusercontent.com/a-/ALV-UjU_TvBvFmKJiQL1U9hXkijxr_ZHJLpbmdCZaNfTFg3RkSGWSQ0=w75-h75-p-rp-mo-br100"  alt=""/>
+                    <img className='img client-img' src="https://lh3.googleusercontent.com/a-/ALV-UjU_TvBvFmKJiQL1U9hXkijxr_ZHJLpbmdCZaNfTFg3RkSGWSQ0=w75-h75-p-rp-mo-br100"  alt=""/>
                     <span className="client-name">srikanth alaparthi</span>
                 </div>
             </div>

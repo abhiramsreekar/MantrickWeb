@@ -1,6 +1,11 @@
 import React from 'react'
 import './footer.css';
 import logo from '../Images/mantrickstudios_logo.webp';
+import facebook from '../Images/icons/facebook.png';
+import instagram from '../Images/icons/instagram.png';
+import twitter from '../Images/icons/twitter.png';
+import youtube from '../Images/icons/youtube.png';
+import { Link } from 'react-router-dom';
 export default function Footer() {
   function fadeIn(element) {
     let opacity = 1;
@@ -27,10 +32,18 @@ export default function Footer() {
     <div className='f1 f'>
         <img src={logo} alt=''/>
         <div className='fabox' style={{paddingTop:"5px"}}>
-        <a target="_blank" href="https://www.facebook.com/mantrickstudios" class="fa fa-facebook"></a>
-        <a target="_blank" href="https://twitter.com/mantrickStudios" class="fa fa-twitter"></a>
-        <a target="_blank" href="https://www.instagram.com/mantrick_studios/" class="fa fa-instagram"></a>
-        <a target="_blank" href="https://www.youtube.com/@MANTRICKSTUDIOS" class="fa fa-youtube"></a>
+        <a target="_blank" href="https://www.facebook.com/mantrickstudios" >
+          <img src={facebook} alt='facebook' style={{height:"50px",width:"50px"}}/>
+        </a>
+        <a target="_blank" href="https://twitter.com/mantrickStudios" >
+        <img src={twitter} alt='facebook' style={{height:"50px",width:"50px"}}/>
+        </a>
+        <a target="_blank" href="https://www.instagram.com/mantrick_studios/">
+        <img src={instagram} alt='facebook' style={{height:"50px",width:"50px"}}/>
+        </a>
+        <a target="_blank" href="https://www.youtube.com/@MANTRICKSTUDIOS">
+        <img src={youtube} alt='facebook' style={{height:"50px",width:"50px"}}/>
+        </a>
         </div>
         <div className='p'>
             <p><strong className='underline'>Address:</strong></p>
@@ -46,9 +59,9 @@ export default function Footer() {
             <div className='f21'>
                 <p ><strong className='underline '> Quick Links</strong></p>
                 <div className='links'>
-                    <a href='#'>Home</a>
-                    <a href="#aboutUs">About us</a>
-                    <a style={{cursor:"pointer"}} onClick={(e)=>{
+                    <Link to='/' onClick={()=>{window.scrollTo(0, 0)}}>Home</Link>
+                    <Link to="/about">About us</Link>
+                    <Link style={{cursor:"pointer"}} onClick={(e)=>{
                         if(window.innerWidth<=1000)
                         {
                             document.querySelector('.navTrigger').classList.toggle('active');
@@ -63,9 +76,13 @@ export default function Footer() {
                         document.querySelector(".back-2").style.display="block";
                         document.querySelector(".schedule-meet").style.display="none";
                         document.querySelector(".schedule-meet-o").style.display="flex";
-                      }}>Meet Us</a>
+                      }}>Meet Us</Link>
                     <a href='#photos_o'>Our Works</a>
-                    <a href='#gallary'>Gallery</a>
+                    <Link  onClick={()=>{
+                      
+                      window.scrollTo(0,0);
+                    }}
+                    >Gallery</Link>
                     {/* <a href='#'>Chat</a> */}
                     <a  style={{cursor:"pointer"}} onClick={(e)=>{
                         if(window.innerWidth<=1000)
@@ -88,12 +105,12 @@ export default function Footer() {
             <div className='f22 f'>
                 <p ><strong className='underline '>Services</strong></p>
                 <div className='links'>
-                    <a href='#servicesTabOuter_o'>Roto</a>
-                    <a href='#servicesTabOuter_o'>Composting</a>
-                    <a href='#servicesTabOuter_o'>Vfx</a>
-                    <a href='#servicesTabOuter_o'>Paint</a>
-                    <a href='#servicesTabOuter_o'>Match Move</a>
-                    <a href='#servicesTabOuter_o'>3D</a>
+                    <Link to='/courses '>Roto</Link>
+                    <Link to='/courses '>Composting</Link>
+                    <Link to='/courses '>Vfx</Link>
+                    <Link to='/courses '>Paint</Link>
+                    <Link to='/courses '>Match Move</Link>
+                    <Link to='/courses '>3D</Link>
                 </div>
             </div>
             <div className='f21'></div>

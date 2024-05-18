@@ -7,13 +7,46 @@ export default function DateCompo({triggerNextStep}) {
   const {openSnackbar,setOpenSnackbar,snackbarMessage,snackbarSeverity,setSnackbarSeverity,showSnackbar,setSnackbarMessage}=useContext(context);
     const [date, setDate] = useState("");
     const submitDate=(e)=>{
+
+
+      const da=new Date(date);
+    let hours = da.getHours();
+    const minutes = da.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    // Convert hours from 24-hour format to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    
+    // Format minutes to be two digits
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    
+    // Create the formatted date string
+    const formattedDate = `${da.toLocaleDateString()} ${hours}:${minutesStr} ${ampm}`;
+
+    const da2=new Date();
+    let hours2 = da2.getHours();
+    const minutes2 = da2.getMinutes();
+    const ampm2 = hours2 >= 12 ? 'PM' : 'AM';
+    
+    // Convert hours from 24-hour format to 12-hour format
+    hours2 = hours2 % 12;
+    hours2 = hours2 ? hours2 : 12; // the hour '0' should be '12'
+    
+    // Format minutes to be two digits
+    const minutesStr2 = minutes2 < 10 ? '0' + minutes2 : minutes2;
+    
+    // Create the formatted date string
+    const formattedDate2 = `${da2.toLocaleDateString()} ${hours2}:${minutesStr2} ${ampm2}`;
+
+
       e.preventDefault();
       // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
-      var url = "https://api.ultramsg.com/instance74996/messages/chat";
+      var url = "https://api.ultramsg.com/instance86007/messages/chat";
     var data = {
-      token: "nbridiw147r4ch9c",
+      token: "nexiu3b9pflmtg98",
       to: "+91"+ph,
-      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${date}`)
+      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${formattedDate}`)
     };
     fetch(url, {
       // mode: 'no-cors',
@@ -35,24 +68,24 @@ export default function DateCompo({triggerNextStep}) {
       
       // data storing on google sheets
 
-      fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806/mobile/${ph}`, {
+      fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb/mobile/${ph}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({name:name,"email":email,mobile:ph,date:new Date(),meeting:date}),
+        body: JSON.stringify({name:name,"email":email,mobile:ph,date:formattedDate2,meeting:formattedDate}),
       })
         .then(response => response.json())
         .then(responseData => {
           if(JSON.stringify(responseData)==="[]")
           {
 
-            fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806`, {
+            fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb`, {
                   method: "POSt",
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify({name:name,"email":email,mobile:ph,date:new Date(),meeting:date}),
+                  body: JSON.stringify({name:name,"email":email,mobile:ph,date:formattedDate2,meeting:formattedDate}),
         })
         .then(response => response.json())
         .then(responseData => {

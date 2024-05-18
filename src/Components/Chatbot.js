@@ -144,12 +144,26 @@ export default function Chatbot() {
 
 
   const onDowloadBrochure=(e)=>{
+    const da=new Date();
+    let hours = da.getHours();
+    const minutes = da.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    // Convert hours from 24-hour format to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    
+    // Format minutes to be two digits
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    
+    // Create the formatted date string
+    const formattedDate = `${da.toLocaleDateString()} ${hours}:${minutesStr} ${ampm}`;
     // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
     e.preventDefault();
     // alert(phone);
-    var url = "https://api.ultramsg.com/instance74996/messages/chat";
+    var url = "https://api.ultramsg.com/instance86007/messages/chat";
     var data = {
-      token: "nbridiw147r4ch9c",
+      token: "nexiu3b9pflmtg98",
       to: "+91"+phone,
       body: JSON.stringify(`${name} Thank you for download our brochure, we look forward to talking to you!
       Download our brochure-
@@ -178,30 +192,31 @@ export default function Chatbot() {
       });
 
       // Data sending to google sheets
-      fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806/mobile/${phone}`, {
+      fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb/mobile/${phone}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date(),meeting:"not yet"}),
+        body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate+" "+(new Date()).toString().slice(12,16),meeting:"not yet"}),
       })
         .then(response => response.json())
         .then(responseData => {
           if(JSON.stringify(responseData)==="[]")
           {
 
-            fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806`, {
+            fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb`, {
                   method: "POSt",
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date(),meeting:"not yet"}),
+                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate,meeting:"not yet"}),
         })
         .then(response => response.json())
         .then(responseData => {
           setEmail("");
         setPhone("");
         setName("");
+        setBsubmit(null);
         setBotp("");
         setEmailbox(null);
         setOtpbox(null);
@@ -222,6 +237,7 @@ export default function Chatbot() {
         setPhone("");
         setName("");
         setBotp("");
+        setBsubmit(null);
         setEmailbox(null);
         setOtpbox(null);
           console.log("response is:"+JSON.stringify(responseData));
@@ -234,12 +250,42 @@ export default function Chatbot() {
         
   }
   const onScheduleSubmit=(e)=>{
+    const da=new Date(DateAndTime);
+    let hours = da.getHours();
+    const minutes = da.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    // Convert hours from 24-hour format to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    
+    // Format minutes to be two digits
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    
+    // Create the formatted date string
+    const formattedDate = `${da.toLocaleDateString()} ${hours}:${minutesStr} ${ampm}`;
+
+    const da2=new Date();
+    let hours2 = da2.getHours();
+    const minutes2 = da2.getMinutes();
+    const ampm2 = hours2 >= 12 ? 'PM' : 'AM';
+    
+    // Convert hours from 24-hour format to 12-hour format
+    hours2 = hours2 % 12;
+    hours2 = hours2 ? hours2 : 12; // the hour '0' should be '12'
+    
+    // Format minutes to be two digits
+    const minutesStr2 = minutes2 < 10 ? '0' + minutes2 : minutes2;
+    
+    // Create the formatted date string
+    const formattedDate2 = `${da2.toLocaleDateString()} ${hours2}:${minutesStr2} ${ampm2}`;
+
     e.preventDefault();
-    var url = "https://api.ultramsg.com/instance74996/messages/chat";
+    var url = "https://api.ultramsg.com/instance86007/messages/chat";
     var data = {
-      token: "nbridiw147r4ch9c",
+      token: "nexiu3b9pflmtg98",
       to: "+91"+phone,
-      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${DateAndTime}`)
+      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${formattedDate}`)
     };
     // whatsapp msg sending
 
@@ -266,28 +312,29 @@ export default function Chatbot() {
       });
 
       // Data sending to google sheets
-      fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806/mobile/${phone}`, {
+      fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb/mobile/${phone}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date()}),
+        body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate2,meeting:formattedDate}),
       })
         .then(response => response.json())
         .then(responseData => {
           if(JSON.stringify(responseData)==="[]")
           {
-            fetch(`https://sheet.best/api/sheets/9f32ac99-3673-4bfb-81bc-6452c996d806`, {
+            fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb`, {
                   method: "POSt",
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:new Date()}),
+                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate2,meeting:formattedDate}),
         })
         .then(response => response.json())
         .then(responseData => {
           setEmail("");
         setPhone("");
+        setBsubmit(null);
         setName("");
         setBotp("");
         setEmailbox(null);
@@ -308,6 +355,7 @@ export default function Chatbot() {
         setPhone("");
         setName("");
         setBotp("");
+        setBsubmit(null);
         setEmailbox(null);
         setOtpbox(null);
           console.log("response is:"+JSON.stringify(responseData));
@@ -338,7 +386,8 @@ export default function Chatbot() {
     function auto_popUp(){
       setTimeout(()=>{
         document.querySelector(".schedule-meet").style.display="flex";
-      },30000)
+        document.querySelector(".back-2").style.display="block";
+      },15000)
     }
     useEffect(()=>{
       auto_popUp();
@@ -359,6 +408,7 @@ export default function Chatbot() {
           <label htmlFor="ss-name" className="ss-label">Name:</label>
           <input type="text" minLength={4} id="ss-name" name='ss-name' value={name} onChange={(e)=>{
               setName(e.target.value);
+              
           }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
       <div className='ss-box'>
@@ -386,7 +436,7 @@ export default function Chatbot() {
          !otpbox?      <div className='ss-box button'>
          <Button type='submit' onClick={onDowloadBrochure}>Download Brochure</Button>
          {
-           !Bsubmit?<p >by pressing this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green"}}>Brochure details sent to your whatsapp successfully</p>
+           !Bsubmit?<p  style={{color:"white"}}>by pressing this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green",background:"white"}}>Brochure details sent to your whatsapp successfully</p>
          }
          </div>
         :<>

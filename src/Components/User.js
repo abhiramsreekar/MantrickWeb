@@ -25,7 +25,7 @@ return (
     {/* <h3 class="fs-subtitle">This is step 1</h3> */}
     <input type="email" onChange={(e)=>{ setEmail(e.target.value)}} name="email" placeholder="Email" />
     <input type="text" onChange={(e)=>{ setName(e.target.value)}} name="name" placeholder="Full Name" />
-    <textarea name="address" onChange={(e)=>{ setMsg(e.target.value)}} placeholder="Enter message"></textarea>
+    {/* <textarea name="address" onChange={(e)=>{ setMsg(e.target.value)}} placeholder="Enter message"></textarea> */}
     <input type="text" onChange={(e)=>{ setPh(e.target.value)}} name="ph" maxLength={10} placeholder="Phone Number" />
     <input type="submit" name="next" onClick={otp} class="next action-button" value="Next" />
   </fieldset>

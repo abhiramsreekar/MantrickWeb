@@ -11,7 +11,11 @@ import Testimonials from './Components/Testimonials';
 import Mystudents from './Components/Mystudents';
 import Services from './Pages/Services';
 import Footer from './Pages/Footer';
+import { useEffect } from 'react';
 export default function Home() {
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   return (
     <div className="App">
     
