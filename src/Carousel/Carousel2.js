@@ -9,7 +9,7 @@ function Carousel2() {
     fetchAllLandings();
   },[])
   useEffect(()=>{
-    // scrolling();
+    scrolling();
     
   },[])
   const [total,setTotal]=useState(null);

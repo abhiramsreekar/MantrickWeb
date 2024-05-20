@@ -34,6 +34,7 @@ function App() {
       <Route path='/studentcorner' element={<StudentCorner />} />
       <Route path='/blog/:id' element={<Blog/>} />
       <Route path='/courses' element={<Courses/>} />
+      <Route path='/*' element={<Home/>} />
       
       </Routes>
       <Footer/>

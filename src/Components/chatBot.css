@@ -242,7 +242,7 @@ display: none;
     width: 90vw !important;
     left: 4vw !important;
     top: 10vh !important;
-    height: 80vh !important;
+    /* height: 80vh !important; */
     overflow-y: scroll !important;
   }
 .KChAP {

@@ -13,6 +13,17 @@
     width: 30%;
     flex-direction: column;
 }
+.footer .f1  .fabox 
+{
+    display: flex;
+    align-items: center;
+}
+.footer .f1  .fabox img
+{
+    width: 40px !important;
+    height: 40px !important;
+    margin: 2px 5px ;
+}
 .footer .f1,.f2,.f3
 {
     display: flex;
@@ -95,6 +106,7 @@
 .footer .f2
 {
     display: flex;
+    padding: 18px 1px;
     flex-direction: row;
     color: white;
     justify-content: space-around;
