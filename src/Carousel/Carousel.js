@@ -110,6 +110,7 @@ export default function Carousel() {
   return (
     <>
     <div className="containerbox" id="first-landing">
+      
         <div id="slide">
             {eventIds.map((eventId,i) => {
             const event = landings[eventId];

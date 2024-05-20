@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Testimonials.css"
 import starf from '../Images/starf.png';
 import starh from '../Images/star-half.png';
@@ -10,8 +10,10 @@ import t3 from '../Images/testimonal/t3.jpeg';
 import t4 from '../Images/testimonal/t4.jpeg';
 import t5 from '../Images/testimonal/t5.jpeg';
 import t6 from '../Images/testimonal/t6.jpeg';
+import apiClient from '../firebase/apiClient';
 export default function Testimonials() {
       useEffect(() => {
+        fetchAllLandings();
         let leftArrows = document.getElementsByClassName("left-arrow");
         let rightArrows = document.getElementsByClassName("right-arrow");
         let carousels = document.getElementsByClassName("carousel");
@@ -35,6 +37,17 @@ export default function Testimonials() {
         document.querySelectorAll(".review")[parseInt(e.target.id)].style.overflowY="scroll";
         // e.target.style.overflowY="scroll";
       }
+      const [landings,setLandings]=useState([]);
+      const fetchAllLandings = async () => {
+        try {
+          const response = await apiClient.get(`/testimonials.json`);
+          setLandings(response.data);
+        } catch (err) {
+          console.error(`Error: ${err}`);
+        }
+      };
+      const stars=[1,2,3,4,5];
+      const eventIds = Object.keys(landings);
       return (
         <>
             <diV className="testimonial page pages" id="gallary">
@@ -48,178 +61,53 @@ export default function Testimonials() {
                 </svg>
               </button>
               <section className="carousel wrapper">
-                <div className="carousel-item"
+              {eventIds.map((eventId,i) => {
+            const event = landings[eventId];
+            return (
+              <div className="carousel-item"
                  >
                 <div className='back'></div>
                 <div className="card img">
                 <div className="card-body">
-                    <p className="review ">{"I have completed my Intensive course recently ,and it's great place if u really want to learn and go into VFX industry. Great faculty and 100% placemen. Best environment for upgrading your future".slice(0,200)+"......"}</p>
+                    <p className="review ">{event.description.slice(0,200)+"......"}</p>
                     <div className="rating">
-                    {/* <p onClick={viewMore} id="0">View More</p> */}
-                        <img className='img star'  src={stare} alt=""/>
-                        <img className='img star'  src={stare} alt=""/>
-                        <img className='img star'  src={stare} alt=""/>
-                        <img className='img star'  src={stare} alt=""/>
-                        <img className='img star'  src={stare} alt=""/>
+                        {/* {
+                          stars.map((el,i)=>{
+                            if((i+2)<=event.youtubeUrl)
+                            {
+                             return <img className='img star'  src={stare} alt=""/>
+                            }
+                          })
+                        } */}
+                        {
+                          event.youtubeUrl>=1?<img className='img star'  src={stare} alt=""/>:<img className='img star'  src={staro} alt=""/>
+                        }
+                        {
+                          event.youtubeUrl>=2?<img className='img star'  src={stare} alt=""/>:<img className='img star'  src={staro} alt=""/>
+                        }
+                        {
+                          event.youtubeUrl>=3?<img className='img star'  src={stare} alt=""/>:<img className='img star'  src={staro} alt=""/>
+                        }
+                        {
+                          event.youtubeUrl>=4?<img className='img star'  src={stare} alt=""/>:<img className='img star'  src={staro} alt=""/>
+                        }
+                        {
+                          event.youtubeUrl>=5?<img className='img star'  src={stare} alt=""/>:<img className='img star'  src={staro} alt=""/>
+                        }
                     </div>
                 </div>
                 <div className="card-thumb">
                     <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjUzD_kWPwmBsztbQ_z8j5poPv_qJGyzL14WKDI67eU8O_kfUYhoQQ=w75-h75-p-rp-mo-br100" alt=""/>
-                    <span className="client-name">Sai Teja</span>
+                    <span className="client-name">{event.title}</span>
                 </div>
             </div>
                 </div>
-                <div className="carousel-item" 
-                // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
-                >
-                <div className='back'></div>
-                <div className="card">
-                <div className="card-body">
-                    <p className="review">{"Mantrick studios is great place for learning 3D animation & VFX. The faculty are very helpful and polite. After completing the class daily I am practicing  live projects and it will be helpful for my career growth.".slice(0,200)+"......"} </p>
-                    <div className="rating">
-                    {/* <p onClick={viewMore} id="1">View More</p> */}
-						            <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                    </div>
-                </div>
-                <div className="card-thumb">
-                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjVedbetLV1psmqIY1KbHfWbWqbCzKLTQJE9BdzK6gKu2PwKUmMG=w75-h75-p-rp-mo-br100" alt=""/>
-                    <span className="client-name">Nadiminti Balamurali</span>
-                </div>
-            </div>
-                </div>
-                <div className="carousel-item"
-                //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2016/11/21/14/53/man-1845814_640.jpg')`}}
-                 >
-                <div className='back'></div>
-                <div className="card">
-                <div className="card-body">
-                    <p className="review">{"It was my immense luck and fortune to be the part of Mantrick Studios where I can grow. The entire faculty and department leaves no stone unturned to shape every one's future. My professional course have been a wonderful experience of learning in VFX with prolific exposure to outside.".slice(0,200)+"......"} </p>
-                    <div className="rating">
-                    {/* <p onClick={viewMore} id="2">View More</p> */}
-                    <img className='img     star'   src={stare} alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                    </div>
-                </div>
-                <div className="card-thumb">
-                    <img className='img client-img'  src={t3} alt=""/>
-                    <span className="client-name">Senbaga Rajan Muthu</span>
-                </div>
-            </div>
-                </div>
-                <div className="carousel-item"
-                //  style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
-                 >
-                <div className='back'></div>
-                <div className="card">
-                <div className="card-body">
-                    <p className="review">{"The best VFX training in Hyderabad, we had live project experience with faculty. The faculty was highly experienced more than 25yrs from VFX industry.".slice(0,200)+"......"} </p>
-                    <div className="rating">
-                    {/* <p onClick={viewMore} id="3">View More</p> */}
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                    </div>
-                </div>
-                <div className="card-thumb">
-                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjXzo3QSyAiKA4PDzMj33aO8dWlbmeRm8KubF43nEnTQtE2hpe2j=w75-h75-p-rp-mo-br100"  alt=""/>
-                    <span className="client-name">anil kumar</span>
-                </div>
-            </div>
-                </div>
-                <div className="carousel-item" 
-                // style={{backgroundImage:`url('https://cdn.pixabay.com/photo/2017/08/10/06/58/cup-2619216_640.jpg')`}}
-                >
-                <div className='back'></div>
-                <div className="card">
-                <div className="card-body">
-                    <p className="review">{"My experience is wonderful and I have learnt many tools which used to my career in Animation  & enjoyed my classes, and they helping us with live projects to our practice.".slice(0,200)+"......"} </p>
-                    <div className="rating">
-                    {/* <p onClick={viewMore} id="4">View More</p> */}
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                    </div>
-                </div>
-                <div className="card-thumb">
-                    <img className='img client-img'  src="https://lh3.googleusercontent.com/-Kqh_ReY0pvY/AAAAAAAAAAI/AAAAAAAAAAA/s6uS5oeiH7M/w70-h70-p/photo.jpg" alt=""/>
-                    <span className="client-name">digital swetha</span>
-                </div>
-            </div>
-                </div>
-          <div className="carousel-item" 
-                >
-                <div className='back'></div>
-                <div className="card">
-                <div className="card-body">
-                    <p className="review">{"Mantrick is a great learning and experience with professional faculty. I started my career as a student now I'm working with production team. THANKS TO MANTRICK STUDIOS".slice(0,200)+"......"} </p>
-                    <div className="rating">
-                    {/* <p onClick={viewMore} id="5">View More</p> */}
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                    </div>
-                </div>
-                <div className="card-thumb">
-                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjUhRn6_0Cl8DddrNDDQwwj58HgiZUzIW8IJPJHggUk1VF_a97JZ=w75-h75-p-rp-mo-br100"  alt=""/>
-                    <span className="client-name">VENU</span>
-                </div>
-            </div>
-          </div>
-          <div className="carousel-item" 
-                >
-                <div className='back'></div>
-                <div className="card">
-                <div className="card-body">
-                    <p className="review">{"An excellent academy for career in VFX with multiple career opportunities in ever growing media and entertainment sector. Recently complted my Vfx course and got placed waiting for my big day to join.".slice(0,200)+"......"}</p>
-                    <div className="rating">
-                    {/* <p onClick={viewMore} id="5">View More</p> */}
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                    </div>
-                </div>
-                <div className="card-thumb">
-                    <img className='img client-img' src="https://lh3.googleusercontent.com/a/ACg8ocLOvWcWR0806jH4KXRSee35AidmjyZ05ysjqK0jNFSFjyA9PA=w75-h75-p-rp-mo-br100"  alt=""/>
-                    <span className="client-name">Divya Lakshmi Kancharla</span>
-                </div>
-            </div>
-          </div>
-          <div className="carousel-item" 
-                >
-                <div className='back'></div>
-                <div className="card">
-                <div className="card-body">
-                    <p className="review">{"Best Institute for the best career , their teaching skills were interesting. Mantrick was one with good fame in the Animation industry".slice(0,200)+"......"}</p>
-                    <div className="rating">
-                    {/* <p onClick={viewMore} id="5">View More</p> */}
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                        <img className='img star'  src={stare}  alt=""/>
-                    </div>
-                </div>
-                <div className="card-thumb">
-                    <img className='img client-img' src="https://lh3.googleusercontent.com/a-/ALV-UjU_TvBvFmKJiQL1U9hXkijxr_ZHJLpbmdCZaNfTFg3RkSGWSQ0=w75-h75-p-rp-mo-br100"  alt=""/>
-                    <span className="client-name">srikanth alaparthi</span>
-                </div>
-            </div>
-          </div>
+            );
+          })}
+
+
+                
+               
               </section>
               <button type="button" className="arrows right-arrow" aria-label="Arrow Right">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
