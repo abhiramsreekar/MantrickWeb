@@ -145,6 +145,12 @@
     background-color: white;
     
 }
+.outerfooter .footer .f1 .fabox img
+{
+    width: 25px !important;
+    height: 25px !important;
+    padding-right:10px !important;
+}
 .outerfooter .footer .f1 .fabox .fa-facebook:hover
 {
     color: white;
