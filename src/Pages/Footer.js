@@ -50,7 +50,7 @@ export default function Footer() {
             <p>Sixth floor, 3 Cube Towers, White Field Rd,</p>
             <p>Whitefields, HITEC City,</p>
             <p>Hyderabad, Telangana 500081.</p>
-            <p>Phone: +91 9052000230</p>
+            <p>Phone: +91 9052000230,+91 7993338242</p>
             <p>Mail us: muneswar@mantrickstudios.com, anil@mantrickstudios.com</p>
             {/* <p>muneswar@mantrickstudios.com</p> */}
             </div>
