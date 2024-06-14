@@ -97,7 +97,7 @@ export default function Testimonials() {
                     </div>
                 </div>
                 <div className="card-thumb">
-                    <img className='img client-img'  src="https://lh3.googleusercontent.com/a-/ALV-UjUzD_kWPwmBsztbQ_z8j5poPv_qJGyzL14WKDI67eU8O_kfUYhoQQ=w75-h75-p-rp-mo-br100" alt=""/>
+                    <img className='img client-img'  src={event.imageUrl} alt=""/>
                     <span className="client-name">{event.title}</span>
                 </div>
             </div>
