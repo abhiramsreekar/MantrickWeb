@@ -1,59 +1,28 @@
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import Newcard from '../Components/Newcard'
 import './Clients.css'
-
+import apiClient from '../firebase/apiClient'
 export default function Clients() {
-  const cardArr=[
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/01_LEGEND-GLOBAL-STUDIO.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/02_VFX-Wala.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/03_EROS.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/05_konidela-p.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/06_g-silver.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/07_Mythri-Movie.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/08_DVV.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/09_Green-GOLD.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/10_SYMBIOSYS-png.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/04_Suresh-Productions.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/11_EFX.png"
-    },
-    {
-      link:"youtube.com",
-      img:"https://mantrickstudios.com/old/wp-content/uploads/2021/03/12_smt.apsri-venkateswara-creations.png"
-    }
-  ]
+  const [photos,setPhotos]=useState(null);
+ 
+
+  useEffect(()=>{
+    fetchAllPhotos();
+},[])
+const fetchAllPhotos = async () => {
+  try {
+    const response = await apiClient.get(`/clients.json`);
+    setPhotos(response.data);
+  } catch (err) {
+    console.error(`Error: ${err}`);
+  }
+};
+var eventIds;
+if(photos!=null)
+{
+  eventIds= Object.keys(photos);
+}
   return (
     
     <diV className="gallaryBox page clientGallary clientspage" id="gallary">
@@ -68,12 +37,12 @@ export default function Clients() {
               </button>
               <section className="carousel">
               {
-                cardArr.map((e,i)=>{
+                photos?eventIds.map((e,i)=>{
                 return <div className="carousel-item client-item">
                   {/* <img src="https://pixelloid.com/old/wp-content/grand-media/image/02.jpg" alt="Working" /> */}
-                  <Newcard img={e.img} delay={i}/>
+                  <Newcard img={photos[e].imageUrl} delay={photos[e]}/>
                 </div>
-                  })
+                  }):<></>
               }
               </section>
               <button type="button" className="arrows right-arrow" aria-label="Arrow Right">
