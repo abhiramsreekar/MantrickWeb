@@ -42,7 +42,7 @@ export default function DateCompo({triggerNextStep}) {
 
       e.preventDefault();
       // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
-      var url = "https://api.ultramsg.com/instance86007/messages/chat";
+    var url = "https://api.ultramsg.com/instance86007/messages/chat";
     var data = {
       token: "nexiu3b9pflmtg98",
       to: "+91"+ph,

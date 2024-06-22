@@ -13,39 +13,7 @@ export default function Carousel() {
   const [total,setTotal]=useState(0);
     const [landings,setLandings]=useState([
       ]);
-      const t=[
-        {
-          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/RRR-2-1536x864.jpg",
-          name:"RRR",
-          des:"Directed by Rajamouli"
-
-        },
-        {
-          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/PUSHPA-3-1536x864.jpg",
-          name:"Pushpa",
-          des:"Details"
-        },
-        {
-          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/GOD-FATHER-4-1536x864.jpg",
-          name:"GodFather",
-          des:"Details"
-        },
-        {
-          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/bheemla-nayak-2-1536x864.jpg",
-          name:"Bheemla Nayak",
-          des:"Details"
-        },
-        {
-          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/Bangaraju-3-1536x864.jpg",
-          name:"Bangaraju",
-          des:"details"
-        },
-        {
-          image:"https://mantrickstudios.com/wp-content/uploads/2022/11/VARASUDU-1-1536x864.jpg",
-          name:"Varasudu",
-          des:"details"
-        }
-      ];
+      
       var j;
       const auto=async ()=>{
         while(1)
@@ -70,17 +38,7 @@ export default function Carousel() {
         document.getElementById('slide').append(lists[0]);
         increase();
       }
-      const nleft=(e)=>{
-        // alert(e.target.id);
-        // for(let i=0;i<(e.target.id-2);i++)
-        // {
-        //   setTimeout(()=>{
-        //     let lists = document.querySelectorAll('.item');
-        //     document.getElementById('slide').append(lists[0]);
-        //   },2000)
-          
-        // }
-      }
+
       const right=()=>{
         let lists = document.querySelectorAll('.item');
         document.getElementById('slide').prepend(lists[lists.length - 1]);
