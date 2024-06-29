@@ -6,7 +6,7 @@ export default function DateCompo({triggerNextStep}) {
   const {ph,setPh,name,setName,msg,setMsg,email,setEmail}=useContext(context);
   const {openSnackbar,setOpenSnackbar,snackbarMessage,snackbarSeverity,setSnackbarSeverity,showSnackbar,setSnackbarMessage}=useContext(context);
     const [date, setDate] = useState("");
-    const submitDate=(e)=>{
+    const submitDate=async (e)=>{
 
 
       const da=new Date(date);
@@ -38,83 +38,26 @@ export default function DateCompo({triggerNextStep}) {
     
     // Create the formatted date string
     const formattedDate2 = `${da2.toLocaleDateString()} ${hours2}:${minutesStr2} ${ampm2}`;
-
-
       e.preventDefault();
-      // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
-    var url = "https://api.ultramsg.com/instance86007/messages/chat";
-    var data = {
-      token: "nexiu3b9pflmtg98",
-      to: "+91"+ph,
-      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${formattedDate}`)
-    };
-    fetch(url, {
-      // mode: 'no-cors',
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(responseData => {
-        console.log(responseData);
-        
-      })
-      .catch(error => {
-        
-        console.error("Error:", error);
-      });
+      
       
       // data storing on google sheets
-
-      fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb/mobile/${ph}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+      try{
+      const store=await fetch('https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users.json',{
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({name:name,"email":email,mobile:ph,date:formattedDate2,meeting:formattedDate}),
-      })
-        .then(response => response.json())
-        .then(responseData => {
-          if(JSON.stringify(responseData)==="[]")
-          {
-
-            fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb`, {
-                  method: "POSt",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({name:name,"email":email,mobile:ph,date:formattedDate2,meeting:formattedDate}),
-        })
-        .then(response => response.json())
-        .then(responseData => {
-          setEmail("");
-        setPh("");
-        setName("");
-          console.log("inner new inseted response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
+        body:JSON.stringify({name:name,email:email,mobile:ph,Schedule_time:formattedDate,last_sign_in_date:formattedDate2}),
+      }
+      )
+    }catch(error) {
           showSnackbar('Meeting Not Scheduled,Try Again!', 'error');
           console.error("Error:", error);
-           });
-          }
-          else
-          {
-            showSnackbar('Meeting  Scheduled Successfully!', 'success');
-          }
-          setEmail("");
-        setPh("");
-        setName("");
-          console.log("response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
-          showSnackbar('Meeting Not Scheduled,Try Again!', 'error');
-          console.error("Error:", error);
-        });
+        };
 
       triggerNextStep({trigger:"intro-user"});
-    }
+      }
   return (
     <div> 
     <form id="msform">

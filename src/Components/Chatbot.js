@@ -1,8 +1,9 @@
-import React, {useState, Component,useContext, useEffect } from 'react';
+import React, {useState, Component,useContext, useEffect,useRef } from 'react';
 import ChatBot from 'react-simple-chatbot';
 import User from './User';
 import Login from './Login'
-import './index.css'
+import './index.css';
+import emailjs from '@emailjs/browser';
 import context from '../context/useContext';
 import logo from '../Images/chatlogo2..png'
 import logo2 from '../Images/img/ChatBot/img.svg'
@@ -14,6 +15,7 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import './chatBot.css';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
+import { async } from '@firebase/util';
 // type Value = ValuePiece | [ValuePiece, ValuePiece];
 // all available config props
 const config ={
@@ -21,9 +23,11 @@ const config ={
   height: "70vh",
 };
 export default function Chatbot() {
-  
+  const form = useRef();
+  const form2 = useRef();
     const [otp, setOtp] = useState("");
     const [phone,setPhone] = useState("");
+    const [email_otp,setEmail_otp]=useState("");
     const [captcha,setCaptcha] = useState("");
     const [showOtp, setShowOtp] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -55,65 +59,9 @@ export default function Chatbot() {
     window.localStorage({"name":"pavan"});
   }
   
-  function onCaptchaVerify(id) {
-    if (!window.RecaptchaVerifier) {
-      window.recaptchaVerifier = new RecaptchaVerifier(
-        auth,
-        id===1?"recaptcha-container2":"recaptcha-container3",
-        {
-          size:"invisible"
-        }
-        );
-        window.recaptchaVerifier.verify();
-      }
-    }
-    function onOtpverify() {
-      window.confirmationResult
-        .confirm(otp)
-        .then(async (result) => {
-          // User signed in successfully.
-          const user = result.user;
-          setUser(user);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.log(error.message);
-          toast.error(error.message);
-        });
-      }
-  function onSignup(id) {
+
     
-    setLoading(true);
-    onCaptchaVerify(id);
-    const appVerifier = window.recaptchaVerifier;
-    var phoneNumber;
-    if(id==1)
-    {
-      phoneNumber = "+91"+document.querySelector(".ss-phone-2").value;
-    }
-    else
-    {
-      phoneNumber = "+91"+document.querySelector(".ss-phone-3").value;
-    }
-    alert(phoneNumber);
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-    .then((confirmationResult) => {
-      window.confirmationResult = confirmationResult;
-      setLoading(false);
-      setShowOtp(true);
-      // toast.success("OTP Sended Sucessfully");
-      showSnackbar('OTP Sended Sucessfully!', 'success');
-      setOtpbox("true");
-    })
-    .catch((error) => {
-      setLoading(false);
-      showSnackbar('OTP Not Sent!', 'error');
-      setEmail("");
-        setPhone("");
-        setName("");
-      toast.error(error.message);
-      });
-  }
+  
   // Brochure download whatsapp msg sending
   const [name, setName] = useState("");
   const [Botp, setBotp] = useState("");
@@ -142,247 +90,6 @@ export default function Chatbot() {
     
     }
 
-
-  const onDowloadBrochure=(e)=>{
-    const da=new Date();
-    let hours = da.getHours();
-    const minutes = da.getMinutes();
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    
-    // Convert hours from 24-hour format to 12-hour format
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    
-    // Format minutes to be two digits
-    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
-    
-    // Create the formatted date string
-    const formattedDate = `${da.toLocaleDateString()} ${hours}:${minutesStr} ${ampm}`;
-    // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
-    e.preventDefault();
-    // alert(phone);
-    var url = "https://api.ultramsg.com/instance86007/messages/chat";
-    var data = {
-      token: "nexiu3b9pflmtg98",
-      to: "+91"+phone,
-      body: JSON.stringify(`${name} Thank you for download our brochure, we look forward to talking to you!
-      Download our brochure-
-      https://drive.google.com/file/d/1v2JQvY40RLbKf8W8J3eyLH22d4ZYQenk/view
-      `)
-    };
-    // whatsapp msg sending
-
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(responseData => {
-        console.log(responseData);
-        showSnackbar('Brochure details has been sent to Whatsapp', 'success');
-        setBsubmit("s");
-      })
-      .catch(error => {
-        showSnackbar('Data Not Went Whatsapp', 'error');
-        setBsubmit(null);
-        console.error("Error:", error);
-      });
-
-      // Data sending to google sheets
-      fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb/mobile/${phone}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate+" "+(new Date()).toString().slice(12,16),meeting:"not yet"}),
-      })
-        .then(response => response.json())
-        .then(responseData => {
-          if(JSON.stringify(responseData)==="[]")
-          {
-
-            fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb`, {
-                  method: "POSt",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate,meeting:"not yet"}),
-        })
-        .then(response => response.json())
-        .then(responseData => {
-          setEmail("");
-        setPhone("");
-        setName("");
-        setBsubmit(null);
-        setBotp("");
-        setEmailbox(null);
-        setOtpbox(null);
-        showSnackbar('Details sent to your Whatsapp successfully', 'success');
-          console.log("inner new inseted response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
-          // alert("Data has not been sent");
-          showSnackbar('Data Has Not Been Sent', 'error');
-          console.error("Error:", error);
-           });
-          }
-          else
-          {
-            // alert("we got user");
-          }
-          setEmail("");
-        setPhone("");
-        setName("");
-        setBotp("");
-        setBsubmit(null);
-        setEmailbox(null);
-        setOtpbox(null);
-          console.log("response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
-          showSnackbar('data  not sent to database', 'error');
-          console.error("Error:", error);
-        });
-        
-        
-  }
-  const onScheduleSubmit=(e)=>{
-    const da=new Date(DateAndTime);
-    let hours = da.getHours();
-    const minutes = da.getMinutes();
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    
-    // Convert hours from 24-hour format to 12-hour format
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    
-    // Format minutes to be two digits
-    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
-    
-    // Create the formatted date string
-    const formattedDate = `${da.toLocaleDateString()} ${hours}:${minutesStr} ${ampm}`;
-
-    const da2=new Date();
-    let hours2 = da2.getHours();
-    const minutes2 = da2.getMinutes();
-    const ampm2 = hours2 >= 12 ? 'PM' : 'AM';
-    
-    // Convert hours from 24-hour format to 12-hour format
-    hours2 = hours2 % 12;
-    hours2 = hours2 ? hours2 : 12; // the hour '0' should be '12'
-    
-    // Format minutes to be two digits
-    const minutesStr2 = minutes2 < 10 ? '0' + minutes2 : minutes2;
-    
-    // Create the formatted date string
-    const formattedDate2 = `${da2.toLocaleDateString()} ${hours2}:${minutesStr2} ${ampm2}`;
-
-    e.preventDefault();
-    var url = "https://api.ultramsg.com/instance86007/messages/chat";
-    var data = {
-      token: "nexiu3b9pflmtg98",
-      to: "+91"+phone,
-      body: JSON.stringify(`${name} Thank you for scheduling a callback, we look forward to talking to you! Your date and time:${formattedDate}`)
-    };
-    // whatsapp msg sending
-
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    }
-    // ,{ mode: 'no-cors'}
-    )
-      .then(response => response.json())
-      .then(responseData => {
-        console.log(responseData);
-        showSnackbar('Meeting details has been sent to Whatsapp', 'success');
-        setBsubmit("s");
-      })
-      .catch(error => {
-        // alert("msg not sent");
-        showSnackbar('msg not sent', 'erro');
-        setBsubmit(null);
-        console.error("Error:", error);
-      });
-
-      // Data sending to google sheets
-      fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb/mobile/${phone}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate2,meeting:formattedDate}),
-      })
-        .then(response => response.json())
-        .then(responseData => {
-          if(JSON.stringify(responseData)==="[]")
-          {
-            fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb`, {
-                  method: "POSt",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({name:name,"email":email,mobile:phone,date:formattedDate2,meeting:formattedDate}),
-        })
-        .then(response => response.json())
-        .then(responseData => {
-          setEmail("");
-        setPhone("");
-        setBsubmit(null);
-        setName("");
-        setBotp("");
-        setEmailbox(null);
-        setOtpbox(null);
-        showSnackbar('Meeting Has Been Scheduled Successfully', 'success');
-          console.log("inner new inseted response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
-          showSnackbar('Data  Not Submitted', 'error');
-          console.error("Error:", error);
-           });
-          }
-          else
-          {
-            showSnackbar('Failed to schedule yor meet. ', 'error'); 
-          }
-          setEmail("");
-        setPhone("");
-        setName("");
-        setBotp("");
-        setBsubmit(null);
-        setEmailbox(null);
-        setOtpbox(null);
-          console.log("response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
-          console.log("data  not sent to google sheet");
-          console.error("Error:", error);
-        });
-        
-  }
-  function onOtpverify() {
-    window.confirmationResult
-      .confirm(Botp)
-      .then(async (result) => {
-        // User signed in successfully.
-        const user = result.user;
-        setUser(user);
-        setOtpstatus(null);
-        setEmailbox("ss");
-        setLoading(false);
-      })
-      .catch((error) => {
-        setOtpstatus("s");
-        console.log(error.message);
-        toast.error(error.message);
-      });
-    }
     function auto_popUp(){
       setTimeout(()=>{
         document.querySelector(".schedule-meet").style.display="flex";
@@ -392,8 +99,246 @@ export default function Chatbot() {
     useEffect(()=>{
       auto_popUp();
     },[])
+    var e_otp;
+    const Email_OTP=async(e)=>{
+      e.preventDefault();
+      const min = 1000;
+      const max = 9999;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      e_otp=randomNumber.toString();
+      document.querySelector('#email_id').value=e_otp;
+      emailjs
+      .sendForm('service_xe7vpm5', 'template_52psjsp', form.current, {
+          publicKey: 'q7X7GCfUuxJ7losY8',
+        })
+        .then(
+          () => {
+            setOtpbox("s");
+            showSnackbar('OTP has been sent to your registered email successfully!', 'success');
+          },
+          (error) => {
+            alert(JSON.stringify(error));
+            showSnackbar('Failed to send OTP!', 'error');
+          },
+        );
+
+    }
+    const formated_date=(da)=>
+    {
+    let hours = da.getHours();
+    const minutes = da.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    // Convert hours from 24-hour format to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    
+    // Format minutes to be two digits
+    const minutesStr = minutes < 10 ? '0' + minutes : minutes;
+    
+    // Create the formatted date string
+    return `${da.toLocaleDateString()} ${hours}:${minutesStr} ${ampm}`;
+    }
+    const onDowloadBrochure1= async () => {
+
+    
+      const new_date=formated_date(new Date())
+      if(e_otp=!otp)
+      {
+        showSnackbar('OTP entered is wrong!', 'error');
+        return;
+      }
+      try {
+
+      // #sending data to firebase
+        const search=await fetch('https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users.json',{
+          method:"GET",
+          headers:{
+            'Content-Type': 'application/json',
+          },
+        }
+        )
+        const search_result = await search.json();
+        if(search_result)
+        {
+
+          const search_keys=Object.keys(search_result);
+          try{
+          var s=0;
+          var element;
+          var user_id;
+        }catch(err)
+        {
+          alert(err);
+        }
+        if(search_keys)
+        {
+          search_keys.forEach(element=>
+          {
+            if(search_result[element].email==email)
+            {
+              s=1;
+              user_id=element;
+            }
+            
+          });
+  
+        }
+      
+        }
+      if(!search_result || s==0)
+      {
+        const store=await fetch('https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users.json',{
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({name:name,email:email,mobile:phone,Schedule_time:'Not yet',last_sign_in_date:new_date}),
+      }
+      )
+    }
+    else
+    {
+        const update=await fetch(`https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users/${user_id}.json`,{
+          method:"PUT",
+          headers:{
+              'Content-Type': 'application/json',
+            },
+            body:JSON.stringify({name:search_result[user_id].name,email:search_result[user_id].email,mobile:search_result[user_id].mobile,Schedule_time:search_result[user_id].Schedule_time,last_sign_in_date:new_date}),
+          }
+          )
+        }
+        
+        // # Brochure sent to email
+        
+        // emailjs
+        // .sendForm('service_xe7vpm5', 'template_82neu78', form.current, {
+        //   publicKey: 'q7X7GCfUuxJ7losY8',
+        // })
+        // .then(
+        //   () => {
+        //     console.log('SUCCESS!');
+        //   },
+        //   (error) => {
+        //     console.log('FAILED...', error.text);
+        //   },
+        //   );
+        clear();
+        setBsubmit("s");
+        showSnackbar('Brochure has been sent to your registered email successfully!', 'success');
+      
+      } catch (error) {
+        clear();
+        showSnackbar('Failed to download brochure!', 'error'); 
+      } finally {
+        
+    }
+    };
+    function clear()
+    {
+      setEmail("");
+        setPhone("");
+        setName("");
+        setBsubmit(null);
+        setBotp("");
+        setEmailbox(null);
+        setOtpbox(null);
+    }
+    const onScheduleSubmit1=async ()=>{
+      // #sending data to firebase
+      const sh_date=formated_date(new Date(DateAndTime));
+
+      const new_date=formated_date(new Date())
+      if(e_otp=!otp)
+      {
+        showSnackbar('OTP entered is wrong!', 'error');
+        return;
+      }
+      try {
+
+      // #sending data to firebase
+        const search=await fetch('https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users.json',{
+          method:"GET",
+          headers:{
+            'Content-Type': 'application/json',
+          },
+        }
+        )
+        const search_result = await search.json();
+        if(search_result)
+        {
+
+          const search_keys=Object.keys(search_result);
+         
+          var s=0;
+          var element;
+          var user_id;
+        
+        if(search_keys)
+        {
+          search_keys.forEach(element=>
+          {
+            if(search_result[element].email==email)
+            {
+              s=1;
+              user_id=element;
+            }
+            
+          });
+  
+        }
+      
+        }
+      if(!search_result || s==0)
+      {
+        const store=await fetch('https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users.json',{
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body:JSON.stringify({name:name,email:email,mobile:phone,Schedule_time:sh_date,last_sign_in_date:new_date}),
+      }
+      )
+    }
+    else
+    {
+        const update=await fetch(`https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users/${user_id}.json`,{
+          method:"PUT",
+          headers:{
+              'Content-Type': 'application/json',
+            },
+            body:JSON.stringify({name:search_result[user_id].name,email:search_result[user_id].email,mobile:search_result[user_id].mobile,Schedule_time:sh_date,last_sign_in_date:new_date}),
+          }
+          )
+        }
+        
+        // # Brochure sent to email
+        
+        // emailjs
+        // .sendForm('service_xe7vpm5', 'template_82neu78', form.current, {
+        //   publicKey: 'q7X7GCfUuxJ7losY8',
+        // })
+        // .then(
+        //   () => {
+        //     console.log('SUCCESS!');
+        //   },
+        //   (error) => {
+        //     console.log('FAILED...', error.text);
+        //   },
+        //   );
+        // clear();
+        // setBsubmit("s");
+        // showSnackbar('Meet has been scheduled successfully and details sent to your registered email!', 'success');
+      
+      } catch (error) {
+        clear();
+        showSnackbar('Failed to schedule a meet!', 'error'); 
+      } finally {
+        
+    }
+    }
     return (
-      <>
+      <> 
     {/* Download Brochure */}
     <div className='schedule-meet' >
     <span className="material-symbols-outlined" onClick={()=>{
@@ -403,10 +348,11 @@ export default function Chatbot() {
       
       <h2>Download Brochure</h2>
       <p>Please provide your contact information</p>
-      <form>
+      <form ref={form} onSubmit={Email_OTP}>
+      <input type='text' name='email_otp' id='email_id' value={email_otp} style={{display:"none"}}/>
       <div className='ss-box'>
           <label htmlFor="ss-name" className="ss-label">Name:</label>
-          <input type="text" minLength={4} id="ss-name" name='ss-name' value={name} onChange={(e)=>{
+          <input type="text" minLength={4} id="ss-name" name='ss-name'  value={name} onChange={(e)=>{
               setName(e.target.value);
               
           }} className='ss-input' placeholder='Enter Your Name'/>
@@ -414,46 +360,44 @@ export default function Chatbot() {
       <div className='ss-box'>
           <label htmlFor="ss-name"  className="ss-label" 
           >Ph.No:</label>
-          <input type="text" id="ss-name"  maxLength={10} value={phone} onChange={(e)=>{
+          <input type="text" id="ss-name"  pattern="[6-9]{1}[0-9]{9}" value={phone} onChange={(e)=>{
             setPhone(e.target.value);
           }} className='ss-input ss-phone-2'  placeholder='Enter Phone Number'/>
         </div>
-        {
-          !emailbox?
-          <>
+        
         <div className='ss-box'>
         <label htmlFor="ss-name" className="ss-label">Email: </label>
         <input type="email" id="ss-name" value={email} 
         onChange={(e)=>{
           setEmail(e.target.value);
         }}
-        name='ss-name' className='ss-input' placeholder='Enter Email Address'/>
-      </div>
-          </>
-        :<></>
-        }
+        name='email' className='ss-input' placeholder='Enter Email Address'/>
+        </div>
+          
         {
-         !otpbox?      <div className='ss-box button'>
-         <Button type='submit' onClick={onDowloadBrochure}>Download Brochure</Button>
+         !otpbox?<div className='ss-box button'>
+          <div className='ss-box' style={{display:"none"}}>
+          <label htmlFor="ss-name" className="ss-label" >OTP:</label>
+          <input type="text" minLength={4} maxLength={4} id="ss-name" name='ss-name'  value={otp} onChange={(e)=>{
+              setOtp(e.target.value);
+          }} className='ss-input' placeholder='Enter OTP'/>
+        </div>
+         <Button type='button' onClick={onDowloadBrochure1}>Download Brochure</Button>
          {
-           !Bsubmit?<p  style={{color:"white"}}>by pressing this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green",background:"white"}}>Brochure details sent to your whatsapp successfully</p>
+           !Bsubmit?<p  style={{color:"white"}}>by clicking this button, you are agreed to receive an email</p>:<p style={{color:"green",background:"white"}}>Brochure details sent to your registered email successfully</p>
          }
          </div>
         :<>
         
         <div className='ss-box button'>
-        <Button type='button'  onClick={()=>{
-            onSignup(2);
-        }}>SEND OTP</Button>
+        <Button type='submit'>SEND OTP</Button>
         </div>
         </>
       }
-      </form>
+  </form>
     </div>
     {/* schedule */}
-    <div id="recaptcha-container2"  style={{display:"none"}} className="mt-6 recaptcha-container2"></div>
-      <div id="recaptcha-container3"  style={{display:"none"}} className="mt-6 recaptcha-container3"></div>
-      <div className='back-2' onClick={()=>{
+    <div className='back-2' onClick={()=>{
       setPhone("");
       document.querySelector(".back-2").style.display="none";
       document.querySelector(".schedule-meet-o").style="none";
@@ -467,16 +411,16 @@ export default function Chatbot() {
     }}>cancel</span>
       <h2>Schedule Meet</h2>
       <p>Please provide your contact information</p>
-      <form>
+      <form onSubmit={Email_OTP}>
       <div className='ss-box'>
           <label htmlFor="ss-name" className="ss-label">Name:</label>
-          <input type="text" id="ss-name" name='ss-name'  value={name} onChange={(e)=>{
+          <input type="text" id="ss-name" name='ss-name'  value={name}  onChange={(e)=>{
             setName(e.target.value);
           }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
       <div className='ss-box'>
           <label htmlFor="ss-name" className="ss-label">Ph.No:</label>
-          <input type="text" id="ss-name3" name='ss-name' maxLength="10" value={phone} onChange={(e)=>{
+          <input type="text" id="ss-name3" name='ss-name' pattern="[6-9]{1}[0-9]{9}" value={phone} onChange={(e)=>{
             setPhone(e.target.value);
           }}
           className='ss-input ss-phone-3' placeholder='Enter Phone Number'/>
@@ -494,29 +438,35 @@ export default function Chatbot() {
         name='ss-name' className='ss-input' placeholder='Enter Email Address'/>
       </div>
 
-      <p>Please select date and time of visit</p>
-      <div className='ss-box ss-date'>
-        <label htmlFor="birthdaytime"  className="ss-label">Date/Time:</label>
-        <input type="datetime-local" value={DateAndTime} onChange={(e)=>{
-          setDateAndTime(e.target.value);
-        }} id="birthdaytime" className='ss-input' name="birthdaytime"></input>
-      </div>
+      
 
           </>
         :<></>
       }
       {
          !otpbox?<div className='ss-box button'>
-        <Button type='button'  onClick={onScheduleSubmit}>Schedule Meet</Button>
+          <div className='ss-box' style={{display:"none"}}>
+          <label htmlFor="ss-name" className="ss-label" style={{display:"none"}}>OTP:</label>
+          <input type="text" minLength={4} maxLength={4} id="ss-name" name='ss-name'  value={otp} onChange={(e)=>{
+              setOtp(e.target.value);
+          }} className='ss-input' placeholder='Enter OTP'/>
+          </div>
+         <p>Please select date and time of visit</p>
+        <div className='ss-box ss-date'>
+          <label htmlFor="birthdaytime"  className="ss-label">Date/Time:</label>
+          <input type="datetime-local" value={DateAndTime} onChange={(e)=>{
+              setDateAndTime(e.target.value);
+            }} id="birthdaytime" className='ss-input' name="birthdaytime"></input>
+        </div>
+
+        <Button type='button'  onClick={onScheduleSubmit1}>Schedule Meet</Button>
         {
-          Bsubmit?<p style={{color:"green"}}>by pressing this button, you are agreed to receive message on whatsapp</p>:<p>scheduled meeting confirmation details sent to your whatsapp successfully</p>
+          !Bsubmit?<p>by clicking this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green"}}>scheduled meeting confirmation details sent to your whatsapp successfully</p>
         }
         </div>:<>
         
         <div className='ss-box button'>
-        <Button type='button'  onClick={()=>{
-            onSignup(2);
-        }}>SEND OTP</Button>
+        <Button type='submit'>SEND OTP</Button>
         </div>
         </>
       }

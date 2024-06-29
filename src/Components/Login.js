@@ -68,100 +68,28 @@ const Login = ({triggerNextStep,type}) => {
     window.confirmationResult
       .confirm(otp)
       .then(async (result) => {
-        // User signed in successfully.
-        const user = result.user;
-        setUser(user);
-        setLoading(false);
-        // https://api.ultramsg.com/instance74996/messages/chat?token=nbridiw147r4ch9c&to=+919951661022&body=WhatsApp+API+on+UltraMsg.com+works+good&priority=10
-        var url = "https://api.ultramsg.com/instance86007/messages/chat";
-      var data = {
-        token: "nexiu3b9pflmtg98",
-        to: "+91"+ph,
-        body: JSON.stringify(`${name} Thank you for download our brochure, we look forward to talking to you!
-        Download our brochure-
-        https://drive.google.com/file/d/1v2JQvY40RLbKf8W8J3eyLH22d4ZYQenk/view`)
-      };
+       
       
       if(type==="brochure")
       {
-        // message sending to whatsapp4
-
-          fetch(url, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          })
-            .then(response => response.json())
-            .then(responseData => {
-              console.log(responseData);
-              showSnackbar('Whatsapp Message Has Been Sent!', 'success');
-             
-            })
-            .catch(error => {
-              showSnackbar('Whatsapp Message Not Sent!', 'error');
-              console.error("Error:", error);
-            });
-
-          // data storing on google sheet
-
-          fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb/mobile/${ph}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
+        const store=await fetch('https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/users.json',{
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({name:name,"email":email,mobile:ph,date:formattedDate,meeting:"not yet"}),
-      })
-        .then(response => response.json())
-        .then(responseData => {
-          if(JSON.stringify(responseData)==="[]")
-          {
-
-            fetch(`https://sheet.best/api/sheets/68244d50-c52a-4fd2-83f8-95cdadac0bdb`, {
-                  method: "POSt",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({name:name,"email":email,mobile:ph,date:formattedDate,meeting:"not yet"}),
-        })
-        .then(response => response.json())
-        .then(responseData => {
-          setEmail("");
-        setPh("");
-        setName("");
-          console.log("inner new inseted response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
-          showSnackbar('Failure!', 'error');
-          console.error("Error:", error);
-           });
-          }
-          else
-          {
-            showSnackbar('Success!', 'success');
-          }
-          setEmail("");
-        setPh("");
-        setName("");
-          console.log("response is:"+JSON.stringify(responseData));
-        })
-        .catch(error => {
-          // showSnackbar('Failure!', 'error');
-          console.log("Not updated in Google sheet");
-        });
+        body:JSON.stringify({name:name,email:email,mobile:ph,Schedule_time:'Not yet',last_sign_in_date:formattedDate}),
+        }
+      );
           triggerNextStep({trigger:"brochure"});
         }
         else
         {
           triggerNextStep({trigger:"book-call"});
         }
-
-      
       })
       .catch((error) => {
         showSnackbar('OTP Not Correct!', 'error');
-        console.log(error.message);
+        
         toast.error(error.message);
       });
     }
@@ -193,9 +121,6 @@ const Login = ({triggerNextStep,type}) => {
                 ></OtpInput>
         <button
                     className="btn btn-primary mt-3 w-75 "
-                    // onClick={()=>{
-                    //   triggerNextStep({trigger:"book-call"});
-                    // }}
                     onClick={onOtpverify}
                     
                   >Verify</button>
