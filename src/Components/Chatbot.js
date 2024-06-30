@@ -143,11 +143,11 @@ export default function Chatbot() {
 
     
       const new_date=formated_date(new Date())
-      if(e_otp=!otp)
-      {
-        showSnackbar('OTP entered is wrong!', 'error');
-        return;
-      }
+      // if(e_otp=!otp)
+      // {
+      //   showSnackbar('OTP entered is wrong!', 'error');
+      //   return;
+      // }
       try {
 
       // #sending data to firebase
@@ -225,7 +225,7 @@ export default function Chatbot() {
         //   );
         clear();
         setBsubmit("s");
-        showSnackbar('Brochure has been sent to your registered email successfully!', 'success');
+        showSnackbar('Response recorded successfully!', 'success');
       
       } catch (error) {
         clear();
@@ -249,11 +249,11 @@ export default function Chatbot() {
       const sh_date=formated_date(new Date(DateAndTime));
 
       const new_date=formated_date(new Date())
-      if(e_otp=!otp)
-      {
-        showSnackbar('OTP entered is wrong!', 'error');
-        return;
-      }
+      // if(e_otp=!otp)
+      // {
+      //   showSnackbar('OTP entered is wrong!', 'error');
+      //   return;
+      // }
       try {
 
       // #sending data to firebase
@@ -328,7 +328,7 @@ export default function Chatbot() {
         //   );
         // clear();
         // setBsubmit("s");
-        // showSnackbar('Meet has been scheduled successfully and details sent to your registered email!', 'success');
+        showSnackbar('Response recorded successfully!!', 'success');
       
       } catch (error) {
         clear();
