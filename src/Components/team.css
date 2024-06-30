@@ -1,0 +1,266 @@
+
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+.team .socialIcons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-bottom: 10px;
+  z-index: 10;
+  padding: 0px;
+  margin: 0px;
+  margin-left: -8px;
+  margin-top: -20px;
+}
+.team
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.team  .socialIcons ul li
+{
+  margin: 0px 1px;
+}
+.team  .socialIcons ul
+{
+  margin: 0px;
+  padding: 0px;
+}
+.team  .socialIcons ul {
+   position: relative;
+   display: flex;
+   transform: rotate(0deg) skew(0deg);
+   transform-style: preserve-3d;
+}
+.team  .socialIcons ul li {
+  position: relative;
+  list-style: none;
+  width: 30px;
+  height: 30px;
+  margin: 0px 20px;
+}
+.team  .socialIcons ul li:before{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: -5px;
+  width: 100%;
+  height: 10px;
+  background: #2a2a2a;
+  trnasform-origin: top;
+  transform: skewX(-41deg);
+}
+.team  .socialIcons ul li:after{
+  content: '';
+  position: absolute;
+  top:5px;
+  left: -9px;
+  width: 9px;
+  height: 100%;
+  background: #2a2a2a;
+  trnasform-origin: right;
+  transform: skewY(-49deg);
+}
+.team  .socialIcons ul li span{
+  position: absolute;
+  top: 0;
+  z-index: 2000;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex !important;
+  background: #2a2a2a;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30px !important;
+  transition: 1.5s ease-out;
+}
+.team  .socialIcons ul li:hover span {
+  z-index: 1000;
+  transition: .3s;
+  color: #fff;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, .5);
+}
+.team .socialIcons ul li:hover span:nth-child(5){
+  transform: translate(8px, -8px);
+  opacity: 1;
+}
+.team .socialIcons ul li:hover span:nth-child(4){
+  transform: translate(6px, -6px);
+  opacity: .8;
+}
+.team .socialIcons ul li:hover span:nth-child(3){
+  transform: translate(4px, -4px);
+  opacity: .6;
+}
+.team  .socialIcons ul li:hover span:nth-child(2){
+  transform: translate(2px, -2px);
+  opacity: .4;
+}
+.team .socialIcons ul li:hover span:nth-child(1){
+  transform: translate(0px, 0px);
+  opacity: .2;
+}
+.team .socialIcons ul li:nth-child(1):hover span{
+  background: #52E19F !important;
+}
+.team .socialIcons ul li:nth-child(2):hover span{
+  background: #2C3456 !important;
+}
+.team .socialIcons ul li:nth-child(3):hover span{
+  background: #EA6E96 !important;
+}
+.team .socialIcons ul li:nth-child(4):hover span{
+  background: #FCEB00 !important;
+}
+.team .socialIcons .wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+  }
+  
+  .team .wrapper h3
+  {
+    color: white;
+  }
+  .team .wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+  }
+  .team .tcards
+  {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 3;
+    max-width: 1300px;
+    justify-content:space-around;
+  }
+  .team .tcard {
+    width: 20%;
+    height: 50vh;
+    border-radius:0px;
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    margin: 45px 10px;
+  }
+  .team .tcard:hover {
+    transform: translateY(20px);
+  }
+  .team .tcard:hover:before {
+    opacity: 1;
+  }
+  .team .tcard:hover .info {
+    opacity: 1;
+    z-index: 5;
+    transform: translateY(0px);
+  }
+  .team .tcard:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    transition: 0.5s;
+    opacity: 0;
+  }
+  .team .tcard img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+  }
+  .team .tcard .info {
+    position: relative;
+    z-index: -3;
+    color: white;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+  }
+  .team .tcard .info h8 {
+    margin: 6px;
+  }
+  .team .tcard .info .p {
+    letter-spacing: 1px;
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  .team .tcard .info button {
+    padding: 0.6rem;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+  .team .tcard .info button:hover {
+    background: dodgerblue;
+    color: white;
+  }
+  @media (max-width:1200px){
+    .team .tcard {
+      width: 28%;
+    }
+  }
+  @media (max-width:1200px) and (min-width:502){
+    .team .tcard h3{
+      bottom: -77px !important;
+    }
+  }
+  @media (max-width:500px){ 
+    .team .tcard
+    {
+      width: 63%;
+      margin-bottom: 20px;
+    }
+    .team
+    {
+      padding-top: 10vh;
+    }
+    .team .tcards
+    {
+      justify-content: center;
+    }
+    .team .socialIcons ul li span:nth-child(2+n){
+      display: none;
+    }
+    .team .tcards
+  {
+    justify-content:center;
+  }
+  }
+  .team .teamdes
+  {
+    margin-top: 60px;
+    font-size: 15px;
+  }
+  .team .teamout
+  {
+    display: flex;
+  }

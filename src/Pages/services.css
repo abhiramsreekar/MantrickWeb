@@ -1,0 +1,236 @@
+.services {
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+  }
+  
+  .services .photos .photo 
+  {
+    margin-bottom: 20px;
+    /* width: 30%; */
+
+  }
+  .services .photos .photo h3
+  {
+    margin: 0px;
+    margin-left: 10px;
+    color: white;
+  }
+  .portfolio-first
+  {
+    display: none;
+  }
+  .services {
+    margin: 0;
+    /* font-family: Arial; */
+    font-family: 'Montserrat';
+    font-size: 17px;
+    width: 100vw;
+    /* display: none; */
+    justify-content: center;
+    /* margin-left: -10px; */
+align-items: center;
+}
+.services .outerWork
+{
+   /* background-image: url('https://cdn.pixabay.com/photo/2023/11/12/18/52/christmas-8383920_640.jpg'); */
+   background-size: cover;
+   background-position: center;
+   margin-top: -10px;
+   padding-top: 50px;
+   padding-bottom: 50px;
+
+ } 
+  .services #myVideo {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    min-width: 100%; 
+    width: 100vw;
+    transform: scale(1.1);
+    height: 120vh;
+    background-size: cover;
+    background-position: center;
+    /* border: 1px white solid ; */
+    min-height: 100%;
+    /* left: 5vw; */
+  }
+  
+  .services .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .services #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .services #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+  /* photos */
+  #photos .photo img
+  {
+    width: 25vw;
+    margin: 5px 10px;
+    height: 15vw;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  #photos
+  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80vw;
+    justify-content: space-between;
+    margin: 2px auto;
+  }
+.outerphotos
+{
+  margin-top: 10vh;
+}
+ .showphoto .p
+{
+    padding: 2px 20px;
+    cursor: pointer;
+    margin: 0;
+    display: none;
+  }
+   .showphoto .inner .img .exit
+  {
+    position: absolute;
+    margin-top: -30px;
+  }
+  
+   .showphoto  .inner .img img
+  {
+    width: 100%;
+    height: 100%;
+  }
+    .inner .img
+  {
+      animation: splash .5s ease-in-out;
+      animation-fill-mode: forwards;
+    border: none;
+    border-radius: 0px;
+  }
+  @keyframes splash {
+      from
+      {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+
+   .showphoto .inner .img
+  {
+      opacity: 0;
+      width: 40vw;
+      height: 20vw;
+  }
+   .showphoto 
+  {
+      height: 100vh;
+      width: 100vw;
+      display: none;
+      position: absolute;
+      top: 0px;
+      z-index: 1000;
+  }
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .showphoto::before
+  {
+    content: '';
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color:  rgb(255 255 255 / 16%);
+    z-index: 90;
+}
+  }
+   .showphoto  .exit
+  {
+    /* position: absolute; */
+}
+ .showphoto .inner
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    z-index: 208888;
+    /* display: none; */
+  }
+    @media screen  and (max-width:500px){
+      .services .photos .photo h3 {
+        font-size: 12px;
+    }
+    }
+    @media screen  and (max-width:800px){
+      #photos .photo img {
+        border-radius: 5px;
+    }
+      #photos {
+          width: 96%;
+          justify-content: space-around;
+          margin: 0px;
+      }
+      #photos .photo
+      {
+        width: 45vw;
+      }
+      .services .ourWork {
+        border-radius: 10px !important;
+        width: 97% !important;
+  
+      }
+
+      #photos .photo img {
+          width: 100%;
+          margin: 5px 10px;
+
+          height: 30vw;
+          cursor: pointer;
+      }
+       .showphoto .inner .img {
+          width: 90vw;
+          height: 56vw;
+      }
+    }
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      .services .ourWork {
+        /* -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        background-color:  rgb(255 255 255 / 16%); */
+        margin: 0px auto;
+        border-radius: 40px;
+        width: 90%;
+        /* padding-top: 20px; */
+        padding-bottom: 20px;
+  
+      }
+    }

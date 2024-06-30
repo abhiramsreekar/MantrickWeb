@@ -1,0 +1,357 @@
+.blogShow
+{
+  width: 60%;
+  margin: 2px auto;
+}
+.blogs-Container .blogsContainer{
+    height: 45vh;
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+
+.blogs-Container .blogsChangingHeading{
+    text-align: left !important;
+    width: 80%;
+    position: absolute;
+    top:35%;
+    left:10%;
+    /* background-color: blue; */
+}
+
+.blogs-Container .blogsChangingHeading h1{
+    text-align: center !important;
+    font-size: 70px;
+    margin: 2px;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.blogs-Container .content-items{
+    padding-top: 50px;
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 40px;
+    grid-row-gap: 40px;
+}
+
+.blogs-Container .tabsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: black;
+    margin: 0 10% 0;
+    word-break: break-all;
+}
+  
+.blogs-Container .bloc-tabs {
+    display: flex;
+    width:100%;
+}
+.blogs-Container .tabs {
+  padding: 15px;
+  text-align: center;
+  width: 8%;
+  background: rgba(128, 128, 128, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+}
+.blogs-Container .tabs:not(:last-child){
+  border-right: 1px solid rgba(0, 0, 0, 0.274);
+}
+  
+.blogs-Container .active-tabs  {
+  background: #335061;
+  color: #fff;
+  /* border-bottom: 1px solid transparent; */
+}
+  
+.blogs-Container button {
+  border: none;
+}
+.blogs-Container .content-tabs {
+  position: relative;
+}
+.blogs-Container .content {
+  /* background: white; */
+  /* padding: 20px; */
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.blogs-Container .content h2 {
+    padding: 0px 0 5px 0px;
+}
+.blogs-Container .content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+.blogs-Container .content p {
+  width: 100%;
+  height: 100%;
+}
+.blogs-Container .active-content {
+  display: block;
+}
+
+@media only screen and (max-width: 798px) {
+  .blogs-Container .blogsContainer{
+    height: 75vh;
+  }
+  .blogs-Container .content-items{
+    padding-top: 50px;
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-row-gap: 40px;
+  }
+
+  .blogs-Container .tabs {
+    width: 30%;
+  }
+}
+
+/* individual */
+.getInvolvedPage .eventPoster{
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  /* background-color: #355061; */
+  cursor: pointer;
+}
+.getInvolvedPage .img
+{
+  width: 60%;
+  height: 60vh;
+  margin: 20px 30px;
+}
+.getInvolvedPage .eventPoster img:hover{
+  transform: scale(0.97);
+  /* opacity: 0.5; */
+}
+
+.getInvolvedPage .eventPoster img{
+  width: 100%;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  transition: all 0.45s ease-out;
+}
+
+.getInvolvedPage .eventPoster a{
+  width:100%;
+}
+
+.getInvolvedPage .colorOverlay{
+  background: linear-gradient(to top right, #000 10%, rgba(254, 243, 236,0) 100%);
+  width:100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  opacity: 0.5;
+  border-radius: 5px;
+}
+
+.getInvolvedPage .colorOverlay.pastOverlay{
+  cursor: pointer;
+  transition: all 0.45s ease-in-out;
+  background: linear-gradient(to top right, #355061 10%, rgba(254, 243, 236,0) 98%);
+}
+
+.getInvolvedPage .colorOverlay.pastOverlay:hover{
+  background: #355061;
+}
+
+.getInvolvedPage .overlayText{
+  width:100%;
+  height: 100%;
+  position: absolute;
+  top:65%;
+  background-color: rgba(0,0,0,0);
+  padding: 20px;
+  line-height: 1.3;
+  color: #fef3ec;
+}
+
+.getInvolvedPage .PastEventPoster {
+  position: relative;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* overflow: hidden; */
+}
+
+.getInvolvedPage .PastEventPoster h1{
+  color: #355061 !important;
+}
+
+.getInvolvedPage .PastEventPoster img{
+  width: 100%;
+  border-radius: 5px;
+  padding: 0;
+  margin: 0;
+  transition: all 0.45s ease-out;
+}
+
+.getInvolvedPage .PastEventPoster img:hover{
+  transform: scale(0.97);
+  /* opacity: 0.5; */
+}
+
+a{
+  text-decoration: none;
+}
+
+
+@media only screen and (max-width: 798px) {
+  .getInvolvedPage .img
+  {
+      width: 100%;
+      margin: 20px 0px;
+      height: 50vh;
+  }
+}
+/* getinvolved */
+.why img{
+  width:30%;
+}
+
+.shape{
+  position: relative;
+  top:10%;
+  right: 10%;
+  width:50%;
+}
+
+.getInvolvedPage{
+  width: 70%;
+  /* margin: 10% auto; */
+}
+
+.getInvolvedPage h1,
+.getInvolvedPage h3{
+  color: #EB4438;
+  margin:50px 0 40px;
+  font-weight: bolder;
+  text-align: left !important;
+}
+
+.getInvolvedPage p{
+  color: white;
+  margin-bottom: 40px;
+  font-family: 'Lexend Deca',sans-serif;
+}
+
+p.question{
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.benefits{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap:20px;
+}
+
+.benefitItem{
+  background-color: rgba(51, 80, 97, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.benefits h5{
+  font-weight: bolder;
+  color: #EB4438;  
+}
+
+.benefits p{
+  font-size: 14px;
+  color: #335061;
+  padding: 0;
+  margin: 0;  
+}
+
+.PrDeptDetails h6{
+  color: #335061;
+}
+.PrDeptDetails h5{
+  font-weight: bolder;
+}
+
+.PrDeptDetails span{
+  color: #EB4438;
+  font-weight: bolder;
+}
+
+.PrDeptDetails p{
+  padding: 0;
+  margin: 5px 0;
+}
+
+@media only screen and (max-width: 798px) {
+  .why img{
+      width:100%;
+  }
+  
+  .getInvolvedPage{
+      width: 80%;
+  }
+  
+  .getInvolvedPage h1,
+  .getInvolvedPage h3{
+      color: #EB4438;
+      margin:50px 0 40px;
+      font-weight: bolder;
+      text-align: left !important;
+  }
+  
+  .getInvolvedPage p{
+      margin-bottom: 40px;
+      font-family: 'Lexend Deca',sans-serif;
+  }
+  
+  p.question{
+      margin: 0 0 10px 0;
+      padding: 0;
+      font-weight: bold;
+      font-size: 17px;
+  }
+  
+  .benefits{
+      display: grid;
+      grid-template-columns: repeat(1,1fr);
+      grid-gap:20px;
+  }
+  .blogShow .getInvolvedPage *
+  {
+      /* width: 60%; */
+  }
+  .benefitItem{
+      background-color: rgba(51, 80, 97, 0.1);
+      border-radius: 5px;
+      padding: 20px;
+  }
+  
+  .benefits h5{
+      font-weight: bolder;
+      color: #EB4438;  
+  }
+  
+  .benefits p{
+      font-size: 14px;
+      color: #335061;
+      padding: 0;
+      margin: 0;  
+  }
+}
+

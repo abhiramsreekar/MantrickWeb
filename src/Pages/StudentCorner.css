@@ -1,0 +1,111 @@
+.containerCorner {
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 20px;
+    padding-top: 15vh;
+    background-color: black;
+    position: relative;
+}
+.containerCorner .search-bar {
+    position: relative;
+    margin-top: 20px; /* Add some spacing between search box and table */
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 5px;
+    justify-content: flex-end; /* Align search bar to the right */
+}
+.containerCorner .search-bar input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    width: calc(100% - 30px); /* Adjust width to fit the container */
+    margin-right: 5px;
+}
+.containerCorner .search-icon {
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+.containerCorner table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    table-layout: fixed;
+}
+.containerCorner th, td {
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+.containerCorner th {
+    background-color: black;
+}
+.containerCorner th:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 1px;
+    background-color: white;
+}
+.containerCorner tr {
+    background-color: #191919;
+    border-radius: 10px;
+}
+.containerCorner .portfolio {
+    display: none;
+    background-color: black;
+    padding: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-align: left;
+}
+.containerCorner .portfolio-container {
+    width: calc(100%);
+    overflow-x: auto;
+}
+.containerCorner .portfolio iframe {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+.containerCorner .expand-icon {
+    cursor: pointer;
+    color: white;
+    font-size: 32px;
+}
+
+@media (max-width: 768px) {
+    .containerCorner th, td {
+        font-size: 11px;
+    }
+}
+@media (min-width: 768px) {
+    .containerCorner {
+        max-width: 90%; /* Adjust max-width for larger screens */
+    }
+    .containerCorner .search-bar {
+        position: absolute;
+        top: 0;
+        right: 20px; /* Align search bar to the right */
+        margin-top: 10px; /* Add spacing from top */
+        width: 300px; /* Set fixed width */
+        justify-content: space-between; /* Space between input and icon */
+    }
+    .containerCorner .search-bar input[type="text"] {
+        width: calc(100% - 35px); /* Adjust width to fit the container */
+    }
+    .containerCorner .search-icon {
+        font-size: 20px; /* Adjust icon size */
+    }
+}

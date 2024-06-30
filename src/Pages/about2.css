@@ -1,0 +1,126 @@
+
+.aboutUs
+{
+    display: flex;
+    margin: 2px auto;
+    width: 93vw;
+    color: white;
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 500;
+    font-family: 'Abel', sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-top: 0px;
+}
+#huesfx:hover
+{
+    text-decoration: underline !important;
+}
+.aboutUs .left h1
+{
+    margin-top: 0px;
+    font-family: 'Abel', sans-serif;
+}
+.blackbg
+{
+    background-color: black;
+}
+.aboutUs .left
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40vw;
+    /* align-items: center; */
+}
+
+.aboutUs .left .tabs .tableft img
+{
+    width: 40px;
+    margin: 2px 10px;
+    margin-top: -10px;
+}
+.aboutUs .left .tabs h3 p
+{
+    margin-top: 0px;
+
+}
+.aboutUs .left .tabs h3
+{
+    margin-top: -5px;
+    margin-bottom: 0px;
+    font-family: 'Abel', sans-serif;
+}
+.aboutUs .left .tabs
+{
+    display: flex;
+}
+.aboutUs .right #img1
+{
+    height: 400px;
+    left: 8vw;
+    top:10vh;
+    z-index: -1;
+    width: 300px;
+    transform: rotate(-3deg);
+}
+.aboutUs .tabright p
+{
+    font-size: 17px;
+}
+.aboutUs .right #img2
+{
+    height: 300px;
+    left: 5vw;
+    top:30vh;
+    z-index: 0;
+    width: 250px;
+    transform: rotate(5deg);
+}
+.aboutUs .right #img3
+{
+    height: 150px;
+    left: 13vw;
+    top:4vh;
+    z-index: 2;
+    width: 250px;
+}
+.aboutUs .right img
+{
+    position: relative;
+}
+.aboutUs .right
+{
+    width: 40vw;
+}
+@media  (max-width:800px) {
+    .aboutUs .right
+    {
+        display: none;
+    }
+    .aboutUs .left
+    {
+        width: 80vw;
+    }
+    .aboutUs
+    {
+        font-size: 13px;
+        padding-top: 83px;
+    }
+}
+@media  (max-width:1300px) {
+    .aboutUs .left {
+        width: 95vw;
+    }
+    .aboutUs .left .tabs {
+        width: 100% !important;
+    }
+    .aboutUs .left .tabs .tableft img {
+        width: 26px;
+    }
+    .responsive-container-block.rightSide * {
+        border-radius: 5px;
+    }
+}

@@ -1,13 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
 import Banner from '../Components/Banner.js'
-
+import Chatbot from '../Components/Chatbot'
 export default function LandingPage() {
   return (
-    <div>
-        <Navbar/>
-        <Banner/>
-        {/* <Carousel/> */}
-    </div>
+    <>
+    <Banner/>
+    <Chatbot/>
+    </>
   )
 }

@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+.nav {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    line-height: 65px;
+    text-align: center;
+    position: fixed;
+    padding: 5px 0px;
+    background-color: transparent;
+    z-index: 9999;
+    transition: all .5s linear;
+    top: 7vh;
+}
+.navUp ul li span
+{
+    display: flex;
+}
+.navUp ul li
+{
+    list-style: none;
+}
+.navUp ul li span span
+{
+    color: red;
+    padding-right: 10px
+}
+.navUp ul li
+{
+    color: #111;
+    display: flex;
+    padding-right: 10vw;
+    /* padding-left: 1vw; */
+}
+.navUp ul #sh-meet a
+{
+    color: white;
+    padding-left: 20px;
+}
+.navUp ul #sh-meet
+{
+    background-color: red;
+    height: 7vh !important;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    /* margin-right:3vw; */
+    height: 8vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navUp ul
+{
+    display: flex;
+}
+.navUp
+{
+    display: flex;
+    height: 7vh;
+    background: white;
+    z-index: 99999;
+    width: 100%;
+    position: fixed;
+}
+.snacker
+{
+    position: fixed;
+    bottom: 20px;
+    left: 200px;
+    z-index: 99999;
+}
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    /* display: none; */
+    padding-left: 3rem;
+    margin-top: 5px;
+    animation: logoanime 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes logoanime {
+    from{
+        display: none;
+        transform: scale(1.5);
+    }
+    to
+    {
+        display: block;
+        transform: scale(1);
+    }
+}
+
+.ul22:hover
+{
+    background-color: white;
+    color: #111;
+}
+.ul22
+{
+    border: 2px white solid;
+    border-radius: 8px;
+
+}
+
+
+.nav
+{
+    background-image:linear-gradient(black,transparent);
+}
+.nav div.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+/* .nav div.logo a:hover {
+    color: red;
+} */
+
+.nav div.main_list {
+    height: 65px;
+    float: right;
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 65px;
+    padding: 0;
+    padding-right: 2rem;
+}
+.ul3
+{
+    animation: navroll .5s linear;
+    animation-delay: .5s;
+    color: aqua;
+}
+/* @keyframes navroll {
+    from
+    {
+        opacity: 0;
+        top:10px;
+    }
+    to 
+    {
+        opacity: 1;
+        top:0px
+    }
+} */
+.nav div.main_list ul li a:hover {
+}
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    padding:5px 10px;
+    cursor: pointer;
+    position: relative;
+    top:0px;
+    font-size: 18px;
+    font-family:sans-serif;
+    transform-origin:100% 0% ;
+}
+.nav div.main_list ul li .ul1 {
+    animation-delay: 0s;
+
+}
+.nav div.main_list ul li .ul2 {
+    animation-delay: .2s;
+
+}
+.nav div.main_list ul li .ul3 {
+    animation-delay: .4s;
+
+}
+.nav div.main_list ul li .ul4 {
+    animation-delay: .6s;
+
+}
+.nav div.main_list ul li .ul5 {
+    animation-delay: .8s;
+
+}
+.nav div.main_list ul li .ul6 {
+    animation-delay: 1s;
+
+}
+.nav div.main_list ul li .ul7 {
+    animation-delay: 1.2s;
+
+}
+@keyframes amoveup {
+    from
+    {
+        opacity: 0;
+        top:30px;
+    }
+    to
+    {
+        opacity: 1;
+        top:0px;
+        
+    }
+}
+.nav div.main_list ul #marker
+{
+    position: absolute;
+    height: 4px;
+    width: 0px;
+    left: 0px;
+    background: rgb(239, 36, 36);
+    bottom: 10px;
+    border-radius: 5px;
+    transition: all .5s;
+}
+/* .nav div.main_list ul li .ul1:hover {
+    border-bottom: 2px red solid;  
+} */
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+@media screen and (max-width:1008px) {
+    /* .nav div.show_list {
+        height: auto;
+        display: none;
+    } */
+    .navUp ul
+    {
+        padding-left: 10px !important;
+    }
+    .navUp ul li {
+        padding-right: 2vw;
+    }
+}
+@media screen and (max-width:700px) {
+    .navUp ul #sh-meet
+    {
+        height: 5vh !important;
+    }
+    .navUp
+    {
+        height: 5vh;
+    }
+    .nav {
+        top: 5vh;
+    }
+    .navUp ul .ul-2
+    {
+        display: none;
+    }
+    .navUp ul .ul-3
+    {
+        display: none;
+    }
+}
+@media screen and (max-width:800px) {
+    /* .nav div.show_list {
+        height: auto;
+        display: none;
+    } */
+    .navUp ul li {
+        font-size: 13px;
+    }
+    .navUp ul li span span {
+        font-size: 15px;
+    }
+}
+.nav div.logo img {
+    width: 290px;
+    margin-top: 5px;
+}
+@media screen and (max-width:1408px) {
+    .nav div.main_list ul li {
+        width: auto;
+        height: 65px;
+        padding: 0;
+    }    
+    .nav div.logo {
+        padding-left: 2rem;
+    }
+}
+@media screen and (max-width:1008px) {
+    .nav div.logo img {
+        width: 250px;
+        margin-top: 0px;
+    }
+    .navTrigger {
+        display: block;
+    }
+    #marker
+    {
+        display: none;
+    }
+    .nav div.logo {
+        margin-left: -30px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list ul a {
+        opacity: 0;
+        animation: amoveup .5s ease-in-out;
+        transition: all 1s ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    .nav div.show_list ul{
+        padding-top: 70px;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+        position: absolute;
+        top: 0px;
+        z-index: -1;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #111;
+        /*same background color of navbar*/
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .nav div.main_list ul li a {
+        text-align: center;
+        width: 100%;
+        font-size: 20px;
+        padding: 8px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #fff;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+.ContactContainer ul .contacts
+{
+    display: flex;
+    flex-direction: row;
+}
+.nav .container .option
+{
+    background: none;
+}

@@ -1,0 +1,60 @@
+.clientspage{
+    display: flex;
+    flex-direction: column;
+    width:100vw;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    transition: all 1s ease-in-out;
+    margin-bottom: 0px;
+}
+
+.clientspage .carouse-wrapper
+{
+    align-items: center;
+}
+.clientspage h1{
+    margin:3%;
+    color:white;
+    margin-top: 40px;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    width:100vw;
+    height:auto;
+    align-items: center;
+    max-width: 1300px;
+    justify-content: center;
+}
+.clientGallary .carousel
+{
+    height: 100%;
+}
+.clientspage .client-item {
+height: 100%;
+}
+
+@media (max-width:500px)
+{
+    .basiccard {
+        width: 61vw;
+    }
+    .clientGallary
+    {
+        padding-top: 10vh;
+    }
+    .clientspage .client-item {
+    /* height: 30vh; */
+    }
+}
+
+.clientGallary .gin  .gallary .carousel .carousel-item
+{
+    -webkit-animation: scroll 32s linear infinite;
+            animation: scroll 32s linear infinite;
+            width: 100%;
+}
