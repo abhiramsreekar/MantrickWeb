@@ -6,11 +6,14 @@
 
 ![demo](https://i.ibb.co/9rNmSYv/mantrick-studios-demo.png)
 
-
 ## Tech Stack 
 
 -   [React.js](https://react.dev/)
 -   [Firebase](https://firebase.google.com/)
+
+## Table of Contents
+- [Installation](#installation)
+- [Demo](#demo)
   
 ## instalation & Setup
 Clone the repository,
