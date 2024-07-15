@@ -18,6 +18,7 @@ import { useEffect } from 'react';
 import MyGaller from './Pages/MyGaller';
 import MyPortfolio from './Pages/MyPortfolio';
 import MyTestimonials from './Components/MyTestimonials';
+import Placements from './Components/Placements';
 function App() {
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -40,6 +41,7 @@ function App() {
       <Route path='/gallery' element={<MyGaller/>} />
       <Route path='/portfolio' element={<MyPortfolio/>} />
       <Route path='/testimonials' element={<MyTestimonials/>} />
+      <Route path='/mystudents' element={<Placements/>} />
 
       <Route path='/*' element={<Home/>} />
       

@@ -24,9 +24,9 @@ export default function Home() {
     <About2/>
     <ServicesTab/>
     <Courses/>
-    <Mystudents/>
-    <StudentGallary/>
-    <Testimonials/>
+    {/* <Mystudents/> */}
+    {/* <StudentGallary/> */}
+    {/* <Testimonials/> */}
     <Team/>
     <Services/>
     <Clients/>

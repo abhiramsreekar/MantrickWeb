@@ -94,7 +94,7 @@ export default function Navbar3() {
                 <span class="material-symbols-outlined">
                     schedule
                 </span>
-                Mon-Sat 09.00 AM to 07.00 PM IST
+                Mon-Sat 09.00 AM to 07.00 PM
                 </span>
             </li>
                     <li className='ul-3' style={{cursor:"pointer"}} id='sh-meet'><a  className=''  onClick={(e)=>{
@@ -135,7 +135,7 @@ export default function Navbar3() {
                     </li>
                     <li><Link to="/about" className='ul1 ul2' id="#aboutUs1" onClick={marker}>About</Link></li>
                     <li><Link to="/services" className='ul1 ul3'  id="#services-head3" onClick={marker}>Services</Link></li>
-                    <li><Link to="/training" className='ul1 ul3' id="#team1"
+                    <li><Link to="/portfolio" className='ul1 ul3' id="#team1"
                     //  onClick={portfolio}
                     onClick={marker}
                     >Portfolio</Link></li>
@@ -180,6 +180,8 @@ keyboard_arrow_down
         }}
           >Brochure</Link>
           <Link to="blogs">Blogs</Link>
+          <Link to="/gallery">Gallery</Link>
+          <Link to="/mystudents">Placements</Link>
           <Link to="/studentcorner">StudentCorner</Link>
           <Link to="/testimonials">Testimonials</Link>
         </div>
