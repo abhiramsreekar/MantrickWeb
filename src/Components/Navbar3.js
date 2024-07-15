@@ -134,12 +134,12 @@ export default function Navbar3() {
                     </li>
                     <li><Link to="/about" className='ul1 ul2' id="#aboutUs1" onClick={marker}>About</Link></li>
                     <li><Link to="/services" className='ul1 ul3'  id="#services-head3" onClick={marker}>Services</Link></li>
-                    <li><Link to="/training" className='ul1 ul4'   id="#courses1" onClick={marker}>Training</Link></li>
-                    <li><Link to="/team" className='ul1 ul5'   id="#team22" onClick={marker} >Team</Link></li>
                     <li><Link to="/team" className='ul1 ul3' id="#team1"
                     //  onClick={portfolio}
                     onClick={marker}
                     >Portfolio</Link></li>
+                    <li><Link to="/team" className='ul1 ul5'   id="#team22" onClick={marker} >Team</Link></li>
+                    {/* <li><Link to="/training" className='ul1 ul4'   id="#courses1" onClick={marker}>Training</Link></li>
                     <li><a href="#clients" className='ul22 ul6' onClick={(e)=>{
                         document.querySelector(".back-2").style.display="flex";
                         if(window.innerWidth<=1000)
@@ -157,6 +157,43 @@ export default function Navbar3() {
                         </li>
                         <li>
                         <Link to="/studentcorner" className='ul1 ul7' id="#footer1"  onClick={marker}>Student Corner</Link>
+                        </li> */}
+                        <li>
+                        <div className="dropdown">
+        <a href="#!" className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Academy <span class="material-symbols-outlined">
+keyboard_arrow_down
+</span></a>
+        <div className="dropdown-content">
+          <Link 
+           onClick={(e)=>{
+            document.querySelector(".back-2").style.display="flex";
+            if(window.innerWidth<=1000)
+            {
+                document.querySelector('.navTrigger').classList.toggle('active');
+                const mainListDiv = document.querySelector('#mainListDiv');
+                mainListDiv.classList.toggle('show_list');
+                fadeIn(mainListDiv);
+            }
+            document.querySelector(".schedule-meet-o").style.display="none";
+            document.querySelector(".schedule-meet").style.display="flex";
+        }}
+          >Brochure</Link>
+          <Link to="blogs">Blogs</Link>
+          <Link to="/studentcorner">StudentCorner</Link>
+          <Link to="/testimonials">Testimonials</Link>
+        </div>
+      </div>
+                        </li>
+                        <li>
+                        <div className="dropdown">
+        <a href="#!" className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Reach Us <span class="material-symbols-outlined">
+keyboard_arrow_down
+</span></a>
+        <div className="dropdown-content">
+          <Link to="/">Business</Link>
+          <Link to="/">Careers</Link>
+        </div>
+      </div>
                         </li>
                 </ul>
             </div>

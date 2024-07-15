@@ -15,6 +15,9 @@ import Home from './home'
 import Courses from './Pages/Courses';
 import Blog from './Components/Blog';
 import { useEffect } from 'react';
+import MyGaller from './Pages/MyGaller';
+import MyPortfolio from './Pages/MyPortfolio';
+import MyTestimonials from './Components/MyTestimonials';
 function App() {
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -34,6 +37,10 @@ function App() {
       <Route path='/studentcorner' element={<StudentCorner />} />
       <Route path='/blog/:id' element={<Blog/>} />
       <Route path='/courses' element={<Courses/>} />
+      <Route path='/gallery' element={<MyGaller/>} />
+      <Route path='/portfolio' element={<MyPortfolio/>} />
+      <Route path='/testimonials' element={<MyTestimonials/>} />
+
       <Route path='/*' element={<Home/>} />
       
       </Routes>

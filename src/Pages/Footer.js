@@ -6,7 +6,11 @@ import instagram from '../Images/icons/instagram.png';
 import twitter from '../Images/icons/twitter.png';
 import youtube from '../Images/icons/youtube.png';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
   function fadeIn(element) {
     let opacity = 1;
     const links=document.querySelector('.ulm');
@@ -59,43 +63,19 @@ export default function Footer() {
             <div className='f21'>
                 <p ><strong className='underline '> Quick Links</strong></p>
                 <div className='links'>
-                    <Link to='/' onClick={()=>{window.scrollTo(0, 0)}}>Home</Link>
+                    <Link to='/'>Home</Link>
                     <Link to="/about">About us</Link>
                     <Link style={{cursor:"pointer"}} onClick={(e)=>{
-                        if(window.innerWidth<=1000)
-                        {
-                            document.querySelector('.navTrigger').classList.toggle('active');
-                            const mainListDiv = document.querySelector('#mainListDiv');
-                            mainListDiv.classList.toggle('show_list');
-                            fadeIn(mainListDiv);
-                        }
-                        var mark=document.querySelector("#marker");
-                        mark.style.left=e.target.offsetLeft+"px";
-                        mark.style.width=e.target.offsetWidth+"px";
                         
                         document.querySelector(".back-2").style.display="block";
                         document.querySelector(".schedule-meet").style.display="none";
                         document.querySelector(".schedule-meet-o").style.display="flex";
                       }}>Meet Us</Link>
-                    <a href='#photos_o'>Our Works</a>
-                    <Link  onClick={()=>{
-                      
-                      window.scrollTo(0,0);
-                    }}
+                    <Link to='/portfolio'>Our Works</Link>
+                    <Link  to='/gallery'
                     >Gallery</Link>
                     {/* <a href='#'>Chat</a> */}
                     <a  style={{cursor:"pointer"}} onClick={(e)=>{
-                        if(window.innerWidth<=1000)
-                        {
-                            document.querySelector('.navTrigger').classList.toggle('active');
-                            const mainListDiv = document.querySelector('#mainListDiv');
-                            mainListDiv.classList.toggle('show_list');
-                            fadeIn(mainListDiv);
-                        }
-                        var mark=document.querySelector("#marker");
-                        mark.style.left=e.target.offsetLeft+"px";
-                        mark.style.width=e.target.offsetWidth+"px";
-                        
                         document.querySelector(".back-2").style.display="block";
                         document.querySelector(".schedule-meet").style.display="none";
                         document.querySelector(".schedule-meet-o").style.display="flex";
@@ -105,12 +85,47 @@ export default function Footer() {
             <div className='f22 f'>
                 <p ><strong className='underline '>Services</strong></p>
                 <div className='links'>
-                    <Link to='/courses '>Roto</Link>
-                    <Link to='/courses '>Composting</Link>
-                    <Link to='/courses '>Vfx</Link>
-                    <Link to='/courses '>Paint</Link>
-                    <Link to='/courses '>Match Move</Link>
-                    <Link to='/courses '>3D</Link>
+                    <Link to='/courses ' onClick={()=>{
+                      
+                        window.scrollTo(0, 0);
+                      
+                    }}>Roto</Link>
+                    <Link 
+                    to='/courses '
+                    onClick={()=>{
+                      
+                      window.scrollTo(0, 0);
+                    
+                  }}
+                    >Composting</Link>
+                    <Link
+                    onClick={()=>{
+                      
+                      window.scrollTo(0, 0);
+                    
+                  }}
+                    >Vfx</Link>
+                    <Link to='/courses '
+                    onClick={()=>{
+                      
+                      window.scrollTo(0, 0);
+                    
+                  }}
+                  >Paint</Link>
+                    <Link to='/courses '
+                    onClick={()=>{
+                      
+                      window.scrollTo(0, 0);
+                    
+                  }}
+                  >Match Move</Link>
+                    <Link to='/courses '
+                    onClick={()=>{
+                      
+                      window.scrollTo(0, 0);
+                    
+                  }}
+                  >3D</Link>
                 </div>
             </div>
             <div className='f21'></div>
