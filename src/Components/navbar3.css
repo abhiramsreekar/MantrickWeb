@@ -141,6 +141,7 @@
 }
 
 .nav div.main_list ul li {
+    display: flex;
     width: auto;
     /* height: 65px; */
     padding: 0;
@@ -180,6 +181,7 @@
 }
 .nav div.main_list ul li .ul1 {
     animation-delay: 0s;
+    display: flex;
     
 }
 .nav div.main_list ul li .ul2 {
@@ -268,6 +270,13 @@
     border: 1px white solid;
 }
 @media screen and (max-width:700px) {
+    .nav div.main_list ul li {
+        display: block;
+    }
+    .nav div.main_list ul li .ul1 {
+        display: block;
+        
+    }
     .dropdown-content {
         position: relative !important;
         background-color: white;

@@ -76,7 +76,7 @@ export default function Navbar3() {
                     call
                 </span>
                 
-                +91 9052000230
+                +91 7993338242
                 </span>
             </li>
             <li className='ul-2'>
@@ -84,7 +84,8 @@ export default function Navbar3() {
                 <span class="material-symbols-outlined">
                     mail
                     </span>
-                    <a style={{textDecoration:"none",color:"black"}} href = "mailto:training@mantrickstudios.com">training@mantrickstudios.com</a>
+                    <a style={{textDecoration:"none",color:"black"}} href = "mailto:training@mantrickstudios.com">info@mantrickstudios.com
+</a>
                     
                 </span>
             </li>
@@ -93,7 +94,7 @@ export default function Navbar3() {
                 <span class="material-symbols-outlined">
                     schedule
                 </span>
-                Mon-Sat  9am-7pm
+                Mon-Sat 09.00 AM to 07.00 PM IST
                 </span>
             </li>
                     <li className='ul-3' style={{cursor:"pointer"}} id='sh-meet'><a  className=''  onClick={(e)=>{
@@ -134,7 +135,7 @@ export default function Navbar3() {
                     </li>
                     <li><Link to="/about" className='ul1 ul2' id="#aboutUs1" onClick={marker}>About</Link></li>
                     <li><Link to="/services" className='ul1 ul3'  id="#services-head3" onClick={marker}>Services</Link></li>
-                    <li><Link to="/team" className='ul1 ul3' id="#team1"
+                    <li><Link to="/training" className='ul1 ul3' id="#team1"
                     //  onClick={portfolio}
                     onClick={marker}
                     >Portfolio</Link></li>
