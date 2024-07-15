@@ -67,8 +67,14 @@ redefining visual storytelling
         <div className="responsive-container-block rightSide">
               <img className="number2img img1 aleft"src={cubes2}/>
               <img className="number4vid aright" src={image}/>
+
               <img className="number7img img4 aright" src={cubes}/>
-              <img className="number6img img5 aright" src={TPN}/>
+              <div>
+              <p className="number66img">
+              Mantrick Studios is a proud member of Trusted Partner Network (TPN) global, As part of industry-wide content security initiative.
+              </p>
+              <img className='number6img img5 aright' src={TPN}/>
+              </div>
               <img className="number1img  img6 aleft" src={cubes}/>
             </div>
     </div>

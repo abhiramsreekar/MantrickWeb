@@ -180,10 +180,18 @@ keyboard_arrow_down
         }}
           >Brochure</Link>
           <Link to="blogs">Blogs</Link>
-          <Link to="/gallery">Gallery</Link>
           <Link to="/mystudents">Placements</Link>
-          <Link to="/studentcorner">StudentCorner</Link>
-          <Link to="/testimonials">Testimonials</Link>
+          <Link>
+          <div class="dropdown2">
+            <Link to='/studentcorner' class="nav-link2 dropdown-toggle2" style={{background:"#575757"}}>StudentCorner▼</Link>
+            <div class="dropdown-content2">
+                <Link to="/gallery">Gallery</Link>
+                <Link to="/testimonials">Testimonials</Link>
+                
+            </div>
+        </div>
+          </Link>
+          
         </div>
       </div>
                         </li>

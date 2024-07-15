@@ -178,7 +178,7 @@ display: none;
 }
 .aboutUs
 {
-    margin-top: 140px;
+    margin-top: 10px !important;
 }
 @media screen  and (max-width:1000px){
   .page{
