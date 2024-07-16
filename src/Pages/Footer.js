@@ -7,9 +7,7 @@ import twitter from '../Images/icons/twitter.png';
 import youtube from '../Images/icons/youtube.png';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 export default function Footer() {
-  const location = useLocation();
   const navigate = useNavigate();
   function fadeIn(element) {
     let opacity = 1;

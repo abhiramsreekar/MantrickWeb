@@ -209,20 +209,7 @@ export default function Chatbot() {
           )
         }
         
-        // # Brochure sent to email
-        
-        // emailjs
-        // .sendForm('service_xe7vpm5', 'template_82neu78', form.current, {
-        //   publicKey: 'q7X7GCfUuxJ7losY8',
-        // })
-        // .then(
-        //   () => {
-        //     console.log('SUCCESS!');
-        //   },
-        //   (error) => {
-        //     console.log('FAILED...', error.text);
-        //   },
-        //   );
+       
         clear();
         setBsubmit("s");
         showSnackbar('Response recorded successfully!', 'success');
@@ -249,11 +236,7 @@ export default function Chatbot() {
       const sh_date=formated_date(new Date(DateAndTime));
 
       const new_date=formated_date(new Date())
-      // if(e_otp=!otp)
-      // {
-      //   showSnackbar('OTP entered is wrong!', 'error');
-      //   return;
-      // }
+      
       try {
 
       // #sending data to firebase
@@ -312,22 +295,7 @@ export default function Chatbot() {
           )
         }
         
-        // # Brochure sent to email
-        
-        // emailjs
-        // .sendForm('service_xe7vpm5', 'template_82neu78', form.current, {
-        //   publicKey: 'q7X7GCfUuxJ7losY8',
-        // })
-        // .then(
-        //   () => {
-        //     console.log('SUCCESS!');
-        //   },
-        //   (error) => {
-        //     console.log('FAILED...', error.text);
-        //   },
-        //   );
-        // clear();
-        // setBsubmit("s");
+      
         showSnackbar('Response recorded successfully!!', 'success');
       
       } catch (error) {
@@ -346,7 +314,7 @@ export default function Chatbot() {
       document.querySelector(".back-2").style.display="none";
       }}>cancel</span>
       
-      <h2>Download Brochure</h2>
+      <h2>Reach Us</h2>
       <p>Please provide your contact information</p>
       <form ref={form} onSubmit={Email_OTP}>
       <input type='text' name='email_otp' id='email_id' value={email_otp} style={{display:"none"}}/>

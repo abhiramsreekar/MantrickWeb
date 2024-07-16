@@ -36,7 +36,7 @@
 {
     color: #111;
     display: flex;
-    padding-right: 10vw;
+    padding-right: 4vw;
     /* padding-left: 1vw; */
 }
 .navUp ul #sh-meet a
@@ -629,7 +629,7 @@
 }
 
 .nav-link2:hover {
-    background-color: #575757 !important;
+    background-color:red !important;
 }
 
 .dropdown2 {
@@ -645,7 +645,7 @@
 .dropdown-content2 {
     display: none;
     position: relative;
-    background-color: #444 !important;
+    background-color: red !important;
     padding-left: 20px;
 }
 
@@ -657,7 +657,7 @@
 }
 
 .dropdown-content2 a:hover {
-    background-color: #575757 !important;
+    background-color: Red !important;
 }
 
 .dropdown2:hover .dropdown-content2 {

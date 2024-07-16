@@ -5,11 +5,15 @@ import paint from '../Images/courses/mantrickstudios_paint.webp';
 import d3 from '../Images/courses/mantrickstudios_3d.webp';
 import mm from '../Images/courses/mantrickstudios_mm.webp';
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import { display } from '@mui/system';
 export default function Courses() {
-  var currentCard=1;
-  useEffect(()=>{
-   window.scrollTo(0, 0);
-},[])
+   var currentCard=1;
+   useEffect(()=>{
+      window.scrollTo(0, 0);
+      // alert(location.pathname=='/');
+   },[])
+   const location = useLocation();
   const courses=[
     {
       heading:"Roto (Rotoscoping)",
@@ -97,8 +101,31 @@ export default function Courses() {
       {/* <video style={{display:"absolute",width:"100%"}} autoPlay muted loop id="myVideo"  src={Video} type="video/mp4" controls> 
       </video> */}
     <div className="coursesBox page" id="courses" style={{display: "flex",flexDirection: "column",justifyContent:"center",alignItems:"center",marginTop:"0px",paddingTop:"5vh"}}>
-      <h1 className='head-one training-head' style={{textAlign:"center",marginTop:"100px",marginBottom:"50px"}} >TRAINING</h1>
-      <h1 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px",width:"100%"}}>HERE ARE OUR COURSES</h1>
+      <h1 className='head-one training-head' style={{textAlign:"center",marginTop:"100px",marginBottom:"50px"}} >
+         
+         {
+            location.pathname=='/'?<>
+            Studio Services
+            </>
+            :
+            <>
+            TRAINING
+            </>
+         }
+         </h1>
+
+      <h1 className='text-blk heading' style={{fontSize:"30px",letterSpacing:"-.5px",width:"100%"}}>HERE ARE OU
+      
+      {
+         location.pathname=='/'?<>
+         R SERVICES
+         </>
+         :
+         <>
+         R COURSES
+         </>
+      }
+      </h1>
       <div className="options ">
         <div className="option active option1" id="1" onMouseOver={active}
          style={{"--optionBackground":`url("${roto}")`}}
@@ -168,7 +195,11 @@ export default function Courses() {
                 </div>
              </div>
         </div>
-        <div className="option option6" id="6" onMouseOver={active}>
+        
+                 {
+                    !location.pathname=='/'?
+                    <>
+                    <div className="option option6" id="6" onMouseOver={active}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -192,6 +223,10 @@ export default function Courses() {
                 </div>
              </div>
         </div>
+                 </>
+                    :
+                    <></>
+                 }
    </div>
    <div className='options2' style={{display:"none"}}>
 
@@ -225,12 +260,13 @@ export default function Courses() {
               <div className="carousel-item client-item option">
               <h3 id="5" onClick={active}>Compositing</h3>
                </div>
-              <div className="carousel-item client-item option">
+                  <div className="carousel-item client-item option">
               <h3 id="6" onClick={active}>Digital Marketing</h3>
                </div>
               <div className="carousel-item client-item option">
               <h3 id="7" onClick={active}>UX/UI Design</h3>
                </div>
+              
               </section>
               <button type="button" className="arrows right-arrow" aria-label="Arrow Right">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512">
@@ -242,8 +278,15 @@ export default function Courses() {
         </div>
       </diV>
    </div>
-   <div  className='optionContentout'>
-    <div className="optionContent" id="c1" style={{padding:"0px 0px"}} >
+   
+   <div  className='optionContentout'
+    
+
+      style={{display:"none",display:location.pathname=='/'?"none":"block"}}
+      
+      
+    >
+    <div className="optionContent" id="c1" style={{padding:"0px 0px",display:"none"}} >
       
       <h3 id="h1" className='heads' style={{color:"red"}}>{courses[0].heading}</h3>
       <p id="p1">
