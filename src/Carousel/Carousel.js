@@ -5,7 +5,7 @@ import context from '../context/useContext';
 export default function Carousel() {
   useEffect(()=>{
     fetchAllLandings();
-    auto();
+    // auto();
   },[])
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); 
   const [cardNo,setCardNo]=useState(1);
@@ -74,7 +74,9 @@ export default function Carousel() {
             const event = landings[eventId];
             return (
               <div className="item"
-                 style={{backgroundImage:`URL(${event.imageUrl})`,color:"black"}} id={i}>
+                //  style={{backgroundImage:`URL(${event.imageUrl})`,color:"black"}}
+                  id={i}>
+                  <img src={event.imageUrl} ></img>
                 <div className="content">
                     <div className="name" >{event.title}</div>
                     <div className="des">{event.description}</div>

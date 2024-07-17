@@ -18,11 +18,13 @@ import axios from 'axios';
 import { async } from '@firebase/util';
 // type Value = ValuePiece | [ValuePiece, ValuePiece];
 // all available config props
+import { useLocation } from 'react-router-dom';
 const config ={
   width: "28vw",
   height: "70vh",
 };
 export default function Chatbot() {
+  const location = useLocation();
   const form = useRef();
   const form2 = useRef();
     const [otp, setOtp] = useState("");
@@ -697,7 +699,10 @@ export default function Chatbot() {
     }
     <section>
     {/* <div type="button" style={{zIndex:"1000"}} onClick={()=>{ */}
-    <div type="button" onClick={()=>{
+    {
+      location.pathname=='/academy'?
+      <>
+      <div type="button" onClick={()=>{
         const c1=document.querySelector("#chat1");
         const c2=document.querySelector("#chat2");
         const bot=document.querySelector(".bot");
@@ -727,6 +732,9 @@ export default function Chatbot() {
         <img id="chat1"  src={logo} alt="" style={{height:"50px",color:"white"}}/>
         <img id="chat2"   src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-logo-icon.png" alt="" style={{height:"60px"}}>
         </img></div>
+      </>:<></>
+    }
+    
     </section>
     </>
   )

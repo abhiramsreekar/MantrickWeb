@@ -143,7 +143,7 @@ export default function Navbar3() {
                     
                         <li>
                         <div className="dropdown">
-        <Link to="/academy" className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Academy <span class="material-symbols-outlined" style={{color:"red"}}>
+        <Link to="/academy" onClick={marker} className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Academy <span class="material-symbols-outlined" style={{color:"red"}}>
 keyboard_arrow_down
 </span></Link>
         <div className="dropdown-content">
@@ -180,9 +180,9 @@ keyboard_arrow_down
                         </li>
                         <li>
                         <div className="dropdown">
-        <a href="#!" className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Reach Us <span class="material-symbols-outlined" style={{color:"red"}}>
+        <Link to="/" onClick={marker} className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Reach Us <span class="material-symbols-outlined" style={{color:"red"}}>
 keyboard_arrow_down
-</span></a>
+</span></Link>
         <div className="dropdown-content">
           <Link to="/">Business</Link>
           <Link to="/">Careers</Link>

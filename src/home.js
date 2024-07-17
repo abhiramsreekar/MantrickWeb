@@ -23,7 +23,7 @@ export default function Home() {
     <LandingPage/>
     <About2/>
     <ServicesTab/>
-    <Courses/>
+    {/* <Courses/> */}
     {/* <Mystudents/> */}
     {/* <StudentGallary/> */}
     {/* <Testimonials/> */}

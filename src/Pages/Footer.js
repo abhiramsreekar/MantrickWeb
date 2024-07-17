@@ -3,6 +3,7 @@ import './footer.css';
 import logo from '../Images/mantrickstudios_logo.webp';
 import facebook from '../Images/icons/facebook.png';
 import instagram from '../Images/icons/instagram.png';
+import linkedin from '../Images/icons/linkedin.png';
 import twitter from '../Images/icons/twitter.png';
 import youtube from '../Images/icons/youtube.png';
 import { Link } from 'react-router-dom';
@@ -34,98 +35,35 @@ export default function Footer() {
     <div className='f1 f'>
         <img src={logo} alt=''/>
         <div className='fabox' style={{paddingTop:"5px"}}>
-        <a target="_blank" href="https://www.facebook.com/mantrickstudios" >
+        {/* <a target="_blank" href="https://www.facebook.com/mantrickstudios" >
           <img src={facebook} alt='facebook' style={{height:"50px",width:"50px"}}/>
-        </a>
-        <a target="_blank" href="https://twitter.com/mantrickStudios" >
+        </a> */}
+        {/* <a target="_blank" href="https://twitter.com/mantrickStudios" >
         <img src={twitter} alt='facebook' style={{height:"50px",width:"50px"}}/>
-        </a>
-        <a target="_blank" href="https://www.instagram.com/mantrick_studios/">
-        <img src={instagram} alt='facebook' style={{height:"50px",width:"50px"}}/>
+        </a> */}
+        <a target="_blank" href="https://www.linkedin.com/in/sai-kumar-mantrick-b6673229a/">
+        <img src={linkedin} alt='linkedin' style={{height:"50px",width:"50px"}}/>
         </a>
         <a target="_blank" href="https://www.youtube.com/@MANTRICKSTUDIOS">
         <img src={youtube} alt='facebook' style={{height:"50px",width:"50px"}}/>
         </a>
         </div>
         <div className='p'>
-            <p><strong className='underline'>Address:</strong></p>
+        <p>Phone: +91 9052000230,+91 7993338242</p>
+            <p>Mail us: muneswar@mantrickstudios.com, anil@mantrickstudios.com</p>
+        </div>
+      </div>
+        <div className='f2 f' style={{padding:"0px"}}>
+        <div className='p' style={{marginTop:"0px"}}>
+            <p style={{paddingBottom:"10px"}}><strong className='underline' style={{paddingBottom:"2px"}}>Address:</strong></p>
             <p>Sixth floor, 3 Cube Towers, White Field Rd,</p>
             <p>Whitefields, HITEC City,</p>
             <p>Hyderabad, Telangana 500081.</p>
-            <p>Phone: +91 9052000230,+91 7993338242</p>
-            <p>Mail us: muneswar@mantrickstudios.com, anil@mantrickstudios.com</p>
+            
             {/* <p>muneswar@mantrickstudios.com</p> */}
             </div>
-      </div>
-        <div className='f2 f'>
-            <div className='f21'>
-                <p ><strong className='underline '> Quick Links</strong></p>
-                <div className='links'>
-                    <Link to='/'>Home</Link>
-                    <Link to="/about">About us</Link>
-                    <Link style={{cursor:"pointer"}} onClick={(e)=>{
-                        
-                        document.querySelector(".back-2").style.display="block";
-                        document.querySelector(".schedule-meet").style.display="none";
-                        document.querySelector(".schedule-meet-o").style.display="flex";
-                      }}>Meet Us</Link>
-                    <Link to='/portfolio'>Our Works</Link>
-                    <Link  to='/gallery'
-                    >Gallery</Link>
-                    {/* <a href='#'>Chat</a> */}
-                    <a  style={{cursor:"pointer"}} onClick={(e)=>{
-                        document.querySelector(".back-2").style.display="block";
-                        document.querySelector(".schedule-meet").style.display="none";
-                        document.querySelector(".schedule-meet-o").style.display="flex";
-                      }}>Call Back</a>
-                </div>
-            </div>
-            <div className='f22 f'>
-                <p ><strong className='underline '>Services</strong></p>
-                <div className='links'>
-                    <Link to='/courses ' onClick={()=>{
-                      
-                        window.scrollTo(0, 0);
-                      
-                    }}>Roto</Link>
-                    <Link 
-                    to='/courses '
-                    onClick={()=>{
-                      
-                      window.scrollTo(0, 0);
-                    
-                  }}
-                    >Composting</Link>
-                    <Link
-                    onClick={()=>{
-                      
-                      window.scrollTo(0, 0);
-                    
-                  }}
-                    >Vfx</Link>
-                    <Link to='/courses '
-                    onClick={()=>{
-                      
-                      window.scrollTo(0, 0);
-                    
-                  }}
-                  >Paint</Link>
-                    <Link to='/courses '
-                    onClick={()=>{
-                      
-                      window.scrollTo(0, 0);
-                    
-                  }}
-                  >Match Move</Link>
-                    <Link to='/courses '
-                    onClick={()=>{
-                      
-                      window.scrollTo(0, 0);
-                    
-                  }}
-                  >3D</Link>
-                </div>
-            </div>
+            
+            
             <div className='f21'></div>
         </div>
       

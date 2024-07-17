@@ -9,11 +9,11 @@ import { useLocation } from 'react-router-dom';
 import { display } from '@mui/system';
 export default function Courses() {
    var currentCard=1;
+   const location = useLocation();
    useEffect(()=>{
       window.scrollTo(0, 0);
       // alert(location.pathname=='/');
    },[])
-   const location = useLocation();
   const courses=[
     {
       heading:"Roto (Rotoscoping)",
