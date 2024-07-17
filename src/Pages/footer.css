@@ -126,9 +126,13 @@
 {
     color: white;
 }
+.footer .f1 .p p a:hover
+{
+    color: rgb(93, 93, 255) !important;
+}
 .footer .f1 .p p
 {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 200;
     font-family: sans-serif;
     margin: 1px;

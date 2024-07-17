@@ -93,8 +93,8 @@ function Carousel2() {
       {eventIds.map((eventId,i) => {
             const el = landings[eventId];
             return (
-              <div className='slide' style={{width:"100vw",backgroundImage:`url("${el.imageUrl}")`,height:"100vh"}}>
-                
+              <div className='slide' style={{width:"100vw",height:"100vh"}}>
+                <img src={el.imageUrl} alt=''></img>
                 <div className='des'>
                 <p>{el.title}</p>
                 <h1>{el.description}</h1>

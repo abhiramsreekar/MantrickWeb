@@ -5,7 +5,7 @@ import context from '../context/useContext';
 export default function Carousel() {
   useEffect(()=>{
     fetchAllLandings();
-    // auto();
+    auto();
   },[])
   const sleep = ms => new Promise(resolve => setTimeout(resolve, ms)); 
   const [cardNo,setCardNo]=useState(1);

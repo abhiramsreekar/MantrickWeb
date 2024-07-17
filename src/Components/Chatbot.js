@@ -99,7 +99,7 @@ export default function Chatbot() {
       },15000)
     }
     useEffect(()=>{
-      auto_popUp();
+      // auto_popUp();
     },[])
     var e_otp;
     const Email_OTP=async(e)=>{
