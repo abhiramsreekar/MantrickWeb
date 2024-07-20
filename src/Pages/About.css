@@ -181,15 +181,15 @@ body {
     width: 40%;
     position: absolute;
 }
-  .number2img {
-    margin-top: 9%;
-    margin-right: 42%;
-    margin-bottom: 42%;
-    margin-left: 17%;
-    width: 35%;
-    height: 39%;
-    position: absolute;
-    /* opacity: 0; */
+.number2img {
+  margin-top: 28%;
+  margin-right: 42%;
+  margin-bottom: 42%;
+  margin-left: 6%;
+  width: 47%;
+  height: 25%;
+  position: absolute;
+  /* opacity: 0; */
 }
   
 .number3img {
@@ -204,24 +204,24 @@ body {
 }
   
 .number4vid {
-  width: 172%;
-  height: 118%;
+  width: 47%;
+  height: 25%;
   position: absolute;
   margin-top: 28%;
   margin-right: 27%;
   margin-bottom: 0px;
-  margin-left: 8%;
+  margin-left: 64%;
 }
   
-  .number5img {
-    position: absolute;
-    width: 20%;
-    height: 21%;
-    margin-top: 38%;
-    margin-right: 27%;
-    margin-bottom: 41%;
-    margin-left: 60%;
-  }
+.number5img {
+  position: absolute;
+  width: 47%;
+  height: 25%;
+  margin-top: 66%;
+  margin-right: 27%;
+  margin-bottom: 41%;
+  margin-left: 6%;
+}
   
   .number66img {
     position: absolute;
@@ -237,10 +237,10 @@ body {
   position: absolute;
   margin-right: 3%;
   margin-bottom: 67%;
-  margin-top: 76%;
-  margin-left: 27%;
-  width: 45%;
-  height: 40%;
+  margin-top: 63%;
+  margin-left: 64%;
+  width: 47%;
+  height: 31%;
 }
   .number7img {
     position: absolute;
@@ -301,6 +301,24 @@ body {
   }
   
   @media (max-width: 768px) {
+    .responsive-container-block.rightSide {
+      height: 100%;
+
+    }
+    .page {
+      margin-bottom: 0px;
+  }
+  #servicesTabOuter_o
+  {
+    padding-top: 0px !important;
+  }
+    .videos
+    {
+      position: relative;
+      margin: 10px auto;
+      width: 96%;
+      height: 60%;
+    }
     .aboutUs {
       margin-bottom: 40px;
     }
@@ -314,8 +332,7 @@ body {
     padding-top: 10px;
   }
     .responsive-container-block.rightSide {
-      width: 450px;
-      height: 450px;
+      width: 100%;
     }
     .text-blk.heading
     {
@@ -348,7 +365,6 @@ body {
     }
     .responsive-container-block.rightSide {
       width: 100%;
-      height: 250px;
       margin-top: 0px;
       margin-right: 0px;
       margin-bottom: 0px;

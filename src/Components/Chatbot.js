@@ -145,11 +145,7 @@ export default function Chatbot() {
 
     
       const new_date=formated_date(new Date())
-      // if(e_otp=!otp)
-      // {
-      //   showSnackbar('OTP entered is wrong!', 'error');
-      //   return;
-      // }
+      
       try {
 
       // #sending data to firebase

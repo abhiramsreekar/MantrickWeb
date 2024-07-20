@@ -202,10 +202,7 @@ display: none;
   .sc-bZQynM {
       font-size: 10px;
   }
-  .page
-  {
-      margin-bottom: 50px;
-  }
+  
 }
 @media screen and (max-width: 1200px) {
 
@@ -404,7 +401,7 @@ display: none;
     font-size: 10px;
     text-align: center;
 }
-.schedule-meet .ss-box button
+.btn
 {
     background-color: black;
     font-size: 20px;

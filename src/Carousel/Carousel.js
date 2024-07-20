@@ -20,7 +20,12 @@ export default function Carousel() {
         {
           await sleep(4000);
             let lists = document.querySelectorAll('.item');
-            document.getElementById('slide').append(lists[0]);
+            let slide=document.getElementById('slide');
+            if(slide)
+            {
+              slide.append(lists[0])
+            }
+            
         }
   
       }

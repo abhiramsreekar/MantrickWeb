@@ -11,7 +11,7 @@ export default function Navbar3() {
     const navanimation=(e)=>{
         // e.target.style.top="10px";
         var mark=document.querySelector("#marker");
-        mark.style.left=document.querySelector("#first").offsetLeft+  "px";
+        mark.style.left=document.querySelector("#first").offsetLeft+"px";
         mark.style.width=document.querySelector("#first").offsetWidth+"px";
     }
     useEffect(()=>{
@@ -143,7 +143,7 @@ export default function Navbar3() {
                     
                         <li>
                         <div className="dropdown">
-        <Link to="/academy" onClick={marker} className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Academy <span class="material-symbols-outlined" style={{color:"red"}}>
+        <Link to="/academy" className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Academy <span class="material-symbols-outlined" style={{color:"red"}}>
 keyboard_arrow_down
 </span></Link>
         <div className="dropdown-content">
@@ -180,7 +180,7 @@ keyboard_arrow_down
                         </li>
                         <li>
                         <div className="dropdown">
-        <Link to="/" onClick={marker} className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Reach Us <span class="material-symbols-outlined" style={{color:"red"}}>
+        <Link to="/contact"  className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Reach Us <span class="material-symbols-outlined" style={{color:"red"}}>
 keyboard_arrow_down
 </span></Link>
         <div className="dropdown-content">

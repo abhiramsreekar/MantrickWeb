@@ -83,7 +83,7 @@
     }
     .slides .slide .des
 {
-    bottom: 34vh !important;
+    top: 60vh !important;
     left: 5vw !important;
 }
     .slide:nth-child(n+4)

@@ -20,6 +20,8 @@ import MyPortfolio from './Pages/MyPortfolio';
 import MyTestimonials from './Components/MyTestimonials';
 import Placements from './Components/Placements';
 import Academy from './Pages/Academy';
+import Contact from './Pages/Contact';
+import AboutPage from './Pages/AboutPage';
 function App() {
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -32,7 +34,7 @@ function App() {
       <Routes>
       <Route path='/blogs' exact element={<Blogs />} />
       <Route path='/' element={<Home />} />
-      <Route path='/about' element={<About2 />} />
+      <Route path='/about' element={<AboutPage/>}/>
       <Route path='/services' element={<ServicesTab />} />
       <Route path='/training' element={<Training />} />
       <Route path='/team' element={<Team />} />
@@ -44,6 +46,7 @@ function App() {
       <Route path='/testimonials' element={<MyTestimonials/>} />
       <Route path='/mystudents' element={<Placements/>} />
       <Route path='/academy' element={<Academy/>} />
+      <Route path='/contact' element={<Contact/>} />
 
       <Route path='/*' element={<Home/>} />
       

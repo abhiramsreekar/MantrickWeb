@@ -41,7 +41,7 @@ export default function Footer() {
         {/* <a target="_blank" href="https://twitter.com/mantrickStudios" >
         <img src={twitter} alt='facebook' style={{height:"50px",width:"50px"}}/>
         </a> */}
-        <a target="_blank" href="https://www.linkedin.com/in/sai-kumar-mantrick-b6673229a/">
+        <a target="_blank" href="https://www.linkedin.com/company/mantrick-studios-pvt-ltd/">
         <img src={linkedin} alt='linkedin' style={{height:"50px",width:"50px"}}/>
         </a>
         <a target="_blank" href="https://www.youtube.com/@MANTRICKSTUDIOS">
@@ -54,7 +54,7 @@ export default function Footer() {
             <p>Mail us<a href="mailto:anil@mantrickstudios.com" style={{color:"white"}}>: anil@mantrickstudios.com</a></p>
         </div>
       </div>
-        <div className='f2 f' style={{padding:"0px"}}>
+        <div className='f2 f' style={{padding:"7px"}}>
         <div className='p' style={{marginTop:"0px"}}>
             <p style={{paddingBottom:"10px"}}><strong className='underline' style={{paddingBottom:"2px"}}>Address:</strong></p>
             <p>Sixth floor, 3 Cube Towers, White Field Rd,</p>
@@ -65,7 +65,6 @@ export default function Footer() {
             </div>
             
             
-            <div className='f21'></div>
         </div>
       
     <div className='f3 f'>

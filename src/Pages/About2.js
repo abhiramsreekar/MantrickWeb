@@ -54,7 +54,7 @@ and knowledge necessary to excel in the competitive VFX landscape, ensuring they
                 <img src={effects}></img>
                 </div>
                 <div className='tabright'>
-                    <h3>HUES FX  (<a id="huesfx" style={{textDecoration:"none",color:"white"}} href='https://huesfx.in/' target="_blank">huesfx.in</a>)</h3>
+                    <h3>HUES FX</h3>
                     <p> Embark on a transformative journey with Hues FX, a dynamic joint venture born from the 
 evolution of Mantrick Studios' VFX production. Guided by Mathew Kemper, we specialize in elevating 
 visual effects production. Hues FX proudly holds the Trusted Partner Network (TPN) certification, 
@@ -68,14 +68,24 @@ redefining visual storytelling
               {/* <img className="number2img img1 aleft"src={cubes2}/>
               <img className="number4vid aright" src={image}/> */}
 
-              <div className="number4vid aright">
-              <iframe width="50%" height="40%" src="https://www.youtube.com/embed/BwhOY2ptiSY?si=fhNgp7gOHCsd46zV" >
+              <div className="number2img videos img1 aleft">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BwhOY2ptiSY?si=fhNgp7gOHCsd46zV" >
 </iframe>
 
               </div>
-              <div>
-              <img className='number6img img5 aright' src={TPN}/>
+              <div className="number5img videos img1 aleft">
+              <iframe src="https://player.vimeo.com/video/891437649?h=9fa4c56e8a" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+
               </div>
+              <div className="number4vid videos aright">
+              <iframe width="100%" height="100%" src="hhttps://www.youtube.com/embed/YOdqs8FnYYU?si=_BxPNdsqLfif5G0b" >
+</iframe>
+
+              </div>
+              
+              <img className='number6img videos img5 aright' src={TPN}/>
+              
               
               {/* <img className="number1img  img6 aleft" src={cubes}/> */}
             </div>
