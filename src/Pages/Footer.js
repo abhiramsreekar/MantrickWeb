@@ -50,8 +50,8 @@ export default function Footer() {
         </div>
         <div className='p'>
         <p>Phone: +91 9052000230,+91 7993338242</p>
-            <p>Mail us<a href="mailto:muneswar@mantrickstudios.com" style={{color:"white"}}>: muneswar@mantrickstudios.com</a></p>
-            <p>Mail us<a href="mailto:anil@mantrickstudios.com" style={{color:"white"}}>: anil@mantrickstudios.com</a></p>
+            {/* <p>Mail us<a href="mailto:muneswar@mantrickstudios.com" style={{color:"white"}}>: muneswar@mantrickstudios.com</a></p>
+            <p>Mail us<a href="mailto:anil@mantrickstudios.com" style={{color:"white"}}>: anil@mantrickstudios.com</a></p> */}
         </div>
       </div>
         <div className='f2 f' style={{padding:"7px"}}>

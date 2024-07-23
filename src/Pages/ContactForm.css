@@ -29,6 +29,8 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 10px;
+    width: 93vw;
+    margin: 2vw;
   }
   
   .contact_form-group {

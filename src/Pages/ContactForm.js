@@ -1,12 +1,13 @@
-import React,{useState} from "react";
+import React,{useState,useContext} from "react";
 import "./ContactForm.css";
+import context from '../context/useContext';
 const ContactForm = () => {
   const [name,setName]=useState("");
   const [mobile,setMobile]=useState("");
   const [request,setRequest]=useState("");
   const [email,setEmail]=useState("");
   const [message,setMessage]=useState("");
-  const [write,setWrite]=useState("");
+  const {openSnackbar,setOpenSnackbar,snackbarMessage,snackbarSeverity,setSnackbarSeverity,showSnackbar,setSnackbarMessage}=useContext(context);
   const onSubmit=(e)=>{
     e.preventDefault();
     fetch("https://mantrick-studios-fdb0f-default-rtdb.firebaseio.com/data.json", {
@@ -19,8 +20,7 @@ const ContactForm = () => {
       "mobile":{mobile},
       "Service_request":{request},
       "Email":{email},
-      "Message":{message},
-      "Write_to_us":{write}
+      "Message":{message}
     }) // Convert the data object to a JSON string
 })
 .then(response => {
@@ -30,23 +30,22 @@ const ContactForm = () => {
     return response.json(); // Parse the JSON response
 })
 .then(data => {
-    console.log("Success:"); // Log the response data
+    setName("");
+    setEmail("");
+    setMessage("");
+    setMobile("");
+    setRequest("");
+    showSnackbar('Response recorded successfully!', 'success');
 })
 .catch(error => {
     console.error("Error:", error); // Handle any errors
+    showSnackbar('Semething went wrong, please try again later!', 'error');
 });
   }
   return (
       
     <div className="contact_container">
       <div className="contact_content">
-      
-      <div className="contact_form-group">
-            <label htmlFor="message">Write to Us</label>
-            <textarea id="message" name="message" minLength={10} value={write} onChange={(e)=>{
-              setWrite(e.target.value);
-            }}></textarea>
-      </div>
         <form className="contact_form" onSubmit={onSubmit}>
           <div className="contact_form-group">
             <label htmlFor="name">Name</label>
