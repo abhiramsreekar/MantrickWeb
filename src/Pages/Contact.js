@@ -5,9 +5,7 @@ export default function Contact() {
     <div>
     <div className='padding' style={{paddingTop:"15vh"}}>
     <h3 style={{color:"white",textAlign:"center"}}className="head-one">Reach Us</h3>
-
     </div>
-    
     <ContactForm/>
     </div>
   )

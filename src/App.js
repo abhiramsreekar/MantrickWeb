@@ -48,7 +48,7 @@ function App() {
       <Route path='/academy' element={<Academy/>} />
       <Route path='/contact' element={<Contact/>} />
 
-      <Route path='/*' element={<Home/>} />
+      <Route path='/' element={<Home/>} />
       
       </Routes>
       <Footer/>

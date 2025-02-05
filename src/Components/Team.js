@@ -62,9 +62,10 @@ export default function Team() {
                     </ul>
                       
                 </div> 
-                <p className='teamdes' >
+                <p className='teamdes' style={{}}>
                 
-                        "Muneeshwar Tirumalla: Strategic CEO leading operations with innovation, efficiency, and collaboration."
+                        "Muneswar, the visionary founder of Mantrick Studios, brings 25 years of expertise across animation, VFX, commercials, and gaming. Known for turning creative challenges into groundbreaking visual stories, Muneswar blends technical brilliance with seamless production management and strategic operations. His sharp understanding of global economies and business cycles powers his unique ability to steer projects toward success, 
+                        making him a trusted leader with an extensive industry network that consistently delivers impactful results"
                         </p>
             </div>
         </div>

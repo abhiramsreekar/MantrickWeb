@@ -27,7 +27,7 @@
   
   .contact_form {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     width: 93vw;
     margin: 2vw;

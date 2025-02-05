@@ -69,18 +69,23 @@ redefining visual storytelling
               <img className="number4vid aright" src={image}/> */}
 
               <div className="number2img videos img1 aleft">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BwhOY2ptiSY?si=fhNgp7gOHCsd46zV" >
+              <iframe width="100%" height="140%" allowfullscreen="true"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" src="https://www.youtube.com/embed/BwhOY2ptiSY?si=fhNgp7gOHCsd46zV" >
 </iframe>
 
               </div>
               <div className="number5img videos img1 aleft">
-              <iframe src="https://player.vimeo.com/video/891437649?h=9fa4c56e8a" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://player.vimeo.com/video/891437649?h=9fa4c56e8a" allowfullscreen="true"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" width="100%" height="140%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
 
               </div>
               <div className="number4vid videos aright">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YOdqs8FnYYU?si=OwMb9clTMDxWXpb5" >
-</iframe>
+              <iframe width="100%" height="140%"
+               allowfullscreen="true"
+               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                src="https://www.youtube.com/embed/YOdqs8FnYYU?si=OwMb9clTMDxWXpb5" >
+                </iframe>
 
               </div>
               

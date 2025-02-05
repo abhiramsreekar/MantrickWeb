@@ -5,7 +5,10 @@ import image from '../Images/mantrickstudios_logo.webp';
 import { Snackbar } from '@mui/material';
 import Alert from '@mui/material/Alert/Alert';
 import { Link } from 'react-router-dom';
+import { useRef} from 'react';
+import { First } from 'react-bootstrap/esm/PageItem';
 export default function Navbar3() {
+    const first=useRef();
     const {gpt,setGpt}=useContext(context);
     const {openSnackbar,setOpenSnackbar,snackbarMessage,snackbarSeverity,setSnackbarSeverity,showSnackbar,setSnackbarMessage}=useContext(context);
     const navanimation=(e)=>{
@@ -15,9 +18,17 @@ export default function Navbar3() {
         mark.style.width=document.querySelector("#first").offsetWidth+"px";
     }
     useEffect(()=>{
+        
         var mark=document.querySelector("#marker");
         mark.style.left=document.querySelector('#first').offsetLeft+"px";
         mark.style.width=document.querySelector('#first').offsetWidth+"px";
+    })
+    useEffect(()=>{
+        setTimeout(()=>{
+            var mark=document.querySelector("#marker");
+            mark.style.left=document.querySelector('#first').offsetLeft+"px";
+            mark.style.width=document.querySelector('#first').offsetWidth+"px";
+        },[1000])
         window.addEventListener('scroll', function() {
             if (document.documentElement.scrollTop > 50 || document.body.scrollTop > 50) {
                 document.querySelector('.nav').classList.add('affix');
@@ -125,13 +136,13 @@ export default function Navbar3() {
      <nav className="nav">
         <div className="container">
             <div className="logo">
-                <a href="#"><img src={image} alt=""/></a>
+                <a href="#" ><img src={image} alt=""/></a>
             </div>
             <div id="mainListDiv" className="main_list">
                 <ul className="navlinks ulm">
                     <div id='marker'></div>
                     <li>
-                        <Link to="/" id='first'  className='ul1 ul1' onClick={marker}>Home</Link>
+                        <Link to="/" id='first' ref={first}  className='ul1 ul1' onClick={marker}>Home</Link>
                     </li>
                     <li><Link to="/about" className='ul1 ul2' id="#aboutUs1" onClick={marker}>About</Link></li>
                     <li><Link to="/services" className='ul1 ul3'  id="#services-head3" onClick={marker}>Services</Link></li>
@@ -140,8 +151,10 @@ export default function Navbar3() {
                     onClick={marker}
                     >Portfolio</Link></li>
                     <li><Link to="/team" className='ul1 ul5'   id="#team22" onClick={marker} >Team</Link></li>
-                    
-                        <li>
+                    <li>
+                    <Link to="/academy" className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}} onClick={marker}>Academy</Link>
+                    </li>
+                        {/* <li>
                         <div className="dropdown">
         <Link to="/academy" className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Academy <span class="material-symbols-outlined" style={{color:"red"}}>
 keyboard_arrow_down
@@ -177,17 +190,15 @@ keyboard_arrow_down
           
         </div>
       </div>
-                        </li>
+                        </li> */}
                         <li>
-                        <div className="dropdown">
-        <Link to="/contact"  className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}}>Reach Us <span class="material-symbols-outlined" style={{color:"red"}}>
-keyboard_arrow_down
-</span></Link>
+        <Link to="/contact"  className="dropbtn" style={{display:"flex",alignItems:"center",justifyContent:"center"}} onClick={marker}>Reach Us</Link>
+                        {/* <div className="dropdown">
         <div className="dropdown-content">
           <Link to="/">Business</Link>
           <Link to="/">Careers</Link>
         </div>
-      </div>
+      </div> */}
                         </li>
                 </ul>
             </div>

@@ -257,8 +257,29 @@
   }
   .team .teamdes
   {
+    overflow-y: scroll;
+    height: 30vh;
     margin-top: 60px;
     font-size: 15px;
+    
+  }
+  .team .teamdes::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  .team .teamdes::-webkit-scrollbar-track {
+    background: #888; 
+  }
+   
+  /* Handle */
+  .team .teamdes::-webkit-scrollbar-thumb {
+    background:  #f1f1f1; 
+  }
+  
+  /* Handle on hover */
+  .team .teamdes::-webkit-scrollbar-thumb:hover {
+    background: #555; 
   }
   .team .teamout
   {

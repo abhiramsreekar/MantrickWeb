@@ -29,7 +29,7 @@ export default function Home() {
     {/* <Testimonials/> */}
     <Team/>
     <Services/>
-    <Clients/>
+    {/* <Clients/> */}
     
   
   </div>

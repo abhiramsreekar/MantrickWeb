@@ -314,11 +314,11 @@ export default function Chatbot() {
       
       <h2>Reach Us</h2>
       <p>Please provide your contact information</p>
-      <form ref={form} onSubmit={Email_OTP}>
+      <form ref={form} onSubmit={onDowloadBrochure1}>
       <input type='text' name='email_otp' id='email_id' value={email_otp} style={{display:"none"}}/>
       <div className='ss-box'>
           <label htmlFor="ss-name" className="ss-label">Name:</label>
-          <input type="text" minLength={4} id="ss-name" name='ss-name'  value={name} onChange={(e)=>{
+          <input type="text" minLength={5} id="ss-name" name='ss-name'  value={name} onChange={(e)=>{
               setName(e.target.value);
               
           }} className='ss-input' placeholder='Enter Your Name'/>
@@ -348,7 +348,9 @@ export default function Chatbot() {
               setOtp(e.target.value);
           }} className='ss-input' placeholder='Enter OTP'/>
         </div>
-         <Button type='button' onClick={onDowloadBrochure1}>Download Brochure</Button>
+         <Button type='submit'
+          // onClick={onDowloadBrochure1}
+         >Download Brochure</Button>
          {
            !Bsubmit?<p  style={{color:"white"}}>by clicking this button, you are agreed to receive an email</p>:<p style={{color:"green",background:"white"}}>Brochure details sent to your registered email successfully</p>
          }
@@ -377,10 +379,10 @@ export default function Chatbot() {
     }}>cancel</span>
       <h2>Schedule Meet</h2>
       <p>Please provide your contact information</p>
-      <form onSubmit={Email_OTP}>
+      <form onSubmit={onScheduleSubmit1}>
       <div className='ss-box'>
           <label htmlFor="ss-name" className="ss-label">Name:</label>
-          <input type="text" id="ss-name" name='ss-name'  value={name}  onChange={(e)=>{
+          <input type="text" id="ss-name"minLength={5} name='ss-name'  value={name}  onChange={(e)=>{
             setName(e.target.value);
           }} className='ss-input' placeholder='Enter Your Name'/>
         </div>
@@ -425,7 +427,9 @@ export default function Chatbot() {
             }} id="birthdaytime" className='ss-input' name="birthdaytime"></input>
         </div>
 
-        <Button type='button'  onClick={onScheduleSubmit1}>Schedule Meet</Button>
+        <Button type='submit'
+        // onClick={onScheduleSubmit1}
+        >Schedule Meet</Button>
         {
           !Bsubmit?<p>by clicking this button, you are agreed to receive message on whatsapp</p>:<p style={{color:"green"}}>scheduled meeting confirmation details sent to your whatsapp successfully</p>
         }

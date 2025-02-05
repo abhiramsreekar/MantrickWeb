@@ -169,7 +169,7 @@ export default function Courses() {
               </div>
            </div>
         </div>
-        <div className="option option4" id="4" onMouseOver={active}>
+        <div className="option option4" id="4" onMouseOver={active} >
         {/* <video style={{display:"absolute",width:"100%"}} muted loop id="myVideo"  src={Video} type="video/mp4">
         </video> */}
           <div className="shadow" style={{pointerEvents:"none"}}></div>
@@ -195,11 +195,7 @@ export default function Courses() {
                 </div>
              </div>
         </div>
-        
-                 {
-                    !location.pathname=='/'?
-                    <>
-                    <div className="option option6" id="6" onMouseOver={active}>
+        <div className="option option6" id="6" onMouseOver={active}>
            <div className="shadow" style={{pointerEvents:"none"}}></div>
            <div className="label" style={{pointerEvents:"none"}}>
               <div className="icon" style={{pointerEvents:"none"}}>
@@ -223,6 +219,10 @@ export default function Courses() {
                 </div>
              </div>
         </div>
+                 {
+                    location.pathname=='/'?
+                    <>
+                    
                  </>
                     :
                     <></>
